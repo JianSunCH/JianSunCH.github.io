@@ -34,7 +34,7 @@
   <!-- leancloud -->
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
 <script src="/js/leancloud.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 	<body>
 		<!-- Preloader -->
@@ -136,9 +136,6 @@
 				</li>
 				<li>
 					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
-				</li>
-				<li>
-					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
 				</li>
 			</ul>
 		</div>
@@ -306,7 +303,13 @@
 		/
 		<span>
 			<i class="fa fa-tags"></i>
-					
+			
+	
+		<a href="/tags/hello/" class=" ">
+			hello
+		</a>
+	
+		
 		</span>
 		/
 		
@@ -332,7 +335,7 @@
 		<h1 id="创建成功"><a href="#创建成功" class="headerlink" title="创建成功 :)"></a>创建成功 :)</h1>	
 	</div>
 	
-	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+	<div id="current-post-cover" data-scr="/img/1.jpg"></div>
 
 	<!-- relate post, comment...-->
 	<div class="investment-container">
@@ -346,6 +349,10 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
+			<a href="/2019/03/31/5-6-矩阵输出/" title="5-6 矩阵输出" rel="prev">
+				&laquo;上一篇
+			</a>
+		
 			
 	</span>
       		
@@ -358,6 +365,27 @@
 
 <div class="relate-post">
 	<ul>
+		
+				<li>
+					<div>
+						<a href="/2019/03/31/5-6-矩阵输出/" title="5-6 矩阵输出">
+							5-6 矩阵输出
+						</a>
+						<p>
+							例题5-6 矩阵输出题目描述输出以下4*5的矩阵
+  1  2  3  4  5
+  2  4  6  8 10
+  3  6  9 12 15
+  4  8 12 16 20
+要求使用循环实现，注意每行输出5个数字，每个数字占3个字...
+						</p>
+					</div>
+
+					<a href="/2019/03/31/5-6-矩阵输出/" title="5-6 矩阵输出">				
+						<img src="/img/cart_cover.jpg" class="relateImg" alt="5-6 矩阵输出">
+					</a>
+				</li>											
+		
 		
 	</ul>
 </div>	
@@ -427,7 +455,7 @@
 		//id: window.location.pathname,
 		//id: decodeURI(window.location.pathname),
 		//id: (window.location.pathname).split("/").pop().substring(0, 49),
-		id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+		id: decodeURI( md5( location.href.trimEnd('.*$,\\?.*$,$') ) ),
 		repo: 'Blog-Comment-Repo',
 		owner: 'JianSunCH',
 		admin: 'JianSunCH',
