@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      5-6 矩阵输出 | 孙健的个人博客
+      5-8 Fibonacci数列 | 孙健的个人博客
     
   </title>
   <meta name="author" content="Jian Sun">
@@ -115,7 +115,7 @@
 				<!-- Page title -->
 				<p>
 					
-						当前文章&nbsp;:&nbsp;《5-6 矩阵输出》
+						当前文章&nbsp;:&nbsp;《5-8 Fibonacci数列》
 					
 				</p>
 				<!-- Progress bar -->
@@ -281,8 +281,8 @@
 	
 	<div class="article-title">
 		
-	<a href="/2019/03/31/5-6-矩阵输出/" itemprop="url">
-		5-6 矩阵输出
+	<a href="/2019/04/03/5-8-Fibonacci数列/" itemprop="url">
+		5-8 Fibonacci数列
 	</a>
 
 	</div>
@@ -291,17 +291,17 @@
 		<span>
 			
 	发布于
-	<a href="/2019/03/31/5-6-矩阵输出/" itemprop="url">
-		<time datetime="2019-03-31T09:34:35.000Z" itemprop="datePublished">
-	  		2019-03-31
+	<a href="/2019/04/03/5-8-Fibonacci数列/" itemprop="url">
+		<time datetime="2019-04-02T16:13:40.000Z" itemprop="datePublished">
+	  		2019-04-03
 	  </time>
 	</a> 
 
 	/
 	更新于
-	<a href="/2019/03/31/5-6-矩阵输出/" itemprop="url">
-		<time datetime="2019-03-31T09:34:35.000Z" itemprop="dateUpdated">
-	  		2019-03-31
+	<a href="/2019/04/03/5-8-Fibonacci数列/" itemprop="url">
+		<time datetime="2019-04-02T16:13:40.000Z" itemprop="dateUpdated">
+	  		2019-04-03
 	  </time>
 	</a> 	
 
@@ -320,7 +320,7 @@
 		/
 		
 
-    <span class="leancloud_visitors" id="/2019/03/31/5-6-矩阵输出/_visitors" data-url="/2019/03/31/5-6-矩阵输出/" data-title="5-6 矩阵输出">
+    <span class="leancloud_visitors" id="/2019/04/03/5-8-Fibonacci数列/_visitors" data-url="/2019/04/03/5-8-Fibonacci数列/" data-title="5-8 Fibonacci数列">
         热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
     </span>
@@ -329,7 +329,7 @@
 
 
 
-    <span class="leancloud_likes" id="/2019/03/31/5-6-矩阵输出/_likes" data-url="/2019/03/31/5-6-矩阵输出/" data-title="5-6 矩阵输出" rel="unlike">
+    <span class="leancloud_likes" id="/2019/04/03/5-8-Fibonacci数列/_likes" data-url="/2019/04/03/5-8-Fibonacci数列/" data-title="5-8 Fibonacci数列" rel="unlike">
         喜欢
         <i class="fa fa-heart"></i>
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -338,47 +338,46 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h1>例题5-6 矩阵输出</h1>
+		<h1>例题5-8 Fibonacci数列</h1>
 <h2>题目描述</h2>
-<p>输出以下4*5的矩阵</p>
-<p>1  2  3  4  5</p>
-<p>2  4  6  8 10</p>
-<p>3  6  9 12 15</p>
-<p>4  8 12 16 20</p>
-<p>要求使用循环实现，注意每行输出5个数字，每个数字占3个字符的宽度，右对齐。</p>
+<p>输入一个正整数n，求Fibonacci数列的第n个数。Fibonacci数列的特点：第1,2个数为1,1。从第3个数开始，概述是前面两个数之和。即：</p>
+<p>要求输入的正整数n不超过50.</p>
 <h2>输入</h2>
-<p>无</p>
+<p>一个不超过50的正整数</p>
 <h2>输出</h2>
-<p>每行输出5个数字，每个数字占3个字符的宽度，右对齐。</p>
+<p>Fibonacci数列的第n个数，末尾输出换行。</p>
 <h2>样例输入</h2>
-<p><code>无</code></p>
+<p><code>20</code></p>
 <h2>样例输出</h2>
-<p><code>1 2 3 4 5</code></p>
-<p><code>2 4 6 8 10</code></p>
-<p><code>3 6 9 12 15</code></p>
-<p><code>4 8 12 16 20</code></p>
+<p><code>6765</code></p>
 <h2>代码</h2>
 <pre class="line-numbers language-language-c++"><code class="language-language-c++">#include &lt;cstdio&gt;
 
+int Fibonacci(int n)
+{
+    if (n == 0)
+    {
+        return 0;
+    }
+    else if (n == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
+    }
+}
+
 int main()
 {
-    int n = 1;
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 5; j++)
-        {
-            printf("%3d", n++ * (i + 1));
-        }
-        n = 1;
-        printf("\n");
-    }
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    int n;
+    scanf("%d", &n);
+    if (n <= 50) { printf("%d", fibonacci(n)); } return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></code></pre>
 	
 	</div>
 	
-	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+	<div id="current-post-cover" data-scr="/img/1.jpg"></div>
 
 	<!-- relate post, comment...-->
 	<div class="investment-container">
@@ -392,12 +391,12 @@ int main()
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/04/02/5-7-求圆周率pi的近似值/" title="5-7 求圆周率pi的近似值" rel="prev">
+			<a href="/2019/04/03/5-10-分数序列求和/" title="5-10 分数序列求和" rel="prev">
 				&laquo;上一篇
 			</a>
 		
 		
-			<a href="/2019/03/31/create/" title="create" rel="next">
+			<a href="/2019/04/02/5-7-求圆周率pi的近似值/" title="5-7 求圆周率pi的近似值" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -438,27 +437,6 @@ int main()
 		
 				<li>
 					<div>
-						<a href="/2019/04/03/5-8-Fibonacci数列/" title="5-8 Fibonacci数列">
-							5-8 Fibonacci数列
-						</a>
-						<p>
-							例题5-8 Fibonacci数列
-题目描述
-输入一个正整数n，求Fibonacci数列的第n个数。Fibonacci数列的特点：第1,2个数为1,1。从第3个数开始，概述是前面两个数之和。即：
-要求输入的正整数n不超过50.
-输入
-...
-						</p>
-					</div>
-
-					<a href="/2019/04/03/5-8-Fibonacci数列/" title="5-8 Fibonacci数列">				
-						<img src="/img/1.jpg" class="relateImg" alt="5-8 Fibonacci数列">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
 						<a href="/2019/04/02/5-7-求圆周率pi的近似值/" title="5-7 求圆周率pi的近似值">
 							5-7 求圆周率pi的近似值
 						</a>
@@ -475,6 +453,29 @@ int main()
 
 					<a href="/2019/04/02/5-7-求圆周率pi的近似值/" title="5-7 求圆周率pi的近似值">				
 						<img src="/img/2.jpg" class="relateImg" alt="5-7 求圆周率pi的近似值">
+					</a>
+				</li>											
+		
+		
+				<li>
+					<div>
+						<a href="/2019/03/31/5-6-矩阵输出/" title="5-6 矩阵输出">
+							5-6 矩阵输出
+						</a>
+						<p>
+							例题5-6 矩阵输出
+题目描述
+输出以下4*5的矩阵
+1  2  3  4  5
+2  4  6  8 10
+3  6  9 12 15
+4  8 12 16 20
+要求使用循环实现，注意每行输出5个数字，每个数字占3个字符的宽度，右...
+						</p>
+					</div>
+
+					<a href="/2019/03/31/5-6-矩阵输出/" title="5-6 矩阵输出">				
+						<img src="/img/cart_cover.jpg" class="relateImg" alt="5-6 矩阵输出">
 					</a>
 				</li>											
 		
