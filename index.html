@@ -111,7 +111,7 @@
         <div class="logo-name">孙健的个人博客</div>
         <div class="logo-desc">
             
-            个人博客
+            The Best Or Nothing
             
         </div>
     </div>
@@ -297,13 +297,13 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                    Audi-Duckweed
                 
             </div>
 
             <div class="description center-align">
                 
-                    个人博客
+                    The Best Or Nothing
                 
             </div>
         </div>
@@ -320,7 +320,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
 
                 
-                <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
+                <a href="https://github.com/JianSunCH/JianSunCH.github.io" class="waves-effect waves-light btn" target="_blank">
                     <i class="fa fa-github-alt"></i>Github
                 </a>
                 
@@ -532,12 +532,119 @@ $(function () {
                     
 
                     
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="title center-align">
+        <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"Take me hand","artist":"DAISHI DANCE,Cecile Corbel","url":"http://static.blinkfox.com/music2.mp3","cover":"http://static.blinkfox.com/music-cover2.png"},{"name":"Shape of You","artist":"J.Fla","url":"http://static.blinkfox.com/music3.mp3","cover":"http://static.blinkfox.com/music-cover3.png"}]')
+    });
+});
+</script>
+                    
 
                     
 
                     <div id="recommend-sections" class="recommend">
                         
 
+
+
+
+
+<div class="title"><i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;推荐文章</div>
+
+<div class="row">
+
+    
+    
+    <div class="col s12">
+        <div class="post-card" style="background-image: url('/medias/featureimages/9.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/code/" class="category" target="_blank">code</a>
+                    
+                </div>
+                <a href="/2019/04/03/4-1-一元二次方程求根/" target="_blank">
+                    <h3 class="post-title">4-1 一元二次方程求根</h3>
+                </a>
+                <p class="post-description">例题4-1 一元二次方程求根题目描述求一元二次方程ax2+bx+c=0的根，三个系数a, b, c由键盘输入，且a不能为0，但不保证b2-4ac&gt;0。
+程序中所涉及</p>
+                <a href="/2019/04/03/4-1-一元二次方程求根/" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/19.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/code/" class="category" target="_blank">code</a>
+                    
+                </div>
+                <a href="/2019/04/03/5-10-分数序列求和/" target="_blank">
+                    <h3 class="post-title">5-10 分数序列求和</h3>
+                </a>
+                <p class="post-description">习题5-10 分数序列求和题目描述有如下分数序列有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13…求出这个数列的前 20 </p>
+                <a href="/2019/04/03/5-10-分数序列求和/" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/12.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/other-category/" class="category" target="_blank">other category</a>
+                    
+                </div>
+                <a href="/2019/03/31/create/" target="_blank">
+                    <h3 class="post-title">create</h3>
+                </a>
+                <p class="post-description">Hello World!创建成功 :)</p>
+                <a href="/2019/03/31/create/" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
 
 
                     </div>
@@ -552,6 +659,55 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/04/03/4-1-一元二次方程求根/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="4-1 一元二次方程求根">
+                            
+                            <span class="card-title">4-1 一元二次方程求根</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                例题4-1 一元二次方程求根题目描述求一元二次方程ax2+bx+c=0的根，三个系数a, b, c由键盘输入，且a不能为0，但不保证b2-4ac&gt;0。
+程序中所涉及的变量均为double类型。
+输入以空格分隔的一元二次方程的三个系数，
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/code/" class="post-category" target="_blank">
+                                    code
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/codeup/" target="_blank">
+                            <span class="chip bg-color">codeup</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
@@ -820,7 +976,7 @@ $(function () {
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">681</span>
+            <span class="white-color">930</span>
             
 
             
