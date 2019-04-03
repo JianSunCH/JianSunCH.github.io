@@ -4,12 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="5-7 求圆周率pi的近似值, 孙健的博客">
-    <meta name="description" content="例题5-7 求圆周率pi的近似值题目描述用如下公式
-
-求圆周率PI的近似值，直到发现某一项的绝对值小于10-6为止（该项不累加）。
-要求输出的结果总宽度占10位，其中小数部分为8位。
-程序中使用浮点型数据时，请定义为双精度double类型。">
+    <meta name="keywords" content="6-12 解密, 孙健的博客">
+    <meta name="description" content="习题6-12 解密题目描述有一行电文，已按如下规律译成密码：
+A–&amp;gt;Z        a–&amp;gt;z
+B–&amp;gt;Y        b–&amp;gt;y
+C–&amp;gt;X        c–&amp;gt;x
+……          ……
+即第一个字">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>5-7 求圆周率pi的近似值 | 孙健的博客</title>
+    <title>6-12 解密 | 孙健的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -244,13 +245,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        5-7 求圆周率pi的近似值
+                        6-12 解密
                     </div>
                 </div>
             </div>
@@ -385,14 +386,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-02
+                    2019-04-03
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        225
+                        178
                     </div>
                     
 
@@ -415,34 +416,37 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="例题5-7-求圆周率pi的近似值"><a href="#例题5-7-求圆周率pi的近似值" class="headerlink" title="例题5-7 求圆周率pi的近似值"></a>例题5-7 求圆周率pi的近似值</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>用如下公式</p>
-<p><img src="https://img-bcuket.oss-cn-shanghai.aliyuncs.com/5-7.png?Expires=1554269714&amp;OSSAccessKeyId=TMP.AQENp1HEMvuMCz-DUG1yogVKNOrOyNiGVExePkByuZLfHC7Lsb2Xp6pvbLKWADAtAhRpZZfUpV0YC-nsmxKgBKyEwTtP2QIVAJj5UKZ9WuoenVbY1nlE4h8FxfZk&amp;Signature=J9NMbrmqBvbYEKNeH4Mahl3MhAc%3D" alt="avatar"></p>
-<p>求圆周率PI的近似值，直到发现某一项的绝对值小于10-6为止（该项不累加）。</p>
-<p>要求输出的结果总宽度占10位，其中小数部分为8位。</p>
-<p>程序中使用浮点型数据时，请定义为双精度double类型。</p>
-<p>如果需要计算绝对值，可以使用C语言数学库提供的函数fabs，如求x的绝对值，则为fabs(x).</p>
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>无</p>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>PI=圆周率的近似值</p>
-<p>输出的结果总宽度占10位，其中小数部分为8位。</p>
-<p>末尾输出换行。</p>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p><code>无</code></p>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p><code>PI=3.14159065</code></p>
+                <h1 id="习题6-12-解密"><a href="#习题6-12-解密" class="headerlink" title="习题6-12 解密"></a>习题6-12 解密</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一行电文，已按如下规律译成密码：</p>
+<p>A–&gt;Z        a–&gt;z</p>
+<p>B–&gt;Y        b–&gt;y</p>
+<p>C–&gt;X        c–&gt;x</p>
+<p>……          ……</p>
+<p>即第一个字母变成第26个字母，第i个字母变成第（26-i+1)个字母，非字母字符不变。要求根据密码译回原文，并输出。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>输入一行密文</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>解密后的原文，单独占一行。</p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p><code>ZYX123zyx</code></p>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p><code>ABC123abc</code></p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    <span class="token keyword">double</span> sum <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> sign <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">double</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token function">fabs</span><span class="token punctuation">(</span>sign <span class="token operator">/</span> i<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token keyword">char</span> pass<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">gets</span><span class="token punctuation">(</span>pass<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        sum <span class="token operator">+</span><span class="token operator">=</span> sign <span class="token operator">/</span> i<span class="token punctuation">;</span>
-        sign <span class="token operator">=</span> <span class="token operator">-</span>sign<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'a'</span> <span class="token operator">&amp;&amp;</span> pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'z'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'a'</span> <span class="token operator">+</span> <span class="token string">'z'</span> <span class="token operator">-</span> pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'A'</span> <span class="token operator">&amp;&amp;</span> pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'Z'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'A'</span> <span class="token operator">+</span> <span class="token string">'Z'</span> <span class="token operator">-</span> pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"PI=%10.8f"</span><span class="token punctuation">,</span> <span class="token number">4</span> <span class="token operator">*</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">puts</span><span class="token punctuation">(</span>pass<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -590,7 +594,7 @@
                     </span>
                     <a href="https://jiansunch.github.io" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/02/5-7-求圆周率pi的近似值/" class="b-link-green">5-7 求圆周率pi的近似值</a>
+                    <a href="/2019/04/03/6-12-解密/" class="b-link-green">6-12 解密</a>
                 </p>
             </div>
         </div>
@@ -612,7 +616,7 @@
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-04-02T00-04-23',
+        id: '2019-04-03T23-09-05',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -635,25 +639,29 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/03/5-8-Fibonacci数列/">
+                <a href="/2019/04/03/6-12-解密/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="5-8 Fibonacci数列">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="6-12 解密">
                         
-                        <span class="card-title">5-8 Fibonacci数列</span>
+                        <span class="card-title">6-12 解密</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">例题5-8 Fibonacci数列题目描述输入一个正整数n，求Fibonacci数列的第n个数。Fibonacci数列的特点：第1,2个数为1,1。从第3个数开始，概述是前面两个数之和。即：
-要求输入的正整数n不超过50.
-输入一个不超过5</div>
+                    <div class="summary block-with-text">习题6-12 解密题目描述有一行电文，已按如下规律译成密码：
+A–&gt;Z        a–&gt;z
+B–&gt;Y        b–&gt;y
+C–&gt;X        c–&gt;x
+……          ……
+即第一个字</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -666,6 +674,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -684,25 +693,24 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/31/5-6-矩阵输出/">
+                <a href="/2019/04/03/6-6-杨辉三角/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="5-6 矩阵输出">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="6-6 杨辉三角">
                         
-                        <span class="card-title">5-6 矩阵输出</span>
+                        <span class="card-title">6-6 杨辉三角</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">例题5-6 矩阵输出题目描述输出以下4*5的矩阵
-  1  2  3  4  5
-  2  4  6  8 10
-  3  6  9 12 15
-  4  8 12 16 20
-要求使用循环实现，注意每行输出5个数字，每个数字占3个字符的宽</div>
+                    <div class="summary block-with-text">习题6-6 杨辉三角题目描述按要求输入如下格式的杨辉三角
+11 11 2 11 3 3 11 4 6 4 11 5 10 10 5 1
+最多输出10层
+输入输入只包含一个正整数n，表示将要输出的杨辉三角的层数。
+输出对应于该输入，请输出相应</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
                             </span>
                         <span class="publish-author">
                             
