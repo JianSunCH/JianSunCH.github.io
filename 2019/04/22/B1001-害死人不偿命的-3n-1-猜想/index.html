@@ -4,15 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="5-6 矩阵输出, 孙健的博客">
-    <meta name="description" content="例题5-6 矩阵输出
-题目描述
-输出以下4*5的矩阵
-1  2  3  4  5
-2  4  6  8 10
-3  6  9 12 15
-4  8 12 16 20
-要求使用循环实现，注意每行输出5个数字，每个数字占3个字符的宽度，右对齐。">
+    <meta name="keywords" content="B1001 害死人不偿命的(3n+1)猜想, 孙健的博客">
+    <meta name="description" content="1001 害死人不偿命的(3n+1)猜想
+
+卡拉兹(Callatz)猜想：
+对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 19">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>5-6 矩阵输出 | 孙健的博客</title>
+    <title>B1001 害死人不偿命的(3n+1)猜想 | 孙健的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -247,13 +243,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        5-6 矩阵输出
+                        B1001 害死人不偿命的(3n+1)猜想
                     </div>
                 </div>
             </div>
@@ -364,8 +360,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/codeup/" target="_blank">
-                                <span class="chip bg-color">codeup</span>
+                            <a href="/tags/PAT/" target="_blank">
+                                <span class="chip bg-color">PAT</span>
                             </a>
                         
                     </div>
@@ -388,14 +384,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-31
+                    2019-04-22
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        164
+                        321
                     </div>
                     
 
@@ -418,43 +414,43 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>例题5-6 矩阵输出</h1>
-<h2>题目描述</h2>
-<p>输出以下4*5的矩阵</p>
-<p>1  2  3  4  5</p>
-<p>2  4  6  8 10</p>
-<p>3  6  9 12 15</p>
-<p>4  8 12 16 20</p>
-<p>要求使用循环实现，注意每行输出5个数字，每个数字占3个字符的宽度，右对齐。</p>
-<h2>输入</h2>
-<p>无</p>
-<h2>输出</h2>
-<p>每行输出5个数字，每个数字占3个字符的宽度，右对齐。</p>
-<h2>样例输入</h2>
-<p><code>无</code></p>
-<h2>样例输出</h2>
-<p><code>1 2 3 4 5</code></p>
-<p><code>2 4 6 8 10</code></p>
-<p><code>3 6 9 12 15</code></p>
-<p><code>4 8 12 16 20</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
+                <h2>1001 害死人不偿命的(3n+1)猜想</h2>
+<blockquote>
+<p>卡拉兹(Callatz)猜想：
+对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950 年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证 (3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……
+我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过 1000 的正整数 n，简单地数一下，需要多少步（砍几下）才能得到 n=1？</p>
+</blockquote>
+<h3>输入格式：</h3>
+<p>每个测试输入包含 1 个测试用例，即给出正整数 n 的值。</p>
+<h3>输出格式：</h3>
+<p>输出从 n 计算到 1 需要的步数。</p>
+<h3>输入样例：</h3>
+<p><code>3</code></p>
+<h3>输出样例：</h3>
+<p><code>5</code></p>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c++"><code class="language-language-c++">#include <cstdio>
 
 int main()
 {
-    int n = 1;
-    for (int i = 0; i < 4; i++)
+    int n, step = 0;
+    scanf("%d", &n);
+    while (n != 1)
     {
-        for (int j = 0; j < 5; j++)
+        if (n % 2 == 0)
         {
-            printf("%3d", n++ * (i + 1));
+            n /= 2;
         }
-        n = 1;
-        printf("\n");
+        else
+        {
+            n = (3 * n + 1) / 2;
+        }
+        step++;
     }
+    printf("%d\n", step);
     return 0;
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
 
             </div>
             <hr>
@@ -602,7 +598,7 @@ int main()
                     </span>
                     <a href="https://jiansunch.github.io" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/31/5-6-矩阵输出/" class="b-link-green">5-6 矩阵输出</a>
+                    <a href="/2019/04/22/B1001-害死人不偿命的-3n-1-猜想/" class="b-link-green">B1001 害死人不偿命的(3n+1)猜想</a>
                 </p>
             </div>
         </div>
@@ -624,7 +620,7 @@ int main()
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-03-31T17-34-35',
+        id: '2019-04-22T18-35-37',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -647,29 +643,27 @@ int main()
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/02/5-7-求圆周率pi的近似值/">
+                <a href="/2019/04/22/B1001-害死人不偿命的-3n-1-猜想/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="5-7 求圆周率pi的近似值">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="B1001 害死人不偿命的(3n+1)猜想">
                         
-                        <span class="card-title">5-7 求圆周率pi的近似值</span>
+                        <span class="card-title">B1001 害死人不偿命的(3n+1)猜想</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">例题5-7 求圆周率pi的近似值
-题目描述
-用如下公式
+                    <div class="summary block-with-text">1001 害死人不偿命的(3n+1)猜想
 
-求圆周率PI的近似值，直到发现某一项的绝对值小于10-6为止（该项不累加）。
-要求输出的结果总宽度占10位，其中小数部分为8位。
-程序中使用浮点型数据时，请定义为双精度double类</div>
+卡拉兹(Callatz)猜想：
+对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 19</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -682,11 +676,12 @@ int main()
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/codeup/" target="_blank">
-                        <span class="chip bg-color">codeup</span>
+                    <a href="/tags/PAT/" target="_blank">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>
@@ -700,29 +695,60 @@ int main()
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/31/create/">
+                <a href="/2019/04/22/PAT-Solution/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="create">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="PAT_Solution">
                         
-                        <span class="card-title">create</span>
+                        <span class="card-title">PAT_Solution</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">Hello World!
-创建成功 :)
+                    <div class="summary block-with-text">PAT解答
+Top Level
+
+
+
+标号
+标题
+地址
+
+
+
+
+A1002
+A+B for Polynomials
+C++
+
+
+
+Basic Level
+
+
+
+标号
+标题
+地址
+
+
+
+
+B1001
+害死人不偿命的(3n+1)猜想
+C++
+
 </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/other-category/" class="post-category" target="_blank">
-                                    other category
+                            <a href="/categories/题集/" class="post-category" target="_blank">
+                                    题集
                                 </a>
                             
                             
@@ -732,8 +758,8 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hello/" target="_blank">
-                        <span class="chip bg-color">hello</span>
+                    <a href="/tags/PAT/" target="_blank">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>
