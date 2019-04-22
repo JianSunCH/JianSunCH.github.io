@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jiansunch.github.io/"/>
-  <updated>2019-04-22T11:08:32.337Z</updated>
+  <updated>2019-04-22T14:48:21.737Z</updated>
   <id>https://jiansunch.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>B1032 挖掘机技术哪家强</title>
+    <link href="https://jiansunch.github.io/2019/04/22/B1032-%E6%8C%96%E6%8E%98%E6%9C%BA%E6%8A%80%E6%9C%AF%E5%93%AA%E5%AE%B6%E5%BC%BA/"/>
+    <id>https://jiansunch.github.io/2019/04/22/B1032-挖掘机技术哪家强/</id>
+    <published>2019-04-22T14:46:01.000Z</published>
+    <updated>2019-04-22T14:48:21.737Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1032-挖掘机技术哪家强"><a href="#1032-挖掘机技术哪家强" class="headerlink" title="1032 挖掘机技术哪家强"></a>1032 挖掘机技术哪家强</h2><blockquote><p>为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。</p></blockquote><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从 1 开始连续编号）、及其比赛成绩（百分制），中间以空格分隔。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中给出总得分最高的学校的编号、及其总分，中间以空格分隔。题目保证答案唯一，没有并列。</p><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>6</code><br><code>3 65</code><br><code>2 80</code><br><code>1 100</code><br><code>2 70</code><br><code>3 40</code><br><code>3 0</code></p><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>2 150</code></p><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">int</span> N<span class="token punctuation">,</span> schoolId<span class="token punctuation">,</span> schoolScore<span class="token punctuation">;</span>    <span class="token keyword">int</span> school<span class="token punctuation">[</span><span class="token number">100001</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>schoolId<span class="token punctuation">,</span> <span class="token operator">&amp;</span>schoolScore<span class="token punctuation">)</span><span class="token punctuation">;</span>        school<span class="token punctuation">[</span>schoolId<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> schoolScore<span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">int</span> topId <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> topScore <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>school<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> topScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>            topScore <span class="token operator">=</span> school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>            topId <span class="token operator">=</span> i<span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span> topId<span class="token punctuation">,</span> topScore<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1032-挖掘机技术哪家强&quot;&gt;&lt;a href=&quot;#1032-挖掘机技术哪家强&quot; class=&quot;headerlink&quot; title=&quot;1032 挖掘机技术哪家强&quot;&gt;&lt;/a&gt;1032 挖掘机技术哪家强&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;为了用事实说明挖掘机技术到
+      
+    
+    </summary>
+    
+      <category term="code" scheme="https://jiansunch.github.io/categories/code/"/>
+    
+    
+      <category term="PAT" scheme="https://jiansunch.github.io/tags/PAT/"/>
+    
+  </entry>
   
   <entry>
     <title>B1001 害死人不偿命的(3n+1)猜想</title>
@@ -46,9 +72,9 @@
     <link href="https://jiansunch.github.io/2019/04/22/PAT-Solution/"/>
     <id>https://jiansunch.github.io/2019/04/22/PAT-Solution/</id>
     <published>2019-04-22T10:22:06.000Z</published>
-    <updated>2019-04-22T11:03:51.683Z</updated>
+    <updated>2019-04-22T14:49:25.115Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="PAT解答"><a href="#PAT解答" class="headerlink" title="PAT解答"></a>PAT解答</h1><h2 id="Top-Level"><a href="#Top-Level" class="headerlink" title="Top Level"></a>Top Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">地址</th></tr></thead><tbody><tr><td style="text-align:center">A1002</td><td style="text-align:center">A+B for Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr></tbody></table><h2 id="Basic-Level"><a href="#Basic-Level" class="headerlink" title="Basic Level"></a>Basic Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">地址</th></tr></thead><tbody><tr><td style="text-align:center">B1001</td><td style="text-align:center">害死人不偿命的(3n+1)猜想</td><td style="text-align:center"><a href="/2019/04/22/B1001-害死人不偿命的-3n-1-猜想/">C++</a></td></tr><tr><td style="text-align:center">B1032</td><td style="text-align:center">挖掘机技术哪家强</td><td style="text-align:center"><a href>C++</a></td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<h1 id="PAT解答"><a href="#PAT解答" class="headerlink" title="PAT解答"></a>PAT解答</h1><h2 id="Top-Level"><a href="#Top-Level" class="headerlink" title="Top Level"></a>Top Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">地址</th></tr></thead><tbody><tr><td style="text-align:center">A1002</td><td style="text-align:center">A+B for Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr></tbody></table><h2 id="Basic-Level"><a href="#Basic-Level" class="headerlink" title="Basic Level"></a>Basic Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">地址</th></tr></thead><tbody><tr><td style="text-align:center">B1001</td><td style="text-align:center">害死人不偿命的(3n+1)猜想</td><td style="text-align:center"><a href="/2019/04/22/B1001-害死人不偿命的-3n-1-猜想/">C++</a></td></tr><tr><td style="text-align:center">B1032</td><td style="text-align:center">挖掘机技术哪家强</td><td style="text-align:center"><a href="/2019/04/22/B1032-挖掘机技术哪家强">C++</a></td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
