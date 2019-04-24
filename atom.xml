@@ -399,7 +399,7 @@
     <link href="https://www.jiansunch.com/create/"/>
     <id>https://www.jiansunch.com/create/</id>
     <published>2019-03-31T06:02:26.000Z</published>
-    <updated>2019-04-03T15:13:31.541Z</updated>
+    <updated>2019-04-24T08:34:22.347Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><h2 id="创建成功"><a href="#创建成功" class="headerlink" title="创建成功 :)"></a>创建成功 :)</h2>]]></content>
     
@@ -412,7 +412,7 @@
     
     </summary>
     
-      <category term="other category" scheme="https://www.jiansunch.com/categories/other-category/"/>
+      <category term="other" scheme="https://www.jiansunch.com/categories/other/"/>
     
     
       <category term="hello" scheme="https://www.jiansunch.com/tags/hello/"/>

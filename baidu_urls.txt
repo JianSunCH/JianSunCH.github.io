@@ -8,3 +8,8 @@ https://www.jiansunch.com/A-B/
 https://www.jiansunch.com/6-12-解密/
 https://www.jiansunch.com/6-6-杨辉三角/
 https://www.jiansunch.com/6-4-有序插入/
+https://www.jiansunch.com/4-1-一元二次方程求根/
+https://www.jiansunch.com/5-10-分数序列求和/
+https://www.jiansunch.com/5-8-Fibonacci数列/
+https://www.jiansunch.com/5-7-求圆周率pi的近似值/
+https://www.jiansunch.com/5-6-矩阵输出/
