@@ -1,3 +1,5 @@
+https://www.jiansunch.com/B1012-数字分类/
+https://www.jiansunch.com/B1008-数组元素循环右移问题/
 https://www.jiansunch.com/B1046-划拳/
 https://www.jiansunch.com/B1026-程序运行时间/
 https://www.jiansunch.com/B1016-部分A-B/
@@ -11,5 +13,3 @@ https://www.jiansunch.com/6-12-解密/
 https://www.jiansunch.com/6-6-杨辉三角/
 https://www.jiansunch.com/6-4-有序插入/
 https://www.jiansunch.com/4-1-一元二次方程求根/
-https://www.jiansunch.com/5-10-分数序列求和/
-https://www.jiansunch.com/5-8-Fibonacci数列/
