@@ -1,3 +1,5 @@
+https://www.jiansunch.com/B1046-划拳/
+https://www.jiansunch.com/B1026-程序运行时间/
 https://www.jiansunch.com/B1016-部分A-B/
 https://www.jiansunch.com/B1011-A-B-和-C/
 https://www.jiansunch.com/B1032-挖掘机技术哪家强/
@@ -11,5 +13,3 @@ https://www.jiansunch.com/6-4-有序插入/
 https://www.jiansunch.com/4-1-一元二次方程求根/
 https://www.jiansunch.com/5-10-分数序列求和/
 https://www.jiansunch.com/5-8-Fibonacci数列/
-https://www.jiansunch.com/5-7-求圆周率pi的近似值/
-https://www.jiansunch.com/5-6-矩阵输出/

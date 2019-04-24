@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.jiansunch.com/"/>
-  <updated>2019-04-24T03:49:30.412Z</updated>
+  <updated>2019-04-24T11:06:00.804Z</updated>
   <id>https://www.jiansunch.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>B1046 划拳</title>
+    <link href="https://www.jiansunch.com/B1046-%E5%88%92%E6%8B%B3/"/>
+    <id>https://www.jiansunch.com/B1046-划拳/</id>
+    <published>2019-04-24T11:03:05.000Z</published>
+    <updated>2019-04-24T11:06:00.804Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1046-划拳-（15-分"><a href="#1046-划拳-（15-分" class="headerlink" title="1046 划拳 （15 分)"></a>1046 划拳 （15 分)</h2><blockquote><p>划拳是古老中国酒文化的一个有趣的组成部分。酒桌上两人划拳的方法为：每人口中喊出一个数字，同时用手比划出一个数字。如果谁比划出的数字正好等于两人喊出的数字之和，谁就赢了，输家罚一杯酒。两人同赢或两人同输则继续下一轮，直到唯一的赢家出现。</p></blockquote><blockquote><p>下面给出甲、乙两人的划拳记录，请你统计他们最后分别喝了多少杯酒。</p></blockquote><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行先给出一个正整数 N（≤100），随后 N 行，每行给出一轮划拳的记录，格式为：</p><p><code>甲喊 甲划 乙喊 乙划</code></p><p>其中<code>喊</code>是喊出的数字，<code>划</code>是划出的数字，均为不超过 100 的正整数（两只手一起划）。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中先后输出甲、乙两人喝酒的杯数，其间以一个空格分隔。</p><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>5</code><br><code>8 10 9 12</code><br><code>5 10 5 10</code><br><code>3 8 5 12</code><br><code>12 18 1 13</code><br><code>4 16 12 15</code> </p><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>1 2</code></p><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1046-划拳-（15-分&quot;&gt;&lt;a href=&quot;#1046-划拳-（15-分&quot; class=&quot;headerlink&quot; title=&quot;1046 划拳 （15 分)&quot;&gt;&lt;/a&gt;1046 划拳 （15 分)&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;划拳是古老中国酒文化的
+      
+    
+    </summary>
+    
+      <category term="code" scheme="https://www.jiansunch.com/categories/code/"/>
+    
+    
+      <category term="PAT" scheme="https://www.jiansunch.com/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>B1026 程序运行时间</title>
+    <link href="https://www.jiansunch.com/B1026-%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/"/>
+    <id>https://www.jiansunch.com/B1026-程序运行时间/</id>
+    <published>2019-04-24T10:27:24.000Z</published>
+    <updated>2019-04-24T11:02:37.111Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1026-程序运行时间"><a href="#1026-程序运行时间" class="headerlink" title="1026 程序运行时间"></a>1026 程序运行时间</h2><blockquote><p>要获得一个 C 语言程序的运行时间，常用的方法是调用头文件 time.h，其中提供了 clock() 函数，可以捕捉从程序开始运行到 clock() 被调用时所耗费的时间。这个时间单位是 clock tick，即“时钟打点”。同时还有一个常数 CLK_TCK，给出了机器时钟每秒所走的时钟打点数。于是为了获得一个函数 f 的运行时间，我们只要在调用 f 之前先调用 clock()，获得一个时钟打点数 C1；在 f 执行完成后再调用 clock()，获得另一个时钟打点数 C2；两次获得的时钟打点数之差 (C2-C1) 就是 f 运行所消耗的时钟打点数，再除以常数 CLK_TCK，就得到了以秒为单位的运行时间。</p></blockquote><blockquote><p>这里不妨简单假设常数 CLK_TCK 为 100。现给定被测函数前后两次获得的时钟打点数，请你给出被测函数运行的时间。</p></blockquote><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中顺序给出 2 个整数 C1 和 C2。注意两次获得的时钟打点数肯定不相同，即 C1 &lt; C2，并且取值在 [0,10​​^7]。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出被测函数运行的时间。运行时间必须按照 <code>hh:mm:ss</code>（即2位的 <code>时:分:秒</code>）格式输出；不足 1 秒的时间四舍五入到秒。</p><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>123 4577973</code></p><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>12:42:59</code></p><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> C1<span class="token punctuation">,</span> C2<span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>C1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>C2<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> seconds <span class="token operator">=</span> C2 <span class="token operator">-</span> C1<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//运行的时间(单位为s)</span>    <span class="token comment" spellcheck="true">//四舍五入</span>    <span class="token keyword">if</span> <span class="token punctuation">(</span>seconds <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">>=</span> <span class="token number">50</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        seconds <span class="token operator">=</span> seconds <span class="token operator">/</span> <span class="token number">100</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">else</span>    <span class="token punctuation">{</span>        seconds <span class="token operator">=</span> seconds <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%02d:%02d:%02d"</span><span class="token punctuation">,</span> seconds <span class="token operator">/</span> <span class="token number">3600</span><span class="token punctuation">,</span> seconds <span class="token operator">%</span> <span class="token number">3600</span> <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">,</span> seconds <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1026-程序运行时间&quot;&gt;&lt;a href=&quot;#1026-程序运行时间&quot; class=&quot;headerlink&quot; title=&quot;1026 程序运行时间&quot;&gt;&lt;/a&gt;1026 程序运行时间&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;要获得一个 C 语言程序的运行时间，常用的
+      
+    
+    </summary>
+    
+      <category term="code" scheme="https://www.jiansunch.com/categories/code/"/>
+    
+    
+      <category term="PAT" scheme="https://www.jiansunch.com/tags/PAT/"/>
+    
+  </entry>
   
   <entry>
     <title>B1016 部分A+B</title>
@@ -124,9 +176,9 @@
     <link href="https://www.jiansunch.com/PAT-Solution/"/>
     <id>https://www.jiansunch.com/PAT-Solution/</id>
     <published>2019-04-22T10:22:06.000Z</published>
-    <updated>2019-04-24T06:34:35.727Z</updated>
+    <updated>2019-04-24T11:03:28.446Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="PAT解答"><a href="#PAT解答" class="headerlink" title="PAT解答"></a>PAT解答</h1><h2 id="Advanced-Level"><a href="#Advanced-Level" class="headerlink" title="Advanced Level"></a>Advanced Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">地址</th></tr></thead><tbody><tr><td style="text-align:center">A1002</td><td style="text-align:center">A+B for Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1009</td><td style="text-align:center">Product of Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1042</td><td style="text-align:center">Shuffling Machine</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1046</td><td style="text-align:center">Shortest Distance</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1065</td><td style="text-align:center">A+B and C (64bit)</td><td style="text-align:center"><a href>C++</a></td></tr></tbody></table><h2 id="Basic-Level"><a href="#Basic-Level" class="headerlink" title="Basic Level"></a>Basic Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">地址</th></tr></thead><tbody><tr><td style="text-align:center">B1001</td><td style="text-align:center">害死人不偿命的(3n+1)猜想</td><td style="text-align:center"><a href="/B1001-害死人不偿命的-3n-1-猜想">C++</a></td></tr><tr><td style="text-align:center">B1008</td><td style="text-align:center">数组元素循环右移问题</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1010</td><td style="text-align:center">一元多项式求导</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1011</td><td style="text-align:center">A+B 和 C</td><td style="text-align:center"><a href="/B1011-A-B-和-C">C++</a></td></tr><tr><td style="text-align:center">B1012</td><td style="text-align:center">数字分类</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1016</td><td style="text-align:center">部分A+B</td><td style="text-align:center"><a href="/B1016-部分A-B">C++</a></td></tr><tr><td style="text-align:center">B1018</td><td style="text-align:center">锤子剪刀布</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1026</td><td style="text-align:center">程序运行时间</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1032</td><td style="text-align:center">挖掘机技术哪家强</td><td style="text-align:center"><a href="/B1032-挖掘机技术哪家强">C++</a></td></tr><tr><td style="text-align:center">B1046</td><td style="text-align:center">划拳</td><td style="text-align:center"><a href>C++</a></td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<h1 id="PAT解答"><a href="#PAT解答" class="headerlink" title="PAT解答"></a>PAT解答</h1><h2 id="Advanced-Level"><a href="#Advanced-Level" class="headerlink" title="Advanced Level"></a>Advanced Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">解决方案</th></tr></thead><tbody><tr><td style="text-align:center">A1002</td><td style="text-align:center">A+B for Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1009</td><td style="text-align:center">Product of Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1042</td><td style="text-align:center">Shuffling Machine</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1046</td><td style="text-align:center">Shortest Distance</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1065</td><td style="text-align:center">A+B and C (64bit)</td><td style="text-align:center"><a href>C++</a></td></tr></tbody></table><h2 id="Basic-Level"><a href="#Basic-Level" class="headerlink" title="Basic Level"></a>Basic Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">解决方案</th></tr></thead><tbody><tr><td style="text-align:center">B1001</td><td style="text-align:center">害死人不偿命的(3n+1)猜想</td><td style="text-align:center"><a href="/B1001-害死人不偿命的-3n-1-猜想">C++</a></td></tr><tr><td style="text-align:center">B1008</td><td style="text-align:center">数组元素循环右移问题</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1010</td><td style="text-align:center">一元多项式求导</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1011</td><td style="text-align:center">A+B 和 C</td><td style="text-align:center"><a href="/B1011-A-B-和-C">C++</a></td></tr><tr><td style="text-align:center">B1012</td><td style="text-align:center">数字分类</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1016</td><td style="text-align:center">部分A+B</td><td style="text-align:center"><a href="/B1016-部分A-B">C++</a></td></tr><tr><td style="text-align:center">B1018</td><td style="text-align:center">锤子剪刀布</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1026</td><td style="text-align:center">程序运行时间</td><td style="text-align:center"><a href="/B1026-程序运行时间">C++</a></td></tr><tr><td style="text-align:center">B1032</td><td style="text-align:center">挖掘机技术哪家强</td><td style="text-align:center"><a href="/B1032-挖掘机技术哪家强">C++</a></td></tr><tr><td style="text-align:center">B1046</td><td style="text-align:center">划拳</td><td style="text-align:center"><a href="/B1046-划拳">C++</a></td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
