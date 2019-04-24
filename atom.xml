@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jiansunch.github.io/"/>
-  <updated>2019-04-24T01:38:52.447Z</updated>
+  <updated>2019-04-24T03:49:30.412Z</updated>
   <id>https://jiansunch.github.io/</id>
   
   <author>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>B1016 部分A+B</title>
-    <link href="https://jiansunch.github.io/2019/04/23/B1016-%E9%83%A8%E5%88%86A-B/"/>
-    <id>https://jiansunch.github.io/2019/04/23/B1016-部分A-B/</id>
+    <link href="https://jiansunch.github.io/B1016-%E9%83%A8%E5%88%86A-B/"/>
+    <id>https://jiansunch.github.io/B1016-部分A-B/</id>
     <published>2019-04-23T15:56:06.000Z</published>
-    <updated>2019-04-24T01:38:52.447Z</updated>
+    <updated>2019-04-24T03:49:30.412Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1016-部分A-B-（15-分"><a href="#1016-部分A-B-（15-分" class="headerlink" title="1016 部分A+B （15 分)"></a>1016 部分A+B （15 分)</h2><blockquote><p>正整数 A 的“D​A​​（为 1 位整数）部分”定义为由 A 中所有 D​A​​ 组成的新整数 P​A​​。例如：给定 A=3862767，D​A​​=6，则 A 的“6 部分”P​A​​ 是 66，因为 A 中有 2 个 6。</p></blockquote><blockquote><p>现给定 A、D​A​​、B、D​B​​，请编写程序计算 P​A​​+P​B​​。</p></blockquote><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 A、D​A​​、B、D​B​​，中间以空格分隔，其中 0&lt;A,B&lt;10​10​​。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出 P​A​​+P​B​​ 的值。</p><h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p><code>3862767 6 13530293 3</code></p><h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p><code>399</code></p><h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p><code>3862767 1 13530293 8</code></p><h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p><code>0</code></p><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">long</span> <span class="token keyword">long</span> A<span class="token punctuation">,</span> Da<span class="token punctuation">,</span> B<span class="token punctuation">,</span> Db<span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%lld%lld%lld"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>A<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Da<span class="token punctuation">,</span> <span class="token operator">&amp;</span>B<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Db<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">long</span> <span class="token keyword">long</span> Pa <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> Pb <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//检查A的每一位</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span>A <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>A <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> Da<span class="token punctuation">)</span>            Pa <span class="token operator">=</span> Pa <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> Da<span class="token punctuation">;</span>        A <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token comment" spellcheck="true">//检查B的每一位</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span>B <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>B <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> Db<span class="token punctuation">)</span>            Pb <span class="token operator">=</span> Pb <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> Db<span class="token punctuation">;</span>        B <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld\n"</span><span class="token punctuation">,</span> Pa <span class="token operator">+</span> Pb<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="1016-部分A-B-（15-分"><a href="#1016-部分A-B-（15-分" class="headerlink" title="1016 部分A+B （15 分)"></a>1016 部分A+B （15 分)</h2><blockquote><p>正整数 A 的“D​A​​（为 1 位整数）部分”定义为由 A 中所有 D​A​​ 组成的新整数 P​A​​。例如：给定 A=3862767，D​A​​=6，则 A 的“6 部分”P​A​​ 是 66，因为 A 中有 2 个 6。</p></blockquote><blockquote><p>现给定 A、D​A​​、B、D​B​​，请编写程序计算 P​A​​+P​B​​。</p></blockquote><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 A、D​A​​、B、D​B​​，中间以空格分隔，其中 0&lt;A,B&lt;10​^10​​。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出 P​A​​+P​B​​ 的值。</p><h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p><code>3862767 6 13530293 3</code></p><h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p><code>399</code></p><h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p><code>3862767 1 13530293 8</code></p><h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p><code>0</code></p><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">long</span> <span class="token keyword">long</span> A<span class="token punctuation">,</span> Da<span class="token punctuation">,</span> B<span class="token punctuation">,</span> Db<span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%lld%lld%lld"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>A<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Da<span class="token punctuation">,</span> <span class="token operator">&amp;</span>B<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Db<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">long</span> <span class="token keyword">long</span> Pa <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> Pb <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//检查A的每一位</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span>A <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>A <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> Da<span class="token punctuation">)</span>            Pa <span class="token operator">=</span> Pa <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> Da<span class="token punctuation">;</span>        A <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token comment" spellcheck="true">//检查B的每一位</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span>B <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>B <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> Db<span class="token punctuation">)</span>            Pb <span class="token operator">=</span> Pb <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> Db<span class="token punctuation">;</span>        B <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld\n"</span><span class="token punctuation">,</span> Pa <span class="token operator">+</span> Pb<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
     
     <summary type="html">
     
@@ -44,19 +44,19 @@
   
   <entry>
     <title>B1011 A+B 和 C</title>
-    <link href="https://jiansunch.github.io/2019/04/23/B1011-A-B-%E5%92%8C-C/"/>
-    <id>https://jiansunch.github.io/2019/04/23/B1011-A-B-和-C/</id>
+    <link href="https://jiansunch.github.io/B1011-A-B-%E5%92%8C-C/"/>
+    <id>https://jiansunch.github.io/B1011-A-B-和-C/</id>
     <published>2019-04-23T15:21:29.000Z</published>
-    <updated>2019-04-24T01:38:47.241Z</updated>
+    <updated>2019-04-24T03:49:10.555Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1011-A-B-和-C"><a href="#1011-A-B-和-C" class="headerlink" title="1011 A+B 和 C"></a>1011 A+B 和 C</h2><blockquote><p>给定区间 [−2​31​​,2​31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。</p></blockquote><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例，每组占一行，顺序给出 A、B 和 C。整数间以空格分隔。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每组测试用例，在一行中输出 <code>Case #X: true</code> 如果 A+B&gt;C，否则输出 <code>Case #X: false</code>，其中 <code>X</code> 是测试用例的编号（从 1 开始）。</p><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>4</code><br><code>1 2 3</code><br><code>2 3 4</code><br><code>2147483647 0 2147483646</code><br><code>0 -2147483648 -2147483647</code></p><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>Case #1: false</code><br><code>Case #2: true</code><br><code>Case #3: true</code><br><code>Case #4: false</code></p><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> T<span class="token punctuation">,</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">long</span> <span class="token keyword">long</span> A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//while版本</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span>T<span class="token operator">--</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%lld%lld"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>A<span class="token punctuation">,</span> <span class="token operator">&amp;</span>B<span class="token punctuation">,</span> <span class="token operator">&amp;</span>C<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>A <span class="token operator">+</span> B <span class="token operator">></span> C<span class="token punctuation">)</span>        <span class="token punctuation">{</span>            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Case #%d: true\n"</span><span class="token punctuation">,</span> count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">else</span>        <span class="token punctuation">{</span>            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Case #%d: false\n"</span><span class="token punctuation">,</span> count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token comment" spellcheck="true">//for版本</span>    <span class="token comment" spellcheck="true">// for (int i = 1; i &lt;= T; i++)</span>    <span class="token comment" spellcheck="true">// {</span>    <span class="token comment" spellcheck="true">//     scanf("%lld%lld%lld", &amp;A, &amp;B, &amp;C);</span>    <span class="token comment" spellcheck="true">//     if (A + B > C)</span>    <span class="token comment" spellcheck="true">//     {</span>    <span class="token comment" spellcheck="true">//         printf("Case #%d: true\n", i);</span>    <span class="token comment" spellcheck="true">//     }</span>    <span class="token comment" spellcheck="true">//     else</span>    <span class="token comment" spellcheck="true">//     {</span>    <span class="token comment" spellcheck="true">//         printf("Case #%d: false\n", i);</span>    <span class="token comment" spellcheck="true">//     }</span>    <span class="token comment" spellcheck="true">// }</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="1011-A-B-和-C"><a href="#1011-A-B-和-C" class="headerlink" title="1011 A+B 和 C"></a>1011 A+B 和 C</h2><blockquote><p>给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。</p></blockquote><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例，每组占一行，顺序给出 A、B 和 C。整数间以空格分隔。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每组测试用例，在一行中输出 <code>Case #X: true</code> 如果 A+B&gt;C，否则输出 <code>Case #X: false</code>，其中 <code>X</code> 是测试用例的编号（从 1 开始）。</p><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>4</code><br><code>1 2 3</code><br><code>2 3 4</code><br><code>2147483647 0 2147483646</code><br><code>0 -2147483648 -2147483647</code></p><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>Case #1: false</code><br><code>Case #2: true</code><br><code>Case #3: true</code><br><code>Case #4: false</code></p><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> T<span class="token punctuation">,</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">long</span> <span class="token keyword">long</span> A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//while版本</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span>T<span class="token operator">--</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%lld%lld"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>A<span class="token punctuation">,</span> <span class="token operator">&amp;</span>B<span class="token punctuation">,</span> <span class="token operator">&amp;</span>C<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>A <span class="token operator">+</span> B <span class="token operator">></span> C<span class="token punctuation">)</span>        <span class="token punctuation">{</span>            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Case #%d: true\n"</span><span class="token punctuation">,</span> count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">else</span>        <span class="token punctuation">{</span>            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Case #%d: false\n"</span><span class="token punctuation">,</span> count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token comment" spellcheck="true">//for版本</span>    <span class="token comment" spellcheck="true">// for (int i = 1; i &lt;= T; i++)</span>    <span class="token comment" spellcheck="true">// {</span>    <span class="token comment" spellcheck="true">//     scanf("%lld%lld%lld", &amp;A, &amp;B, &amp;C);</span>    <span class="token comment" spellcheck="true">//     if (A + B > C)</span>    <span class="token comment" spellcheck="true">//     {</span>    <span class="token comment" spellcheck="true">//         printf("Case #%d: true\n", i);</span>    <span class="token comment" spellcheck="true">//     }</span>    <span class="token comment" spellcheck="true">//     else</span>    <span class="token comment" spellcheck="true">//     {</span>    <span class="token comment" spellcheck="true">//         printf("Case #%d: false\n", i);</span>    <span class="token comment" spellcheck="true">//     }</span>    <span class="token comment" spellcheck="true">// }</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h2 id=&quot;1011-A-B-和-C&quot;&gt;&lt;a href=&quot;#1011-A-B-和-C&quot; class=&quot;headerlink&quot; title=&quot;1011 A+B 和 C&quot;&gt;&lt;/a&gt;1011 A+B 和 C&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;给定区间 [−2​31​​,2​3
+&lt;p&gt;给定区间 [−2​^31​​,2​
       
     
     </summary>
@@ -70,8 +70,8 @@
   
   <entry>
     <title>B1032 挖掘机技术哪家强</title>
-    <link href="https://jiansunch.github.io/2019/04/22/B1032-%E6%8C%96%E6%8E%98%E6%9C%BA%E6%8A%80%E6%9C%AF%E5%93%AA%E5%AE%B6%E5%BC%BA/"/>
-    <id>https://jiansunch.github.io/2019/04/22/B1032-挖掘机技术哪家强/</id>
+    <link href="https://jiansunch.github.io/B1032-%E6%8C%96%E6%8E%98%E6%9C%BA%E6%8A%80%E6%9C%AF%E5%93%AA%E5%AE%B6%E5%BC%BA/"/>
+    <id>https://jiansunch.github.io/B1032-挖掘机技术哪家强/</id>
     <published>2019-04-22T14:46:01.000Z</published>
     <updated>2019-04-24T01:38:55.372Z</updated>
     
@@ -96,10 +96,10 @@
   
   <entry>
     <title>B1001 害死人不偿命的(3n+1)猜想</title>
-    <link href="https://jiansunch.github.io/2019/04/22/B1001-%E5%AE%B3%E6%AD%BB%E4%BA%BA%E4%B8%8D%E5%81%BF%E5%91%BD%E7%9A%84-3n-1-%E7%8C%9C%E6%83%B3/"/>
-    <id>https://jiansunch.github.io/2019/04/22/B1001-害死人不偿命的-3n-1-猜想/</id>
+    <link href="https://jiansunch.github.io/B1001-%E5%AE%B3%E6%AD%BB%E4%BA%BA%E4%B8%8D%E5%81%BF%E5%91%BD%E7%9A%84-3n-1-%E7%8C%9C%E6%83%B3/"/>
+    <id>https://jiansunch.github.io/B1001-害死人不偿命的-3n-1-猜想/</id>
     <published>2019-04-22T10:35:37.000Z</published>
-    <updated>2019-04-24T01:38:42.982Z</updated>
+    <updated>2019-04-24T03:42:49.954Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1001-害死人不偿命的-3n-1-猜想"><a href="#1001-害死人不偿命的-3n-1-猜想" class="headerlink" title="1001 害死人不偿命的(3n+1)猜想"></a>1001 害死人不偿命的(3n+1)猜想</h2><blockquote><p>卡拉兹(Callatz)猜想：<br>对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950 年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证 (3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……<br>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过 1000 的正整数 n，简单地数一下，需要多少步（砍几下）才能得到 n=1？</p></blockquote><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个测试输入包含 1 个测试用例，即给出正整数 n 的值。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出从 n 计算到 1 需要的步数。</p><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>3</code></p><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>5</code></p><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> n<span class="token punctuation">,</span> step <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>        <span class="token punctuation">{</span>            n <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">else</span>        <span class="token punctuation">{</span>            n <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        step<span class="token operator">++</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> step<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
     
@@ -121,8 +121,8 @@
   
   <entry>
     <title>PAT_Solution</title>
-    <link href="https://jiansunch.github.io/2019/04/22/PAT-Solution/"/>
-    <id>https://jiansunch.github.io/2019/04/22/PAT-Solution/</id>
+    <link href="https://jiansunch.github.io/PAT-Solution/"/>
+    <id>https://jiansunch.github.io/PAT-Solution/</id>
     <published>2019-04-22T10:22:06.000Z</published>
     <updated>2019-04-24T00:39:37.875Z</updated>
     
@@ -146,8 +146,8 @@
   
   <entry>
     <title>百钱白鸡</title>
-    <link href="https://jiansunch.github.io/2019/04/16/%E7%99%BE%E9%92%B1%E7%99%BD%E9%B8%A1/"/>
-    <id>https://jiansunch.github.io/2019/04/16/百钱白鸡/</id>
+    <link href="https://jiansunch.github.io/%E7%99%BE%E9%92%B1%E7%99%BD%E9%B8%A1/"/>
+    <id>https://jiansunch.github.io/百钱白鸡/</id>
     <published>2019-04-16T15:44:26.000Z</published>
     <updated>2019-04-21T09:35:43.954Z</updated>
     
@@ -171,8 +171,8 @@
   
   <entry>
     <title>A+B</title>
-    <link href="https://jiansunch.github.io/2019/04/11/A-B/"/>
-    <id>https://jiansunch.github.io/2019/04/11/A-B/</id>
+    <link href="https://jiansunch.github.io/A-B/"/>
+    <id>https://jiansunch.github.io/A-B/</id>
     <published>2019-04-11T15:51:44.000Z</published>
     <updated>2019-04-16T15:45:49.274Z</updated>
     
@@ -196,8 +196,8 @@
   
   <entry>
     <title>6-12 解密</title>
-    <link href="https://jiansunch.github.io/2019/04/03/6-12-%E8%A7%A3%E5%AF%86/"/>
-    <id>https://jiansunch.github.io/2019/04/03/6-12-解密/</id>
+    <link href="https://jiansunch.github.io/6-12-%E8%A7%A3%E5%AF%86/"/>
+    <id>https://jiansunch.github.io/6-12-解密/</id>
     <published>2019-04-03T15:09:05.000Z</published>
     <updated>2019-04-03T15:17:44.675Z</updated>
     
@@ -221,8 +221,8 @@
   
   <entry>
     <title>6-6 杨辉三角</title>
-    <link href="https://jiansunch.github.io/2019/04/03/6-6-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/"/>
-    <id>https://jiansunch.github.io/2019/04/03/6-6-杨辉三角/</id>
+    <link href="https://jiansunch.github.io/6-6-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/"/>
+    <id>https://jiansunch.github.io/6-6-杨辉三角/</id>
     <published>2019-04-03T15:08:24.000Z</published>
     <updated>2019-04-03T15:17:41.717Z</updated>
     
@@ -246,8 +246,8 @@
   
   <entry>
     <title>6-4 有序插入</title>
-    <link href="https://jiansunch.github.io/2019/04/03/6-4-%E6%9C%89%E5%BA%8F%E6%8F%92%E5%85%A5/"/>
-    <id>https://jiansunch.github.io/2019/04/03/6-4-有序插入/</id>
+    <link href="https://jiansunch.github.io/6-4-%E6%9C%89%E5%BA%8F%E6%8F%92%E5%85%A5/"/>
+    <id>https://jiansunch.github.io/6-4-有序插入/</id>
     <published>2019-04-03T15:06:49.000Z</published>
     <updated>2019-04-03T15:07:55.954Z</updated>
     
@@ -271,8 +271,8 @@
   
   <entry>
     <title>4-1 一元二次方程求根</title>
-    <link href="https://jiansunch.github.io/2019/04/03/4-1-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9/"/>
-    <id>https://jiansunch.github.io/2019/04/03/4-1-一元二次方程求根/</id>
+    <link href="https://jiansunch.github.io/4-1-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9/"/>
+    <id>https://jiansunch.github.io/4-1-一元二次方程求根/</id>
     <published>2019-04-03T02:45:23.000Z</published>
     <updated>2019-04-03T15:10:08.956Z</updated>
     
@@ -296,8 +296,8 @@
   
   <entry>
     <title>5-10 分数序列求和</title>
-    <link href="https://jiansunch.github.io/2019/04/03/5-10-%E5%88%86%E6%95%B0%E5%BA%8F%E5%88%97%E6%B1%82%E5%92%8C/"/>
-    <id>https://jiansunch.github.io/2019/04/03/5-10-分数序列求和/</id>
+    <link href="https://jiansunch.github.io/5-10-%E5%88%86%E6%95%B0%E5%BA%8F%E5%88%97%E6%B1%82%E5%92%8C/"/>
+    <id>https://jiansunch.github.io/5-10-分数序列求和/</id>
     <published>2019-04-02T16:16:35.000Z</published>
     <updated>2019-04-03T03:28:52.052Z</updated>
     
@@ -321,8 +321,8 @@
   
   <entry>
     <title>5-8 Fibonacci数列</title>
-    <link href="https://jiansunch.github.io/2019/04/03/5-8-Fibonacci%E6%95%B0%E5%88%97/"/>
-    <id>https://jiansunch.github.io/2019/04/03/5-8-Fibonacci数列/</id>
+    <link href="https://jiansunch.github.io/5-8-Fibonacci%E6%95%B0%E5%88%97/"/>
+    <id>https://jiansunch.github.io/5-8-Fibonacci数列/</id>
     <published>2019-04-02T16:13:40.000Z</published>
     <updated>2019-04-03T03:28:23.154Z</updated>
     
@@ -346,8 +346,8 @@
   
   <entry>
     <title>5-7 求圆周率pi的近似值</title>
-    <link href="https://jiansunch.github.io/2019/04/02/5-7-%E6%B1%82%E5%9C%86%E5%91%A8%E7%8E%87pi%E7%9A%84%E8%BF%91%E4%BC%BC%E5%80%BC/"/>
-    <id>https://jiansunch.github.io/2019/04/02/5-7-求圆周率pi的近似值/</id>
+    <link href="https://jiansunch.github.io/5-7-%E6%B1%82%E5%9C%86%E5%91%A8%E7%8E%87pi%E7%9A%84%E8%BF%91%E4%BC%BC%E5%80%BC/"/>
+    <id>https://jiansunch.github.io/5-7-求圆周率pi的近似值/</id>
     <published>2019-04-01T16:04:23.000Z</published>
     <updated>2019-04-06T13:19:02.279Z</updated>
     
@@ -371,8 +371,8 @@
   
   <entry>
     <title>5-6 矩阵输出</title>
-    <link href="https://jiansunch.github.io/2019/03/31/5-6-%E7%9F%A9%E9%98%B5%E8%BE%93%E5%87%BA/"/>
-    <id>https://jiansunch.github.io/2019/03/31/5-6-矩阵输出/</id>
+    <link href="https://jiansunch.github.io/5-6-%E7%9F%A9%E9%98%B5%E8%BE%93%E5%87%BA/"/>
+    <id>https://jiansunch.github.io/5-6-矩阵输出/</id>
     <published>2019-03-31T09:34:35.000Z</published>
     <updated>2019-04-22T10:23:36.997Z</updated>
     
@@ -396,8 +396,8 @@
   
   <entry>
     <title>create</title>
-    <link href="https://jiansunch.github.io/2019/03/31/create/"/>
-    <id>https://jiansunch.github.io/2019/03/31/create/</id>
+    <link href="https://jiansunch.github.io/create/"/>
+    <id>https://jiansunch.github.io/create/</id>
     <published>2019-03-31T06:02:26.000Z</published>
     <updated>2019-04-03T15:13:31.541Z</updated>
     
