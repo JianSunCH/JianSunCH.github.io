@@ -389,7 +389,7 @@ Shuffling is a procedure used to randomize a deck of playing cards. Because stan
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        408
+                        402
                     </div>
                     
 
@@ -418,8 +418,8 @@ Shuffling is a procedure used to randomize a deck of playing cards. Because stan
 <blockquote>
 <p>The machine shuffles a deck of 54 cards according to a given random order and repeats for a given number of times. It is assumed that the initial status of a card deck is in the following order:</p>
 </blockquote>
-<p><code>S1, S2, ..., S13, H1, H2, ..., H13, C1, C2, ..., C13, D1, D2, ..., D13, J1, J2</code></p>
-<blockquote>
+<pre><code>S1, S2, ..., S13, H1, H2, ..., H13, C1, C2, ..., C13, D1, D2, ..., D13, J1, J2
+</code></pre><blockquote>
 <p>where “S” stands for “Spade”, “H” for “Heart”, “C” for “Club”, “D” for “Diamond”, and “J” for “Joker”. A given order is a permutation of distinct integers in [1, 54]. If the number at the i-th position is j, it means to move the card from position i to position j. For example, suppose we only have 5 cards: S3, H5, C1, D13 and J2. Given a shuffling order {4, 2, 5, 3, 1}, the result will be: J2, H5, D13, S3, C1. If we are to repeat the shuffling again, the result will be: C1, H5, S3, J2, D13.</p>
 </blockquote>
 <h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains a positive integer K (≤20) which is the number of repeat times. Then the next line contains the given order. All the numbers in a line are separated by a space.</p>
@@ -427,11 +427,8 @@ Shuffling is a procedure used to randomize a deck of playing cards. Because stan
 <h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>2
 36 52 37 38 3 39 40 53 54 41 11 12 13 42 43 44 2 4 23 24 25 26 27 6 7 8 48 49 50 51 9 10 14 15 16 5 17 18 19 1 20 21 22 28 29 30 31 32 33 34 35 45 46 47
 </code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>S7 C11 C10 C12 S1 H7 H8 H9 D8 D9 S11 S12 S13 D10 D11 D12 S3 S4 S6 S10 H1 H2 C13 D2 D3 D4 H6 H3 D13 J1 J2 C1 C2 C3 C4 D1 S5 H5 H11 H12 C6 C7 C8 C9 S2 S8 S9 H10 D5 D6 D7 H4 H13 C5
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span> <span class="token punctuation">{</span>
-
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -601,7 +598,7 @@ Shuffling is a procedure used to randomize a deck of playing cards. Because stan
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-04-25T19-10-59',
+        id: '2019-04-25T23-02-51',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -624,24 +621,25 @@ Shuffling is a procedure used to randomize a deck of playing cards. Because stan
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/A1046-Shortest-Distance/">
+                <a href="/A1042-Shuffling-Machine/">
                     <div class="card-image">
                         
                         
-                        <img src="http://pqdbu4mph.bkt.clouddn.com/11.jpg" class="responsive-img" alt="A1046 Shortest Distance">
+                        <img src="http://pqdbu4mph.bkt.clouddn.com/3.jpg" class="responsive-img" alt="A1042 Shuffling Machine">
                         
-                        <span class="card-title">A1046 Shortest Distance</span>
+                        <span class="card-title">A1042 Shuffling Machine</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1046 Shortest Distance
-The task is really simple: given N exits on a highway which forms a simple cycle, you are suppose</div>
+                    <div class="summary block-with-text">1042 Shuffling Machine
+Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling te</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -654,6 +652,7 @@ The task is really simple: given N exits on a highway which forms a simple cycle
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -672,24 +671,18 @@ The task is really simple: given N exits on a highway which forms a simple cycle
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/B1018-锤子剪刀布/">
+                <a href="/A1046-Shortest-Distance/">
                     <div class="card-image">
                         
                         
-                        <img src="http://pqdbu4mph.bkt.clouddn.com/23.jpg" class="responsive-img" alt="B1018 锤子剪刀布">
+                        <img src="http://pqdbu4mph.bkt.clouddn.com/11.jpg" class="responsive-img" alt="A1046 Shortest Distance">
                         
-                        <span class="card-title">B1018 锤子剪刀布</span>
+                        <span class="card-title">A1046 Shortest Distance</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1018 锤子剪刀布
-大家应该都会玩“锤子剪刀布”的游戏：两人同时给出手势，胜负规则如图所示：
-
-
-
-现给出两人的交锋记录，请统计双方的胜、平、负次数，并且给出双方分别出什么手势的胜算最大。
-
-输入格式：输入第 1 行给出正整数 N（≤10</div>
+                    <div class="summary block-with-text">1046 Shortest Distance
+The task is really simple: given N exits on a highway which forms a simple cycle, you are suppose</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-25
