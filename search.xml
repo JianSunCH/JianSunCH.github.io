@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>B1018 锤子剪刀布</title>
+      <link href="/b1018-chui-zi-jian-dao-bu/"/>
+      <url>/b1018-chui-zi-jian-dao-bu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1018-锤子剪刀布"><a href="#1018-锤子剪刀布" class="headerlink" title="1018 锤子剪刀布"></a>1018 锤子剪刀布</h2><blockquote><p>大家应该都会玩“锤子剪刀布”的游戏：两人同时给出手势，胜负规则如图所示：</p></blockquote><p><img src="https://images.ptausercontent.com/724da598-b37f-4f1f-99b4-71459654ce3a.jpg" alt="FigCJB.jpg"></p><blockquote><p>现给出两人的交锋记录，请统计双方的胜、平、负次数，并且给出双方分别出什么手势的胜算最大。</p></blockquote><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第 1 行给出正整数 N（≤10​5​​），即双方交锋的次数。随后 N 行，每行给出一次交锋的信息，即甲、乙双方同时给出的的手势。<code>C</code> 代表“锤子”、<code>J</code> 代表“剪刀”、<code>B</code> 代表“布”，第 1 个字母代表甲方，第 2 个代表乙方，中间有 1 个空格。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出第 1、2 行分别给出甲、乙的胜、平、负次数，数字间以 1 个空格分隔。第 3 行给出两个字母，分别代表甲、乙获胜次数最多的手势，中间有 1 个空格。如果解不唯一，则输出按字母序最小的解。</p><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>10</code><br><code>C J</code><br><code>J B</code><br><code>C B</code><br><code>B B</code><br><code>B C</code><br><code>C C</code><br><code>C B</code><br><code>J B</code><br><code>B C</code><br><code>J J</code></p><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>5 3 2</code><br><code>2 3 5</code><br><code>B B</code></p><pre class="line-numbers language-c"><code class="language-c"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PAT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>B1012 数字分类</title>
       <link href="/b1012-shu-zi-fen-lei/"/>
       <url>/b1012-shu-zi-fen-lei/</url>
@@ -208,7 +233,7 @@
       <link href="/pat-solution/"/>
       <url>/pat-solution/</url>
       
-        <content type="html"><![CDATA[<h1 id="PAT解答"><a href="#PAT解答" class="headerlink" title="PAT解答"></a>PAT解答</h1><h2 id="Advanced-Level"><a href="#Advanced-Level" class="headerlink" title="Advanced Level"></a>Advanced Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">解决方案</th></tr></thead><tbody><tr><td style="text-align:center">A1002</td><td style="text-align:center">A+B for Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1009</td><td style="text-align:center">Product of Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1042</td><td style="text-align:center">Shuffling Machine</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1046</td><td style="text-align:center">Shortest Distance</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1065</td><td style="text-align:center">A+B and C (64bit)</td><td style="text-align:center"><a href>C++</a></td></tr></tbody></table><h2 id="Basic-Level"><a href="#Basic-Level" class="headerlink" title="Basic Level"></a>Basic Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">解决方案</th></tr></thead><tbody><tr><td style="text-align:center">B1001</td><td style="text-align:center">害死人不偿命的(3n+1)猜想</td><td style="text-align:center"><a href="/B1001-害死人不偿命的-3n-1-猜想">C++</a></td></tr><tr><td style="text-align:center">B1008</td><td style="text-align:center">数组元素循环右移问题</td><td style="text-align:center"><a href="/B1008-数组元素循环右移问题">C++</a></td></tr><tr><td style="text-align:center">B1010</td><td style="text-align:center">一元多项式求导</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1011</td><td style="text-align:center">A+B 和 C</td><td style="text-align:center"><a href="/B1011-A-B-和-C">C++</a></td></tr><tr><td style="text-align:center">B1012</td><td style="text-align:center">数字分类</td><td style="text-align:center"><a href="/B1012-数字分类">C++</a></td></tr><tr><td style="text-align:center">B1016</td><td style="text-align:center">部分A+B</td><td style="text-align:center"><a href="/B1016-部分A-B">C++</a></td></tr><tr><td style="text-align:center">B1018</td><td style="text-align:center">锤子剪刀布</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1026</td><td style="text-align:center">程序运行时间</td><td style="text-align:center"><a href="/B1026-程序运行时间">C++</a></td></tr><tr><td style="text-align:center">B1032</td><td style="text-align:center">挖掘机技术哪家强</td><td style="text-align:center"><a href="/B1032-挖掘机技术哪家强">C++</a></td></tr><tr><td style="text-align:center">B1046</td><td style="text-align:center">划拳</td><td style="text-align:center"><a href="/B1046-划拳">C++</a></td></tr></tbody></table>]]></content>
+        <content type="html"><![CDATA[<h1 id="PAT解答"><a href="#PAT解答" class="headerlink" title="PAT解答"></a>PAT解答</h1><h2 id="Advanced-Level"><a href="#Advanced-Level" class="headerlink" title="Advanced Level"></a>Advanced Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">解决方案</th></tr></thead><tbody><tr><td style="text-align:center">A1002</td><td style="text-align:center">A+B for Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1009</td><td style="text-align:center">Product of Polynomials</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1042</td><td style="text-align:center">Shuffling Machine</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1046</td><td style="text-align:center">Shortest Distance</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">A1065</td><td style="text-align:center">A+B and C (64bit)</td><td style="text-align:center"><a href>C++</a></td></tr></tbody></table><h2 id="Basic-Level"><a href="#Basic-Level" class="headerlink" title="Basic Level"></a>Basic Level</h2><table><thead><tr><th style="text-align:center">标号</th><th style="text-align:center">标题</th><th style="text-align:center">解决方案</th></tr></thead><tbody><tr><td style="text-align:center">B1001</td><td style="text-align:center">害死人不偿命的(3n+1)猜想</td><td style="text-align:center"><a href="/B1001-害死人不偿命的-3n-1-猜想">C++</a></td></tr><tr><td style="text-align:center">B1008</td><td style="text-align:center">数组元素循环右移问题</td><td style="text-align:center"><a href="/B1008-数组元素循环右移问题">C++</a></td></tr><tr><td style="text-align:center">B1010</td><td style="text-align:center">一元多项式求导</td><td style="text-align:center"><a href>C++</a></td></tr><tr><td style="text-align:center">B1011</td><td style="text-align:center">A+B 和 C</td><td style="text-align:center"><a href="/B1011-A-B-和-C">C++</a></td></tr><tr><td style="text-align:center">B1012</td><td style="text-align:center">数字分类</td><td style="text-align:center"><a href="/B1012-数字分类">C++</a></td></tr><tr><td style="text-align:center">B1016</td><td style="text-align:center">部分A+B</td><td style="text-align:center"><a href="/B1016-部分A-B">C++</a></td></tr><tr><td style="text-align:center">B1018</td><td style="text-align:center">锤子剪刀布</td><td style="text-align:center"><a href="/B1018-锤子剪刀布">C++</a></td></tr><tr><td style="text-align:center">B1026</td><td style="text-align:center">程序运行时间</td><td style="text-align:center"><a href="/B1026-程序运行时间">C++</a></td></tr><tr><td style="text-align:center">B1032</td><td style="text-align:center">挖掘机技术哪家强</td><td style="text-align:center"><a href="/B1032-挖掘机技术哪家强">C++</a></td></tr><tr><td style="text-align:center">B1046</td><td style="text-align:center">划拳</td><td style="text-align:center"><a href="/B1046-划拳">C++</a></td></tr></tbody></table>]]></content>
       
       
       <categories>
