@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1016 部分A+B, 孙健的博客">
-    <meta name="description" content="1016 部分A+B （15 分)
-正整数 A 的“D​A​​（为 1 位整数）部分”定义为由 A 中所有 D​A​​ 组成的新整数 P​A​​。例如：给定 A=3862767，D​A​​=6，则 A 的“6 部分”P​A​​ 是 66，因">
+    <meta name="description" content="1016 部分A+B （15 分)
+
+正整数 A 的“D​A​​（为 1 位整数）部分”定义为由 A 中所有 D​A​​ 组成的新整数 P​A​​。例如：给定 A=3862767，D​A​​=6，则 A 的“6 部分”P​A​​ 是 66，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,7 +390,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        249
+                        241
                     </div>
                     
 
@@ -412,44 +413,52 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1016-部分A-B-（15-分"><a href="#1016-部分A-B-（15-分" class="headerlink" title="1016 部分A+B （15 分)"></a>1016 部分A+B （15 分)</h2><blockquote>
-<p>正整数 A 的“D​A​​（为 1 位整数）部分”定义为由 A 中所有 D​A​​ 组成的新整数 P​A​​。例如：给定 A=3862767，D​A​​=6，则 A 的“6 部分”P​A​​ 是 66，因为 A 中有 2 个 6。</p>
+                <h2>1016 部分A+B （15 分)</h2>
+<blockquote>
+<p>正整数 A 的“D​A​​（为 1 位整数）部分”定义为由 A 中所有 D​A​​ 组成的新整数 P​A​​。例如：给定 A=3862767，D​A​​=6，则 A 的“6 部分”P​A​​ 是 66，因为 A 中有 2 个 6。</p>
 </blockquote>
 <blockquote>
-<p>现给定 A、D​A​​、B、D​B​​，请编写程序计算 P​A​​+P​B​​。</p>
+<p>现给定 A、D​A​​、B、D​B​​，请编写程序计算 P​A​​+P​B​​。</p>
 </blockquote>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 A、D​A​​、B、D​B​​，中间以空格分隔，其中 0&lt;A,B&lt;10​^10​​。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出 P​A​​+P​B​​ 的值。</p>
-<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p><code>3862767 6 13530293 3</code></p>
-<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p><code>399</code></p>
-<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p><code>3862767 1 13530293 8</code></p>
-<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p><code>0</code></p>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<h3>输入格式：</h3>
+<p>输入在一行中依次给出 A、D​A​​、B、D​B​​，中间以空格分隔，其中 0&lt;A,B&lt;10​^10​​。</p>
+<h3>输出格式：</h3>
+<p>在一行中输出 P​A​​+P​B​​ 的值。</p>
+<h3>输入样例 1：</h3>
+<p><code>3862767 6 13530293 3</code></p>
+<h3>输出样例 1：</h3>
+<p><code>399</code></p>
+<h3>输入样例 2：</h3>
+<p><code>3862767 1 13530293 8</code></p>
+<h3>输出样例 2：</h3>
+<p><code>0</code></p>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">long</span> <span class="token keyword">long</span> A<span class="token punctuation">,</span> Da<span class="token punctuation">,</span> B<span class="token punctuation">,</span> Db<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%lld%lld%lld"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>A<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Da<span class="token punctuation">,</span> <span class="token operator">&amp;</span>B<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Db<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">long</span> <span class="token keyword">long</span> Pa <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> Pb <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//检查A的每一位</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>A <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>A <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> Da<span class="token punctuation">)</span>
-            Pa <span class="token operator">=</span> Pa <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> Da<span class="token punctuation">;</span>
-        A <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//检查B的每一位</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>B <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>B <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> Db<span class="token punctuation">)</span>
-            Pb <span class="token operator">=</span> Pb <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> Db<span class="token punctuation">;</span>
-        B <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld\n"</span><span class="token punctuation">,</span> Pa <span class="token operator">+</span> Pb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+int main()
+{
+	long long A, Da, B, Db;
+	scanf("%lld%lld%lld%lld", &A, &Da, &B, &Db);
+	long long Pa = 0, Pb = 0;
+	//检查A的每一位
+	while (A != 0)
+	{
+		if (A % 10 == Da)
+			Pa = Pa * 10 + Da;
+		A /= 10;
+	}
+	//检查B的每一位
+	while (B != 0)
+	{
+		if (B % 10 == Db)
+			Pb = Pb * 10 + Db;
+		B /= 10;
+	}
+	printf("%lld\n", Pa + Pb);
 
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -654,8 +663,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1026 程序运行时间
-要获得一个 C 语言程序的运行时间，常用的方法是调用头文件 time.h，其中提供了 clock() 函数，可以捕捉从程序开始运行到 clock() 被调用时所耗费的时间。这个时间单位是 clock tick，即“时</div>
+                    <div class="summary block-with-text">1026 程序运行时间
+
+要获得一个 C 语言程序的运行时间，常用的方法是调用头文件 time.h，其中提供了 clock() 函数，可以捕捉从程序开始运行到 clock() 被调用时所耗费的时间。这个时间单位是 clock tick，即“</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
@@ -700,10 +710,12 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1011 A+B 和 C
-给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。
+                    <div class="summary block-with-text">1011 A+B 和 C
 
-输入格式：输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例，每</div>
+给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。
+
+输入格式：
+输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-23
@@ -882,7 +894,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">6.5k</span>
+            <span class="white-color">6.3k</span>
             
 
             
