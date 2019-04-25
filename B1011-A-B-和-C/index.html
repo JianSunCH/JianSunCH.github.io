@@ -5,12 +5,10 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1011 A+B 和 C, 孙健的博客">
-    <meta name="description" content="1011 A+B 和 C
+    <meta name="description" content="1011 A+B 和 C
+给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。
 
-给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。
-
-输入格式：
-输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例">
+输入格式：输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例，每">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -393,7 +391,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        239
+                        256
                     </div>
                     
 
@@ -416,61 +414,51 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1011 A+B 和 C</h2>
-<blockquote>
-<p>给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。</p>
+                <h2 id="1011-A-B-和-C"><a href="#1011-A-B-和-C" class="headerlink" title="1011 A+B 和 C"></a>1011 A+B 和 C</h2><blockquote>
+<p>给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。</p>
 </blockquote>
-<h3>输入格式：</h3>
-<p>输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例，每组占一行，顺序给出 A、B 和 C。整数间以空格分隔。</p>
-<h3>输出格式：</h3>
-<p>对每组测试用例，在一行中输出 <code>Case #X: true</code> 如果 A+B&gt;C，否则输出 <code>Case #X: false</code>，其中 <code>X</code> 是测试用例的编号（从 1 开始）。</p>
-<h3>输入样例：</h3>
-<p><code>4</code>
-<code>1 2 3</code>
-<code>2 3 4</code>
-<code>2147483647 0 2147483646</code>
-<code>0 -2147483648 -2147483647</code></p>
-<h3>输出样例：</h3>
-<p><code>Case #1: false</code>
-<code>Case #2: true</code>
-<code>Case #3: true</code>
-<code>Case #4: false</code></p>
-<h3>解答</h3>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例，每组占一行，顺序给出 A、B 和 C。整数间以空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每组测试用例，在一行中输出 <code>Case #X: true</code> 如果 A+B&gt;C，否则输出 <code>Case #X: false</code>，其中 <code>X</code> 是测试用例的编号（从 1 开始）。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>4</code><br><code>1 2 3</code><br><code>2 3 4</code><br><code>2147483647 0 2147483646</code><br><code>0 -2147483648 -2147483647</code></p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>Case #1: false</code><br><code>Case #2: true</code><br><code>Case #3: true</code><br><code>Case #4: false</code></p>
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
 
-int main()
-{
-	int T, count = 1;
-	scanf("%d", &T);
-	long long A, B, C;
-	//while版本
-	while (T--)
-	{
-		scanf("%lld%lld%lld", &A, &B, &C);
-		if (A + B > C)
-		{
-			printf("Case #%d: true\n", count++);
-		}
-		else
-		{
-			printf("Case #%d: false\n", count++);
-		}
-	}
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> T<span class="token punctuation">,</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//while版本</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>T<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%lld%lld"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>A<span class="token punctuation">,</span> <span class="token operator">&amp;</span>B<span class="token punctuation">,</span> <span class="token operator">&amp;</span>C<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>A <span class="token operator">+</span> B <span class="token operator">></span> C<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Case #%d: true\n"</span><span class="token punctuation">,</span> count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Case #%d: false\n"</span><span class="token punctuation">,</span> count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-	//for版本
-	// for (int i = 1; i <= t; i++) { scanf("%lld%lld%lld", &a, &b, &c); if (a + b> C)
-	// 	{
-	// 		printf("Case #%d: true\n", i);
-	// 	}
-	// 	else
-	// 	{
-	// 		printf("Case #%d: false\n", i);
-	// 	}
-	// }
+    <span class="token comment" spellcheck="true">//for版本</span>
+    <span class="token comment" spellcheck="true">// for (int i = 1; i &lt;= T; i++)</span>
+    <span class="token comment" spellcheck="true">// {</span>
+    <span class="token comment" spellcheck="true">//     scanf("%lld%lld%lld", &amp;A, &amp;B, &amp;C);</span>
+    <span class="token comment" spellcheck="true">//     if (A + B > C)</span>
+    <span class="token comment" spellcheck="true">//     {</span>
+    <span class="token comment" spellcheck="true">//         printf("Case #%d: true\n", i);</span>
+    <span class="token comment" spellcheck="true">//     }</span>
+    <span class="token comment" spellcheck="true">//     else</span>
+    <span class="token comment" spellcheck="true">//     {</span>
+    <span class="token comment" spellcheck="true">//         printf("Case #%d: false\n", i);</span>
+    <span class="token comment" spellcheck="true">//     }</span>
+    <span class="token comment" spellcheck="true">// }</span>
 
-	return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></bits></code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -675,9 +663,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1016 部分A+B （15 分)
-
-正整数 A 的“D​A​​（为 1 位整数）部分”定义为由 A 中所有 D​A​​ 组成的新整数 P​A​​。例如：给定 A=3862767，D​A​​=6，则 A 的“6 部分”P​A​​ 是 66，</div>
+                    <div class="summary block-with-text">1016 部分A+B （15 分)
+正整数 A 的“D​A​​（为 1 位整数）部分”定义为由 A 中所有 D​A​​ 组成的新整数 P​A​​。例如：给定 A=3862767，D​A​​=6，则 A 的“6 部分”P​A​​ 是 66，因</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-23
@@ -722,12 +709,10 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1032 挖掘机技术哪家强
-
+                    <div class="summary block-with-text">1032 挖掘机技术哪家强
 为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。
 
-输入格式：
-输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行</div>
+输入格式：输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-22
@@ -906,7 +891,7 @@ int main()
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">6k</span>
+            <span class="white-color">6.3k</span>
             
 
             
