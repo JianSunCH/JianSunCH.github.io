@@ -4,14 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="6-12 解密, 孙健的博客">
-    <meta name="description" content="习题6-12 解密
-题目描述
-有一行电文，已按如下规律译成密码：
-A--&amp;gt;Z        a--&amp;gt;z
-B--&amp;gt;Y        b--&amp;gt;y
-C--&amp;gt;X        c--&amp;gt;x
-......      ">
+    <meta name="keywords" content="B1010 一元多项式求导, 孙健的博客">
+    <meta name="description" content="010 一元多项式求导
+
+设计函数求一元多项式的导数。（注：(\boldsymbol{x}^{n})（n为整数）的一阶导数为(\boldsymbol{n} \boldsymbol{x}^{n-1}))。
+
+输入格式:
+以指数递降方式输入多项">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@ C--&amp;gt;X        c--&amp;gt;x
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>6-12 解密 | 孙健的博客</title>
+    <title>B1010 一元多项式求导 | 孙健的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -246,13 +245,13 @@ C--&amp;gt;X        c--&amp;gt;x
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        6-12 解密
+                        B1010 一元多项式求导
                     </div>
                 </div>
             </div>
@@ -363,8 +362,8 @@ C--&amp;gt;X        c--&amp;gt;x
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/codeup/" target="_blank">
-                                <span class="chip bg-color">codeup</span>
+                            <a href="/tags/PAT/" target="_blank">
+                                <span class="chip bg-color">PAT</span>
                             </a>
                         
                     </div>
@@ -387,14 +386,14 @@ C--&amp;gt;X        c--&amp;gt;x
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-03
+                    2019-04-26
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        147
+                        178
                     </div>
                     
 
@@ -417,32 +416,23 @@ C--&amp;gt;X        c--&amp;gt;x
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>习题6-12 解密</h1>
-<h2>题目描述</h2>
-<p>有一行电文，已按如下规律译成密码：</p>
-<p>A--&gt;Z        a--&gt;z</p>
-<p>B--&gt;Y        b--&gt;y</p>
-<p>C--&gt;X        c--&gt;x</p>
-<p>......          ......</p>
-<p>即第一个字母变成第26个字母，第i个字母变成第（26-i+1)个字母，非字母字符不变。要求根据密码译回原文，并输出。</p>
-<h2>输入</h2>
-<p>输入一行密文</p>
-<h2>输出</h2>
-<p>解密后的原文，单独占一行。</p>
-<h2>样例输入</h2>
-<p><code>ZYX123zyx</code></p>
-<h2>样例输出</h2>
-<p><code>ABC123abc</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
-
-int main()
-{
-    char pass[100] = {};
-    gets(pass);
-    for (int i = 0; i < 100; i++)
-    {
-        if (pass[i] >= 'a' && pass[i] <= 'z') { pass[i]="a" + 'z' - pass[i]; } else if (pass[i]>= 'A' && pass[i] <= 'z') { pass[i]="A" + 'z' - pass[i]; } puts(pass); return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></=></cstdio></code></pre>
+                <h2>010 一元多项式求导</h2>
+<blockquote>
+<p>设计函数求一元多项式的导数。（注：(\boldsymbol{x}^{n})（n为整数）的一阶导数为(\boldsymbol{n} \boldsymbol{x}^{n-1}))。</p>
+</blockquote>
+<h3>输入格式:</h3>
+<p>以指数递降方式输入多项式非零项系数和指数（绝对值均为不超过 1000 的整数）。数字间以空格分隔。</p>
+<h3>输出格式:</h3>
+<p>以与输入相同的格式输出导数多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。注意“零多项式”的指数和系数都是 0，但是表示为 <code>0 0</code>。</p>
+<h3>输入样例:</h3>
+<pre><code>3 4 -5 2 6 1 -2 0 
+</code></pre>
+<h3>输出样例:</h3>
+<pre><code>12 3 -10 1 6 0
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -590,7 +580,7 @@ int main()
                     </span>
                     <a href="https://www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/6-12-解密/" class="b-link-green">6-12 解密</a>
+                    <a href="/B1010-一元多项式求导/" class="b-link-green">B1010 一元多项式求导</a>
                 </p>
             </div>
         </div>
@@ -612,7 +602,7 @@ int main()
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-04-03T23-09-05',
+        id: '2019-04-26T18-26-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -635,28 +625,29 @@ int main()
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/A-B/">
+                <a href="/B1010-一元多项式求导/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg0.jpg" class="responsive-img" alt="A+B">
+                        <img src="http://cdn.sunjian.xyz/featureimg7.jpg" class="responsive-img" alt="B1010 一元多项式求导">
                         
-                        <span class="card-title">A+B</span>
+                        <span class="card-title">B1010 一元多项式求导</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">A+B 输入输出练习I
-题目描述
-你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。
-输入
-输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。
-输出</div>
+                    <div class="summary block-with-text">010 一元多项式求导
+
+设计函数求一元多项式的导数。（注：(\boldsymbol{x}^{n})（n为整数）的一阶导数为(\boldsymbol{n} \boldsymbol{x}^{n-1}))。
+
+输入格式:
+以指数递降方式输入多项</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -669,11 +660,12 @@ int main()
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/codeup/" target="_blank">
-                        <span class="chip bg-color">codeup</span>
+                    <a href="/tags/PAT/" target="_blank">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>
@@ -687,33 +679,21 @@ int main()
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/6-6-杨辉三角/">
+                <a href="/A1065-A-B-and-C-64bit/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg21.jpg" class="responsive-img" alt="6-6 杨辉三角">
+                        <img src="http://cdn.sunjian.xyz/featureimg13.jpg" class="responsive-img" alt="A1065 A+B and C (64bit)">
                         
-                        <span class="card-title">6-6 杨辉三角</span>
+                        <span class="card-title">A1065 A+B and C (64bit)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">习题6-6 杨辉三角
-题目描述
-按要求输入如下格式的杨辉三角
-1
-1 1
-1 2 1
-1 3 3 1
-1 4 6 4 1
-1 5 10 10 5 1
-最多输出10层
-输入
-输入只包含一个正整数n，表示将要输出的杨辉三角的层数。
-输出
-对应于</div>
+                    <div class="summary block-with-text">1065 A+B and C (64bit)
+Given three integers A, B and C in [−2​^63​​,2​^63​​], you are supposed to tell whether A+B&gt;C.</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
                             </span>
                         <span class="publish-author">
                             
@@ -730,8 +710,8 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/codeup/" target="_blank">
-                        <span class="chip bg-color">codeup</span>
+                    <a href="/tags/PAT/" target="_blank">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>

@@ -5,8 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1065 A+B and C (64bit), 孙健的博客">
-    <meta name="description" content="1065 A+B and C (64bit)Given three integers A, B and C in [−2​^63​​,2​^63​​], you are supposed to tell whether A+B&amp;gt;C.
-">
+    <meta name="description" content="1065 A+B and C (64bit)
+Given three integers A, B and C in [−2​^63​​,2​^63​​], you are supposed to tell whether A+B&amp;gt;C.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,7 +389,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        124
+                        210
                     </div>
                     
 
@@ -412,13 +412,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1065-A-B-and-C-64bit"><a href="#1065-A-B-and-C-64bit" class="headerlink" title="1065 A+B and C (64bit)"></a>1065 A+B and C (64bit)</h2><p>Given three integers A, B and C in [−2​^63​​,2​^63​​], you are supposed to tell whether A+B&gt;C.</p>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>The first line of the input gives the positive number of test cases, T (≤10). Then T test cases follow, each consists of a single line containing three integers A, B and C, separated by single spaces.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, output in one line <code>Case #X: true</code> if A+B&gt;C, or <code>Case #X: false</code> otherwise, where X is the case number (starting from 1).</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>3 1 2 3 2 3 4 9223372036854775807 -9223372036854775808 0 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>Case #1: false Case #2: true Case #3: false
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2>1065 A+B and C (64bit)</h2>
+<p>Given three integers A, B and C in [−2​^63​​,2​^63​​], you are supposed to tell whether A+B&gt;C.</p>
+<h3>Input Specification:</h3>
+<p>The first line of the input gives the positive number of test cases, T (≤10). Then T test cases follow, each consists of a single line containing three integers A, B and C, separated by single spaces.</p>
+<h3>Output Specification:</h3>
+<p>For each test case, output in one line <code>Case #X: true</code> if A+B&gt;C, or <code>Case #X: false</code> otherwise, where X is the case number (starting from 1).</p>
+<h3>Sample Input:</h3>
+<pre><code>3
+1 2 3 
+2 3 4
+9223372036854775807 -9223372036854775808 0 
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>Case #1: false 
+Case #2: true 
+Case #3: false
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
+
+int main()
+{
+	int T, count = 1;
+	scanf("%d", &T);
+	long long A, B, C, result;
+	while (T--)
+	{
+		scanf("%lld%lld%lld", &A, &B, &C);
+		result = A + B;
+		bool flag;
+		//正溢出
+		if (A > 0 && B > 0 && result < 0)
+			flag = true;
+		//负溢出
+		else if (A < 0 && B < 0 && result >= 0)
+			flag = false;
+		//没有溢出
+		else if (result > C)
+			flag = true;
+		else
+			flag = false;
+
+		if (flag == true)
+			printf("Case #%d: true\n", count++);
+		else
+			printf("Case #%d: false\n", count++);
+	}
+
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -611,25 +655,28 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/A1065-A-B-and-C-64bit/">
+                <a href="/B1010-一元多项式求导/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg13.jpg" class="responsive-img" alt="A1065 A+B and C (64bit)">
+                        <img src="http://cdn.sunjian.xyz/featureimg7.jpg" class="responsive-img" alt="B1010 一元多项式求导">
                         
-                        <span class="card-title">A1065 A+B and C (64bit)</span>
+                        <span class="card-title">B1010 一元多项式求导</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1065 A+B and C (64bit)Given three integers A, B and C in [−2​^63​​,2​^63​​], you are supposed to tell whether A+B&gt;C.
-</div>
+                    <div class="summary block-with-text">010 一元多项式求导
+
+设计函数求一元多项式的导数。（注：(\boldsymbol{x}^{n})（n为整数）的一阶导数为(\boldsymbol{n} \boldsymbol{x}^{n-1}))。
+
+输入格式:
+以指数递降方式输入多项</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -642,7 +689,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -671,8 +717,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1042 Shuffling Machine
-Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling te</div>
+                    <div class="summary block-with-text">1042 Shuffling Machine
+
+Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling t</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
@@ -851,7 +898,7 @@ Shuffling is a procedure used to randomize a deck of playing cards. Because stan
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7k</span>
+            <span class="white-color">6.7k</span>
             
 
             
