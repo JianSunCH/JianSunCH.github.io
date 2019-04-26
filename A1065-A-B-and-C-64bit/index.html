@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="A1046 Shortest Distance, 孙健的博客">
-    <meta name="description" content="1046 Shortest Distance
-The task is really simple: given N exits on a highway which forms a simple cycle, you are suppose">
+    <meta name="keywords" content="A1065 A+B and C (64bit), 孙健的博客">
+    <meta name="description" content="1065 A+B and C (64bit)Given three integers A, B and C in [−2​^63​​,2​^63​​], you are supposed to tell whether A+B&amp;gt;C.
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@ The task is really simple: given N exits on a highway which forms a simple cycle
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>A1046 Shortest Distance | 孙健的博客</title>
+    <title>A1065 A+B and C (64bit) | 孙健的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -241,13 +241,13 @@ The task is really simple: given N exits on a highway which forms a simple cycle
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        A1046 Shortest Distance
+                        A1065 A+B and C (64bit)
                     </div>
                 </div>
             </div>
@@ -382,14 +382,14 @@ The task is really simple: given N exits on a highway which forms a simple cycle
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-25
+                    2019-04-26
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        197
+                        124
                     </div>
                     
 
@@ -412,22 +412,12 @@ The task is really simple: given N exits on a highway which forms a simple cycle
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1046-Shortest-Distance"><a href="#1046-Shortest-Distance" class="headerlink" title="1046 Shortest Distance"></a>1046 Shortest Distance</h2><blockquote>
-<p>The task is really simple: given N exits on a highway which forms a simple cycle, you are supposed to tell the shortest distance between any pair of exits.</p>
-</blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains an integer N (in [3,10​5​​]), followed by N integer distances D​1​​ D​2​​ ⋯ D​N​​, where D​i​​ is the distance between the i-th and the (i+1)-st exits, and D​N​​ is between the N-th and the 1st exits. All the numbers in a line are separated by a space. The second line gives a positive integer M (≤10​4​​), with M lines follow, each contains a pair of exit numbers, provided that the exits are numbered from 1 to N. It is guaranteed that the total round trip distance is no more than 10​7​​.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print your results in M lines, each contains the shortest distance between the corresponding given pair of exits.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>5 1 2 4 14 9
-3
-1 3
-2 5
-4 1
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>3
-10
-7
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+                <h2 id="1065-A-B-and-C-64bit"><a href="#1065-A-B-and-C-64bit" class="headerlink" title="1065 A+B and C (64bit)"></a>1065 A+B and C (64bit)</h2><p>Given three integers A, B and C in [−2​^63​​,2​^63​​], you are supposed to tell whether A+B&gt;C.</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>The first line of the input gives the positive number of test cases, T (≤10). Then T test cases follow, each consists of a single line containing three integers A, B and C, separated by single spaces.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, output in one line <code>Case #X: true</code> if A+B&gt;C, or <code>Case #X: false</code> otherwise, where X is the case number (starting from 1).</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>3 1 2 3 2 3 4 9223372036854775807 -9223372036854775808 0 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>Case #1: false Case #2: true Case #3: false
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3>
             </div>
             <hr>
 
@@ -574,7 +564,7 @@ The task is really simple: given N exits on a highway which forms a simple cycle
                     </span>
                     <a href="https://www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/A1046-Shortest-Distance/" class="b-link-green">A1046 Shortest Distance</a>
+                    <a href="/A1065-A-B-and-C-64bit/" class="b-link-green">A1065 A+B and C (64bit)</a>
                 </p>
             </div>
         </div>
@@ -596,7 +586,7 @@ The task is really simple: given N exits on a highway which forms a simple cycle
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-04-25T22-47-53',
+        id: '2019-04-26T10-22-32',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -619,24 +609,25 @@ The task is really simple: given N exits on a highway which forms a simple cycle
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/A1042-Shuffling-Machine/">
+                <a href="/A1065-A-B-and-C-64bit/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg3.jpg" class="responsive-img" alt="A1042 Shuffling Machine">
+                        <img src="http://cdn.sunjian.xyz/featureimg13.jpg" class="responsive-img" alt="A1065 A+B and C (64bit)">
                         
-                        <span class="card-title">A1042 Shuffling Machine</span>
+                        <span class="card-title">A1065 A+B and C (64bit)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1042 Shuffling Machine
-Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling te</div>
+                    <div class="summary block-with-text">1065 A+B and C (64bit)Given three integers A, B and C in [−2​^63​​,2​^63​​], you are supposed to tell whether A+B&gt;C.
+</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -649,6 +640,7 @@ Shuffling is a procedure used to randomize a deck of playing cards. Because stan
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -667,27 +659,21 @@ Shuffling is a procedure used to randomize a deck of playing cards. Because stan
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/B1018-锤子剪刀布/">
+                <a href="/A1042-Shuffling-Machine/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg23.jpg" class="responsive-img" alt="B1018 锤子剪刀布">
+                        <img src="http://cdn.sunjian.xyz/featureimg3.jpg" class="responsive-img" alt="A1042 Shuffling Machine">
                         
-                        <span class="card-title">B1018 锤子剪刀布</span>
+                        <span class="card-title">A1042 Shuffling Machine</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1018 锤子剪刀布
-大家应该都会玩“锤子剪刀布”的游戏：两人同时给出手势，胜负规则如图所示：
-
-
-
-现给出两人的交锋记录，请统计双方的胜、平、负次数，并且给出双方分别出什么手势的胜算最大。
-
-输入格式：输入第 1 行给出正整数 N（≤10</div>
+                    <div class="summary block-with-text">1042 Shuffling Machine
+Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling te</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
                             </span>
                         <span class="publish-author">
                             
