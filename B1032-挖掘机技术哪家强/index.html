@@ -5,10 +5,12 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1032 挖掘机技术哪家强, 孙健的博客">
-    <meta name="description" content="1032 挖掘机技术哪家强
+    <meta name="description" content="1032 挖掘机技术哪家强
+
 为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。
 
-输入格式：输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每">
+输入格式：
+输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -391,7 +393,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        272
+                        264
                     </div>
                     
 
@@ -414,35 +416,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1032-挖掘机技术哪家强"><a href="#1032-挖掘机技术哪家强" class="headerlink" title="1032 挖掘机技术哪家强"></a>1032 挖掘机技术哪家强</h2><blockquote>
+                <h2>1032 挖掘机技术哪家强</h2>
+<blockquote>
 <p>为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。</p>
 </blockquote>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从 1 开始连续编号）、及其比赛成绩（百分制），中间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中给出总得分最高的学校的编号、及其总分，中间以空格分隔。题目保证答案唯一，没有并列。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>6</code><br><code>3 65</code><br><code>2 80</code><br><code>1 100</code><br><code>2 70</code><br><code>3 40</code><br><code>3 0</code></p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>2 150</code></p>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<h3>输入格式：</h3>
+<p>输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从 1 开始连续编号）、及其比赛成绩（百分制），中间以空格分隔。</p>
+<h3>输出格式：</h3>
+<p>在一行中给出总得分最高的学校的编号、及其总分，中间以空格分隔。题目保证答案唯一，没有并列。</p>
+<h3>输入样例：</h3>
+<p><code>6</code>
+<code>3 65</code>
+<code>2 80</code>
+<code>1 100</code>
+<code>2 70</code>
+<code>3 40</code>
+<code>3 0</code></p>
+<h3>输出样例：</h3>
+<p><code>2 150</code></p>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> schoolId<span class="token punctuation">,</span> schoolScore<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> school<span class="token punctuation">[</span><span class="token number">100001</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>schoolId<span class="token punctuation">,</span> <span class="token operator">&amp;</span>schoolScore<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        school<span class="token punctuation">[</span>schoolId<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> schoolScore<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">int</span> topId <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> topScore <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>school<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> topScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            topScore <span class="token operator">=</span> school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            topId <span class="token operator">=</span> i<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span> topId<span class="token punctuation">,</span> topScore<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+int main() {
+	int N, schoolId, schoolScore;
+	int school[100001] = {0};
+	scanf("%d", &N);
+	for(int i = 0; i < N; i++) {
+		scanf("%d%d", &schoolId, &schoolScore);
+		school[schoolId] += schoolScore;
+	}
+	
+	int topId = 1, topScore = -1;
+	for(int i = 1; i <= n; i++) { if(school[i]> topScore) {
+			topScore = school[i];
+			topId = i;
+		}
+	}
+	printf("%d %d\n", topId, topScore);
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></bits></code></pre>
 
             </div>
             <hr>
@@ -647,10 +660,12 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1011 A+B 和 C
-给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。
+                    <div class="summary block-with-text">1011 A+B 和 C
 
-输入格式：输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例，每</div>
+给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。
+
+输入格式：
+输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-23
@@ -695,8 +710,10 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1001 害死人不偿命的(3n+1)猜想
-卡拉兹(Callatz)猜想：对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950</div>
+                    <div class="summary block-with-text">1001 害死人不偿命的(3n+1)猜想
+
+卡拉兹(Callatz)猜想：
+对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 19</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-22
@@ -875,7 +892,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">6.3k</span>
+            <span class="white-color">6.2k</span>
             
 
             
