@@ -4,13 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="A+B, 孙健的博客">
-    <meta name="description" content="A+B 输入输出练习I
-题目描述
-你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。
-输入
-输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。
-输出">
+    <meta name="keywords" content="A1002 A+B for Polynomials, 孙健的博客">
+    <meta name="description" content="1002 A+B for Polynomials
+
+This time, you are supposed to find A+B where A and B are two polynomials.
+
+Input Specificatio">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>A+B | 孙健的博客</title>
+    <title>A1002 A+B for Polynomials | 孙健的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -245,13 +244,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        A+B
+                        A1002 A+B for Polynomials
                     </div>
                 </div>
             </div>
@@ -362,8 +361,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/codeup/" target="_blank">
-                                <span class="chip bg-color">codeup</span>
+                            <a href="/tags/PAT/" target="_blank">
+                                <span class="chip bg-color">PAT</span>
                             </a>
                         
                     </div>
@@ -386,21 +385,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-11
+                    2019-04-27
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        550
+                        312
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -416,124 +415,68 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>A+B 输入输出练习I</h1>
-<h2>题目描述</h2>
-<p>你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。</p>
-<h2>输入</h2>
-<p>输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。</p>
-<h2>输出</h2>
-<p>对于输入的每对a和b，你需要依次输出a、b的和。</p>
-<p>如对于输入中的第二对a和b，在输出中它们的和应该也在第二行。</p>
-<h2>样例输入</h2>
-<p><code>1 5</code>
-<code>10 20</code></p>
-<h2>样例输出</h2>
-<p><code>6</code>
-<code>30</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
+                <h2>1002 A+B for Polynomials</h2>
+<blockquote>
+<p>This time, you are supposed to find A+B where A and B are two polynomials.</p>
+</blockquote>
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:</p>
+<p>K N​1​​ a​N​1​​​​ N​2​​ a​N​2​​​​ ... N​K​​ a​N​K​​​​</p>
+<p>where K is the number of nonzero terms in the polynomial, N​i​​ and a​N​i​​​​ (i=1,2,⋯,K) are the exponents and coefficients, respectively. It is given that 1≤K≤10，0≤N​K​​&lt;⋯&lt;N​2​​&lt;N​1​​≤1000.</p>
+<h3>Output Specification:</h3>
+<p>For each test case you should output the sum of A and B in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate to 1 decimal place.</p>
+<h3>Sample Input:</h3>
+<pre><code>2 1 2.4 0 3.2
+2 2 1.5 1 0.5
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>3 2 1.5 1 2.9 0 3.2
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
+
+const int max_n = 1001;
+double arr[max_n] = {0};
 
 int main()
 {
-    int a, b;
-    while(scanf("%d%d", &a, &b) != EOF){
-        printf("%d\n", a + b);
-    }
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
-<h2>输入</h2>
-<p>第一行是一个整数N，表示后面会有N行a和b，通过空格隔开。</p>
-<h2>输出</h2>
-<p>对于输入的每对a和b，你需要在相应的行输出a、b的和。
-如第二对a和b，对应的和也输出在第二行。</p>
-<h2>样例输入</h2>
-<p><code>2</code>
-<code>1 5</code>
-<code>10 20</code></p>
-<h2>样例输出</h2>
-<p><code>6</code>
-<code>30</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
+	int K;			  //非零项的项数
+	int coefficients; //系数
+	double exponents; //指数
+	//读入第一个多项式
+	scanf("%d", &K);
+	for (int i = 0; i < K; i++)
+	{
+		scanf("%d%lf", &coefficients, &exponents);
+		arr[coefficients] += exponents;
+	}
+	//读入第二个多项式
+	scanf("%d", &K);
+	for (int i = 0; i < K; i++)
+	{
+		scanf("%d%lf", &coefficients, &exponents);
+		arr[coefficients] += exponents;
+	}
 
-int main()
-{
-    int a, b, N;
-    scanf("%d", &N);
-    while (N--)
-    {
-        scanf("%d%d", &a, &b);
-        printf("%d\n", a + b);
-    }
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
-<h2>输入</h2>
-<p>输入中每行是一对a和b。其中会有一对是0和0标志着输入结束，且这一对不要计算。</p>
-<h2>输出</h2>
-<p>对于输入的每对a和b，你需要在相应的行输出a、b的和。</p>
-<p>如第二对a和b，他们的和也输出在第二行。</p>
-<h2>样例输入</h2>
-<p><code>1 5</code>
-<code>10 20</code>
-<code>0 0</code></p>
-<h2>样例输出</h2>
-<p><code>6</code>
-<code>30</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
+	//计算非零系数项的个数
+	int count = 0;
+	for (int i = 0; i < max_n; i++)
+	{
+		if (arr[i] != 0)
+			count++;
+	}
 
-int main()
-{
-    int a, b;
-    while (scanf("%d%d", &a, &b), a || b)
-    {
-        printf("%d\n", a + b);
-    }
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
-<h2>输入</h2>
-<p>输入的第一行为一个整数N，接下来N行每行先输入一个整数M，然后在同一行内输入M个整数。</p>
-<h2>输出</h2>
-<p>对于每组输入，输出M个数的和，每组输出之间输出一个空行。</p>
-<h2>样例输入</h2>
-<p><code>3</code>
-<code>4 1 2 3 4</code>
-<code>5 1 2 3 4 5</code>
-<code>3 1 2 3</code></p>
-<h2>样例输出</h2>
-<p><code>10</code>
-<code></code>
-<code>15</code>
-<code></code>
-<code>6</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
+	//输出多项式
+	printf("%d", count);
+	for (int i = max_n; i >= 0; i--)
+	{
+		if (arr[i] != 0)
+			printf(" %d %.1lf", i, arr[i]);
+	}
 
-int main()
-{
-    int a, b, N, M, num;
-    scanf("%d", &N);
-    while (N--)
-    {
-        int sum = 0;
-        scanf("%d", &M);
-        for (int i = 0; i < M; i++)
-        {
-            scanf("%d", &num);
-            sum += num;
-        }
-        printf("%d\n", sum);
-        if (N > 0)
-        {
-            printf("\n");
-        }
-    }
-    return 0;
+	return 0;
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -681,7 +624,7 @@ int main()
                     </span>
                     <a href="https://www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/A-B/" class="b-link-green">A+B</a>
+                    <a href="/A1002-A-B-for-Polynomials/" class="b-link-green">A1002 A+B for Polynomials</a>
                 </p>
             </div>
         </div>
@@ -703,7 +646,7 @@ int main()
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-04-11T23-51-44',
+        id: '2019-04-27T18-24-57',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -728,28 +671,24 @@ int main()
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/百钱白鸡/">
+                <a href="/A1009-Product-of-Polynomials/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg7.jpg" class="responsive-img" alt="百钱白鸡">
+                        <img src="http://cdn.sunjian.xyz/featureimg6.jpg" class="responsive-img" alt="A1009 Product of Polynomials">
                         
-                        <span class="card-title">百钱白鸡</span>
+                        <span class="card-title">A1009 Product of Polynomials</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">百钱白鸡
-题目描述
+                    <div class="summary block-with-text">1009 Product of Polynomials
 
-鸡翁一值钱五, 鸡母一值钱三, 鸡雏三值钱一. 百钱买百鸡, 问鸡翁, 鸡母, 鸡雏各几何
-—— 张丘建《算经》
+This time, you are supposed to find A×B where A and B are two polynomials.
 
-求解方法
-
-先构造可能的解的集合S={(X,Y,Z)|0&lt;=X,Y,Z&lt;=100} X, </div>
+Input Specifica</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-27
                         </span>
                         <span class="publish-author">
                             
@@ -766,8 +705,8 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/algo-base/" target="_blank">
-                        <span class="chip bg-color">algo_base</span>
+                    <a href="/tags/PAT/" target="_blank">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>
@@ -781,26 +720,25 @@ int main()
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/6-12-解密/">
+                <a href="/B1010-一元多项式求导/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg11.jpg" class="responsive-img" alt="6-12 解密">
+                        <img src="http://cdn.sunjian.xyz/featureimg7.jpg" class="responsive-img" alt="B1010 一元多项式求导">
                         
-                        <span class="card-title">6-12 解密</span>
+                        <span class="card-title">B1010 一元多项式求导</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">习题6-12 解密
-题目描述
-有一行电文，已按如下规律译成密码：
-A--&gt;Z        a--&gt;z
-B--&gt;Y        b--&gt;y
-C--&gt;X        c--&gt;x
-......      </div>
+                    <div class="summary block-with-text">010 一元多项式求导
+
+设计函数求一元多项式的导数。（注：(\boldsymbol{x}^{n})（n为整数）的一阶导数为(\boldsymbol{n} \boldsymbol{x}^{n-1}))。
+
+输入格式:
+以指数递降方式输入多项</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
                             </span>
                         <span class="publish-author">
                             
@@ -817,8 +755,8 @@ C--&gt;X        c--&gt;x
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/codeup/" target="_blank">
-                        <span class="chip bg-color">codeup</span>
+                    <a href="/tags/PAT/" target="_blank">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>
