@@ -432,14 +432,14 @@ Input Specification">
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">int</span> K<span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">//非零项的项数</span>
-    <span class="token keyword">int</span> coefficients<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//系数</span>
-    <span class="token keyword">double</span> exponents<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//指数</span>
+    <span class="token keyword">double</span> coefficients<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//系数</span>
+    <span class="token keyword">int</span> exponents<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//指数</span>
     <span class="token comment" spellcheck="true">//读入第一个多项式</span>
     <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>coefficients<span class="token punctuation">,</span> <span class="token operator">&amp;</span>exponents<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        arr<span class="token punctuation">[</span>coefficients<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> exponents<span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>exponents<span class="token punctuation">,</span> <span class="token operator">&amp;</span>coefficients<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>exponents<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> coefficients<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">//读入第二个多项式</span>
     <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
