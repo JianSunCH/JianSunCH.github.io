@@ -392,14 +392,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        279
+                        501
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -430,8 +430,76 @@ Ann 2121/01/30
 James 1814/09/05 
 Steve 1967/11/20 
 </code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>3 Tom John
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+
+<span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">100001</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> Person
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> year<span class="token punctuation">,</span> month<span class="token punctuation">,</span> day<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span> temp<span class="token punctuation">,</span> youngest<span class="token punctuation">,</span> oldest<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//合法日期区间: [left,right]</span>
+
+<span class="token comment" spellcheck="true">//初始化</span>
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    youngest<span class="token punctuation">.</span>year <span class="token operator">=</span> left<span class="token punctuation">.</span>year <span class="token operator">=</span> <span class="token number">1814</span><span class="token punctuation">;</span>
+    youngest<span class="token punctuation">.</span>month <span class="token operator">=</span> left<span class="token punctuation">.</span>month <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+    youngest<span class="token punctuation">.</span>day <span class="token operator">=</span> left<span class="token punctuation">.</span>day <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+    oldest<span class="token punctuation">.</span>year <span class="token operator">=</span> right<span class="token punctuation">.</span>year <span class="token operator">=</span> <span class="token number">2014</span><span class="token punctuation">;</span>
+    oldest<span class="token punctuation">.</span>month <span class="token operator">=</span> right<span class="token punctuation">.</span>month <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+    oldest<span class="token punctuation">.</span>day <span class="token operator">=</span> right<span class="token punctuation">.</span>day <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+bool <span class="token function">LessEqu</span><span class="token punctuation">(</span>Person p1<span class="token punctuation">,</span> Person p2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>year <span class="token operator">!=</span> p2<span class="token punctuation">.</span>year<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>year <span class="token operator">&lt;=</span> p2<span class="token punctuation">.</span>year<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>month <span class="token operator">!=</span> p2<span class="token punctuation">.</span>month<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>month <span class="token operator">&lt;=</span> p2<span class="token punctuation">.</span>month<span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>day <span class="token operator">&lt;=</span> p2<span class="token punctuation">.</span>day<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+bool <span class="token function">MoreEqu</span><span class="token punctuation">(</span>Person p1<span class="token punctuation">,</span> Person p2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>year <span class="token operator">!=</span> p2<span class="token punctuation">.</span>year<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>year <span class="token operator">>=</span> p2<span class="token punctuation">.</span>year<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>month <span class="token operator">!=</span> p2<span class="token punctuation">.</span>month<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>month <span class="token operator">>=</span> p2<span class="token punctuation">.</span>month<span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>day <span class="token operator">>=</span> p2<span class="token punctuation">.</span>day<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>N<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%d/%d/%d"</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>year<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>month<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//判断是否合法</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">MoreEqu</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> left<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">LessEqu</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">MoreEqu</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> youngest<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                youngest <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">LessEqu</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> oldest<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                oldest <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//特殊处理,否则会出格式错误</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %s %s"</span><span class="token punctuation">,</span> count<span class="token punctuation">,</span> oldest<span class="token punctuation">.</span>name<span class="token punctuation">,</span> youngest<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -866,7 +934,7 @@ Steve 1967/11/20
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">9.3k</span>
+            <span class="white-color">10.5k</span>
             
 
             
