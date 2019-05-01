@@ -4,11 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="A1002 A+B for Polynomials, 孙健的博客">
-    <meta name="description" content="1002 A+B for Polynomials
-This time, you are supposed to find A+B where A and B are two polynomials.
+    <meta name="keywords" content="B1027 打印沙漏, 孙健的博客">
+    <meta name="description" content="1027 打印沙漏
+本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印
 
-Input Specification">
+*****
+ ***
+  *
+ ***
+*****
+
+所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +22,7 @@ Input Specification">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>A1002 A+B for Polynomials | 孙健的博客</title>
+    <title>B1027 打印沙漏 | 孙健的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -243,13 +249,13 @@ Input Specification">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        A1002 A+B for Polynomials
+                        B1027 打印沙漏
                     </div>
                 </div>
             </div>
@@ -384,14 +390,14 @@ Input Specification">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-27
+                    2019-05-01
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        325
+                        399
                     </div>
                     
 
@@ -414,60 +420,71 @@ Input Specification">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1002-A-B-for-Polynomials"><a href="#1002-A-B-for-Polynomials" class="headerlink" title="1002 A+B for Polynomials"></a>1002 A+B for Polynomials</h2><blockquote>
-<p>This time, you are supposed to find A+B where A and B are two polynomials.</p>
+                <h2 id="1027-打印沙漏"><a href="#1027-打印沙漏" class="headerlink" title="1027 打印沙漏"></a>1027 打印沙漏</h2><blockquote>
+<p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:</p>
-<p>K N​1​​ a​N​1​​​​ N​2​​ a​N​2​​​​ … N​K​​ a​N​K​​​​</p>
-<p>where K is the number of nonzero terms in the polynomial, N​i​​ and a​N​i​​​​ (i=1,2,⋯,K) are the exponents and coefficients, respectively. It is given that 1≤K≤10，0≤N​K​​&lt;⋯&lt;N​2​​&lt;N​1​​≤1000.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case you should output the sum of A and B in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate to 1 decimal place.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>2 1 2.4 0 3.2
-2 2 1.5 1 0.5
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>3 2 1.5 1 2.9 0 3.2
+<pre><code>*****
+ ***
+  *
+ ***
+*****
+</code></pre><blockquote>
+<p>所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。</p>
+</blockquote>
+<blockquote>
+<p>给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。</p>
+</blockquote>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入在一行给出1个正整数N（≤1000）和一个符号，中间以空格分隔。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><pre><code>19 *
+</code></pre><h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>*****
+ ***
+  *
+ ***
+*****
+2
 </code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-
-<span class="token keyword">const</span> <span class="token keyword">int</span> max_n <span class="token operator">=</span> <span class="token number">1001</span><span class="token punctuation">;</span>
-<span class="token keyword">double</span> arr<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> K<span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">//非零项的项数</span>
-    <span class="token keyword">double</span> coefficients<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//系数</span>
-    <span class="token keyword">int</span> exponents<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//指数</span>
-    <span class="token comment" spellcheck="true">//读入第一个多项式</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>exponents<span class="token punctuation">,</span> <span class="token operator">&amp;</span>coefficients<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        arr<span class="token punctuation">[</span>exponents<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> coefficients<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//读入第二个多项式</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>coefficients<span class="token punctuation">,</span> <span class="token operator">&amp;</span>exponents<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        arr<span class="token punctuation">[</span>coefficients<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> exponents<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> num<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> C<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d %c"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">,</span> <span class="token operator">&amp;</span>C<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//三角形底边的字符数</span>
+    <span class="token keyword">int</span> bottom <span class="token operator">=</span> <span class="token function">floor</span><span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//底边需要为奇数</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>bottom <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        bottom<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//总共需要输出的非空格字符数</span>
+    <span class="token keyword">int</span> total <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span>bottom <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-    <span class="token comment" spellcheck="true">//计算非零系数项的个数</span>
-    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> max_n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">//输出倒三角</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> bottom<span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            count<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//输出空格</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token punctuation">(</span>bottom <span class="token operator">-</span> i<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//输出对应的字符</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> C<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">//输出多项式</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> max_n<span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">//输出正三角</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> bottom<span class="token punctuation">;</span> i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %d %.1lf"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//输出空格</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token punctuation">(</span>bottom <span class="token operator">-</span> i<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//输出对应的字符</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> C<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> num <span class="token operator">-</span> total<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -615,7 +632,7 @@ Input Specification">
                     </span>
                     <a href="https://www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/PAT/A1002-A-B-for-Polynomials/" class="b-link-green">A1002 A+B for Polynomials</a>
+                    <a href="/PAT/B1027-打印沙漏/" class="b-link-green">B1027 打印沙漏</a>
                 </p>
             </div>
         </div>
@@ -637,7 +654,7 @@ Input Specification">
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-04-27T18-24-57',
+        id: '2019-05-01T17-16-16',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -662,23 +679,21 @@ Input Specification">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/PAT/A1009-Product-of-Polynomials/">
+                <a href="/PAT/A1031-Hello-World-for-U/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg6.jpg" class="responsive-img" alt="A1009 Product of Polynomials">
+                        <img src="http://cdn.sunjian.xyz/featureimg16.jpg" class="responsive-img" alt="A1031 Hello World for U">
                         
-                        <span class="card-title">A1009 Product of Polynomials</span>
+                        <span class="card-title">A1031 Hello World for U</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1009 Product of Polynomials
-This time, you are supposed to find A×B where A and B are two polynomials.
-
-Input Specificat</div>
+                    <div class="summary block-with-text">1031 Hello World for U
+Given any string of N (≥5) characters, you are asked to form the characters into the shape of U. </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-27
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-01
                         </span>
                         <span class="publish-author">
                             
@@ -710,23 +725,21 @@ Input Specificat</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/PAT/B1010-一元多项式求导/">
+                <a href="/PAT/B1036-跟奥巴马一起编程/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg7.jpg" class="responsive-img" alt="B1010 一元多项式求导">
+                        <img src="http://cdn.sunjian.xyz/featureimg22.jpg" class="responsive-img" alt="B1036 跟奥巴马一起编程">
                         
-                        <span class="card-title">B1010 一元多项式求导</span>
+                        <span class="card-title">B1036 跟奥巴马一起编程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">010 一元多项式求导
-设计函数求一元多项式的导数。（注：(\boldsymbol{x}^{n})（n为整数）的一阶导数为(\boldsymbol{n} \boldsymbol{x}^{n-1}))。
-
-输入格式:以指数递降方式输入多项式非</div>
+                    <div class="summary block-with-text">1036 跟奥巴马一起编程
+美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014 年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-30
                             </span>
                         <span class="publish-author">
                             
