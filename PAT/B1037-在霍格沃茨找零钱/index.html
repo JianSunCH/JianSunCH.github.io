@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1037 在霍格沃茨找零钱, 孙健的博客">
-    <meta name="description" content="1037 在霍格沃茨找零钱
-
-如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的">
+    <meta name="description" content="1037 在霍格沃茨找零钱
+如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的价">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,7 +389,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        337
+                        348
                     </div>
                     
 
@@ -413,50 +412,38 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1037 在霍格沃茨找零钱</h2>
-<blockquote>
-<p>如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的价钱 P 和他实付的钱 A，你的任务是写一个程序来计算他应该被找的零钱。</p>
+                <h2 id="1037-在霍格沃茨找零钱"><a href="#1037-在霍格沃茨找零钱" class="headerlink" title="1037 在霍格沃茨找零钱"></a>1037 在霍格沃茨找零钱</h2><blockquote>
+<p>如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的价钱 P 和他实付的钱 A，你的任务是写一个程序来计算他应该被找的零钱。</p>
 </blockquote>
-<h3>输入格式：</h3>
-<p>输入在 1 行中分别给出 P 和 A，格式为 <code>Galleon.Sickle.Knut</code>，其间用 1 个空格分隔。这里 <code>Galleon</code> 是 [0, 10​7​​] 区间内的整数，<code>Sickle</code> 是 [0, 17) 区间内的整数，<code>Knut</code> 是 [0, 29) 区间内的整数。</p>
-<h3>输出格式：</h3>
-<p>在一行中用与输入同样的格式输出哈利应该被找的零钱。如果他没带够钱，那么输出的应该是负数。</p>
-<h3>输入样例 1：</h3>
-<pre><code>10.16.27 14.1.28 
-</code></pre>
-<h3>输出样例 1：</h3>
-<pre><code>3.2.1 
-</code></pre>
-<h3>输入样例 2：</h3>
-<pre><code>14.1.28 10.16.27 
-</code></pre>
-<h3>输出样例 2：</h3>
-<pre><code>-3.2.1
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在 1 行中分别给出 P 和 A，格式为 <code>Galleon.Sickle.Knut</code>，其间用 1 个空格分隔。这里 <code>Galleon</code> 是 [0, 10​7​​] 区间内的整数，<code>Sickle</code> 是 [0, 17) 区间内的整数，<code>Knut</code> 是 [0, 29) 区间内的整数。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中用与输入同样的格式输出哈利应该被找的零钱。如果他没带够钱，那么输出的应该是负数。</p>
+<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><pre><code>10.16.27 14.1.28 
+</code></pre><h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><pre><code>3.2.1 
+</code></pre><h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><pre><code>14.1.28 10.16.27 
+</code></pre><h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><pre><code>-3.2.1
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
 
-const int Galleon = 17 * 29;
-const int Sickle = 29;
+<span class="token keyword">const</span> <span class="token keyword">int</span> Galleon <span class="token operator">=</span> <span class="token number">17</span> <span class="token operator">*</span> <span class="token number">29</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> Sickle <span class="token operator">=</span> <span class="token number">29</span><span class="token punctuation">;</span>
 
-int main()
-{
-	int p1, p2, p3, a1, a2, a3;
-	scanf("%d.%d.%d %d.%d.%d", &p1, &p2, &p3, &a1, &a2, &a3);
-	int P = p1 * Galleon + p2 * Sickle + p3;
-	int A = a1 * Galleon + a2 * Sickle + a3;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">,</span> a1<span class="token punctuation">,</span> a2<span class="token punctuation">,</span> a3<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d.%d.%d %d.%d.%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>p1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>p2<span class="token punctuation">,</span> <span class="token operator">&amp;</span>p3<span class="token punctuation">,</span> <span class="token operator">&amp;</span>a1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>a2<span class="token punctuation">,</span> <span class="token operator">&amp;</span>a3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> P <span class="token operator">=</span> p1 <span class="token operator">*</span> Galleon <span class="token operator">+</span> p2 <span class="token operator">*</span> Sickle <span class="token operator">+</span> p3<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> A <span class="token operator">=</span> a1 <span class="token operator">*</span> Galleon <span class="token operator">+</span> a2 <span class="token operator">*</span> Sickle <span class="token operator">+</span> a3<span class="token punctuation">;</span>
 
-	int change = A - P; //要找的零钱
-	if (change < 0)
-	{
-		printf("-");
-		change = -change;
-	}
-	printf("%d.%d.%d\n", change / Galleon, change % Galleon / Sickle, change % Sickle);
+    <span class="token keyword">int</span> change <span class="token operator">=</span> A <span class="token operator">-</span> P<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//要找的零钱</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>change <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        change <span class="token operator">=</span> <span class="token operator">-</span>change<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d.%d.%d\n"</span><span class="token punctuation">,</span> change <span class="token operator">/</span> Galleon<span class="token punctuation">,</span> change <span class="token operator">%</span> Galleon <span class="token operator">/</span> Sickle<span class="token punctuation">,</span> change <span class="token operator">%</span> Sickle<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -661,9 +648,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1019 General Palindromic Number
-
-A number that will be the same when it is written forwards or backwards is known as a P</div>
+                    <div class="summary block-with-text">1019 General Palindromic Number
+A number that will be the same when it is written forwards or backwards is known as a Pa</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-02
@@ -708,14 +694,11 @@ A number that will be the same when it is written forwards or backwards is known
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1022 D进制的A+B
+                    <div class="summary block-with-text">1022 D进制的A+B
+输入两个非负 10 进制整数 A 和 B (≤2​30​​−1)，输出 A+B 的 D (1&lt;D≤10)进制数。
 
-输入两个非负 10 进制整数 A 和 B (≤2​30​​−1)，输出 A+B 的 D (1&lt;D≤10)进制数。
-
-输入格式：
-输入在一行中依次给出 3 个整数 A、B 和 D。
-输出格式：
-输出 A+B </div>
+输入格式：输入在一行中依次给出 3 个整数 A、B 和 D。
+输出格式：输出 A+B 的 D</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-02
@@ -894,7 +877,7 @@ A number that will be the same when it is written forwards or backwards is known
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">12.4k</span>
+            <span class="white-color">14.9k</span>
             
 
             
