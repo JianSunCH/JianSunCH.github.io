@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1019 General Palindromic Number, 孙健的博客">
-    <meta name="description" content="1019 General Palindromic Number
-A number that will be the same when it is written forwards or backwards is known as a Pa">
+    <meta name="description" content="1019 General Palindromic Number
+
+A number that will be the same when it is written forwards or backwards is known as a P">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,7 +390,7 @@ A number that will be the same when it is written forwards or backwards is known
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        408
+                        340
                     </div>
                     
 
@@ -412,60 +413,48 @@ A number that will be the same when it is written forwards or backwards is known
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1019-General-Palindromic-Number"><a href="#1019-General-Palindromic-Number" class="headerlink" title="1019 General Palindromic Number"></a>1019 General Palindromic Number</h2><blockquote>
-<p>A number that will be the same when it is written forwards or backwards is known as a <strong>Palindromic Number</strong>. For example, 1234321 is a palindromic number. All single digit numbers are palindromic numbers.</p>
+                <h2>1019 General Palindromic Number</h2>
+<blockquote>
+<p>A number that will be the same when it is written forwards or backwards is known as a <strong>Palindromic Number</strong>. For example, 1234321 is a palindromic number. All single digit numbers are palindromic numbers.</p>
 </blockquote>
 <blockquote>
-<p>Although palindromic numbers are most often considered in the decimal system, the concept of palindromicity can be applied to the natural numbers in any numeral system. Consider a number N&gt;0 in base b≥2, where it is written in standard notation with k+1 digits a​i​​ as $\sum_{i=0}^{k}\left(a_{i} b^{i}\right)$. Here, as usual, 0 ≤ ai​​ &lt; b for all i and a​k​​ is non-zero. Then N is palindromic if and only if a​i​​=a​k−i​​ for all i. Zero is written 0 in any base and is also palindromic by definition.</p>
+<p>Although palindromic numbers are most often considered in the decimal system, the concept of palindromicity can be applied to the natural numbers in any numeral system. Consider a number N&gt;0 in base b≥2, where it is written in standard notation with k+1 digits a​i​​ as $\sum_{i=0}^{k}\left(a_{i} b^{i}\right)$. Here, as usual, 0 ≤ ai​​ &lt; b for all i and a​k​​ is non-zero. Then N is palindromic if and only if a​i​​=a​k−i​​ for all i. Zero is written 0 in any base and is also palindromic by definition.</p>
 </blockquote>
 <blockquote>
-<p>Given any positive decimal integer N and a base b, you are supposed to tell if N is a palindromic number in base b.</p>
+<p>Given any positive decimal integer N and a base b, you are supposed to tell if N is a palindromic number in base b.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case consists of two positive numbers N and b, where 0&lt;N≤10​^9​​ is the decimal number and 2≤b≤10​^9​​ is the base. The numbers are separated by a space.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, first print in one line <code>Yes</code> if N is a palindromic number in base b, or <code>No</code> if not. Then in the next line, print N as the number in base b in the form “a​k​​ a​k−1​​ … a​0​​”. Notice that there must be no extra space at the end of output.</p>
-<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h3><pre><code>27 2 
-</code></pre><h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h3><pre><code>Yes 1 1 0 1 1 
-</code></pre><h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h3><pre><code>121 5 
-</code></pre><h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h3><pre><code>No 4 4 1 
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. Each case consists of two positive numbers N and b, where 0&lt;N≤10​^9​​ is the decimal number and 2≤b≤10​^9​​ is the base. The numbers are separated by a space.</p>
+<h3>Output Specification:</h3>
+<p>For each test case, first print in one line <code>Yes</code> if N is a palindromic number in base b, or <code>No</code> if not. Then in the next line, print N as the number in base b in the form &quot;a​k​​ a​k−1​​ ... a​0​​&quot;. Notice that there must be no extra space at the end of output.</p>
+<h3>Sample Input 1:</h3>
+<pre><code>27 2 
+</code></pre>
+<h3>Sample Output 1:</h3>
+<pre><code>Yes 1 1 0 1 1 
+</code></pre>
+<h3>Sample Input 2:</h3>
+<pre><code>121 5 
+</code></pre>
+<h3>Sample Output 2:</h3>
+<pre><code>No 4 4 1 
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
 
-<span class="token comment" spellcheck="true">//判断是否为回文</span>
-bool <span class="token function">isPalindromic</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> num<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> num <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> arr<span class="token punctuation">[</span>num <span class="token operator">-</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> true<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+//判断是否为回文
+bool isPalindromic(int arr[], int num)
+{
+	for (int i = 0; i <= num 2; i++) if (arr[i] !="arr[num" - i 1]) return false; true; } int main() { n, b; scanf("%d%d", &n, &b); 进制转换 arr[40], do arr[num++]="N" % n="while" (n bool flag="isPalindromic(arr," num); (flag) printf("yes\n"); else printf("no\n"); for (int 1;>= 0; i--)
+	{
+		printf("%d", arr[i]);
+		if (i != 0) //最后不能有空格
+			printf(" ");
+	}
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//进制转换</span>
-    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">,</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">do</span>
-    <span class="token punctuation">{</span>
-        arr<span class="token punctuation">[</span>num<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> N <span class="token operator">%</span> b<span class="token punctuation">;</span>
-        N <span class="token operator">/</span><span class="token operator">=</span> b<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>N <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    bool flag <span class="token operator">=</span> <span class="token function">isPalindromic</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Yes\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"No\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//最后不能有空格</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></bits></code></pre>
 
             </div>
             <hr>
@@ -670,8 +659,9 @@ bool <span class="token function">isPalindromic</span><span class="token punctua
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1027 Colors in Mars
-People in Mars represent the colors in their computers in a similar way as the Earth people. That is</div>
+                    <div class="summary block-with-text">1027 Colors in Mars
+
+People in Mars represent the colors in their computers in a similar way as the Earth people. That i</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-02
@@ -716,8 +706,9 @@ People in Mars represent the colors in their computers in a similar way as the E
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1037 在霍格沃茨找零钱
-如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的价</div>
+                    <div class="summary block-with-text">1037 在霍格沃茨找零钱
+
+如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-02
@@ -903,7 +894,7 @@ People in Mars represent the colors in their computers in a similar way as the E
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">14.9k</span>
+            <span class="white-color">15.4k</span>
             
 
             
