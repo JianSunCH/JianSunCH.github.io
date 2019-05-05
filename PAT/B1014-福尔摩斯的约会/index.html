@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1014 福尔摩斯的约会, 孙健的博客">
-    <meta name="description" content="1014 福尔摩斯的约会
-
-大侦探福尔摩斯接到一张奇怪的字条：我们约会吧！ 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;amp;hgsfdk d&amp;amp;Hyscvnm。大侦探很快就明白了，字条上奇怪的乱码实际">
+    <meta name="description" content="1014 福尔摩斯的约会
+大侦探福尔摩斯接到一张奇怪的字条：我们约会吧！ 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;amp;hgsfdk d&amp;amp;Hyscvnm。大侦探很快就明白了，字条上奇怪的乱码实际上">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,7 +389,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        481
+                        620
                     </div>
                     
 
@@ -413,48 +412,79 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1014 福尔摩斯的约会</h2>
-<blockquote>
-<p>大侦探福尔摩斯接到一张奇怪的字条：<code>我们约会吧！ 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;hgsfdk d&amp;Hyscvnm</code>。大侦探很快就明白了，字条上奇怪的乱码实际上就是约会的时间<code>星期四 14:04</code>，因为前面两字符串中第 1 对相同的大写英文字母（大小写有区分）是第 4 个字母 <code>D</code>，代表星期四；第 2 对相同的字符是 <code>E</code> ，那是第 5 个英文字母，代表一天里的第 14 个钟头（于是一天的 0 点到 23 点由数字 0 到 9、以及大写字母 <code>A</code> 到 <code>N</code> 表示）；后面两字符串第 1 对相同的英文字母 <code>s</code> 出现在第 4 个位置（从 0 开始计数）上，代表第 4 分钟。现给定两对字符串，请帮助福尔摩斯解码得到约会的时间。</p>
+                <h2 id="1014-福尔摩斯的约会"><a href="#1014-福尔摩斯的约会" class="headerlink" title="1014 福尔摩斯的约会"></a>1014 福尔摩斯的约会</h2><blockquote>
+<p>大侦探福尔摩斯接到一张奇怪的字条：<code>我们约会吧！ 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;hgsfdk d&amp;Hyscvnm</code>。大侦探很快就明白了，字条上奇怪的乱码实际上就是约会的时间<code>星期四 14:04</code>，因为前面两字符串中第 1 对相同的大写英文字母（大小写有区分）是第 4 个字母 <code>D</code>，代表星期四；第 2 对相同的字符是 <code>E</code> ，那是第 5 个英文字母，代表一天里的第 14 个钟头（于是一天的 0 点到 23 点由数字 0 到 9、以及大写字母 <code>A</code> 到 <code>N</code> 表示）；后面两字符串第 1 对相同的英文字母 <code>s</code> 出现在第 4 个位置（从 0 开始计数）上，代表第 4 分钟。现给定两对字符串，请帮助福尔摩斯解码得到约会的时间。</p>
 </blockquote>
-<h3>输入格式：</h3>
-<p>输入在 4 行中分别给出 4 个非空、不包含空格、且长度不超过 60 的字符串。</p>
-<h3>输出格式：</h3>
-<p>在一行中输出约会的时间，格式为 <code>DAY HH:MM</code>，其中 <code>DAY</code> 是某星期的 3 字符缩写，即 <code>MON</code> 表示星期一，<code>TUE</code> 表示星期二，<code>WED</code> 表示星期三，<code>THU</code> 表示星期四，<code>FRI</code> 表示星期五，<code>SAT</code> 表示星期六，<code>SUN</code> 表示星期日。题目输入保证每个测试存在唯一解。</p>
-<h3>输入样例：</h3>
-<pre><code>3485djDkxh4hhGE 
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在 4 行中分别给出 4 个非空、不包含空格、且长度不超过 60 的字符串。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出约会的时间，格式为 <code>DAY HH:MM</code>，其中 <code>DAY</code> 是某星期的 3 字符缩写，即 <code>MON</code> 表示星期一，<code>TUE</code> 表示星期二，<code>WED</code> 表示星期三，<code>THU</code> 表示星期四，<code>FRI</code> 表示星期五，<code>SAT</code> 表示星期六，<code>SUN</code> 表示星期日。题目输入保证每个测试存在唯一解。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code>3485djDkxh4hhGE 
 2984akDfkkkkggEdsb 
 s&amp;hgsfdk 
 d&amp;Hyscvnm 
-</code></pre>
-<h3>输出样例：</h3>
-<pre><code>THU 14:04
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
-using namespace std;
+</code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>THU 14:04
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-char day[7][4] = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
+<span class="token keyword">char</span> day<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"MON"</span><span class="token punctuation">,</span> <span class="token string">"TUE"</span><span class="token punctuation">,</span> <span class="token string">"WED"</span><span class="token punctuation">,</span> <span class="token string">"THU"</span><span class="token punctuation">,</span> <span class="token string">"FRI"</span><span class="token punctuation">,</span> <span class="token string">"SAT"</span><span class="token punctuation">,</span> <span class="token string">"SUN"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-int main()
-{
-	char string1[61];
-	char string2[61];
-	char string3[61];
-	char string4[61];
-	cin.getline(string1, 61);
-	cin.getline(string2, 61);
-	cin.getline(string3, 61);
-	cin.getline(string4, 61);
-	int length1 = strlen(string1);
-	int length2 = strlen(string2);
-	int length3 = strlen(string3);
-	int length4 = strlen(string4);
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> string1<span class="token punctuation">[</span><span class="token number">61</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> string2<span class="token punctuation">[</span><span class="token number">61</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> string3<span class="token punctuation">[</span><span class="token number">61</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> string4<span class="token punctuation">[</span><span class="token number">61</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    cin<span class="token punctuation">.</span><span class="token function">getline</span><span class="token punctuation">(</span>string1<span class="token punctuation">,</span> <span class="token number">61</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cin<span class="token punctuation">.</span><span class="token function">getline</span><span class="token punctuation">(</span>string2<span class="token punctuation">,</span> <span class="token number">61</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cin<span class="token punctuation">.</span><span class="token function">getline</span><span class="token punctuation">(</span>string3<span class="token punctuation">,</span> <span class="token number">61</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cin<span class="token punctuation">.</span><span class="token function">getline</span><span class="token punctuation">(</span>string4<span class="token punctuation">,</span> <span class="token number">61</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> length1 <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>string1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> length2 <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>string2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> length3 <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>string3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> length4 <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>string4<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	//寻找第一对相同的字母, 范围A~G
-	int i;
-	for (i = 0; i < length1 && i < length2; i++)
-		if (string1[i] == string2[i] && string1[i] >= 'A' && string1[i] <= 'g') { printf("%s ", day[string1[i] - 'a']); break; } 继续寻找下一对相同的字母, 范围0~9 a~n for (i++; i < length1 && length2; i++) if (string1[i]="=" string2[i])>= '0' && string1[i] <= '9') { printf("%02d:", string1[i] - '0'); break; } else if (string1[i]>= 'A' && string1[i] <= 'n') { printf("%02d:", string1[i] - 'a' + 10); break; } string3和string4中寻找第一对相同的字母,范围a~z a~z for (int i="0;" < length3 && length4; i++) if (string3[i]="=" string4[i]) ((string3[i]>= 'A' && string3[i] <= 'z') || (string3[i]>= 'a' && string3[i] <= 'z')) { printf("%02d", i); break; } return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></=></=></=></=></bits></code></pre>
+    <span class="token comment" spellcheck="true">//寻找第一对相同的字母, 范围A~G</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length1 <span class="token operator">&amp;&amp;</span> i <span class="token operator">&lt;</span> length2<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> string2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'A'</span> <span class="token operator">&amp;&amp;</span> string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'G'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s "</span><span class="token punctuation">,</span> day<span class="token punctuation">[</span>string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'A'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//继续寻找下一对相同的字母, 范围0~9 A~N</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">++</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length1 <span class="token operator">&amp;&amp;</span> i <span class="token operator">&lt;</span> length2<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> string2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'0'</span> <span class="token operator">&amp;&amp;</span> string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'9'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%02d:"</span><span class="token punctuation">,</span> string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'A'</span> <span class="token operator">&amp;&amp;</span> string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'N'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%02d:"</span><span class="token punctuation">,</span> string1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'A'</span> <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//string3和string4中寻找第一对相同的字母,范围A~Z a~z</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length3 <span class="token operator">&amp;&amp;</span> i <span class="token operator">&lt;</span> length4<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>string3<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> string4<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>string3<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'A'</span> <span class="token operator">&amp;&amp;</span> string3<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'Z'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span>string3<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'a'</span> <span class="token operator">&amp;&amp;</span> string3<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%02d"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -659,9 +689,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1061 Dating
-
-Sherlock Holmes received a note with some strange strings: Let's date! 3485djDkxh4hhGE 2984akDfkkkkggEdsb s</div>
+                    <div class="summary block-with-text">1061 Dating
+Sherlock Holmes received a note with some strange strings: Let&#39;s date! 3485djDkxh4hhGE 2984akDfkkkkggEds</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-05
@@ -706,12 +735,9 @@ Sherlock Holmes received a note with some strange strings: Let's date! 3485djDk
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1002 写出这个数
-》读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。
-输入格式：
-每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10​100​​。
-输出格式：
-在一行内输出 n 的各</div>
+                    <div class="summary block-with-text">1002 写出这个数》读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。
+输入格式：每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10​100​​。
+输出格式：在一行内输出 n 的各位数字</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-04
@@ -890,7 +916,7 @@ Sherlock Holmes received a note with some strange strings: Let's date! 3485djDk
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">15.4k</span>
+            <span class="white-color">17.1k</span>
             
 
             
