@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1046 划拳, 孙健的博客">
-    <meta name="description" content="1046 划拳 （15 分)
-划拳是古老中国酒文化的一个有趣的组成部分。酒桌上两人划拳的方法为：每人口中喊出一个数字，同时用手比划出一个数字。如果谁比划出的数字正好等于两人喊出的数字之和，谁就赢了，输家罚一杯酒。两人同赢或两人同输则继续下一">
+    <meta name="description" content="1046 划拳 （15 分)
+
+划拳是古老中国酒文化的一个有趣的组成部分。酒桌上两人划拳的方法为：每人口中喊出一个数字，同时用手比划出一个数字。如果谁比划出的数字正好等于两人喊出的数字之和，谁就赢了，输家罚一杯酒。两人同赢或两人同输则继续下">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,7 +390,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        386
+                        378
                     </div>
                     
 
@@ -412,46 +413,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1046-划拳-（15-分"><a href="#1046-划拳-（15-分" class="headerlink" title="1046 划拳 （15 分)"></a>1046 划拳 （15 分)</h2><blockquote>
+                <h2>1046 划拳 （15 分)</h2>
+<blockquote>
 <p>划拳是古老中国酒文化的一个有趣的组成部分。酒桌上两人划拳的方法为：每人口中喊出一个数字，同时用手比划出一个数字。如果谁比划出的数字正好等于两人喊出的数字之和，谁就赢了，输家罚一杯酒。两人同赢或两人同输则继续下一轮，直到唯一的赢家出现。</p>
 </blockquote>
 <blockquote>
 <p>下面给出甲、乙两人的划拳记录，请你统计他们最后分别喝了多少杯酒。</p>
 </blockquote>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行先给出一个正整数 N（≤100），随后 N 行，每行给出一轮划拳的记录，格式为：</p>
+<h3>输入格式：</h3>
+<p>输入第一行先给出一个正整数 N（≤100），随后 N 行，每行给出一轮划拳的记录，格式为：</p>
 <p><code>甲喊 甲划 乙喊 乙划</code></p>
 <p>其中<code>喊</code>是喊出的数字，<code>划</code>是划出的数字，均为不超过 100 的正整数（两只手一起划）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中先后输出甲、乙两人喝酒的杯数，其间以一个空格分隔。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>5</code><br><code>8 10 9 12</code><br><code>5 10 5 10</code><br><code>3 8 5 12</code><br><code>12 18 1 13</code><br><code>4 16 12 15</code> </p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>1 2</code></p>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<h3>输出格式：</h3>
+<p>在一行中先后输出甲、乙两人喝酒的杯数，其间以一个空格分隔。</p>
+<h3>输入样例：</h3>
+<p><code>5</code>
+<code>8 10 9 12</code>
+<code>5 10 5 10</code>
+<code>3 8 5 12</code>
+<code>12 18 1 13</code>
+<code>4 16 12 15</code></p>
+<h3>输出样例：</h3>
+<p><code>1 2</code></p>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//a1为甲喊的数,a2为甲比划的数,b1为乙喊的数,b2为乙比划的数</span>
-    <span class="token comment" spellcheck="true">//cupA为甲喝的杯数,cupB为乙喝的杯数</span>
-    <span class="token keyword">int</span> a1<span class="token punctuation">,</span> a2<span class="token punctuation">,</span> b1<span class="token punctuation">,</span> b2<span class="token punctuation">,</span> cupA <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> cupB <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>N<span class="token operator">--</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>a2<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//甲赢</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>a1 <span class="token operator">+</span> b1 <span class="token operator">==</span> a2 <span class="token operator">&amp;&amp;</span> a1 <span class="token operator">+</span> b1 <span class="token operator">!=</span> b2<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            cupB<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">//乙赢</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>a1 <span class="token operator">+</span> b1 <span class="token operator">==</span> b2 <span class="token operator">&amp;&amp;</span> a1 <span class="token operator">+</span> b1 <span class="token operator">!=</span> a2<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            cupA<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span> cupA<span class="token punctuation">,</span> cupB<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+int main()
+{
+	//a1为甲喊的数,a2为甲比划的数,b1为乙喊的数,b2为乙比划的数
+	//cupA为甲喝的杯数,cupB为乙喝的杯数
+	int a1, a2, b1, b2, cupA = 0, cupB = 0;
+	int N;
+	scanf("%d", &N);
+	while (N--)
+	{
+		scanf("%d%d%d%d", &a1, &a2, &b1, &b2);
+		//甲赢
+		if (a1 + b1 == a2 && a1 + b1 != b2)
+		{
+			cupB++;
+		}
+		//乙赢
+		if (a1 + b1 == b2 && a1 + b1 != a2)
+		{
+			cupA++;
+		}
+	}
+	printf("%d %d\n", cupA, cupB);
+	
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -656,8 +668,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1008 数组元素循环右移问题
-一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A​0​​A​1​​⋯A​N−1​​）变换为（A​N−M​​⋯A​N−1​​A​0</div>
+                    <div class="summary block-with-text">1008 数组元素循环右移问题
+
+一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A​0​​A​1​​⋯A​N−1​​）变换为（A​N−M​​⋯A​N−1​​A​</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
@@ -702,8 +715,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1026 程序运行时间
-要获得一个 C 语言程序的运行时间，常用的方法是调用头文件 time.h，其中提供了 clock() 函数，可以捕捉从程序开始运行到 clock() 被调用时所耗费的时间。这个时间单位是 clock tick，即“时</div>
+                    <div class="summary block-with-text">1026 程序运行时间
+
+要获得一个 C 语言程序的运行时间，常用的方法是调用头文件 time.h，其中提供了 clock() 函数，可以捕捉从程序开始运行到 clock() 被调用时所耗费的时间。这个时间单位是 clock tick，即“</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
@@ -882,7 +896,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">17.9k</span>
+            <span class="white-color">16.3k</span>
             
 
             

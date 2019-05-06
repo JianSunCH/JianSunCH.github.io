@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1041 考试座位号, 孙健的博客">
-    <meta name="description" content="1041 考试座位号
-每个 PAT 考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有些">
+    <meta name="description" content="1041 考试座位号
+
+每个 PAT 考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,7 +390,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        492
+                        481
                     </div>
                     
 
@@ -412,56 +413,64 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1041-考试座位号"><a href="#1041-考试座位号" class="headerlink" title="1041 考试座位号"></a>1041 考试座位号</h2><blockquote>
+                <h2>1041 考试座位号</h2>
+<blockquote>
 <p>每个 PAT 考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有些考生迟到了，试机已经结束，他们只能拿着领到的试机座位号码求助于你，从后台查出他们的考试座位号码。</p>
 </blockquote>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数 N（≤1000），随后 N 行，每行给出一个考生的信息：<code>准考证号 试机座位号 考试座位号</code>。其中<code>准考证号</code>由 16 位数字组成，座位从 1 到 N 编号。输入保证每个人的准考证号都不同，并且任何时候都不会把两个人分配到同一个座位上。</p>
-<p>考生信息之后，给出一个正整数 M（≤N），随后一行中给出 M 个待查询的试机座位号码，以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对应每个需要查询的试机座位号码，在一行中输出对应考生的准考证号和考试座位号码，中间用 1 个空格分隔。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code>4 
+<h3>输入格式：</h3>
+<p>输入第一行给出一个正整数 N（≤1000），随后 N 行，每行给出一个考生的信息：<code>准考证号 试机座位号 考试座位号</code>。其中<code>准考证号</code>由 16 位数字组成，座位从 1 到 N 编号。输入保证每个人的准考证号都不同，并且任何时候都不会把两个人分配到同一个座位上。</p>
+<p>考生信息之后，给出一个正整数 M（≤N），随后一行中给出 M 个待查询的试机座位号码，以空格分隔。</p>
+<h3>输出格式：</h3>
+<p>对应每个需要查询的试机座位号码，在一行中输出对应考生的准考证号和考试座位号码，中间用 1 个空格分隔。</p>
+<h3>输入样例：</h3>
+<pre><code>4 
 3310120150912233 2 4 
 3310120150912119 4 1 
 3310120150912126 1 3 
 3310120150912002 3 2 2 3 4 
-</code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>3310120150912002 2
+</code></pre>
+<h3>输出样例：</h3>
+<pre><code>3310120150912002 2
 3310120150912119 1
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
 
-<span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">1001</span><span class="token punctuation">;</span>
-<span class="token keyword">struct</span> Student
-<span class="token punctuation">{</span>
-    <span class="token keyword">long</span> <span class="token keyword">long</span> id<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//准考证号</span>
-    <span class="token keyword">int</span> examId<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//考试座位号</span>
+const int maxn = 1001;
+struct Student
+{
+	long long id; //准考证号
+	int examId;   //考试座位号
 
-<span class="token punctuation">}</span> testSeat<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+} testSeat[maxn];
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+int main()
+{
+	int N;
+	scanf("%d", &N);
 
-    <span class="token keyword">long</span> <span class="token keyword">long</span> _id<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//_testId试机座位号, _examId考试座位号</span>
-    <span class="token keyword">int</span> _testId<span class="token punctuation">,</span> _examId<span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>N<span class="token operator">--</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>_id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>_testId<span class="token punctuation">,</span> <span class="token operator">&amp;</span>_examId<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//存入试机学生的准考证号以及考试座位号</span>
-        testSeat<span class="token punctuation">[</span>_testId<span class="token punctuation">]</span><span class="token punctuation">.</span>id <span class="token operator">=</span> _id<span class="token punctuation">;</span>
-        testSeat<span class="token punctuation">[</span>_testId<span class="token punctuation">]</span><span class="token punctuation">.</span>examId <span class="token operator">=</span> _examId<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+	long long _id;
+	//_testId试机座位号, _examId考试座位号
+	int _testId, _examId;
+	while (N--)
+	{
+		scanf("%lld%d%d", &_id, &_testId, &_examId);
+		//存入试机学生的准考证号以及考试座位号
+		testSeat[_testId].id = _id;
+		testSeat[_testId].examId = _examId;
+	}
 
-    <span class="token keyword">int</span> M<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>M<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>_testId<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld %d\n"</span><span class="token punctuation">,</span> testSeat<span class="token punctuation">[</span>_testId<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> testSeat<span class="token punctuation">[</span>_testId<span class="token punctuation">]</span><span class="token punctuation">.</span>examId<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+	int M;
+	scanf("%d", &M);
+	for (int i = 0; i < M; i++)
+	{
+		scanf("%d", &_testId);
+		printf("%lld %d\n", testSeat[_testId].id, testSeat[_testId].examId);
+	}
 
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -666,8 +675,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1006 Sign In and Sign Out
-At the beginning of every day, the first person who signs in the computer room will unlock the</div>
+                    <div class="summary block-with-text">1006 Sign In and Sign Out
+
+At the beginning of every day, the first person who signs in the computer room will unlock th</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -712,11 +722,12 @@ At the beginning of every day, the first person who signs in the computer room w
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1028 人口普查
+                    <div class="summary block-with-text">1028 人口普查
+
 某城镇进行人口普查，得到了全体居民的生日。现请你写个程序，找出镇上最年长和最年轻的人。
 
 
-这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 6</div>
+这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -895,7 +906,7 @@ At the beginning of every day, the first person who signs in the computer room w
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">17.9k</span>
+            <span class="white-color">16.3k</span>
             
 
             
