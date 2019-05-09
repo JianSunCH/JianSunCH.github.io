@@ -1,1 +1,3 @@
 https://www.jiansunch.com/PAT/A1082-Read-Number-in-Chinese/
+https://www.jiansunch.com/PAT/A1077-Kuchiguse/
+https://www.jiansunch.com/PAT/A1035-Password/
