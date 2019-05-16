@@ -4,13 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="6-12 解密, 孙健的博客">
-    <meta name="description" content="习题6-12 解密题目描述有一行电文，已按如下规律译成密码：
-A–&amp;gt;Z        a–&amp;gt;z
-B–&amp;gt;Y        b–&amp;gt;y
-C–&amp;gt;X        c–&amp;gt;x
-……          ……
-即第一个字">
+    <meta name="keywords" content="A1055 The World Richest, 孙健的博客">
+    <meta name="description" content="1055 The World’s Richest
+Forbes magazine publishes every year its list of billionaires based on the annual ranking of th">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +14,7 @@ C–&amp;gt;X        c–&amp;gt;x
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>6-12 解密 | 孙健的博客</title>
+    <title>A1055 The World Richest | 孙健的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -245,13 +241,13 @@ C–&amp;gt;X        c–&amp;gt;x
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg91.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg29.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        6-12 解密
+                        A1055 The World Richest
                     </div>
                 </div>
             </div>
@@ -362,8 +358,8 @@ C–&amp;gt;X        c–&amp;gt;x
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/codeup/" target="_blank">
-                                <span class="chip bg-color">codeup</span>
+                            <a href="/tags/PAT/" target="_blank">
+                                <span class="chip bg-color">PAT</span>
                             </a>
                         
                     </div>
@@ -386,21 +382,21 @@ C–&amp;gt;X        c–&amp;gt;x
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-03
+                    2019-05-16
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        178
+                        663
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -416,37 +412,103 @@ C–&amp;gt;X        c–&amp;gt;x
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="习题6-12-解密"><a href="#习题6-12-解密" class="headerlink" title="习题6-12 解密"></a>习题6-12 解密</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一行电文，已按如下规律译成密码：</p>
-<p>A–&gt;Z        a–&gt;z</p>
-<p>B–&gt;Y        b–&gt;y</p>
-<p>C–&gt;X        c–&gt;x</p>
-<p>……          ……</p>
-<p>即第一个字母变成第26个字母，第i个字母变成第（26-i+1)个字母，非字母字符不变。要求根据密码译回原文，并输出。</p>
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>输入一行密文</p>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>解密后的原文，单独占一行。</p>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p><code>ZYX123zyx</code></p>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p><code>ABC123abc</code></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
+                <h2 id="1055-The-World’s-Richest"><a href="#1055-The-World’s-Richest" class="headerlink" title="1055 The World’s Richest"></a>1055 The World’s Richest</h2><blockquote>
+<p>Forbes magazine publishes every year its list of billionaires based on the annual ranking of the world’s wealthiest people. Now you are supposed to simulate this job, but concentrate only on the people in a certain range of ages. That is, given the net worths of N people, you must find the M richest people in a given range of their ages.</p>
+</blockquote>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains 2 positive integers: N (≤10​5​​) - the total number of people, and K (≤10​3​​) - the number of queries. Then N lines follow, each contains the name (string of no more than 8 characters without space), age (integer in (0, 200]), and the net worth (integer in [−10​^6​​,10​^6​​]) of a person. Finally there are K lines of queries, each contains three positive integers: M (≤100) - the maximum number of outputs, and [<code>Amin</code>, <code>Amax</code>] which are the range of ages. All the numbers in a line are separated by a space.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each query, first print in a line <code>Case #X:</code> where <code>X</code> is the query number starting from 1. Then output the M richest people with their ages in the range [<code>Amin</code>, <code>Amax</code>]. Each person’s information occupies a line, in the format</p>
+<pre><code>Name Age Net_Worth 
+</code></pre><p>The outputs must be in non-increasing order of the net worths. In case there are equal worths, it must be in non-decreasing order of the ages. If both worths and ages are the same, then the output must be in non-decreasing alphabetical order of the names. It is guaranteed that there is no two persons share all the same of the three pieces of information. In case no one is found, output <code>None</code>.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>12 4 
+Zoe_Bill 35 2333 
+Bob_Volk 24 5888 
+Anny_Cin 95 999999 
+Williams 30 -22 
+Cindy 76 76000 
+Alice 18 88888 
+Joe_Mike 32 3222 
+Michael 5 300000 
+Rosemary 40 5888 
+Dobby 24 5888 
+Billy 24 5888 
+Nobody 5 0 
+4 15 45 
+4 30 35 
+4 5 95 
+1 45 50 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>Case #1: 
+Alice 18 88888 
+Billy 24 5888 
+Bob_Volk 24 5888 
+Dobby 24 5888 
+Case #2: 
+Joe_Mike 32 3222 
+Zoe_Bill 35 2333 
+Williams 30 -22 
+Case #3: 
+Anny_Cin 95 999999 
+Michael 5 300000 
+Alice 18 88888 
+Cindy 76 76000 
+Case #4: 
+None
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> max_n <span class="token operator">=</span> <span class="token number">100001</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> age_num<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//每个年龄所对应的人数</span>
+
+<span class="token keyword">struct</span> Person
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">,</span> worth<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> person<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">,</span> valid<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//M范围在100以内,将每个年龄中财富值前100的人存到一个数组中,以防超时</span>
+
+<span class="token keyword">bool</span> <span class="token function">cmp</span><span class="token punctuation">(</span>Person p1<span class="token punctuation">,</span> Person p2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>worth <span class="token operator">!=</span> p2<span class="token punctuation">.</span>worth<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>worth <span class="token operator">></span> p2<span class="token punctuation">.</span>worth<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>age <span class="token operator">!=</span> p2<span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>age <span class="token operator">&lt;</span> p2<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span>name<span class="token punctuation">,</span> p2<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    <span class="token keyword">char</span> pass<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token function">gets</span><span class="token punctuation">(</span>pass<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">,</span> K<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%d%d"</span><span class="token punctuation">,</span> person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span> <span class="token operator">&amp;</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>worth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">sort</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> person <span class="token operator">+</span> N<span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> valid_num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//需要存入valid数组的人数</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>age_num<span class="token punctuation">[</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>age<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            age_num<span class="token punctuation">[</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>age<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+            valid<span class="token punctuation">[</span>valid_num<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> M<span class="token punctuation">,</span> rangeL<span class="token punctuation">,</span> rangeR<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'a'</span> <span class="token operator">&amp;&amp;</span> pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'z'</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'a'</span> <span class="token operator">+</span> <span class="token string">'z'</span> <span class="token operator">-</span> pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'A'</span> <span class="token operator">&amp;&amp;</span> pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'Z'</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'A'</span> <span class="token operator">+</span> <span class="token string">'Z'</span> <span class="token operator">-</span> pass<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>M<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rangeL<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rangeR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Case #%d:\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> print_num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//以输出的人数</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> valid_num <span class="token operator">&amp;&amp;</span> print_num <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>age <span class="token operator">>=</span> rangeL <span class="token operator">&amp;&amp;</span> valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>age <span class="token operator">&lt;=</span> rangeR<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %d %d\n"</span><span class="token punctuation">,</span> valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span> valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>worth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                print_num<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>print_num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"None\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token function">puts</span><span class="token punctuation">(</span>pass<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -594,7 +656,7 @@ C–&amp;gt;X        c–&amp;gt;x
                     </span>
                     <a href="https://www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/codeup/6-12-解密/" class="b-link-green">6-12 解密</a>
+                    <a href="/PAT/A1055-The-World-Richest/" class="b-link-green">A1055 The World Richest</a>
                 </p>
             </div>
         </div>
@@ -616,7 +678,7 @@ C–&amp;gt;X        c–&amp;gt;x
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-04-03T23-09-05',
+        id: '2019-05-16T16-37-50',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -641,22 +703,21 @@ C–&amp;gt;X        c–&amp;gt;x
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/codeup/A-B/">
+                <a href="/PAT/A1075-PAT-Judge/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg24.jpg" class="responsive-img" alt="A+B">
+                        <img src="http://cdn.sunjian.xyz/featureimg104.jpg" class="responsive-img" alt="A1075 PAT Judge">
                         
-                        <span class="card-title">A+B</span>
+                        <span class="card-title">A1075 PAT Judge</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">A+B 输入输出练习I题目描述你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。  
-输入输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。  
-输</div>
+                    <div class="summary block-with-text">1075 PAT Judge
+The ranklist of PAT is generated from the status list, which shows the scores of the submissions. This ti</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-16
                         </span>
                         <span class="publish-author">
                             
@@ -673,8 +734,8 @@ C–&amp;gt;X        c–&amp;gt;x
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/codeup/" target="_blank">
-                        <span class="chip bg-color">codeup</span>
+                    <a href="/tags/PAT/" target="_blank">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>
@@ -688,24 +749,23 @@ C–&amp;gt;X        c–&amp;gt;x
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/codeup/6-6-杨辉三角/">
+                <a href="/PAT/A1028-List-Sorting/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg37.jpg" class="responsive-img" alt="6-6 杨辉三角">
+                        <img src="http://cdn.sunjian.xyz/featureimg4.jpg" class="responsive-img" alt="A1028 List Sorting">
                         
-                        <span class="card-title">6-6 杨辉三角</span>
+                        <span class="card-title">A1028 List Sorting</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">习题6-6 杨辉三角题目描述按要求输入如下格式的杨辉三角
-11 11 2 11 3 3 11 4 6 4 11 5 10 10 5 1
-最多输出10层
-输入输入只包含一个正整数n，表示将要输出的杨辉三角的层数。
-输出对应于该输入，请输出相应</div>
+                    <div class="summary block-with-text">1028 List Sorting
+Excel can sort records according to any column. Now you are supposed to imitate this function.
+
+Input </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-15
                             </span>
                         <span class="publish-author">
                             
@@ -722,8 +782,8 @@ C–&amp;gt;X        c–&amp;gt;x
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/codeup/" target="_blank">
-                        <span class="chip bg-color">codeup</span>
+                    <a href="/tags/PAT/" target="_blank">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>
