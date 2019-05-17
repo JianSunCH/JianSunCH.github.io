@@ -5,12 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A+B, 孙健的博客">
-    <meta name="description" content="A+B 输入输出练习I
-题目描述
-你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。
-输入
-输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。
-输出">
+    <meta name="description" content="A+B 输入输出练习I题目描述你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。  
+输入输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。  
+输">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -393,7 +390,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        550
+                        555
                     </div>
                     
 
@@ -416,124 +413,86 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>A+B 输入输出练习I</h1>
-<h2>题目描述</h2>
-<p>你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。</p>
-<h2>输入</h2>
-<p>输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。</p>
-<h2>输出</h2>
-<p>对于输入的每对a和b，你需要依次输出a、b的和。</p>
-<p>如对于输入中的第二对a和b，在输出中它们的和应该也在第二行。</p>
-<h2>样例输入</h2>
-<p><code>1 5</code>
-<code>10 20</code></p>
-<h2>样例输出</h2>
-<p><code>6</code>
-<code>30</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
+                <h1 id="A-B-输入输出练习I"><a href="#A-B-输入输出练习I" class="headerlink" title="A+B 输入输出练习I"></a>A+B 输入输出练习I</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。  </p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。  </p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>对于输入的每对a和b，你需要依次输出a、b的和。</p>
+<p>如对于输入中的第二对a和b，在输出中它们的和应该也在第二行。  </p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p><code>1 5</code><br><code>10 20</code></p>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p><code>6</code><br><code>30</code></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
 
-int main()
-{
-    int a, b;
-    while(scanf("%d%d", &a, &b) != EOF){
-        printf("%d\n", a + b);
-    }
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
-<h2>输入</h2>
-<p>第一行是一个整数N，表示后面会有N行a和b，通过空格隔开。</p>
-<h2>输出</h2>
-<p>对于输入的每对a和b，你需要在相应的行输出a、b的和。
-如第二对a和b，对应的和也输出在第二行。</p>
-<h2>样例输入</h2>
-<p><code>2</code>
-<code>1 5</code>
-<code>10 20</code></p>
-<h2>样例输出</h2>
-<p><code>6</code>
-<code>30</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h2><p>第一行是一个整数N，表示后面会有N行a和b，通过空格隔开。</p>
+<h2 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h2><p>对于输入的每对a和b，你需要在相应的行输出a、b的和。<br>如第二对a和b，对应的和也输出在第二行。</p>
+<h2 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h2><p><code>2</code><br><code>1 5</code><br><code>10 20</code></p>
+<h2 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h2><p><code>6</code><br><code>30</code></p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
 
-int main()
-{
-    int a, b, N;
-    scanf("%d", &N);
-    while (N--)
-    {
-        scanf("%d%d", &a, &b);
-        printf("%d\n", a + b);
-    }
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
-<h2>输入</h2>
-<p>输入中每行是一对a和b。其中会有一对是0和0标志着输入结束，且这一对不要计算。</p>
-<h2>输出</h2>
-<p>对于输入的每对a和b，你需要在相应的行输出a、b的和。</p>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> N<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>N<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h2><p>输入中每行是一对a和b。其中会有一对是0和0标志着输入结束，且这一对不要计算。  </p>
+<h2 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h2><p>对于输入的每对a和b，你需要在相应的行输出a、b的和。</p>
 <p>如第二对a和b，他们的和也输出在第二行。</p>
-<h2>样例输入</h2>
-<p><code>1 5</code>
-<code>10 20</code>
-<code>0 0</code></p>
-<h2>样例输出</h2>
-<p><code>6</code>
-<code>30</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
+<h2 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a>样例输入</h2><p><code>1 5</code><br><code>10 20</code><br><code>0 0</code></p>
+<h2 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a>样例输出</h2><p><code>6</code><br><code>30</code></p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
 
-int main()
-{
-    int a, b;
-    while (scanf("%d%d", &a, &b), a || b)
-    {
-        printf("%d\n", a + b);
-    }
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
-<h2>输入</h2>
-<p>输入的第一行为一个整数N，接下来N行每行先输入一个整数M，然后在同一行内输入M个整数。</p>
-<h2>输出</h2>
-<p>对于每组输入，输出M个数的和，每组输出之间输出一个空行。</p>
-<h2>样例输入</h2>
-<p><code>3</code>
-<code>4 1 2 3 4</code>
-<code>5 1 2 3 4 5</code>
-<code>3 1 2 3</code></p>
-<h2>样例输出</h2>
-<p><code>10</code>
-<code></code>
-<code>15</code>
-<code></code>
-<code>6</code></p>
-<h2>代码</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> a <span class="token operator">||</span> b<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="输入-3"><a href="#输入-3" class="headerlink" title="输入"></a>输入</h2><p>输入的第一行为一个整数N，接下来N行每行先输入一个整数M，然后在同一行内输入M个整数。</p>
+<h2 id="输出-3"><a href="#输出-3" class="headerlink" title="输出"></a>输出</h2><p>对于每组输入，输出M个数的和，每组输出之间输出一个空行。</p>
+<h2 id="样例输入-3"><a href="#样例输入-3" class="headerlink" title="样例输入"></a>样例输入</h2><p><code>3</code><br><code>4 1 2 3 4</code><br><code>5 1 2 3 4 5</code><br><code>3 1 2 3</code></p>
+<h2 id="样例输出-3"><a href="#样例输出-3" class="headerlink" title="样例输出"></a>样例输出</h2><p><code>10</code><br><code></code><br><code>15</code><br><code></code><br><code>6</code></p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
 
-int main()
-{
-    int a, b, N, M, num;
-    scanf("%d", &N);
-    while (N--)
-    {
-        int sum = 0;
-        scanf("%d", &M);
-        for (int i = 0; i < M; i++)
-        {
-            scanf("%d", &num);
-            sum += num;
-        }
-        printf("%d\n", sum);
-        if (N > 0)
-        {
-            printf("\n");
-        }
-    }
-    return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> N<span class="token punctuation">,</span> M<span class="token punctuation">,</span> num<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>N<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>M<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sum <span class="token operator">+</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>N <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -679,7 +638,7 @@ int main()
                     <span class="reprint-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="http://www.jiansunch.com" class="b-link-green">孙健的博客</a>
+                    <a href="www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/codeup/A-B/" class="b-link-green">A+B</a>
                 </p>
@@ -738,15 +697,11 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">百钱白鸡
-题目描述
-
-鸡翁一值钱五, 鸡母一值钱三, 鸡雏三值钱一. 百钱买百鸡, 问鸡翁, 鸡母, 鸡雏各几何
-—— 张丘建《算经》
+                    <div class="summary block-with-text">百钱白鸡题目描述
+鸡翁一值钱五, 鸡母一值钱三, 鸡雏三值钱一. 百钱买百鸡, 问鸡翁, 鸡母, 鸡雏各几何—— 张丘建《算经》
 
 求解方法
-
-先构造可能的解的集合S={(X,Y,Z)|0&lt;=X,Y,Z&lt;=100} X, </div>
+先构造可能的解的集合S={(X,Y,Z)|0&lt;=X,Y,Z&lt;=100} X, Y, Z</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-16
@@ -791,13 +746,12 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">习题6-12 解密
-题目描述
-有一行电文，已按如下规律译成密码：
-A--&gt;Z        a--&gt;z
-B--&gt;Y        b--&gt;y
-C--&gt;X        c--&gt;x
-......      </div>
+                    <div class="summary block-with-text">习题6-12 解密题目描述有一行电文，已按如下规律译成密码：
+A–&gt;Z        a–&gt;z
+B–&gt;Y        b–&gt;y
+C–&gt;X        c–&gt;x
+……          ……
+即第一个字</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
@@ -976,7 +930,7 @@ C--&gt;X        c--&gt;x
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">24k</span>
+            <span class="white-color">26.5k</span>
             
 
             

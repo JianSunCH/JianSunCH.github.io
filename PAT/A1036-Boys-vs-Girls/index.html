@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1036 Boys vs Girls, 孙健的博客">
-    <meta name="description" content="1036 Boys vs Girls
-
-This time you are asked to tell the difference between the lowest grade of all the male students and">
+    <meta name="description" content="1036 Boys vs Girls
+This time you are asked to tell the difference between the lowest grade of all the male students and ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,14 +389,14 @@ This time you are asked to tell the difference between the lowest grade of all t
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        253
+                        374
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -413,53 +412,77 @@ This time you are asked to tell the difference between the lowest grade of all t
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1036 Boys vs Girls</h2>
-<blockquote>
+                <h2 id="1036-Boys-vs-Girls"><a href="#1036-Boys-vs-Girls" class="headerlink" title="1036 Boys vs Girls"></a>1036 Boys vs Girls</h2><blockquote>
 <p>This time you are asked to tell the difference between the lowest grade of all the male students and the highest grade of all the female students.</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case. Each case contains a positive integer N, followed by N lines of student information. Each line contains a student's <code>name</code>, <code>gender</code>, <code>ID</code>and <code>grade</code>, separated by a space, where <code>name</code> and <code>ID</code> are strings of no more than 10 characters with no space, <code>gender</code> is either <code>F</code> (female) or <code>M</code> (male), and <code>grade</code> is an integer between 0 and 100. It is guaranteed that all the grades are distinct.</p>
-<h3>Output Specification:</h3>
-<p>For each test case, output in 3 lines. The first line gives the name and ID of the female student with the highest grade, and the second line gives that of the male student with the lowest grade. The third line gives the difference grade​F​​−grade​M​​. If one such kind of student is missing, output <code>Absent</code> in the corresponding line, and output <code>NA</code> in the third line instead.</p>
-<h3>Sample Input 1:</h3>
-<pre><code>3 
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case contains a positive integer N, followed by N lines of student information. Each line contains a student’s <code>name</code>, <code>gender</code>, <code>ID</code>and <code>grade</code>, separated by a space, where <code>name</code> and <code>ID</code> are strings of no more than 10 characters with no space, <code>gender</code> is either <code>F</code> (female) or <code>M</code> (male), and <code>grade</code> is an integer between 0 and 100. It is guaranteed that all the grades are distinct.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, output in 3 lines. The first line gives the name and ID of the female student with the highest grade, and the second line gives that of the male student with the lowest grade. The third line gives the difference grade​F​​−grade​M​​. If one such kind of student is missing, output <code>Absent</code> in the corresponding line, and output <code>NA</code> in the third line instead.</p>
+<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h3><pre><code>3 
 Joe M Math990112 89 
 Mike M CS991301 100 
 Mary F EE990830 95 
-</code></pre>
-<h3>Sample Output 1:</h3>
-<pre><code>Mary EE990830 
+</code></pre><h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h3><pre><code>Mary EE990830 
 Joe Math990112 
 6 
-</code></pre>
-<h3>Sample Input 2:</h3>
-<pre><code>1 
+</code></pre><h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h3><pre><code>1 
 Jean M AA980920 60 
-</code></pre>
-<h3>Sample Output 2:</h3>
-<pre><code>Absent 
+</code></pre><h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h3><pre><code>Absent 
 Jean AA980920 
 NA
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
 
-struct Student
-{
-	char name[11];
-	char id[11];
-	int grade;
-} temp, male, female;
+<span class="token keyword">struct</span> Student
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> id<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> grade<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> temp<span class="token punctuation">,</span> male<span class="token punctuation">,</span> female<span class="token punctuation">;</span>
 
-void init()
-{
-	male.grade = 101;
-	female.grade = -1;
-}
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    male<span class="token punctuation">.</span>grade <span class="token operator">=</span> <span class="token number">101</span><span class="token punctuation">;</span>
+    female<span class="token punctuation">.</span>grade <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-bool compare(Student s1, Student s2)
-{
-	return s1.grade <= s2.grade; } int main() { init(); n; scanf("%d", &n); char gender; while (n--) scanf("%s %c %s%d", temp.name, &gender, temp.id, &temp.grade); if (gender="=" 'm' && compare(temp, male)) male="temp;" else 'f' !compare(temp, female)) female="temp;" 没有女生 (female.grade="=" -1) printf("absent\n"); printf("%s %s\n", female.name, female.id); 没有男生 (male.grade="=" 101) male.name, male.id); 缺少一人分数 -1 || male.grade="=" printf("na\n"); printf("%d\n", female.grade - male.grade); return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></bits></code></pre>
+bool <span class="token function">compare</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> s1<span class="token punctuation">.</span>grade <span class="token operator">&lt;=</span> s2<span class="token punctuation">.</span>grade<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> gender<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>N<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s %c %s%d"</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>gender<span class="token punctuation">,</span> temp<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>grade<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>gender <span class="token operator">==</span> <span class="token string">'M'</span> <span class="token operator">&amp;&amp;</span> <span class="token function">compare</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> male<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            male <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>gender <span class="token operator">==</span> <span class="token string">'F'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">compare</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> female<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            female <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//没有女生</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>female<span class="token punctuation">.</span>grade <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Absent\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %s\n"</span><span class="token punctuation">,</span> female<span class="token punctuation">.</span>name<span class="token punctuation">,</span> female<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//没有男生</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>male<span class="token punctuation">.</span>grade <span class="token operator">==</span> <span class="token number">101</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Absent\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %s\n"</span><span class="token punctuation">,</span> male<span class="token punctuation">.</span>name<span class="token punctuation">,</span> male<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//缺少一人分数</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>female<span class="token punctuation">.</span>grade <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> male<span class="token punctuation">.</span>grade <span class="token operator">==</span> <span class="token number">101</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"NA\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> female<span class="token punctuation">.</span>grade <span class="token operator">-</span> male<span class="token punctuation">.</span>grade<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -605,7 +628,7 @@ bool compare(Student s1, Student s2)
                     <span class="reprint-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="http://www.jiansunch.com" class="b-link-green">孙健的博客</a>
+                    <a href="www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/PAT/A1036-Boys-vs-Girls/" class="b-link-green">A1036 Boys vs Girls</a>
                 </p>
@@ -664,9 +687,8 @@ bool compare(Student s1, Student s2)
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1036 跟奥巴马一起编程
-
-美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014 年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现</div>
+                    <div class="summary block-with-text">1036 跟奥巴马一起编程
+美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014 年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-30
@@ -711,9 +733,8 @@ bool compare(Student s1, Student s2)
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1011 World Cup Betting
-
-With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly ex</div>
+                    <div class="summary block-with-text">1011 World Cup Betting
+With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly exc</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -892,7 +913,7 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">24k</span>
+            <span class="white-color">26.5k</span>
             
 
             
