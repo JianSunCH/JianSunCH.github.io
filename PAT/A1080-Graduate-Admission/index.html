@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1080 Graduate Admission, 孙健的博客">
-    <meta name="description" content="1080 Graduate Admission
-It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 appli">
+    <meta name="description" content="1080 Graduate Admission
+
+It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 appl">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -412,28 +413,36 @@ It is said that in 2011, there are about 100 graduate schools ready to proceed o
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1080-Graduate-Admission"><a href="#1080-Graduate-Admission" class="headerlink" title="1080 Graduate Admission"></a>1080 Graduate Admission</h2><blockquote>
+                <h2>1080 Graduate Admission</h2>
+<blockquote>
 <p>It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 applications in Zhejiang Province. It would help a lot if you could write a program to automate the admission procedure.</p>
 </blockquote>
 <blockquote>
-<p>Each applicant will have to provide two grades: the national entrance exam grade G​E​​, and the interview grade G​I​​. The final grade of an applicant is (G​E​​+G​I​​)/2. The admission rules are:</p>
+<p>Each applicant will have to provide two grades: the national entrance exam grade G​E​​, and the interview grade G​I​​. The final grade of an applicant is (G​E​​+G​I​​)/2. The admission rules are:</p>
 </blockquote>
 <ul>
-<li><p>The applicants are ranked according to their final grades, and will be admitted one by one from the top of the rank list.</p>
+<li>
+<p>The applicants are ranked according to their final grades, and will be admitted one by one from the top of the rank list.</p>
 </li>
-<li><p>If there is a tied final grade, the applicants will be ranked according to their national entrance exam grade G​E​​. If still tied, their ranks must be the same.</p>
+<li>
+<p>If there is a tied final grade, the applicants will be ranked according to their national entrance exam grade G​E​​. If still tied, their ranks must be the same.</p>
 </li>
-<li><p>Each applicant may have K choices and the admission will be done according to his/her choices: if according to the rank list, it is one’s turn to be admitted; and if the quota of one’s most preferred shcool is not exceeded, then one will be admitted to this school, or one’s other choices will be considered one by one in order. If one gets rejected by all of preferred schools, then this unfortunate applicant will be rejected.</p>
+<li>
+<p>Each applicant may have K choices and the admission will be done according to his/her choices: if according to the rank list, it is one's turn to be admitted; and if the quota of one's most preferred shcool is not exceeded, then one will be admitted to this school, or one's other choices will be considered one by one in order. If one gets rejected by all of preferred schools, then this unfortunate applicant will be rejected.</p>
 </li>
-<li><p>If there is a tied rank, and if the corresponding applicants are applying to the same school, then that school must admit all the applicants with the same rank, <strong>even if its quota will be exceeded</strong>.</p>
+<li>
+<p>If there is a tied rank, and if the corresponding applicants are applying to the same school, then that school must admit all the applicants with the same rank, <strong>even if its quota will be exceeded</strong>.</p>
 </li>
 </ul>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case.</p>
-<p>Each case starts with a line containing three positive integers: N (≤40,000), the total number of applicants; M (≤100), the total number of graduate schools; and K (≤5), the number of choices an applicant may have.</p>
-<p>In the next line, separated by a space, there are M positive integers. The i-th integer is the quota of the i-th graduate school respectively.</p>
-<p>Then N lines follow, each contains 2+K integers separated by a space. The first 2 integers are the applicant’s G​E​​ and G​I​​, respectively. The next K integers represent the preferred schools. For the sake of simplicity, we assume that the schools are numbered from 0 to M−1, and the applicants are numbered from 0 to N−1.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case you should output the admission results for all the graduate schools. The results of each school must occupy a line, which contains the applicants’ numbers that school admits. The numbers must be in increasing order and be separated by a space. There must be no extra space at the end of each line. If no applicant is admitted by a school, you must output an empty line correspondingly.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>11 6 3 
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case.</p>
+<p>Each case starts with a line containing three positive integers: N (≤40,000), the total number of applicants; M (≤100), the total number of graduate schools; and K (≤5), the number of choices an applicant may have.</p>
+<p>In the next line, separated by a space, there are M positive integers. The i-th integer is the quota of the i-th graduate school respectively.</p>
+<p>Then N lines follow, each contains 2+K integers separated by a space. The first 2 integers are the applicant's G​E​​ and G​I​​, respectively. The next K integers represent the preferred schools. For the sake of simplicity, we assume that the schools are numbered from 0 to M−1, and the applicants are numbered from 0 to N−1.</p>
+<h3>Output Specification:</h3>
+<p>For each test case you should output the admission results for all the graduate schools. The results of each school must occupy a line, which contains the applicants' numbers that school admits. The numbers must be in increasing order and be separated by a space. There must be no extra space at the end of each line. If no applicant is admitted by a school, you must output an empty line correspondingly.</p>
+<h3>Sample Input:</h3>
+<pre><code>11 6 3 
 2 1 2 2 2 3 
 100 100 0 1 2 
 60 60 2 3 5 
@@ -446,108 +455,112 @@ It is said that in 2011, there are about 100 graduate schools ready to proceed o
 80 70 1 3 2 
 70 80 1 2 3 
 100 100 0 2 4 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>0 10 
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>0 10 
 3 
 5 6 7 
 2 8 
 
 1 4
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> max_n <span class="token operator">=</span> <span class="token number">40001</span><span class="token punctuation">;</span>
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
+using namespace std;
+const int max_n = 40001;
 
-<span class="token keyword">struct</span> Student
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> GE<span class="token punctuation">,</span> GI<span class="token punctuation">,</span> sum<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> rank<span class="token punctuation">,</span> id<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> choice<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span> student<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+struct Student
+{
+	int GE, GI, sum;
+	int rank, id;
+	int choice[6];
+} student[max_n];
 
-<span class="token keyword">struct</span> School
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> quota<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> stu_num<span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">//招生人数</span>
-    <span class="token keyword">int</span> stu_id<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//招收的学生编号</span>
-    <span class="token keyword">int</span> last_admit<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//最后一个招生的学生编号</span>
-<span class="token punctuation">}</span> school<span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+struct School
+{
+	int quota;
+	int stu_num;	   //招生人数
+	int stu_id[max_n]; //招收的学生编号
+	int last_admit;	//最后一个招生的学生编号
+} school[101];
 
-<span class="token keyword">bool</span> <span class="token function">cmp_stu</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>s1<span class="token punctuation">.</span>sum <span class="token operator">!=</span> s2<span class="token punctuation">.</span>sum<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> s1<span class="token punctuation">.</span>sum <span class="token operator">></span> s2<span class="token punctuation">.</span>sum<span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> s1<span class="token punctuation">.</span>GE <span class="token operator">></span> s2<span class="token punctuation">.</span>GE<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+bool cmp_stu(Student s1, Student s2)
+{
+	if (s1.sum != s2.sum)
+		return s1.sum > s2.sum;
+	else
+		return s1.GE > s2.GE;
+}
 
-<span class="token keyword">bool</span> <span class="token function">cmp_id</span><span class="token punctuation">(</span><span class="token keyword">int</span> id1<span class="token punctuation">,</span> <span class="token keyword">int</span> id2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//每个学校将考生编号从小到大排序</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">return</span> student<span class="token punctuation">[</span>id1<span class="token punctuation">]</span><span class="token punctuation">.</span>id <span class="token operator">&lt;</span> student<span class="token punctuation">[</span>id2<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+bool cmp_id(int id1, int id2) //每个学校将考生编号从小到大排序
+{
+	return student[id1].id < student[id2].id;
+}
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> M<span class="token punctuation">,</span> K<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>M<span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化学校</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>quota<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//初始化招生人数为0</span>
-        school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>last_admit <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//表示不存在</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化学生</span>
-    <span class="token punctuation">{</span>
-        student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id <span class="token operator">=</span> i<span class="token punctuation">;</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>GE<span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>GI<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>sum <span class="token operator">=</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>GE <span class="token operator">+</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>GI<span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>choice<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">sort</span><span class="token punctuation">(</span>student<span class="token punctuation">,</span> student <span class="token operator">+</span> N<span class="token punctuation">,</span> cmp_stu<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//给学生排名</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>sum <span class="token operator">==</span> student<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sum <span class="token operator">&amp;&amp;</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>GE <span class="token operator">==</span> student<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>GE<span class="token punctuation">)</span>
-            student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>rank <span class="token operator">=</span> student<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rank<span class="token punctuation">;</span>
-        <span class="token keyword">else</span>
-            student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>rank <span class="token operator">=</span> i<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+int main()
+{
+	int N, M, K;
+	scanf("%d%d%d", &N, &M, &K);
+	for (int i = 0; i < M; i++) //初始化学校
+	{
+		scanf("%d", &school[i].quota);
+		school[i].stu_num = 0;	 //初始化招生人数为0
+		school[i].last_admit = -1; //表示不存在
+	}
+	for (int i = 0; i < N; i++) //初始化学生
+	{
+		student[i].id = i;
+		scanf("%d%d", &student[i].GE, &student[i].GI);
+		student[i].sum = student[i].GE + student[i].GI;
+		for (int j = 0; j < K; j++)
+			scanf("%d", &student[i].choice[j]);
+	}
+	sort(student, student + N, cmp_stu);
+	//给学生排名
+	for (int i = 0; i < N; i++)
+	{
+		if (i > 0 && student[i].sum == student[i - 1].sum && student[i].GE == student[i - 1].GE)
+			student[i].rank = student[i - 1].rank;
+		else
+			student[i].rank = i;
+	}
 
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//判断每位考生被哪所学校录取</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> choice <span class="token operator">=</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>choice<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//考生的志愿学校</span>
-            <span class="token keyword">int</span> num <span class="token operator">=</span> school<span class="token punctuation">[</span>choice<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_num<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//所选择的学校的当前招生人数</span>
-            <span class="token keyword">int</span> last <span class="token operator">=</span> school<span class="token punctuation">[</span>choice<span class="token punctuation">]</span><span class="token punctuation">.</span>last_admit<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//所选择的学校的最后一位录取的考生编号</span>
-            <span class="token comment" spellcheck="true">//如果人数未满或该学校最后一个录取的考生与当前考生排名相同</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&lt;</span> school<span class="token punctuation">[</span>choice<span class="token punctuation">]</span><span class="token punctuation">.</span>quota <span class="token operator">||</span> <span class="token punctuation">(</span>last <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>rank <span class="token operator">==</span> student<span class="token punctuation">[</span>last<span class="token punctuation">]</span><span class="token punctuation">.</span>rank<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                school<span class="token punctuation">[</span>choice<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_id<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//录取该考生</span>
-                school<span class="token punctuation">[</span>choice<span class="token punctuation">]</span><span class="token punctuation">.</span>last_admit <span class="token operator">=</span> i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//最后一个录取的学生变为i</span>
-                school<span class="token punctuation">[</span>choice<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_num<span class="token operator">++</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//当前招生人数增加</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_num <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//如果有学生</span>
-        <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//按照学生id排序</span>
-            <span class="token function">sort</span><span class="token punctuation">(</span>school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_id<span class="token punctuation">,</span> school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_id <span class="token operator">+</span> school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_num<span class="token punctuation">,</span> cmp_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_num<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> student<span class="token punctuation">[</span>school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_id<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;</span> school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>stu_num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
-                    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+	for (int i = 0; i < N; i++) //判断每位考生被哪所学校录取
+	{
+		for (int j = 0; j < K; j++)
+		{
+			int choice = student[i].choice[j];	//考生的志愿学校
+			int num = school[choice].stu_num;	 //所选择的学校的当前招生人数
+			int last = school[choice].last_admit; //所选择的学校的最后一位录取的考生编号
+			//如果人数未满或该学校最后一个录取的考生与当前考生排名相同
+			if (num < school[choice].quota || (last != -1 && student[i].rank == student[last].rank))
+			{
+				school[choice].stu_id[num] = i; //录取该考生
+				school[choice].last_admit = i;  //最后一个录取的学生变为i
+				school[choice].stu_num++;		//当前招生人数增加
+				break;
+			}
+		}
+	}
+	for (int i = 0; i < M; i++)
+	{
+		if (school[i].stu_num > 0) //如果有学生
+		{
+			//按照学生id排序
+			sort(school[i].stu_id, school[i].stu_id + school[i].stu_num, cmp_id);
+			for (int j = 0; j < school[i].stu_num; j++)
+			{
+				printf("%d", student[school[i].stu_id[j]].id);
+				if (j < school[i].stu_num - 1)
+					printf(" ");
+			}
+		}
+		printf("\n");
+	}
 
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -753,8 +766,9 @@ It is said that in 2011, there are about 100 graduate schools ready to proceed o
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1080 Graduate Admission
-It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 appli</div>
+                    <div class="summary block-with-text">1080 Graduate Admission
+
+It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 appl</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-17
@@ -800,8 +814,9 @@ It is said that in 2011, there are about 100 graduate schools ready to proceed o
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1083 List Grades
-Given a list of N student records with name, ID and grade. You are supposed to sort the records with re</div>
+                    <div class="summary block-with-text">1083 List Grades
+
+Given a list of N student records with name, ID and grade. You are supposed to sort the records with r</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-17
@@ -980,7 +995,7 @@ Given a list of N student records with name, ID and grade. You are supposed to s
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">26.5k</span>
+            <span class="white-color">24k</span>
             
 
             

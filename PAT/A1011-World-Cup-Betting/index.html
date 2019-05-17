@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1011 World Cup Betting, 孙健的博客">
-    <meta name="description" content="1011 World Cup Betting
-With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly exc">
+    <meta name="description" content="1011 World Cup Betting
+
+With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly ex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,7 +390,7 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        397
+                        392
                     </div>
                     
 
@@ -412,55 +413,64 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1011-World-Cup-Betting"><a href="#1011-World-Cup-Betting" class="headerlink" title="1011 World Cup Betting"></a>1011 World Cup Betting</h2><blockquote>
+                <h2>1011 World Cup Betting</h2>
+<blockquote>
 <p>With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly excited as the best players from the best teams doing battles for the World Cup trophy in South Africa. Similarly, football betting fans were putting their money where their mouths were, by laying all manner of World Cup bets.</p>
 </blockquote>
 <blockquote>
-<p>Chinese Football Lottery provided a “Triple Winning” game. The rule of winning was simple: first select any three of the games. Then for each selected game, bet on one of the three possible results – namely <code>W</code> for win, <code>T</code> for tie, and <code>L</code> for lose. There was an odd assigned to each result. The winner’s odd would be the product of the three odds times 65%.</p>
+<p>Chinese Football Lottery provided a &quot;Triple Winning&quot; game. The rule of winning was simple: first select any three of the games. Then for each selected game, bet on one of the three possible results -- namely <code>W</code> for win, <code>T</code> for tie, and <code>L</code> for lose. There was an odd assigned to each result. The winner's odd would be the product of the three odds times 65%.</p>
 </blockquote>
 <blockquote>
-<p>For example, 3 games’ odds are given as the following:</p>
+<p>For example, 3 games' odds are given as the following:</p>
 </blockquote>
 <pre><code>  W   T   L 
  1.1 2.5 1.7 
  1.2 3.1 1.6 
  4.1 1.2 1.1 
-</code></pre><blockquote>
-<p>To obtain the maximum profit, one must buy <code>W</code> for the 3rd game, <code>T</code> for the 2nd game, and <code>T</code> for the 1st game. If each bet takes 2 yuans, then the maximum profit would be (4.1×3.1×2.5×65%−1)×2=39.31 yuans (accurate up to 2 decimal places).</p>
+</code></pre>
+<blockquote>
+<p>To obtain the maximum profit, one must buy <code>W</code> for the 3rd game, <code>T</code> for the 2nd game, and <code>T</code> for the 1st game. If each bet takes 2 yuans, then the maximum profit would be (4.1×3.1×2.5×65%−1)×2=39.31 yuans (accurate up to 2 decimal places).</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case contains the betting information of 3 games. Each game occupies a line with three distinct odds corresponding to <code>W</code>, <code>T</code> and <code>L</code>.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print in one line the best bet of each game, and the maximum profit accurate up to 2 decimal places. The characters and the number must be separated by one space.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>1.1 2.5 1.7 
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. Each case contains the betting information of 3 games. Each game occupies a line with three distinct odds corresponding to <code>W</code>, <code>T</code> and <code>L</code>.</p>
+<h3>Output Specification:</h3>
+<p>For each test case, print in one line the best bet of each game, and the maximum profit accurate up to 2 decimal places. The characters and the number must be separated by one space.</p>
+<h3>Sample Input:</h3>
+<pre><code>1.1 2.5 1.7 
 1.2 3.1 1.6 
 4.1 1.2 1.1 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>T T W 39.31
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>T T W 39.31
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> results<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'W'</span><span class="token punctuation">,</span> <span class="token string">'T'</span><span class="token punctuation">,</span> <span class="token string">'L'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token keyword">double</span> max <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">,</span> odds<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">double</span> temp <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//找出每一行的最大值</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>odds<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>odds <span class="token operator">></span> temp<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                temp <span class="token operator">=</span> odds<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//当前最大的赔率</span>
-                id <span class="token operator">=</span> j<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//对应的结果</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c "</span><span class="token punctuation">,</span> results<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        max <span class="token operator">*</span><span class="token operator">=</span> temp<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%.2lf"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>max <span class="token operator">*</span> <span class="token number">0.65</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+int main()
+{
+	char results[3] = {'W', 'T', 'L'};
+	double max = 1.0, odds;
+	int id = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		double temp = 0.0;
+		//找出每一行的最大值
+		for (int j = 0; j < 3; j++)
+		{
+			scanf("%lf", &odds);
+			if (odds > temp)
+			{
+				temp = odds; //当前最大的赔率
+				id = j;		 //对应的结果
+			}
+		}
+		printf("%c ", results[id]);
+		max *= temp;
+	}
+	printf("%.2lf", (max * 0.65 - 1) * 2);
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -665,8 +675,9 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1036 Boys vs Girls
-This time you are asked to tell the difference between the lowest grade of all the male students and </div>
+                    <div class="summary block-with-text">1036 Boys vs Girls
+
+This time you are asked to tell the difference between the lowest grade of all the male students and</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -711,8 +722,9 @@ This time you are asked to tell the difference between the lowest grade of all t
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1006 Sign In and Sign Out
-At the beginning of every day, the first person who signs in the computer room will unlock the</div>
+                    <div class="summary block-with-text">1006 Sign In and Sign Out
+
+At the beginning of every day, the first person who signs in the computer room will unlock th</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -891,7 +903,7 @@ At the beginning of every day, the first person who signs in the computer room w
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">26.5k</span>
+            <span class="white-color">24k</span>
             
 
             
