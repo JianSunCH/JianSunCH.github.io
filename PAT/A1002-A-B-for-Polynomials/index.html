@@ -5,10 +5,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1002 A+B for Polynomials, 孙健的博客">
-    <meta name="description" content="1002 A+B for Polynomials
-This time, you are supposed to find A+B where A and B are two polynomials.
+    <meta name="description" content="1002 A+B for Polynomials
 
-Input Specification">
+This time, you are supposed to find A+B where A and B are two polynomials.
+
+Input Specificatio">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -391,7 +392,7 @@ Input Specification">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        325
+                        312
                     </div>
                     
 
@@ -414,60 +415,68 @@ Input Specification">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1002-A-B-for-Polynomials"><a href="#1002-A-B-for-Polynomials" class="headerlink" title="1002 A+B for Polynomials"></a>1002 A+B for Polynomials</h2><blockquote>
-<p>This time, you are supposed to find A+B where A and B are two polynomials.</p>
+                <h2>1002 A+B for Polynomials</h2>
+<blockquote>
+<p>This time, you are supposed to find A+B where A and B are two polynomials.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:</p>
-<p>K N​1​​ a​N​1​​​​ N​2​​ a​N​2​​​​ … N​K​​ a​N​K​​​​</p>
-<p>where K is the number of nonzero terms in the polynomial, N​i​​ and a​N​i​​​​ (i=1,2,⋯,K) are the exponents and coefficients, respectively. It is given that 1≤K≤10，0≤N​K​​&lt;⋯&lt;N​2​​&lt;N​1​​≤1000.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case you should output the sum of A and B in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate to 1 decimal place.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>2 1 2.4 0 3.2
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:</p>
+<p>K N​1​​ a​N​1​​​​ N​2​​ a​N​2​​​​ ... N​K​​ a​N​K​​​​</p>
+<p>where K is the number of nonzero terms in the polynomial, N​i​​ and a​N​i​​​​ (i=1,2,⋯,K) are the exponents and coefficients, respectively. It is given that 1≤K≤10，0≤N​K​​&lt;⋯&lt;N​2​​&lt;N​1​​≤1000.</p>
+<h3>Output Specification:</h3>
+<p>For each test case you should output the sum of A and B in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate to 1 decimal place.</p>
+<h3>Sample Input:</h3>
+<pre><code>2 1 2.4 0 3.2
 2 2 1.5 1 0.5
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>3 2 1.5 1 2.9 0 3.2
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>3 2 1.5 1 2.9 0 3.2
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
 
-<span class="token keyword">const</span> <span class="token keyword">int</span> max_n <span class="token operator">=</span> <span class="token number">1001</span><span class="token punctuation">;</span>
-<span class="token keyword">double</span> arr<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+const int max_n = 1001;
+double arr[max_n] = {0};
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> K<span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">//非零项的项数</span>
-    <span class="token keyword">double</span> coefficients<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//系数</span>
-    <span class="token keyword">int</span> exponents<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//指数</span>
-    <span class="token comment" spellcheck="true">//读入第一个多项式</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>exponents<span class="token punctuation">,</span> <span class="token operator">&amp;</span>coefficients<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        arr<span class="token punctuation">[</span>exponents<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> coefficients<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//读入第二个多项式</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>coefficients<span class="token punctuation">,</span> <span class="token operator">&amp;</span>exponents<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        arr<span class="token punctuation">[</span>coefficients<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> exponents<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+int main()
+{
+	int K;			  //非零项的项数
+	double coefficients; //系数
+	int exponents; //指数
+	//读入第一个多项式
+	scanf("%d", &K);
+	for (int i = 0; i < K; i++)
+	{
+		scanf("%d%lf", &exponents, &coefficients);
+		arr[exponents] += coefficients;
+	}
+	//读入第二个多项式
+	scanf("%d", &K);
+	for (int i = 0; i < K; i++)
+	{
+		scanf("%d%lf", &coefficients, &exponents);
+		arr[coefficients] += exponents;
+	}
 
-    <span class="token comment" spellcheck="true">//计算非零系数项的个数</span>
-    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> max_n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            count<span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+	//计算非零系数项的个数
+	int count = 0;
+	for (int i = 0; i < max_n; i++)
+	{
+		if (arr[i] != 0)
+			count++;
+	}
 
-    <span class="token comment" spellcheck="true">//输出多项式</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> max_n<span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %d %.1lf"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+	//输出多项式
+	printf("%d", count);
+	for (int i = max_n; i >= 0; i--)
+	{
+		if (arr[i] != 0)
+			printf(" %d %.1lf", i, arr[i]);
+	}
 
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -613,7 +622,7 @@ Input Specification">
                     <span class="reprint-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.jiansunch.com" class="b-link-green">孙健的博客</a>
+                    <a href="http://www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/PAT/A1002-A-B-for-Polynomials/" class="b-link-green">A1002 A+B for Polynomials</a>
                 </p>
@@ -672,10 +681,11 @@ Input Specification">
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1009 Product of Polynomials
-This time, you are supposed to find A×B where A and B are two polynomials.
+                    <div class="summary block-with-text">1009 Product of Polynomials
 
-Input Specificat</div>
+This time, you are supposed to find A×B where A and B are two polynomials.
+
+Input Specifica</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-27
@@ -720,10 +730,12 @@ Input Specificat</div>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">010 一元多项式求导
+                    <div class="summary block-with-text">010 一元多项式求导
+
 设计函数求一元多项式的导数。（注：(\boldsymbol{x}^{n})（n为整数）的一阶导数为(\boldsymbol{n} \boldsymbol{x}^{n-1}))。
 
-输入格式:以指数递降方式输入多项式非</div>
+输入格式:
+以指数递降方式输入多项</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
@@ -902,7 +914,7 @@ Input Specificat</div>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">26.5k</span>
+            <span class="white-color">24k</span>
             
 
             

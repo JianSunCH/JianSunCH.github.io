@@ -5,12 +5,14 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="5-6 矩阵输出, 孙健的博客">
-    <meta name="description" content="例题5-6 矩阵输出题目描述输出以下4*5的矩阵
-  1  2  3  4  5
-  2  4  6  8 10
-  3  6  9 12 15
-  4  8 12 16 20
-要求使用循环实现，注意每行输出5个数字，每个数字占3个字符的宽">
+    <meta name="description" content="例题5-6 矩阵输出
+题目描述
+输出以下4*5的矩阵
+1  2  3  4  5
+2  4  6  8 10
+3  6  9 12 15
+4  8 12 16 20
+要求使用循环实现，注意每行输出5个数字，每个数字占3个字符的宽度，右对齐。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -393,7 +395,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        168
+                        164
                     </div>
                     
 
@@ -416,36 +418,43 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="例题5-6-矩阵输出"><a href="#例题5-6-矩阵输出" class="headerlink" title="例题5-6 矩阵输出"></a>例题5-6 矩阵输出</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输出以下4*5的矩阵</p>
-<p>  1  2  3  4  5</p>
-<p>  2  4  6  8 10</p>
-<p>  3  6  9 12 15</p>
-<p>  4  8 12 16 20</p>
+                <h1>例题5-6 矩阵输出</h1>
+<h2>题目描述</h2>
+<p>输出以下4*5的矩阵</p>
+<p>1  2  3  4  5</p>
+<p>2  4  6  8 10</p>
+<p>3  6  9 12 15</p>
+<p>4  8 12 16 20</p>
 <p>要求使用循环实现，注意每行输出5个数字，每个数字占3个字符的宽度，右对齐。</p>
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>无</p>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>每行输出5个数字，每个数字占3个字符的宽度，右对齐。</p>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p><code>无</code></p>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p><code>1  2  3  4  5</code></p>
-<p><code>2  4  6  8 10</code></p>
-<p><code>3  6  9 12 15</code></p>
-<p><code>4  8 12 16 20</code></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
+<h2>输入</h2>
+<p>无</p>
+<h2>输出</h2>
+<p>每行输出5个数字，每个数字占3个字符的宽度，右对齐。</p>
+<h2>样例输入</h2>
+<p><code>无</code></p>
+<h2>样例输出</h2>
+<p><code>1 2 3 4 5</code></p>
+<p><code>2 4 6 8 10</code></p>
+<p><code>3 6 9 12 15</code></p>
+<p><code>4 8 12 16 20</code></p>
+<h2>代码</h2>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%3d"</span><span class="token punctuation">,</span> n<span class="token operator">++</span> <span class="token operator">*</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        n <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+int main()
+{
+    int n = 1;
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            printf("%3d", n++ * (i + 1));
+        }
+        n = 1;
+        printf("\n");
+    }
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></cstdio></code></pre>
 
             </div>
             <hr>
@@ -591,7 +600,7 @@
                     <span class="reprint-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.jiansunch.com" class="b-link-green">孙健的博客</a>
+                    <a href="http://www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/codeup/5-6-矩阵输出/" class="b-link-green">5-6 矩阵输出</a>
                 </p>
@@ -650,11 +659,13 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">例题5-7 求圆周率pi的近似值题目描述用如下公式
+                    <div class="summary block-with-text">例题5-7 求圆周率pi的近似值
+题目描述
+用如下公式
 
 求圆周率PI的近似值，直到发现某一项的绝对值小于10-6为止（该项不累加）。
 要求输出的结果总宽度占10位，其中小数部分为8位。
-程序中使用浮点型数据时，请定义为双精度double类型。</div>
+程序中使用浮点型数据时，请定义为双精度double类</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-02
@@ -699,7 +710,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">Hello World!创建成功 :)</div>
+                    <div class="summary block-with-text">Hello World!
+创建成功 :)
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-31
@@ -878,7 +891,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">26.5k</span>
+            <span class="white-color">24k</span>
             
 
             

@@ -5,12 +5,14 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1004 成绩排名, 孙健的博客">
-    <meta name="description" content="1004 成绩排名
-读入 n（&amp;gt;0）名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。
+    <meta name="description" content="1004 成绩排名
 
-输入格式：每个测试输入包含 1 个测试用例，格式为
+读入 n（&amp;gt;0）名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。
+
+输入格式：
+每个测试输入包含 1 个测试用例，格式为
 第 1 行：正整数 n 
-第 2 行：第 1 个学生的姓名 学号 成绩 ">
+第 2 行：第 1 个学生的姓名 学号 成">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -393,7 +395,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        364
+                        357
                     </div>
                     
 
@@ -416,54 +418,63 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1004-成绩排名"><a href="#1004-成绩排名" class="headerlink" title="1004 成绩排名"></a>1004 成绩排名</h2><blockquote>
-<p>读入 n（&gt;0）名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。</p>
+                <h2>1004 成绩排名</h2>
+<blockquote>
+<p>读入 n（&gt;0）名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。</p>
 </blockquote>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个测试输入包含 1 个测试用例，格式为</p>
+<h3>输入格式：</h3>
+<p>每个测试输入包含 1 个测试用例，格式为</p>
 <pre><code>第 1 行：正整数 n 
 第 2 行：第 1 个学生的姓名 学号 成绩 
 第 3 行：第 2 个学生的姓名 学号 成绩 ... ... ... 
 第 n+1 行：第 n 个学生的姓名 学号 成绩 
-</code></pre><p>其中<code>姓名</code>和<code>学号</code>均为不超过 10 个字符的字符串，成绩为 0 到 100 之间的一个整数，这里保证在一组测试用例中没有两个学生的成绩是相同的。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每个测试用例输出 2 行，第 1 行是成绩最高学生的姓名和学号，第 2 行是成绩最低学生的姓名和学号，字符串间有 1 空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code>3
+</code></pre>
+<p>其中<code>姓名</code>和<code>学号</code>均为不超过 10 个字符的字符串，成绩为 0 到 100 之间的一个整数，这里保证在一组测试用例中没有两个学生的成绩是相同的。</p>
+<h3>输出格式：</h3>
+<p>对每个测试用例输出 2 行，第 1 行是成绩最高学生的姓名和学号，第 2 行是成绩最低学生的姓名和学号，字符串间有 1 空格。</p>
+<h3>输入样例：</h3>
+<pre><code>3
 Joe Math990112 89
 Mike CS991301 100
 Mary EE990830 95
-</code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>Mike CS991301
+</code></pre>
+<h3>输出样例：</h3>
+<pre><code>Mike CS991301
 Joe Math990112
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-c"><code class="language-language-c">#include <bits stdc++.h>
 
-<span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">1001</span><span class="token punctuation">;</span>
-<span class="token keyword">struct</span> Student
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">char</span> id<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> score<span class="token punctuation">;</span>
+const int maxn = 1001;
+struct Student
+{
+	char name[11];
+	char id[11];
+	int score;
 
-<span class="token punctuation">}</span> temp<span class="token punctuation">,</span> max<span class="token punctuation">,</span> min<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//max为最高分数的学生,min为最低分数的学生</span>
+} temp, max, min; //max为最高分数的学生,min为最低分数的学生
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//初始化学生最高最低的分数</span>
-    max<span class="token punctuation">.</span>score <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    min<span class="token punctuation">.</span>score <span class="token operator">=</span> <span class="token number">101</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%s%d"</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span>name<span class="token punctuation">,</span> temp<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>temp<span class="token punctuation">.</span>score <span class="token operator">></span> max<span class="token punctuation">.</span>score<span class="token punctuation">)</span>
-            max <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>temp<span class="token punctuation">.</span>score <span class="token operator">&lt;</span> min<span class="token punctuation">.</span>score<span class="token punctuation">)</span>
-            min <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %s\n"</span><span class="token punctuation">,</span> max<span class="token punctuation">.</span>name<span class="token punctuation">,</span> max<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %s\n"</span><span class="token punctuation">,</span> min<span class="token punctuation">.</span>name<span class="token punctuation">,</span> min<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	//初始化学生最高最低的分数
+	max.score = -1;
+	min.score = 101;
+	while (n--)
+	{
+		scanf("%s%s%d", temp.name, temp.id, &temp.score);
+		if (temp.score > max.score)
+			max = temp;
+		if (temp.score < min.score)
+			min = temp;
+	}
+	printf("%s %s\n", max.name, max.id);
+	printf("%s %s\n", min.name, min.id);
 
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -609,7 +620,7 @@ Joe Math990112
                     <span class="reprint-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.jiansunch.com" class="b-link-green">孙健的博客</a>
+                    <a href="http://www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/PAT/B1004-成绩排名/" class="b-link-green">B1004 成绩排名</a>
                 </p>
@@ -668,11 +679,12 @@ Joe Math990112
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1028 人口普查
+                    <div class="summary block-with-text">1028 人口普查
+
 某城镇进行人口普查，得到了全体居民的生日。现请你写个程序，找出镇上最年长和最年轻的人。
 
 
-这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 6</div>
+这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -717,10 +729,11 @@ Joe Math990112
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1009 Product of Polynomials
-This time, you are supposed to find A×B where A and B are two polynomials.
+                    <div class="summary block-with-text">1009 Product of Polynomials
 
-Input Specificat</div>
+This time, you are supposed to find A×B where A and B are two polynomials.
+
+Input Specifica</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-27
@@ -899,7 +912,7 @@ Input Specificat</div>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">26.5k</span>
+            <span class="white-color">24k</span>
             
 
             
