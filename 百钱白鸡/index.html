@@ -5,15 +5,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="百钱白鸡, 孙健的博客">
-    <meta name="description" content="百钱白鸡
-题目描述
-
-鸡翁一值钱五, 鸡母一值钱三, 鸡雏三值钱一. 百钱买百鸡, 问鸡翁, 鸡母, 鸡雏各几何
-—— 张丘建《算经》
+    <meta name="description" content="百钱白鸡题目描述
+鸡翁一值钱五, 鸡母一值钱三, 鸡雏三值钱一. 百钱买百鸡, 问鸡翁, 鸡母, 鸡雏各几何—— 张丘建《算经》
 
 求解方法
-
-先构造可能的解的集合S={(X,Y,Z)|0&amp;lt;=X,Y,Z&amp;lt;=100} X, ">
+先构造可能的解的集合S={(X,Y,Z)|0&amp;lt;=X,Y,Z&amp;lt;=100} X, Y, Z">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -396,7 +392,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        143
+                        209
                     </div>
                     
 
@@ -419,34 +415,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>百钱白鸡</h1>
-<h2>题目描述</h2>
-<blockquote>
-<p>鸡翁一值钱五, 鸡母一值钱三, 鸡雏三值钱一. 百钱买百鸡, 问鸡翁, 鸡母, 鸡雏各几何
-—— 张丘建《算经》</p>
+                <h1 id="百钱白鸡"><a href="#百钱白鸡" class="headerlink" title="百钱白鸡"></a>百钱白鸡</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>鸡翁一值钱五, 鸡母一值钱三, 鸡雏三值钱一. 百钱买百鸡, 问鸡翁, 鸡母, 鸡雏各几何<br>—— 张丘建《算经》</p>
 </blockquote>
-<h2>求解方法</h2>
-<ul>
+<h2 id="求解方法"><a href="#求解方法" class="headerlink" title="求解方法"></a>求解方法</h2><ul>
 <li>先构造可能的解的集合S={(X,Y,Z)|0&lt;=X,Y,Z&lt;=100} X, Y, Z分别代表买公鸡, 母鸡和小鸡的只数</li>
-<li>然后验证条件X+Y+Z=100, 5X+3Y+Z/3=100</li>
+<li>然后验证条件X+Y+Z=100, 5X+3Y+Z/3=100 </li>
 <li>复杂度: O(100^2)</li>
 </ul>
-<h2>code</h2>
-<pre class="line-numbers language-language-c"><code class="language-language-c">#include <cstdio>
-#include <time.h>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;time.h></span></span>
 
-clock_t start, stop;
-double duration;
+clock_t start<span class="token punctuation">,</span> stop<span class="token punctuation">;</span>
+<span class="token keyword">double</span> duration<span class="token punctuation">;</span>
 
-#define MAXN 10
-#define MAXK 1e7
-#define CLK_TCK 18.2
+<span class="token macro property">#<span class="token directive keyword">define</span> MAXN 10</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MAXK 1e7</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> CLK_TCK 18.2</span>
 
-int main()
-{
-    start = clock(); //	开始计时
-    int z;
-    for (int x = 0; x <= 0 3="=" 5 100; x++) { for (int y="0;" <="100" - x; y++) z="100" x y; if (z % && * + 100) printf("x="%d," x, y, z); } stop="clock();" 停止计时 printf("ticks1="%f\n" ," (double)(stop start)); printf("duration1="%6.2e\n" duration); return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></time.h></cstdio></code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    start <span class="token operator">=</span> <span class="token function">clock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//    开始计时</span>
+    <span class="token keyword">int</span> z<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> y <span class="token operator">&lt;=</span> <span class="token number">100</span> <span class="token operator">-</span> x<span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            z <span class="token operator">=</span> <span class="token number">100</span> <span class="token operator">-</span> x <span class="token operator">-</span> y<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>z <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token number">5</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">3</span> <span class="token operator">*</span> y <span class="token operator">+</span> z <span class="token operator">/</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">100</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"x=%d, y=%d, z=%d\n"</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    stop <span class="token operator">=</span> <span class="token function">clock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//停止计时</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"ticks1 = %f\n"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">(</span>stop <span class="token operator">-</span> start<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"duration1 = %6.2e\n"</span><span class="token punctuation">,</span> duration<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -651,9 +658,7 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">PAT
-Advanced Level
-
+                    <div class="summary block-with-text">PATAdvanced Level
 
 
 ID
@@ -674,7 +679,7 @@ C++
 
 
 A1005
-Spell It</div>
+Spell It R</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-22
@@ -719,12 +724,9 @@ Spell It</div>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">A+B 输入输出练习I
-题目描述
-你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。
-输入
-输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。
-输出</div>
+                    <div class="summary block-with-text">A+B 输入输出练习I题目描述你的任务是计算a+b。这是为了acm初学者专门设计的题目。你肯定发现还有其他题目跟这道题的标题类似，这些问题也都是专门为初学者提供的。  
+输入输入包含一系列的a和b对，通过空格隔开。一对a和b占一行。  
+输</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-11
@@ -903,7 +905,7 @@ Spell It</div>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">24k</span>
+            <span class="white-color">26.5k</span>
             
 
             

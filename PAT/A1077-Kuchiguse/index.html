@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1077 Kuchiguse, 孙健的博客">
-    <meta name="description" content="1077 Kuchiguse
-
-The Japanese language is notorious for its sentence ending particles. Personal preference of such partic">
+    <meta name="description" content="1077 Kuchiguse
+The Japanese language is notorious for its sentence ending particles. Personal preference of such particl">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,7 +389,7 @@ The Japanese language is notorious for its sentence ending particles. Personal p
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        363
+                        368
                     </div>
                     
 
@@ -413,9 +412,8 @@ The Japanese language is notorious for its sentence ending particles. Personal p
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1077 Kuchiguse</h2>
-<blockquote>
-<p>The Japanese language is notorious for its sentence ending particles. Personal preference of such particles can be considered as a reflection of the speaker's personality. Such a preference is called &quot;Kuchiguse&quot; and is often exaggerated artistically in Anime and Manga. For example, the artificial sentence ending particle &quot;nyan~&quot; is often used as a stereotype for characters with a cat-like personality:</p>
+                <h2 id="1077-Kuchiguse"><a href="#1077-Kuchiguse" class="headerlink" title="1077 Kuchiguse"></a>1077 Kuchiguse</h2><blockquote>
+<p>The Japanese language is notorious for its sentence ending particles. Personal preference of such particles can be considered as a reflection of the speaker’s personality. Such a preference is called “Kuchiguse” and is often exaggerated artistically in Anime and Manga. For example, the artificial sentence ending particle “nyan~” is often used as a stereotype for characters with a cat-like personality:</p>
 <ul>
 <li>Itai nyan~ (It hurts, nyan~)</li>
 <li>Ninjin wa iyada nyan~ (I hate carrots, nyan~)</li>
@@ -424,78 +422,67 @@ The Japanese language is notorious for its sentence ending particles. Personal p
 <blockquote>
 <p>Now given a few lines spoken by the same character, can you find her Kuchiguse?</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case. For each case, the first line is an integer N (2≤N≤100). Following are N file lines of 0~256 (inclusive) characters in length, each representing a character's spoken line. The spoken lines are case sensitive.</p>
-<h3>Output Specification:</h3>
-<p>For each test case, print in one line the kuchiguse of the character, i.e., the longest common suffix of all N lines. If there is no such suffix, write <code>nai</code>.</p>
-<h3>Sample Input 1:</h3>
-<pre><code>3 
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line is an integer N (2≤N≤100). Following are N file lines of 0~256 (inclusive) characters in length, each representing a character’s spoken line. The spoken lines are case sensitive.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print in one line the kuchiguse of the character, i.e., the longest common suffix of all N lines. If there is no such suffix, write <code>nai</code>.</p>
+<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h3><pre><code>3 
 Itai nyan~ 
 Ninjin wa iyadanyan~ 
 uhhh nyan~ 
-</code></pre>
-<h3>Sample Output 1:</h3>
-<pre><code>nyan~ 
-</code></pre>
-<h3>Sample Input 2:</h3>
-<pre><code>3 
+</code></pre><h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h3><pre><code>nyan~ 
+</code></pre><h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h3><pre><code>3 
 Itai! 
 Ninjinnwaiyada T_T 
 T_T 
-</code></pre>
-<h3>Sample Output 2:</h3>
-<pre><code>nai
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
-using namespace std;
+</code></pre><h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h3><pre><code>nai
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-string str[256]; //string数组
+string str<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//string数组</span>
 
-int main()
-{
-	int N;
-	scanf("%d", &N);
-	getchar(); //接收N后的换行符
-	int minLength = 256;
-	for (int i = 0; i < N; i++)
-	{
-		getline(cin, str[i]); //空格 也算字符,否则会有一个case出错!!!
-		int length = str[i].size();
-		if (length < minLength)
-			minLength = length;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//接收N后的换行符</span>
+    <span class="token keyword">int</span> minLength <span class="token operator">=</span> <span class="token number">256</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//空格 也算字符,否则会有一个case出错!!!</span>
+        <span class="token keyword">int</span> length <span class="token operator">=</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>length <span class="token operator">&lt;</span> minLength<span class="token punctuation">)</span>
+            minLength <span class="token operator">=</span> length<span class="token punctuation">;</span>
 
-		reverse(str[i].begin(), str[i].end());
-	}
+        <span class="token function">reverse</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-	//取公共最长前缀
-	int count = 0;
-	for (int i = 0; i < minLength; i++)
-	{
-		bool same = true;
-		for (int j = 1; j < N; j++) //判断其余字符串的第i个字符是否相等
-		{
-			if (str[0][i] != str[j][i]) //只要不相等,就break
-			{
-				same = false;
-				break;
-			}
-		}
+    <span class="token comment" spellcheck="true">//取公共最长前缀</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> minLength<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">bool</span> same <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//判断其余字符串的第i个字符是否相等</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> str<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//只要不相等,就break</span>
+            <span class="token punctuation">{</span>
+                same <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
 
-		if (same)
-			count++;
-		else
-			break;
-	}
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>same<span class="token punctuation">)</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-	if (count)
-		for (int i = count - 1; i >= 0; i--)
-			printf("%c", str[0][i]);
-	else
-		printf("nai");
-	return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> str<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"nai"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -700,9 +687,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1082 Read Number in Chinese
-
-Given an integer with no more than 9 digits, you are supposed to read it in the traditional</div>
+                    <div class="summary block-with-text">1082 Read Number in Chinese
+Given an integer with no more than 9 digits, you are supposed to read it in the traditional </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-07
@@ -747,9 +733,8 @@ Given an integer with no more than 9 digits, you are supposed to read it in the 
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1035 Password
-
-To prepare for PAT, the judge sometimes has to generate random passwords for the users. The problem is th</div>
+                    <div class="summary block-with-text">1035 Password
+To prepare for PAT, the judge sometimes has to generate random passwords for the users. The problem is tha</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-07
@@ -928,7 +913,7 @@ To prepare for PAT, the judge sometimes has to generate random passwords for the
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">24k</span>
+            <span class="white-color">26.5k</span>
             
 
             
