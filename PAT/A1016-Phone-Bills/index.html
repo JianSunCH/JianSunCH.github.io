@@ -5,12 +5,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1016 Phone Bills, 孙健的博客">
-    <meta name="description" content="1016 Phone Bills
-
+    <meta name="description" content="1016 Phone Bills
 A long-distance telephone company charges its customers by the following rules:
 
 
-Making a long-distan">
+Making a long-distanc">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -393,7 +392,7 @@ Making a long-distan">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1k
+                        1.1k
                     </div>
                     
 
@@ -416,23 +415,19 @@ Making a long-distan">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1016 Phone Bills</h2>
-<blockquote>
+                <h2 id="1016-Phone-Bills"><a href="#1016-Phone-Bills" class="headerlink" title="1016 Phone Bills"></a>1016 Phone Bills</h2><blockquote>
 <p>A long-distance telephone company charges its customers by the following rules:</p>
 </blockquote>
 <blockquote>
 <p>Making a long-distance call costs a certain amount per minute, depending on the time of day when the call is made. When a customer starts connecting a long-distance call, the time will be recorded, and so will be the time when the customer hangs up the phone. Every calendar month, a bill is sent to the customer for each minute called (at a rate determined by the time of day). Your job is to prepare the bills for each month, given a set of phone call records.</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case. Each case has two parts: the rate structure, and the phone call records.</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case has two parts: the rate structure, and the phone call records.</p>
 <p>The rate structure consists of a line with 24 non-negative integers denoting the toll (cents/minute) from 00:00 - 01:00, the toll from 01:00 - 02:00, and so on for each hour in the day.</p>
-<p>The next line contains a positive number N (≤1000), followed by N lines of records. Each phone call record consists of the name of the customer (string of up to 20 characters without space), the time and date (<code>mm:dd:hh:mm</code>), and the word <code>on-line</code> or <code>off-line</code>.</p>
-<p>For each test case, all dates will be within a single month. Each <code>on-line</code> record is paired with the chronologically next record for the same customer provided it is an <code>off-line</code>record. Any <code>on-line</code> records that are not paired with an <code>off-line</code> record are ignored, as are <code>off-line</code> records not paired with an <code>on-line</code> record. It is guaranteed that at least one call is well paired in the input. You may assume that no two records for the same customer have the same time. Times are recorded using a 24-hour clock.</p>
-<h3>Output Specification:</h3>
-<p>For each test case, you must print a phone bill for each customer.</p>
-<p>Bills must be printed in alphabetical order of customers' names. For each customer, first print in a line the name of the customer and the month of the bill in the format shown by the sample. Then for each time period of a call, print in one line the beginning and ending time and date (<code>dd:hh:mm</code>), the lasting time (in minute) and the charge of the call. The calls must be listed in chronological order. Finally, print the total charge for the month in the format shown by the sample.</p>
-<h3>Sample Input:</h3>
-<pre><code>10 10 10 10 10 10 20 20 20 15 15 15 15 15 15 15 20 30 20 15 15 10 10 10 
+<p>The next line contains a positive number N (≤1000), followed by N lines of records. Each phone call record consists of the name of the customer (string of up to 20 characters without space), the time and date (<code>mm:dd:hh:mm</code>), and the word <code>on-line</code> or <code>off-line</code>.</p>
+<p>For each test case, all dates will be within a single month. Each <code>on-line</code> record is paired with the chronologically next record for the same customer provided it is an <code>off-line</code>record. Any <code>on-line</code> records that are not paired with an <code>off-line</code> record are ignored, as are <code>off-line</code> records not paired with an <code>on-line</code> record. It is guaranteed that at least one call is well paired in the input. You may assume that no two records for the same customer have the same time. Times are recorded using a 24-hour clock.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, you must print a phone bill for each customer.</p>
+<p>Bills must be printed in alphabetical order of customers’ names. For each customer, first print in a line the name of the customer and the month of the bill in the format shown by the sample. Then for each time period of a call, print in one line the beginning and ending time and date (<code>dd:hh:mm</code>), the lasting time (in minute) and the charge of the call. The calls must be listed in chronological order. Finally, print the total charge for the month in the format shown by the sample.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>10 10 10 10 10 10 20 20 20 15 15 15 15 15 15 15 20 30 20 15 15 10 10 10 
 10 
 CYLL 01:01:06:01 on-line 
 CYLL 01:28:16:05 off-line 
@@ -444,9 +439,7 @@ aaa 01:02:00:01 on-line
 CYLL 01:28:15:41 on-line 
 aaa 01:05:02:24 on-line 
 aaa 01:04:23:59 off-line 
-</code></pre>
-<h3>Sample Output:</h3>
-<pre><code>CYJJ 01 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>CYJJ 01 
 01:05:59 01:07:00 61 $12.10 
 Total amount: $12.10 
 CYLL 01 
@@ -456,119 +449,117 @@ Total amount: $28.25
 aaa 01 
 02:00:01 04:23:59 4318 $638.80 
 Total amount: $638.80
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
-using namespace std;
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-int toll[24]; //不同时间段的费用
+<span class="token keyword">int</span> toll<span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//不同时间段的费用</span>
 
-struct Record
-{
-	char name[21];
-	int MM, dd, hh, mm;
-	bool status; //on-line or off-line
-} record[1001], temp;
+<span class="token keyword">struct</span> Record
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> MM<span class="token punctuation">,</span> dd<span class="token punctuation">,</span> hh<span class="token punctuation">,</span> mm<span class="token punctuation">;</span>
+    <span class="token keyword">bool</span> status<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//on-line or off-line</span>
+<span class="token punctuation">}</span> record<span class="token punctuation">[</span><span class="token number">1001</span><span class="token punctuation">]</span><span class="token punctuation">,</span> temp<span class="token punctuation">;</span>
 
-bool cmp(Record r1, Record r2)
-{
-	int val = strcmp(r1.name, r2.name);
-	if (val != 0)
-		return val < 0;
-	else if (r1.MM != r2.MM)
-		return r1.MM < r2.MM;
-	else if (r1.dd != r2.dd)
-		return r1.dd < r2.dd;
-	else if (r1.hh != r2.hh)
-		return r1.hh < r2.hh;
-	else
-		return r1.mm < r2.mm;
-}
+<span class="token keyword">bool</span> <span class="token function">cmp</span><span class="token punctuation">(</span>Record r1<span class="token punctuation">,</span> Record r2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> val <span class="token operator">=</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>r1<span class="token punctuation">.</span>name<span class="token punctuation">,</span> r2<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>val <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> val <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r1<span class="token punctuation">.</span>MM <span class="token operator">!=</span> r2<span class="token punctuation">.</span>MM<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> r1<span class="token punctuation">.</span>MM <span class="token operator">&lt;</span> r2<span class="token punctuation">.</span>MM<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r1<span class="token punctuation">.</span>dd <span class="token operator">!=</span> r2<span class="token punctuation">.</span>dd<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> r1<span class="token punctuation">.</span>dd <span class="token operator">&lt;</span> r2<span class="token punctuation">.</span>dd<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r1<span class="token punctuation">.</span>hh <span class="token operator">!=</span> r2<span class="token punctuation">.</span>hh<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> r1<span class="token punctuation">.</span>hh <span class="token operator">&lt;</span> r2<span class="token punctuation">.</span>hh<span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> r1<span class="token punctuation">.</span>mm <span class="token operator">&lt;</span> r2<span class="token punctuation">.</span>mm<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void get_expense(int start, int end, int &minute, int &money)
-{
-	temp = record[start];
-	//计算时长
-	while (temp.dd < record[end].dd || temp.hh < record[end].hh || temp.mm < record[end].mm)
-	{
-		minute++;
-		temp.mm++; //当前时间加1min
-		money += toll[temp.hh];
-		if (temp.mm >= 60)
-		{
-			temp.mm = 0;
-			temp.hh++;
-		}
-		if (temp.hh >= 24)
-		{
-			temp.hh = 0;
-			temp.dd++;
-		}
-	}
-}
+<span class="token keyword">void</span> <span class="token function">get_expense</span><span class="token punctuation">(</span><span class="token keyword">int</span> start<span class="token punctuation">,</span> <span class="token keyword">int</span> end<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">&amp;</span>minute<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">&amp;</span>money<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> record<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//计算时长</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>temp<span class="token punctuation">.</span>dd <span class="token operator">&lt;</span> record<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token punctuation">.</span>dd <span class="token operator">||</span> temp<span class="token punctuation">.</span>hh <span class="token operator">&lt;</span> record<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token punctuation">.</span>hh <span class="token operator">||</span> temp<span class="token punctuation">.</span>mm <span class="token operator">&lt;</span> record<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token punctuation">.</span>mm<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        minute<span class="token operator">++</span><span class="token punctuation">;</span>
+        temp<span class="token punctuation">.</span>mm<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//当前时间加1min</span>
+        money <span class="token operator">+</span><span class="token operator">=</span> toll<span class="token punctuation">[</span>temp<span class="token punctuation">.</span>hh<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>temp<span class="token punctuation">.</span>mm <span class="token operator">>=</span> <span class="token number">60</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            temp<span class="token punctuation">.</span>mm <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            temp<span class="token punctuation">.</span>hh<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>temp<span class="token punctuation">.</span>hh <span class="token operator">>=</span> <span class="token number">24</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            temp<span class="token punctuation">.</span>hh <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            temp<span class="token punctuation">.</span>dd<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-	for (int i = 0; i < 24; i++)
-		scanf("%d", &toll[i]);
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">24</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>toll<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	int N;
-	scanf("%d", &N);
-	char line[10]; //临时存放on-line or off-line
-	for (int i = 0; i < N; i++)
-	{
-		scanf("%s %d:%d:%d:%d %s", record[i].name, &record[i].MM, &record[i].dd, &record[i].hh, &record[i].mm, line);
-		if (strcmp(line, "on-line") == 0)
-			record[i].status = true; //on-line
-		else
-			record[i].status = false; //off-line
-	}
-	sort(record, record + N, cmp);
-	int on_line = 0, off_line, next; //next为下个用户
-	while (on_line < N)
-	{
-		int need_print = 0; //是否配对,输出该用户
-		next = on_line;		//从当前位置寻找下一个用户
-		while (next < N && strcmp(record[next].name, record[on_line].name) == 0)
-		{
-			if (need_print == 0 && record[next].status)
-				need_print = 1; //找到on-line
-			else if (need_print == 1 && !(record[next].status))
-				need_print = 2; //找到off-line
+    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> line<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//临时存放on-line or off-line</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s %d:%d:%d:%d %s"</span><span class="token punctuation">,</span> record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>MM<span class="token punctuation">,</span> <span class="token operator">&amp;</span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>dd<span class="token punctuation">,</span> <span class="token operator">&amp;</span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>hh<span class="token punctuation">,</span> <span class="token operator">&amp;</span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>mm<span class="token punctuation">,</span> line<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>line<span class="token punctuation">,</span> <span class="token string">"on-line"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//on-line</span>
+        <span class="token keyword">else</span>
+            record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//off-line</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">sort</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span> record <span class="token operator">+</span> N<span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> on_line <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> off_line<span class="token punctuation">,</span> next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//next为下个用户</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>on_line <span class="token operator">&lt;</span> N<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> need_print <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//是否配对,输出该用户</span>
+        next <span class="token operator">=</span> on_line<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//从当前位置寻找下一个用户</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>next <span class="token operator">&lt;</span> N <span class="token operator">&amp;&amp;</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>record<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> record<span class="token punctuation">[</span>on_line<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>need_print <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> record<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">.</span>status<span class="token punctuation">)</span>
+                need_print <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//找到on-line</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>need_print <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span>record<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                need_print <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//找到off-line</span>
 
-			next++; //直到找到下一个不同的名字
-		}
-		if (need_print < 2) //没有找到配对的off-line
-		{
-			on_line = next;
-			continue;
-		}
-		int all_expense = 0;
-		printf("%s %02d\n", record[on_line].name, record[on_line].MM);
-		while (on_line < next) //该用户配对的所有账单
-		{
-			while (on_line < next - 1 && !(record[on_line].status && !(record[on_line + 1].status)))
-				on_line++;
-			off_line = on_line + 1;
-			if (off_line == next) //输出完所有的配对
-			{
-				on_line = next;
-				break;
-			}
-			printf("%02d:%02d:%02d ", record[on_line].dd, record[on_line].hh, record[on_line].mm);
-			printf("%02d:%02d:%02d ", record[off_line].dd, record[off_line].hh, record[off_line].mm);
+            next<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//直到找到下一个不同的名字</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>need_print <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//没有找到配对的off-line</span>
+        <span class="token punctuation">{</span>
+            on_line <span class="token operator">=</span> next<span class="token punctuation">;</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> all_expense <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %02d\n"</span><span class="token punctuation">,</span> record<span class="token punctuation">[</span>on_line<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> record<span class="token punctuation">[</span>on_line<span class="token punctuation">]</span><span class="token punctuation">.</span>MM<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>on_line <span class="token operator">&lt;</span> next<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//该用户配对的所有账单</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>on_line <span class="token operator">&lt;</span> next <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span>record<span class="token punctuation">[</span>on_line<span class="token punctuation">]</span><span class="token punctuation">.</span>status <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span>record<span class="token punctuation">[</span>on_line <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                on_line<span class="token operator">++</span><span class="token punctuation">;</span>
+            off_line <span class="token operator">=</span> on_line <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>off_line <span class="token operator">==</span> next<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//输出完所有的配对</span>
+            <span class="token punctuation">{</span>
+                on_line <span class="token operator">=</span> next<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%02d:%02d:%02d "</span><span class="token punctuation">,</span> record<span class="token punctuation">[</span>on_line<span class="token punctuation">]</span><span class="token punctuation">.</span>dd<span class="token punctuation">,</span> record<span class="token punctuation">[</span>on_line<span class="token punctuation">]</span><span class="token punctuation">.</span>hh<span class="token punctuation">,</span> record<span class="token punctuation">[</span>on_line<span class="token punctuation">]</span><span class="token punctuation">.</span>mm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%02d:%02d:%02d "</span><span class="token punctuation">,</span> record<span class="token punctuation">[</span>off_line<span class="token punctuation">]</span><span class="token punctuation">.</span>dd<span class="token punctuation">,</span> record<span class="token punctuation">[</span>off_line<span class="token punctuation">]</span><span class="token punctuation">.</span>hh<span class="token punctuation">,</span> record<span class="token punctuation">[</span>off_line<span class="token punctuation">]</span><span class="token punctuation">.</span>mm<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-			int minutes = 0, expense = 0;
-			get_expense(on_line, off_line, minutes, expense);
-			all_expense += expense;
-			printf("%d $%.2f\n", minutes, expense / 100.0);
-			on_line = off_line + 1; //完成一个配对
-		}
-		printf("Total amount: $%.2f\n", all_expense / 100.0);
-	}
-	return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
+            <span class="token keyword">int</span> minutes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> expense <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token function">get_expense</span><span class="token punctuation">(</span>on_line<span class="token punctuation">,</span> off_line<span class="token punctuation">,</span> minutes<span class="token punctuation">,</span> expense<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            all_expense <span class="token operator">+</span><span class="token operator">=</span> expense<span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d $%.2f\n"</span><span class="token punctuation">,</span> minutes<span class="token punctuation">,</span> expense <span class="token operator">/</span> <span class="token number">100.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            on_line <span class="token operator">=</span> off_line <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//完成一个配对</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Total amount: $%.2f\n"</span><span class="token punctuation">,</span> all_expense <span class="token operator">/</span> <span class="token number">100.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -773,11 +764,10 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1028 List Sorting
-
+                    <div class="summary block-with-text">1028 List Sorting
 Excel can sort records according to any column. Now you are supposed to imitate this function.
 
-Input</div>
+Input </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-15
@@ -822,9 +812,8 @@ Input</div>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1012 The Best Rank
-
-To evaluate the performance of our first year CS majored students, we consider their grades of three</div>
+                    <div class="summary block-with-text">1012 The Best Rank
+To evaluate the performance of our first year CS majored students, we consider their grades of three </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-14
@@ -1003,7 +992,7 @@ To evaluate the performance of our first year CS majored students, we consider t
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">24k</span>
+            <span class="white-color">26.5k</span>
             
 
             

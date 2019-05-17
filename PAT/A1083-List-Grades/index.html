@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1083 List Grades, 孙健的博客">
-    <meta name="description" content="1083 List Grades
-
-Given a list of N student records with name, ID and grade. You are supposed to sort the records with r">
+    <meta name="description" content="1083 List Grades
+Given a list of N student records with name, ID and grade. You are supposed to sort the records with re">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,14 +389,14 @@ Given a list of N student records with name, ID and grade. You are supposed to
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        277
+                        355
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -413,66 +412,71 @@ Given a list of N student records with name, ID and grade. You are supposed to
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1083 List Grades</h2>
-<blockquote>
-<p>Given a list of N student records with name, ID and grade. You are supposed to sort the records with respect to the grade in non-increasing order, and output those student records of which the grades are in a given interval.</p>
+                <h2 id="1083-List-Grades"><a href="#1083-List-Grades" class="headerlink" title="1083 List Grades"></a>1083 List Grades</h2><blockquote>
+<p>Given a list of N student records with name, ID and grade. You are supposed to sort the records with respect to the grade in non-increasing order, and output those student records of which the grades are in a given interval.</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case. Each case is given in the following format:</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case is given in the following format:</p>
 <pre><code>N 
 name[1] ID[1] grade[1] 
 name[2] ID[2] grade[2] 
 ... ... 
 name[N] ID[N] grade[N] 
 grade1 grade2 
-</code></pre>
-<p>where <code>name[i]</code> and <code>ID[i]</code> are strings of no more than 10 characters with no space, <code>grade[i]</code> is an integer in [0, 100], <code>grade1</code> and <code>grade2</code> are the boundaries of the grade's interval. It is guaranteed that all the grades are <strong>distinct</strong>.</p>
-<h3>Output Specification:</h3>
-<p>For each test case you should output the student records of which the grades are in the given interval [<code>grade1</code>, <code>grade2</code>] and are in non-increasing order. Each student record occupies a line with the student's name and ID, separated by one space. If there is no student's grade in that interval, output <code>NONE</code> instead.</p>
-<h3>Sample Input 1:</h3>
-<pre><code>4 
+</code></pre><p>where <code>name[i]</code> and <code>ID[i]</code> are strings of no more than 10 characters with no space, <code>grade[i]</code> is an integer in [0, 100], <code>grade1</code> and <code>grade2</code> are the boundaries of the grade’s interval. It is guaranteed that all the grades are <strong>distinct</strong>.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case you should output the student records of which the grades are in the given interval [<code>grade1</code>, <code>grade2</code>] and are in non-increasing order. Each student record occupies a line with the student’s name and ID, separated by one space. If there is no student’s grade in that interval, output <code>NONE</code> instead.</p>
+<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h3><pre><code>4 
 Tom CS000001 59 
 Joe Math990112 89 
 Mike CS991301 100 
 Mary EE990830 95 
 60 100 
-</code></pre>
-<h3>Sample Output 1:</h3>
-<pre><code>Mike CS991301 
+</code></pre><h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h3><pre><code>Mike CS991301 
 Mary EE990830 
 Joe Math990112 
-</code></pre>
-<h3>Sample Input 2:</h3>
-<pre><code>2 
+</code></pre><h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h3><pre><code>2 
 Jean AA980920 60
 Ann CS01 80 
 90 95 
-</code></pre>
-<h3>Sample Output 2:</h3>
-<pre><code>NONE
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
-using namespace std;
-const int max_n = 101;
+</code></pre><h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h3><pre><code>NONE
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> max_n <span class="token operator">=</span> <span class="token number">101</span><span class="token punctuation">;</span>
 
-struct Student
-{
-	char name[11];
-	char id[11];
-	int grade;
-} student[max_n];
+<span class="token keyword">struct</span> Student
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> id<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> grade<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> student<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-bool cmp(Student s1, Student s2)
-{
-	return s1.grade > s2.grade;
-}
+<span class="token keyword">bool</span> <span class="token function">cmp</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> s1<span class="token punctuation">.</span>grade <span class="token operator">></span> s2<span class="token punctuation">.</span>grade<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-	int N, rangeL, rangeR;
-	scanf("%d", &N);
-	for (int i = 1; i <= n; i++) scanf("%s%s%d", student[i].name, student[i].id, &student[i].grade); scanf("%d%d", &rangel, &ranger); sort(student + 1, student n cmp); bool flag="false;" for (int i="1;" <="N;" if (student[i].grade>= rangeL && student[i].grade <= ranger) { printf("%s %s\n", student[i].name, student[i].id); flag="true;" } if (!flag) printf("none\n"); return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></=></bits></code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">,</span> rangeL<span class="token punctuation">,</span> rangeR<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%s%d"</span><span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>rangeL<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rangeR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">sort</span><span class="token punctuation">(</span>student <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> student <span class="token operator">+</span> N <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">bool</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade <span class="token operator">>=</span> rangeL <span class="token operator">&amp;&amp;</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade <span class="token operator">&lt;=</span> rangeR<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %s\n"</span><span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"NONE\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -677,9 +681,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1080 Graduate Admission
-
-It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 appl</div>
+                    <div class="summary block-with-text">1080 Graduate Admission
+It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 appli</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-17
@@ -724,9 +727,8 @@ It is said that in 2011, there are about 100 graduate schools ready to proceed o
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1075 PAT Judge
-
-The ranklist of PAT is generated from the status list, which shows the scores of the submissions. This t</div>
+                    <div class="summary block-with-text">1075 PAT Judge
+The ranklist of PAT is generated from the status list, which shows the scores of the submissions. This ti</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-16
@@ -905,7 +907,7 @@ The ranklist of PAT is generated from the status list, which shows the scores of
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">24k</span>
+            <span class="white-color">26.5k</span>
             
 
             
