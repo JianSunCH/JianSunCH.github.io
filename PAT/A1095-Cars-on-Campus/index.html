@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="A1012 The Best Rank, 孙健的博客">
-    <meta name="description" content="1012 The Best Rank
-To evaluate the performance of our first year CS majored students, we consider their grades of three ">
+    <meta name="keywords" content="A1095 Cars on Campus, 孙健的博客">
+    <meta name="description" content="1095 Cars on Campus
+Zhejiang University has 8 campuses and a lot of gates. From each gate we can collect the in/out time">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@ To evaluate the performance of our first year CS majored students, we consider t
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>A1012 The Best Rank | 孙健的博客</title>
+    <title>A1095 Cars on Campus | 孙健的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -241,13 +241,13 @@ To evaluate the performance of our first year CS majored students, we consider t
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        A1012 The Best Rank
+                        A1095 Cars on Campus
                     </div>
                 </div>
             </div>
@@ -382,21 +382,21 @@ To evaluate the performance of our first year CS majored students, we consider t
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-14
+                    2019-05-18
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        637
+                        477
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        2 分
                     </div>
                     
                 
@@ -412,103 +412,49 @@ To evaluate the performance of our first year CS majored students, we consider t
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1012-The-Best-Rank"><a href="#1012-The-Best-Rank" class="headerlink" title="1012 The Best Rank"></a>1012 The Best Rank</h2><blockquote>
-<p>To evaluate the performance of our first year CS majored students, we consider their grades of three courses only: <code>C</code> - C Programming Language, <code>M</code> - Mathematics (Calculus or Linear Algrbra), and <code>E</code> - English. At the mean time, we encourage students by emphasizing on their best ranks – that is, among the four ranks with respect to the three courses and the average grade, we print the best rank for each student.</p>
+                <h2 id="1095-Cars-on-Campus"><a href="#1095-Cars-on-Campus" class="headerlink" title="1095 Cars on Campus"></a>1095 Cars on Campus</h2><blockquote>
+<p>Zhejiang University has 8 campuses and a lot of gates. From each gate we can collect the in/out times and the plate numbers of the cars crossing the gate. Now with all the information available, you are supposed to tell, at any specific time point, the number of cars parking on campus, and at the end of the day find the cars that have parked for the longest time period.</p>
 </blockquote>
-<blockquote>
-<p>For example, The grades of <code>C</code>, <code>M</code>, <code>E</code> and <code>A</code> - Average of 4 students are given as the following:</p>
-</blockquote>
-<pre><code>StudentID C M E A 
-310101 98 85 88 90 
-310102 70 95 88 84 
-310103 82 87 94 88 
-310104 91 91 91 91 
-</code></pre><blockquote>
-<p>Then the best ranks for all the students are No.1 since the 1st one has done the best in C Programming Language, while the 2nd one in Mathematics, the 3rd one in English, and the last one in average.</p>
-</blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case starts with a line containing 2 numbers N and M (≤2000), which are the total number of students, and the number of students who would check their ranks, respectively. Then N lines follow, each contains a student ID which is a string of 6 digits, followed by the three integer grades (in the range of [0, 100]) of that student in the order of <code>C</code>, <code>M</code> and <code>E</code>. Then there are M lines, each containing a student ID.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each of the M students, print in one line the best rank for him/her, and the symbol of the corresponding rank, separated by a space.</p>
-<p>The priorities of the ranking methods are ordered as <code>A</code> &gt; <code>C</code> &gt; <code>M</code> &gt; <code>E</code>. Hence if there are two or more ways for a student to obtain the same best rank, output the one with the highest priority.</p>
-<p>If a student is not on the grading list, simply output <code>N/A</code>.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>5 6 
-310101 98 85 88 
-310102 70 95 88 
-310103 82 87 94 
-310104 91 91 91 
-310105 85 90 90 
-310101 
-310102 
-310103 
-310104 
-310105 
-999999 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>1 C 
-1 M 
-1 E 
-1 A 
-3 A
-N/A
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">struct</span> Student
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> id<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> grade<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span> student<span class="token punctuation">[</span><span class="token number">2001</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token keyword">char</span> course<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'M'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//按优先级顺序</span>
-<span class="token keyword">int</span> rank_no<span class="token punctuation">[</span><span class="token number">1000000</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">//每门课对应的排名</span>
-<span class="token keyword">int</span> num<span class="token punctuation">;</span>                               <span class="token comment" spellcheck="true">//按num排序student数组</span>
-
-<span class="token keyword">bool</span> <span class="token function">cmp</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">return</span> s1<span class="token punctuation">.</span>grade<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">></span> s2<span class="token punctuation">.</span>grade<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> M<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>M<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">round</span><span class="token punctuation">(</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//平均分</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> num <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> num<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>student<span class="token punctuation">,</span> student <span class="token operator">+</span> N<span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        rank_no<span class="token punctuation">[</span>student<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//对剩下的学生进行排名</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">==</span> student<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>grade<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                rank_no<span class="token punctuation">[</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> rank_no<span class="token punctuation">[</span>student<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span>
-                rank_no<span class="token punctuation">[</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">int</span> query_id<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>query_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>rank_no<span class="token punctuation">[</span>query_id<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//该学生不存在</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"N/A\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//rank值越小,排名越高</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>rank_no<span class="token punctuation">[</span>query_id<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> rank_no<span class="token punctuation">[</span>query_id<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                    k <span class="token operator">=</span> j<span class="token punctuation">;</span>
-
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %c\n"</span><span class="token punctuation">,</span> rank_no<span class="token punctuation">[</span>query_id<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> course<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case starts with two positive integers N (≤10​4​​), the number of records, and K (≤8×10​4​​) the number of queries. Then N lines follow, each gives a record in the format:</p>
+<pre><code>plate_number hh:mm:ss status 
+</code></pre><p>where <code>plate_number</code> is a string of 7 English capital letters or 1-digit numbers; <code>hh:mm:ss</code> represents the time point in a day by hour:minute:second, with the earliest time being <code>00:00:00</code> and the latest <code>23:59:59</code>; and <code>status</code> is either <code>in</code> or <code>out</code>.</p>
+<p>Note that all times will be within a single day. Each <code>in</code> record is paired with the chronologically next record for the same car provided it is an <code>out</code> record. Any <code>in</code> records that are not paired with an <code>out</code> record are ignored, as are <code>out</code> records not paired with an <code>in</code> record. It is guaranteed that at least one car is well paired in the input, and no car is both <code>in</code> and <code>out</code> at the same moment. Times are recorded using a 24-hour clock.</p>
+<p>Then K lines of queries follow, each gives a time point in the format <code>hh:mm:ss</code>. Note: the queries are given in <strong>ascending</strong> order of the times.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each query, output in a line the total number of cars parking on campus. The last line of output is supposed to give the plate number of the car that has parked for the longest time period, and the corresponding time length. If such a car is not unique, then output all of their plate numbers in a line in alphabetical order, separated by a space.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>16 7 
+JH007BD 18:00:01 in 
+ZD00001 11:30:08 out 
+DB8888A 13:00:00 out 
+ZA3Q625 23:59:50 out 
+ZA133CH 10:23:00 in 
+ZD00001 04:09:59 in 
+JH007BD 05:09:59 in 
+ZA3Q625 11:42:01 out 
+JH007BD 05:10:33 in 
+ZA3Q625 06:30:50 in 
+JH007BD 12:23:42 out 
+ZA3Q625 23:55:00 in 
+JH007BD 12:24:23 out 
+ZA133CH 17:11:22 out 
+JH007BD 18:07:01 out 
+DB8888A 06:30:50 in 
+05:10:00 
+06:30:50 
+11:00:00 
+12:23:42 
+14:00:00 
+18:00:00 
+23:59:00 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>1 
+4 
+5 
+2 
+1 
+0 
+1 
+JH007BD ZD00001 07:20:09
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -656,7 +602,7 @@ N/A
                     </span>
                     <a href="www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/PAT/A1012-The-Best-Rank/" class="b-link-green">A1012 The Best Rank</a>
+                    <a href="/PAT/A1095-Cars-on-Campus/" class="b-link-green">A1095 Cars on Campus</a>
                 </p>
             </div>
         </div>
@@ -678,7 +624,7 @@ N/A
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-05-14T16-43-56',
+        id: '2019-05-18T16-09-16',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -701,27 +647,25 @@ N/A
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/PAT/A1016-Phone-Bills/">
+                <a href="/PAT/A1095-Cars-on-Campus/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg97.jpg" class="responsive-img" alt="A1016 Phone Bills">
+                        <img src="http://cdn.sunjian.xyz/featureimg3.jpg" class="responsive-img" alt="A1095 Cars on Campus">
                         
-                        <span class="card-title">A1016 Phone Bills</span>
+                        <span class="card-title">A1095 Cars on Campus</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1016 Phone Bills
-A long-distance telephone company charges its customers by the following rules:
-
-
-Making a long-distanc</div>
+                    <div class="summary block-with-text">1095 Cars on Campus
+Zhejiang University has 8 campuses and a lot of gates. From each gate we can collect the in/out time</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -734,6 +678,7 @@ Making a long-distanc</div>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -752,24 +697,21 @@ Making a long-distanc</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/PAT/B1015-德才论/">
+                <a href="/PAT/A1080-Graduate-Admission/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg105.jpg" class="responsive-img" alt="B1015 德才论">
+                        <img src="http://cdn.sunjian.xyz/featureimg108.jpg" class="responsive-img" alt="A1080 Graduate Admission">
                         
-                        <span class="card-title">B1015 德才论</span>
+                        <span class="card-title">A1080 Graduate Admission</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1015 德才论
-宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”
-
-
-现给出一批考生的德才分数</div>
+                    <div class="summary block-with-text">1080 Graduate Admission
+It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 appli</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-17
                             </span>
                         <span class="publish-author">
                             
