@@ -4,11 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="B1032 挖掘机技术哪家强, 孙健的博客">
-    <meta name="description" content="1032 挖掘机技术哪家强
-为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。
-
-输入格式：输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每">
+    <meta name="keywords" content="A1047 Student List for Course, 孙健的博客">
+    <meta name="description" content="1047 Student List for Course
+Zhejiang University has 40,000 students and provides 2,500 courses. Now given the registere">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>B1032 挖掘机技术哪家强 | 孙健的博客</title>
+    <title>A1047 Student List for Course | 孙健的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -243,13 +241,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg103.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.sunjian.xyz/featureimg94.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        B1032 挖掘机技术哪家强
+                        A1047 Student List for Course
                     </div>
                 </div>
             </div>
@@ -384,21 +382,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-22
+                    2019-05-21
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        272
+                        453
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -414,35 +412,94 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1032-挖掘机技术哪家强"><a href="#1032-挖掘机技术哪家强" class="headerlink" title="1032 挖掘机技术哪家强"></a>1032 挖掘机技术哪家强</h2><blockquote>
-<p>为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。</p>
+                <h2 id="1047-Student-List-for-Course"><a href="#1047-Student-List-for-Course" class="headerlink" title="1047 Student List for Course"></a>1047 Student List for Course</h2><blockquote>
+<p>Zhejiang University has 40,000 students and provides 2,500 courses. Now given the registered course list of each student, you are supposed to output the student name lists of all the courses.</p>
 </blockquote>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从 1 开始连续编号）、及其比赛成绩（百分制），中间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中给出总得分最高的学校的编号、及其总分，中间以空格分隔。题目保证答案唯一，没有并列。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p><code>6</code><br><code>3 65</code><br><code>2 80</code><br><code>1 100</code><br><code>2 70</code><br><code>3 40</code><br><code>3 0</code></p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p><code>2 150</code></p>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains 2 numbers: N (≤40,000), the total number of students, and K (≤2,500), the total number of courses. Then N lines follow, each contains a student’s name (3 capital English letters plus a one-digit number), a positive number C (≤20) which is the number of courses that this student has registered, and then followed by C course numbers. For the sake of simplicity, the courses are numbered from 1 to K.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print the student name lists of all the courses in increasing order of the course numbers. For each course, first print in one line the course number and the number of registered students, separated by a space. Then output the students’ names in alphabetical order. Each name occupies a line.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>10 5 
+ZOE1 2 4 5 
+ANN0 3 5 2 1 
+BOB5 5 3 4 2 1 5 
+JOE4 1 2 
+JAY9 4 1 2 5 4 
+FRA8 3 4 2 5 
+DON2 2 4 5 
+AMY7 1 5 
+KAT3 3 5 4 2 
+LOR6 4 2 4 1 5 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>1 4 
+ANN0 
+BOB5 
+JAY9 
+LOR6 
+2 7 
+ANN0 
+BOB5 
+FRA8 
+JAY9 
+JOE4 
+KAT3 
+LOR6 
+3 1 
+BOB5 
+4 7 
+BOB5 
+DON2 
+FRA8 
+JAY9 
+KAT3 
+LOR6 
+ZOE1 
+5 9 
+AMY7 
+ANN0 
+BOB5 
+DON2 
+FRA8 
+JAY9 
+KAT3 
+LOR6 
+ZOE1
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> max_stu <span class="token operator">=</span> <span class="token number">40001</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//最大的学生数</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> max_course <span class="token operator">=</span> <span class="token number">2501</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//最大的课程数</span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> schoolId<span class="token punctuation">,</span> schoolScore<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> school<span class="token punctuation">[</span><span class="token number">100001</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>schoolId<span class="token punctuation">,</span> <span class="token operator">&amp;</span>schoolScore<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        school<span class="token punctuation">[</span>schoolId<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> schoolScore<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> course<span class="token punctuation">[</span>max_course<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//course[i]为第i门课的学生编号</span>
+<span class="token keyword">char</span> name<span class="token punctuation">[</span>max_stu<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-    <span class="token keyword">int</span> topId <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> topScore <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>school<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> topScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            topScore <span class="token operator">=</span> school<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            topId <span class="token operator">=</span> i<span class="token punctuation">;</span>
+<span class="token keyword">bool</span> <span class="token function">cmp</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>name<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">,</span> name<span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">,</span> K<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num<span class="token punctuation">,</span> course_id<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//选课的人数,课号</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%d"</span><span class="token punctuation">,</span> name<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> num<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>course_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            course<span class="token punctuation">[</span>course_id<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//学生i加入course_id这门课</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span> topId<span class="token punctuation">,</span> topScore<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//第i门课的学生数</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> name<span class="token punctuation">[</span>course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -590,7 +647,7 @@
                     </span>
                     <a href="www.jiansunch.com" class="b-link-green">孙健的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/PAT/B1032-挖掘机技术哪家强/" class="b-link-green">B1032 挖掘机技术哪家强</a>
+                    <a href="/PAT/A1047-Student-List-for-Course/" class="b-link-green">A1047 Student List for Course</a>
                 </p>
             </div>
         </div>
@@ -612,7 +669,7 @@
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
-        id: '2019-04-22T22-46-01',
+        id: '2019-05-21T17-45-38',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -635,26 +692,25 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/PAT/B1011-A-B-和-C/">
+                <a href="/PAT/A1047-Student-List-for-Course/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg88.jpg" class="responsive-img" alt="B1011 A+B 和 C">
+                        <img src="http://cdn.sunjian.xyz/featureimg94.jpg" class="responsive-img" alt="A1047 Student List for Course">
                         
-                        <span class="card-title">B1011 A+B 和 C</span>
+                        <span class="card-title">A1047 Student List for Course</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1011 A+B 和 C
-给定区间 [−2​^31​​,2​^31​​] 内的 3 个整数 A、B 和 C，请判断 A+B 是否大于 C。
-
-输入格式：输入第 1 行给出正整数 T (≤10)，是测试用例的个数。随后给出 T 组测试用例，每</div>
+                    <div class="summary block-with-text">1047 Student List for Course
+Zhejiang University has 40,000 students and provides 2,500 courses. Now given the registere</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -667,6 +723,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -685,21 +742,21 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/PAT/B1001-害死人不偿命的-3n-1-猜想/">
+                <a href="/PAT/A1039-Course-List-for-Student/">
                     <div class="card-image">
                         
                         
-                        <img src="http://cdn.sunjian.xyz/featureimg60.jpg" class="responsive-img" alt="B1001 害死人不偿命的(3n+1)猜想">
+                        <img src="http://cdn.sunjian.xyz/featureimg35.jpg" class="responsive-img" alt="A1039 Course List for Student">
                         
-                        <span class="card-title">B1001 害死人不偿命的(3n+1)猜想</span>
+                        <span class="card-title">A1039 Course List for Student</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1001 害死人不偿命的(3n+1)猜想
-卡拉兹(Callatz)猜想：对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950</div>
+                    <div class="summary block-with-text">1039 Course List for Student
+Zhejiang University has 40000 students and provides 2500 courses. Now given the student nam</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-21
                             </span>
                         <span class="publish-author">
                             
