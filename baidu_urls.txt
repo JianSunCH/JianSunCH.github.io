@@ -1,3 +1,3 @@
-www.jiansunch.com/PAT/A1063-Set-Similarity/
-www.jiansunch.com/PAT/A1047-Student-List-for-Course/
-www.jiansunch.com/PAT/A1039-Course-List-for-Student/
+www.jiansunch.com/PAT/A1100-Mars-Numbers/
+www.jiansunch.com/PAT/B1044-火星数字/
+www.jiansunch.com/PAT/A1060-Are-They-Equal/
