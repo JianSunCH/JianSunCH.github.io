@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>POJ-Solution</title>
+      <link href="/POJ/POJ-Solution/"/>
+      <url>/POJ/POJ-Solution/</url>
+      
+        <content type="html"><![CDATA[<h1 id="POJ"><a href="#POJ" class="headerlink" title="POJ"></a><a href="http://poj.org/" target="_blank" rel="noopener">POJ</a></h1><table><thead><tr><th style="text-align:center">ID</th><th style="text-align:center">Problem</th><th style="text-align:center">Solution</th></tr></thead><tbody><tr><td style="text-align:center">1001</td><td style="text-align:center"><a href="http://poj.org/problem?id=1000" target="_blank" rel="noopener">A+B Problem</a></td><td style="text-align:center"><a href="/POJ/1000-A-B-Problem">C++</a></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 题集 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POJ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1000 A+B Problem</title>
+      <link href="/POJ/1000-A-B-Problem/"/>
+      <url>/POJ/1000-A-B-Problem/</url>
+      
+        <content type="html"><![CDATA[<h2 id="A-B-Problem"><a href="#A-B-Problem" class="headerlink" title="A+B Problem"></a>A+B Problem</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote><p>Calculate a+b</p></blockquote><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>Two integer a,b (0&lt;=a,b&lt;=10)</p><h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Output a+b</p><h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><pre><code>1 2</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><pre><code>3</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POJ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>简单计算器</title>
       <link href="/codeup/%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97%E5%99%A8/"/>
       <url>/codeup/%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97%E5%99%A8/</url>
