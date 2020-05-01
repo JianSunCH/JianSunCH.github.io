@@ -5,13 +5,12 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1100 Mars Numbers, 孙健的博客">
-    <meta name="description" content="1100 Mars Numbers
-
+    <meta name="description" content="1100 Mars Numbers
 People on Mars count their numbers with base 13:
 
 
-Zero on Earth is called &amp;quot;tret&amp;quot; on Mars.
-">
+Zero on Earth is called “tret” on Mars.
+The numbers">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -394,7 +393,7 @@ Zero on Earth is called &amp;quot;tret&amp;quot; on Mars.
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        392
+                        436
                     </div>
                     
 
@@ -417,77 +416,82 @@ Zero on Earth is called &amp;quot;tret&amp;quot; on Mars.
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1100 Mars Numbers</h2>
-<blockquote>
+                <h2 id="1100-Mars-Numbers"><a href="#1100-Mars-Numbers" class="headerlink" title="1100 Mars Numbers"></a>1100 Mars Numbers</h2><blockquote>
 <p>People on Mars count their numbers with base 13:</p>
 </blockquote>
 <ul>
-<li>Zero on Earth is called &quot;tret&quot; on Mars.</li>
-<li>The numbers 1 to 12 on Earth is called &quot;jan, feb, mar, apr, may, jun, jly, aug, sep, oct, nov, dec&quot; on Mars, respectively.</li>
-<li>For the next higher digit, Mars people name the 12 numbers as &quot;tam, hel, maa, huh, tou, kes, hei, elo, syy, lok, mer, jou&quot;, respectively.</li>
+<li>Zero on Earth is called “tret” on Mars.</li>
+<li>The numbers 1 to 12 on Earth is called “jan, feb, mar, apr, may, jun, jly, aug, sep, oct, nov, dec” on Mars, respectively.</li>
+<li>For the next higher digit, Mars people name the 12 numbers as “tam, hel, maa, huh, tou, kes, hei, elo, syy, lok, mer, jou”, respectively.</li>
 </ul>
 <blockquote>
-<p>For examples, the number 29 on Earth is called &quot;hel mar&quot; on Mars; and &quot;elo nov&quot; on Mars corresponds to 115 on Earth. In order to help communication between people from these two planets, you are supposed to write a program for mutual translation between Earth and Mars number systems.</p>
+<p>For examples, the number 29 on Earth is called “hel mar” on Mars; and “elo nov” on Mars corresponds to 115 on Earth. In order to help communication between people from these two planets, you are supposed to write a program for mutual translation between Earth and Mars number systems.</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case. For each case, the first line contains a positive integer N (&lt;100). Then N lines follow, each contains a number in [0, 169), given either in the form of an Earth number, or that of Mars.</p>
-<h3>Output Specification:</h3>
-<p>For each number, print in a line the corresponding number in the other language.</p>
-<h3>Sample Input:</h3>
-<pre><code>4 
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains a positive integer N (&lt;100). Then N lines follow, each contains a number in [0, 169), given either in the form of an Earth number, or that of Mars.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each number, print in a line the corresponding number in the other language.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>4 
 29 
 5 
 elo nov 
 tam 
-</code></pre>
-<h3>Sample Output:</h3>
-<pre><code>hel mar 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>hel mar 
 may 
 115 
 13
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
-using namespace std;
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-// [0,12]的火星文
-string unitDigit[13] = {"tret", "jan", "feb", "mar", "apr", "may", "jun", "jly", "aug", "sep", "oct", "nov", "dec"};
-// 13的[0,12]倍的火星文
-string tenDigit[13] = {"tret", "tam", "hel", "maa", "huh", "tou", "kes", "hei", "elo", "syy", "lok", "mer", "jou"};
+<span class="token comment" spellcheck="true">// [0,12]的火星文</span>
+string unitDigit<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"tret"</span><span class="token punctuation">,</span> <span class="token string">"jan"</span><span class="token punctuation">,</span> <span class="token string">"feb"</span><span class="token punctuation">,</span> <span class="token string">"mar"</span><span class="token punctuation">,</span> <span class="token string">"apr"</span><span class="token punctuation">,</span> <span class="token string">"may"</span><span class="token punctuation">,</span> <span class="token string">"jun"</span><span class="token punctuation">,</span> <span class="token string">"jly"</span><span class="token punctuation">,</span> <span class="token string">"aug"</span><span class="token punctuation">,</span> <span class="token string">"sep"</span><span class="token punctuation">,</span> <span class="token string">"oct"</span><span class="token punctuation">,</span> <span class="token string">"nov"</span><span class="token punctuation">,</span> <span class="token string">"dec"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 13的[0,12]倍的火星文</span>
+string tenDigit<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"tret"</span><span class="token punctuation">,</span> <span class="token string">"tam"</span><span class="token punctuation">,</span> <span class="token string">"hel"</span><span class="token punctuation">,</span> <span class="token string">"maa"</span><span class="token punctuation">,</span> <span class="token string">"huh"</span><span class="token punctuation">,</span> <span class="token string">"tou"</span><span class="token punctuation">,</span> <span class="token string">"kes"</span><span class="token punctuation">,</span> <span class="token string">"hei"</span><span class="token punctuation">,</span> <span class="token string">"elo"</span><span class="token punctuation">,</span> <span class="token string">"syy"</span><span class="token punctuation">,</span> <span class="token string">"lok"</span><span class="token punctuation">,</span> <span class="token string">"mer"</span><span class="token punctuation">,</span> <span class="token string">"jou"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-string num_to_str[170];		 //数字 -> 火星文
-map<string, int> str_to_num; //火星文 -> 数字
-void init()
-{
-	//特殊处理
-	for (int i = 0; i < 13; i++)
-	{
-		num_to_str[i] = unitDigit[i]; //个位为[0,12],十位为0
-		str_to_num[unitDigit[i]] = i;
-		num_to_str[i * 13] = tenDigit[i]; //个位为0,十位为[0,12]
-		str_to_num[tenDigit[i]] = i * 13;
-	}
-	for (int i = 1; i < 13; i++) //十位
-	{
-		for (int j = 1; j < 13; j++) //个位
-		{
-			string str = tenDigit[i] + " " + unitDigit[j]; //火星文
-			num_to_str[i * 13 + j] = str;				   //数字 -> 火星文
-			str_to_num[str] = i * 13 + j;				   //火星文 -> 数字
-		}
-	}
-}
+string num_to_str<span class="token punctuation">[</span><span class="token number">170</span><span class="token punctuation">]</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//数字 -> 火星文</span>
+map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> str_to_num<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//火星文 -> 数字</span>
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//特殊处理</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">13</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        num_to_str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> unitDigit<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//个位为[0,12],十位为0</span>
+        str_to_num<span class="token punctuation">[</span>unitDigit<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        num_to_str<span class="token punctuation">[</span>i <span class="token operator">*</span> <span class="token number">13</span><span class="token punctuation">]</span> <span class="token operator">=</span> tenDigit<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//个位为0,十位为[0,12]</span>
+        str_to_num<span class="token punctuation">[</span>tenDigit<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i <span class="token operator">*</span> <span class="token number">13</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">13</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//十位</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">13</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//个位</span>
+        <span class="token punctuation">{</span>
+            string str <span class="token operator">=</span> tenDigit<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> unitDigit<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//火星文</span>
+            num_to_str<span class="token punctuation">[</span>i <span class="token operator">*</span> <span class="token number">13</span> <span class="token operator">+</span> j<span class="token punctuation">]</span> <span class="token operator">=</span> str<span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">//数字 -> 火星文</span>
+            str_to_num<span class="token punctuation">[</span>str<span class="token punctuation">]</span> <span class="token operator">=</span> i <span class="token operator">*</span> <span class="token number">13</span> <span class="token operator">+</span> j<span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">//火星文 -> 数字</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-	init();
-	int N;
-	scanf("%d%*c", &N);
-	while (N--)
-	{
-		string str;
-		getline(cin, str);
-		if (str[0] >= '0' && str[0] <= 10 '9') 数字 { int num="0;" for (int i="0;" < str.length(); i++) * + (str[i] - '0'); cout << num_to_str[num] endl; } else str_to_num[str] return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></string,></bits></code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%*c"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>N<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        string str<span class="token punctuation">;</span>
+        <span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token string">'0'</span> <span class="token operator">&amp;&amp;</span> str<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token string">'9'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//数字</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+                num <span class="token operator">=</span> num <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> num_to_str<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+            cout <span class="token operator">&lt;&lt;</span> str_to_num<span class="token punctuation">[</span>str<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -692,9 +696,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1032 Sharing
-
-To store English words, one method is to use linked lists and store a word letter by letter. To save some </div>
+                    <div class="summary block-with-text">1032 Sharing
+To store English words, one method is to use linked lists and store a word letter by letter. To save some s</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-28
@@ -739,13 +742,12 @@ To store English words, one method is to use linked lists and store a word lette
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1044 火星数字
-
+                    <div class="summary block-with-text">1044 火星数字
 火星人是以 13 进制计数的：
 
 
 地球人的 0 被火星人称为 tret。
-地球人数字 1 到 12 的火星文分别为：jan, feb, mar, apr, may, jun, jly, aug, sep, oct, </div>
+地球人数字 1 到 12 的火星文分别为：jan, feb, mar, apr, may, jun, jly, aug, sep, oct, n</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-23
@@ -924,7 +926,7 @@ To store English words, one method is to use linked lists and store a word lette
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">28.7k</span>
+            <span class="white-color">31.9k</span>
             
 
             
