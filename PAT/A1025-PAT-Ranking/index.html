@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1025 PAT Ranking, 孙健的博客">
-    <meta name="description" content="1025 PAT Ranking
-Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejia">
+    <meta name="description" content="1025 PAT Ranking
+
+Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zheji">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,14 +390,14 @@ Programming Ability Test (PAT) is organized by the College of Computer Science a
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        516
+                        389
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        2 分
                     </div>
                     
                 
@@ -412,14 +413,19 @@ Programming Ability Test (PAT) is organized by the College of Computer Science a
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1025-PAT-Ranking"><a href="#1025-PAT-Ranking" class="headerlink" title="1025 PAT Ranking"></a>1025 PAT Ranking</h2><blockquote>
+                <h2>1025 PAT Ranking</h2>
+<blockquote>
 <p>Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several places, and the ranklists will be merged immediately after the test. Now it is your job to write a program to correctly merge all the ranklists and generate the final rank.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains a positive number N (≤100), the number of test locations. Then N ranklists follow, each starts with a line containing a positive integer K (≤300), the number of testees, and then K lines containing the registration number (a 13-digit number) and the total score of each testee. All the numbers in a line are separated by a space.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, first print in one line the total number of testees. Then print the final ranklist in the following format:</p>
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. For each case, the first line contains a positive number N (≤100), the number of test locations. Then N ranklists follow, each starts with a line containing a positive integer K (≤300), the number of testees, and then K lines containing the registration number (a 13-digit number) and the total score of each testee. All the numbers in a line are separated by a space.</p>
+<h3>Output Specification:</h3>
+<p>For each test case, first print in one line the total number of testees. Then print the final ranklist in the following format:</p>
 <pre><code>registration_number final_rank location_number local_rank 
-</code></pre><p>The locations are numbered from 1 to N. The output must be sorted in nondecreasing order of the final ranks. The testees with the same score must have the same rank, and the output must be sorted in nondecreasing order of their registration numbers.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>2 
+</code></pre>
+<p>The locations are numbered from 1 to N. The output must be sorted in nondecreasing order of the final ranks. The testees with the same score must have the same rank, and the output must be sorted in nondecreasing order of their registration numbers.</p>
+<h3>Sample Input:</h3>
+<pre><code>2 
 5 
 1234567890001 95 
 1234567890005 100 
@@ -431,7 +437,9 @@ Programming Ability Test (PAT) is organized by the College of Computer Science a
 1234567890011 25 
 1234567890014 100 
 1234567890012 85 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>9 
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>9 
 1234567890005 1 1 1 
 1234567890014 1 2 1 
 1234567890001 3 1 2 
@@ -441,68 +449,43 @@ Programming Ability Test (PAT) is organized by the College of Computer Science a
 1234567890002 7 1 5 
 1234567890013 8 2 3 
 1234567890011 9 2 4
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
+using namespace std;
 
-<span class="token keyword">struct</span> Student
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> id<span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//准考证号</span>
-    <span class="token keyword">int</span> score<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> location_no<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//考场号</span>
-    <span class="token keyword">int</span> local_rank<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//本考场排名</span>
-<span class="token punctuation">}</span> student<span class="token punctuation">[</span><span class="token number">30001</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+struct Student
+{
+	char id[14]; //准考证号
+	int score;
+	int location_no; //考场号
+	int local_rank;  //本考场排名
+} student[30001];
 
-<span class="token keyword">bool</span> <span class="token function">cmp</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>s1<span class="token punctuation">.</span>score <span class="token operator">!=</span> s2<span class="token punctuation">.</span>score<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> s1<span class="token punctuation">.</span>score <span class="token operator">></span> s2<span class="token punctuation">.</span>score<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//分数从高到低</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span>id<span class="token punctuation">,</span> s2<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//准考证号从小到大</span>
-<span class="token punctuation">}</span>
+bool cmp(Student s1, Student s2)
+{
+	if (s1.score != s2.score)
+		return s1.score > s2.score; //分数从高到低
+	else
+		return strcmp(s1.id, s2.id) < 0; //准考证号从小到大
+}
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+int main()
+{
 
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> K<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//总考生数</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%d"</span><span class="token punctuation">,</span> student<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">.</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            student<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">.</span>location_no <span class="token operator">=</span> i<span class="token punctuation">;</span>
-            num<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>student <span class="token operator">+</span> num <span class="token operator">-</span> K<span class="token punctuation">,</span> student <span class="token operator">+</span> num<span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	int N, K;
+	scanf("%d", &N);
+	int num = 0; //总考生数
+	for (int i = 1; i <= 1 n; i++) { scanf("%d", &k); for (int j="0;" < k; j++) scanf("%s%d", student[num].id, &student[num].score); student[num].location_no="i;" num++; } sort(student + num - k, student num, cmp); student[num k].local_rank="1;" 考场第一名 k 1; num; 对剩下的人进行排名 if (student[j].score="=" student[j 1].score) student[j].local_rank="student[j" 1].local_rank; 分数相同，排名相同 else (num k); printf("%d\n", num); sort(student, int rank="1;" i="0;" (i> 0 && student[i].score != student[i - 1].score)
+			rank = i + 1;
 
-        student<span class="token punctuation">[</span>num <span class="token operator">-</span> K<span class="token punctuation">]</span><span class="token punctuation">.</span>local_rank <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//考场第一名</span>
+		printf("%s ", student[i].id);
+		printf("%d %d %d\n", rank, student[i].location_no, student[i].local_rank);
+	}
 
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> num <span class="token operator">-</span> K <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> num<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//对剩下的人进行排名</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>student<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>score <span class="token operator">==</span> student<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>score<span class="token punctuation">)</span>
-                student<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>local_rank <span class="token operator">=</span> student<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>local_rank<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//分数相同，排名相同</span>
-            <span class="token keyword">else</span>
-                student<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>local_rank <span class="token operator">=</span> j <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">-</span> <span class="token punctuation">(</span>num <span class="token operator">-</span> K<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">sort</span><span class="token punctuation">(</span>student<span class="token punctuation">,</span> student <span class="token operator">+</span> num<span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> rank <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> num<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>score <span class="token operator">!=</span> student<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>score<span class="token punctuation">)</span>
-            rank <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s "</span><span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d %d\n"</span><span class="token punctuation">,</span> rank<span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>location_no<span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>local_rank<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></bits></code></pre>
 
             </div>
             <hr>
@@ -707,8 +690,9 @@ Programming Ability Test (PAT) is organized by the College of Computer Science a
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1062 Talent and Virtue
-About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in which he talked abo</div>
+                    <div class="summary block-with-text">1062 Talent and Virtue
+
+About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in which he talked ab</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-13
@@ -753,8 +737,9 @@ About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in wh
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1082 Read Number in Chinese
-Given an integer with no more than 9 digits, you are supposed to read it in the traditional </div>
+                    <div class="summary block-with-text">1082 Read Number in Chinese
+
+Given an integer with no more than 9 digits, you are supposed to read it in the traditional</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-07
@@ -933,7 +918,7 @@ Given an integer with no more than 9 digits, you are supposed to read it in the 
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">31.9k</span>
+            <span class="white-color">28.7k</span>
             
 
             

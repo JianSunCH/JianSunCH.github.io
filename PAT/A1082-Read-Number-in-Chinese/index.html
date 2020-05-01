@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1082 Read Number in Chinese, 孙健的博客">
-    <meta name="description" content="1082 Read Number in Chinese
-Given an integer with no more than 9 digits, you are supposed to read it in the traditional ">
+    <meta name="description" content="1082 Read Number in Chinese
+
+Given an integer with no more than 9 digits, you are supposed to read it in the traditional">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,14 +390,14 @@ Given an integer with no more than 9 digits, you are supposed to read it in the 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        393
+                        293
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -412,72 +413,75 @@ Given an integer with no more than 9 digits, you are supposed to read it in the 
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1082-Read-Number-in-Chinese"><a href="#1082-Read-Number-in-Chinese" class="headerlink" title="1082 Read Number in Chinese"></a>1082 Read Number in Chinese</h2><blockquote>
-<p>Given an integer with no more than 9 digits, you are supposed to read it in the traditional Chinese way. Output <code>Fu</code> first if it is negative. For example, -123456789 is read as <code>Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu</code>. Note: zero (<code>ling</code>) must be handled correctly according to the Chinese tradition. For example, 100800 is <code>yi Shi Wan ling ba Bai</code>.</p>
+                <h2>1082 Read Number in Chinese</h2>
+<blockquote>
+<p>Given an integer with no more than 9 digits, you are supposed to read it in the traditional Chinese way. Output <code>Fu</code> first if it is negative. For example, -123456789 is read as <code>Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu</code>. Note: zero (<code>ling</code>) must be handled correctly according to the Chinese tradition. For example, 100800 is <code>yi Shi Wan ling ba Bai</code>.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case, which gives an integer with no more than 9 digits.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print in a line the Chinese way of reading the number. The characters are separated by a space and there must be no extra space at the end of the line.</p>
-<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h3><pre><code>-123456789 
-</code></pre><h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h3><pre><code>Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu 
-</code></pre><h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h3><pre><code>100800 
-</code></pre><h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h3><pre><code>yi Shi Wan ling ba Bai
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case, which gives an integer with no more than 9 digits.</p>
+<h3>Output Specification:</h3>
+<p>For each test case, print in a line the Chinese way of reading the number. The characters are separated by a space and there must be no extra space at the end of the line.</p>
+<h3>Sample Input 1:</h3>
+<pre><code>-123456789 
+</code></pre>
+<h3>Sample Output 1:</h3>
+<pre><code>Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu 
+</code></pre>
+<h3>Sample Input 2:</h3>
+<pre><code>100800 
+</code></pre>
+<h3>Sample Output 2:</h3>
+<pre><code>yi Shi Wan ling ba Bai
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
+using namespace std;
 
-<span class="token keyword">char</span> num<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"ling"</span><span class="token punctuation">,</span> <span class="token string">"yi"</span><span class="token punctuation">,</span> <span class="token string">"er"</span><span class="token punctuation">,</span> <span class="token string">"san"</span><span class="token punctuation">,</span> <span class="token string">"si"</span><span class="token punctuation">,</span> <span class="token string">"wu"</span><span class="token punctuation">,</span> <span class="token string">"liu"</span><span class="token punctuation">,</span> <span class="token string">"qi"</span><span class="token punctuation">,</span> <span class="token string">"ba"</span><span class="token punctuation">,</span> <span class="token string">"jiu"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">char</span> wei<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Shi"</span><span class="token punctuation">,</span> <span class="token string">"Bai"</span><span class="token punctuation">,</span> <span class="token string">"Qian"</span><span class="token punctuation">,</span> <span class="token string">"Wan"</span><span class="token punctuation">,</span> <span class="token string">"Yi"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+char num[10][5] = {"ling", "yi", "er", "san", "si", "wu", "liu", "qi", "ba", "jiu"};
+char wei[5][5] = {"Shi", "Bai", "Qian", "Wan", "Yi"};
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    cin<span class="token punctuation">.</span><span class="token function">getline</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> length <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//分别指向字符串首尾元素</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'-'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Fu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        left<span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+int main()
+{
+	char str[11];
+	cin.getline(str, 11);
+	int length = strlen(str);
+	int left = 0, right = length - 1; //分别指向字符串首尾元素
+	if (str[0] == '-')
+	{
+		printf("Fu");
+		left++;
+	}
 
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> <span class="token number">4</span> <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//right每次左移4位,直到left与right在同一节</span>
-        right <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> length<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//每次处理数字的一节</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">bool</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token keyword">bool</span> isPrint <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//从左至右处理某节的每一位</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> str<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//当前位为0</span>
-                flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" ling"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token comment" spellcheck="true">//只要不是首位,后面的每一位都输出空格</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
-                    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> num<span class="token punctuation">[</span>str<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出当前位数字</span>
-                isPrint <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>                        <span class="token comment" spellcheck="true">//该节至少一位输出</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">!=</span> right<span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %s"</span><span class="token punctuation">,</span> wei<span class="token punctuation">[</span>right <span class="token operator">-</span> left <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            left<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>isPrint <span class="token operator">==</span> <span class="token boolean">true</span> <span class="token operator">&amp;&amp;</span> right <span class="token operator">!=</span> length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %s"</span><span class="token punctuation">,</span> wei<span class="token punctuation">[</span><span class="token punctuation">(</span>length <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> right<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        right <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	while (left + 4 <= right) right每次左移4位,直到left与right在同一节 right -="4;" while (left < length) 每次处理数字的一节 { bool flag="false;" isprint="false;" 从左至右处理某节的每一位 if> 0 && str[left] == '0') //当前位为0
+				flag = true;
+			else
+			{
+				if (flag)
+				{
+					printf(" ling");
+					flag = false;
+				}
+				//只要不是首位,后面的每一位都输出空格
+				if (left > 0)
+					printf(" ");
+				printf("%s", num[str[left] - '0']); //输出当前位数字
+				isPrint = true;						//该节至少一位输出
+				if (left != right)
+				{
+					printf(" %s", wei[right - left - 1]);
+				}
+			}
+			left++;
+		}
+		if (isPrint == true && right != length - 1)
+		{
+			printf(" %s", wei[(length - 1 - right) / 4 + 2]);
+		}
+		right += 4;
+	}
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></bits></code></pre>
 
             </div>
             <hr>
@@ -682,8 +686,9 @@ Given an integer with no more than 9 digits, you are supposed to read it in the 
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1025 PAT Ranking
-Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejia</div>
+                    <div class="summary block-with-text">1025 PAT Ranking
+
+Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zheji</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-13
@@ -728,8 +733,9 @@ Programming Ability Test (PAT) is organized by the College of Computer Science a
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1077 Kuchiguse
-The Japanese language is notorious for its sentence ending particles. Personal preference of such particl</div>
+                    <div class="summary block-with-text">1077 Kuchiguse
+
+The Japanese language is notorious for its sentence ending particles. Personal preference of such partic</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-07
@@ -908,7 +914,7 @@ The Japanese language is notorious for its sentence ending particles. Personal p
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">31.9k</span>
+            <span class="white-color">28.7k</span>
             
 
             

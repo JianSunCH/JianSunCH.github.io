@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1047 Student List for Course, 孙健的博客">
-    <meta name="description" content="1047 Student List for Course
-Zhejiang University has 40,000 students and provides 2,500 courses. Now given the registere">
+    <meta name="description" content="1047 Student List for Course
+
+Zhejiang University has 40,000 students and provides 2,500 courses. Now given the register">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,7 +390,7 @@ Zhejiang University has 40,000 students and provides 2,500 courses. Now given th
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        453
+                        394
                     </div>
                     
 
@@ -412,12 +413,16 @@ Zhejiang University has 40,000 students and provides 2,500 courses. Now given th
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1047-Student-List-for-Course"><a href="#1047-Student-List-for-Course" class="headerlink" title="1047 Student List for Course"></a>1047 Student List for Course</h2><blockquote>
+                <h2>1047 Student List for Course</h2>
+<blockquote>
 <p>Zhejiang University has 40,000 students and provides 2,500 courses. Now given the registered course list of each student, you are supposed to output the student name lists of all the courses.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains 2 numbers: N (≤40,000), the total number of students, and K (≤2,500), the total number of courses. Then N lines follow, each contains a student’s name (3 capital English letters plus a one-digit number), a positive number C (≤20) which is the number of courses that this student has registered, and then followed by C course numbers. For the sake of simplicity, the courses are numbered from 1 to K.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print the student name lists of all the courses in increasing order of the course numbers. For each course, first print in one line the course number and the number of registered students, separated by a space. Then output the students’ names in alphabetical order. Each name occupies a line.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>10 5 
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. For each case, the first line contains 2 numbers: N (≤40,000), the total number of students, and K (≤2,500), the total number of courses. Then N lines follow, each contains a student's name (3 capital English letters plus a one-digit number), a positive number C (≤20) which is the number of courses that this student has registered, and then followed by C course numbers. For the sake of simplicity, the courses are numbered from 1 to K.</p>
+<h3>Output Specification:</h3>
+<p>For each test case, print the student name lists of all the courses in increasing order of the course numbers. For each course, first print in one line the course number and the number of registered students, separated by a space. Then output the students' names in alphabetical order. Each name occupies a line.</p>
+<h3>Sample Input:</h3>
+<pre><code>10 5 
 ZOE1 2 4 5 
 ANN0 3 5 2 1 
 BOB5 5 3 4 2 1 5 
@@ -428,7 +433,9 @@ DON2 2 4 5
 AMY7 1 5 
 KAT3 3 5 4 2 
 LOR6 4 2 4 1 5 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>1 4 
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>1 4 
 ANN0 
 BOB5 
 JAY9 
@@ -461,45 +468,37 @@ JAY9
 KAT3 
 LOR6 
 ZOE1
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> max_stu <span class="token operator">=</span> <span class="token number">40001</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//最大的学生数</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> max_course <span class="token operator">=</span> <span class="token number">2501</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//最大的课程数</span>
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
+using namespace std;
+const int max_stu = 40001;   //最大的学生数
+const int max_course = 2501; //最大的课程数
 
-vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> course<span class="token punctuation">[</span>max_course<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//course[i]为第i门课的学生编号</span>
-<span class="token keyword">char</span> name<span class="token punctuation">[</span>max_stu<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+vector<int> course[max_course]; //course[i]为第i门课的学生编号
+char name[max_stu][5];
 
-<span class="token keyword">bool</span> <span class="token function">cmp</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>name<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">,</span> name<span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+bool cmp(int a, int b)
+{
+	return strcmp(name[a], name[b]) < 0;
+}
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> K<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> num<span class="token punctuation">,</span> course_id<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//选课的人数,课号</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%d"</span><span class="token punctuation">,</span> name<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> num<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>course_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            course<span class="token punctuation">[</span>course_id<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//学生i加入course_id这门课</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+int main()
+{
+	int N, K;
+	scanf("%d%d", &N, &K);
+	int num, course_id; //选课的人数,课号
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%s%d", name[i], &num);
+		for (int j = 0; j < num; j++)
+		{
+			scanf("%d", &course_id);
+			course[course_id].push_back(i); //学生i加入course_id这门课
+		}
+	}
 
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//第i门课的学生数</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> name<span class="token punctuation">[</span>course<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	for (int i = 1; i <= k; i++) { printf("%d %d\n", i, course[i].size()); 第i门课的学生数 sort(course[i].begin(), course[i].end(), cmp); for (int j="0;" < course[i].size(); j++) printf("%s\n", name[course[i][j]]); } return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></int></bits></code></pre>
 
             </div>
             <hr>
@@ -704,8 +703,9 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1063 Set Similarity
-Given two sets of integers, the similarity of the sets is defined to be N​c​​/N​t​​×100%, where N​c​</div>
+                    <div class="summary block-with-text">1063 Set Similarity
+
+Given two sets of integers, the similarity of the sets is defined to be N​c​​/N​t​​×100%, where N​c</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-22
@@ -750,8 +750,9 @@ Given two sets of integers, the similarity of the sets is defined to be N​c​
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1039 Course List for Student
-Zhejiang University has 40000 students and provides 2500 courses. Now given the student nam</div>
+                    <div class="summary block-with-text">1039 Course List for Student
+
+Zhejiang University has 40000 students and provides 2500 courses. Now given the student na</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-21
@@ -930,7 +931,7 @@ Zhejiang University has 40000 students and provides 2500 courses. Now given the 
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">31.9k</span>
+            <span class="white-color">28.7k</span>
             
 
             

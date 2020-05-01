@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1055 The World Richest, 孙健的博客">
-    <meta name="description" content="1055 The World’s Richest
-Forbes magazine publishes every year its list of billionaires based on the annual ranking of th">
+    <meta name="description" content="1055 The World&#39;s Richest
+
+Forbes magazine publishes every year its list of billionaires based on the annual ranking of t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,7 +390,7 @@ Forbes magazine publishes every year its list of billionaires based on the annua
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        663
+                        579
                     </div>
                     
 
@@ -412,14 +413,19 @@ Forbes magazine publishes every year its list of billionaires based on the annua
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1055-The-World’s-Richest"><a href="#1055-The-World’s-Richest" class="headerlink" title="1055 The World’s Richest"></a>1055 The World’s Richest</h2><blockquote>
-<p>Forbes magazine publishes every year its list of billionaires based on the annual ranking of the world’s wealthiest people. Now you are supposed to simulate this job, but concentrate only on the people in a certain range of ages. That is, given the net worths of N people, you must find the M richest people in a given range of their ages.</p>
+                <h2>1055 The World's Richest</h2>
+<blockquote>
+<p>Forbes magazine publishes every year its list of billionaires based on the annual ranking of the world's wealthiest people. Now you are supposed to simulate this job, but concentrate only on the people in a certain range of ages. That is, given the net worths of N people, you must find the M richest people in a given range of their ages.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains 2 positive integers: N (≤10​5​​) - the total number of people, and K (≤10​3​​) - the number of queries. Then N lines follow, each contains the name (string of no more than 8 characters without space), age (integer in (0, 200]), and the net worth (integer in [−10​^6​​,10​^6​​]) of a person. Finally there are K lines of queries, each contains three positive integers: M (≤100) - the maximum number of outputs, and [<code>Amin</code>, <code>Amax</code>] which are the range of ages. All the numbers in a line are separated by a space.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each query, first print in a line <code>Case #X:</code> where <code>X</code> is the query number starting from 1. Then output the M richest people with their ages in the range [<code>Amin</code>, <code>Amax</code>]. Each person’s information occupies a line, in the format</p>
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. For each case, the first line contains 2 positive integers: N (≤10​5​​) - the total number of people, and K (≤10​3​​) - the number of queries. Then N lines follow, each contains the name (string of no more than 8 characters without space), age (integer in (0, 200]), and the net worth (integer in [−10​^6​​,10​^6​​]) of a person. Finally there are K lines of queries, each contains three positive integers: M (≤100) - the maximum number of outputs, and [<code>Amin</code>, <code>Amax</code>] which are the range of ages. All the numbers in a line are separated by a space.</p>
+<h3>Output Specification:</h3>
+<p>For each query, first print in a line <code>Case #X:</code> where <code>X</code> is the query number starting from 1. Then output the M richest people with their ages in the range [<code>Amin</code>, <code>Amax</code>]. Each person's information occupies a line, in the format</p>
 <pre><code>Name Age Net_Worth 
-</code></pre><p>The outputs must be in non-increasing order of the net worths. In case there are equal worths, it must be in non-decreasing order of the ages. If both worths and ages are the same, then the output must be in non-decreasing alphabetical order of the names. It is guaranteed that there is no two persons share all the same of the three pieces of information. In case no one is found, output <code>None</code>.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>12 4 
+</code></pre>
+<p>The outputs must be in non-increasing order of the net worths. In case there are equal worths, it must be in non-decreasing order of the ages. If both worths and ages are the same, then the output must be in non-decreasing alphabetical order of the names. It is guaranteed that there is no two persons share all the same of the three pieces of information. In case no one is found, output <code>None</code>.</p>
+<h3>Sample Input:</h3>
+<pre><code>12 4 
 Zoe_Bill 35 2333 
 Bob_Volk 24 5888 
 Anny_Cin 95 999999 
@@ -436,7 +442,9 @@ Nobody 5 0
 4 30 35 
 4 5 95 
 1 45 50 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>Case #1: 
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>Case #1: 
 Alice 18 88888 
 Billy 24 5888 
 Bob_Volk 24 5888 
@@ -452,63 +460,48 @@ Alice 18 88888
 Cindy 76 76000 
 Case #4: 
 None
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> max_n <span class="token operator">=</span> <span class="token number">100001</span><span class="token punctuation">;</span>
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
+using namespace std;
+const int max_n = 100001;
 
-<span class="token keyword">int</span> age_num<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//每个年龄所对应的人数</span>
+int age_num[max_n]; //每个年龄所对应的人数
 
-<span class="token keyword">struct</span> Person
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> age<span class="token punctuation">,</span> worth<span class="token punctuation">;</span>
-<span class="token punctuation">}</span> person<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">,</span> valid<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//M范围在100以内,将每个年龄中财富值前100的人存到一个数组中,以防超时</span>
+struct Person
+{
+	char name[9];
+	int age, worth;
+} person[max_n], valid[max_n]; //M范围在100以内,将每个年龄中财富值前100的人存到一个数组中,以防超时
 
-<span class="token keyword">bool</span> <span class="token function">cmp</span><span class="token punctuation">(</span>Person p1<span class="token punctuation">,</span> Person p2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>worth <span class="token operator">!=</span> p2<span class="token punctuation">.</span>worth<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>worth <span class="token operator">></span> p2<span class="token punctuation">.</span>worth<span class="token punctuation">;</span>
-    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>age <span class="token operator">!=</span> p2<span class="token punctuation">.</span>age<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>age <span class="token operator">&lt;</span> p2<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span>name<span class="token punctuation">,</span> p2<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+bool cmp(Person p1, Person p2)
+{
+	if (p1.worth != p2.worth)
+		return p1.worth > p2.worth;
+	else if (p1.age != p2.age)
+		return p1.age < p2.age;
+	else
+		return strcmp(p1.name, p2.name) < 0;
+}
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> K<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%d%d"</span><span class="token punctuation">,</span> person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span> <span class="token operator">&amp;</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>worth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+int main()
+{
+	int N, K;
+	scanf("%d%d", &N, &K);
+	for (int i = 0; i < N; i++)
+		scanf("%s%d%d", person[i].name, &person[i].age, &person[i].worth);
 
-    <span class="token function">sort</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> person <span class="token operator">+</span> N<span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> valid_num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//需要存入valid数组的人数</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>age_num<span class="token punctuation">[</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>age<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            age_num<span class="token punctuation">[</span>person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>age<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
-            valid<span class="token punctuation">[</span>valid_num<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> person<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+	sort(person, person + N, cmp);
+	int valid_num = 0; //需要存入valid数组的人数
+	for (int i = 0; i < N; i++)
+		if (age_num[person[i].age] < 100)
+		{
+			age_num[person[i].age]++;
+			valid[valid_num++] = person[i];
+		}
 
-    <span class="token keyword">int</span> M<span class="token punctuation">,</span> rangeL<span class="token punctuation">,</span> rangeR<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>M<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rangeL<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rangeR<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Case #%d:\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> print_num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//以输出的人数</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> valid_num <span class="token operator">&amp;&amp;</span> print_num <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>age <span class="token operator">>=</span> rangeL <span class="token operator">&amp;&amp;</span> valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>age <span class="token operator">&lt;=</span> rangeR<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %d %d\n"</span><span class="token punctuation">,</span> valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span> valid<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>worth<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                print_num<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>print_num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"None\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	int M, rangeL, rangeR;
+	for (int i = 1; i <= k; i++) { scanf("%d%d%d", &m, &rangel, &ranger); printf("case #%d:\n", i); int print_num="0;" 以输出的人数 for (int j="0;" < valid_num && m; j++) if (valid[j].age>= rangeL && valid[j].age <= ranger) { printf("%s %d %d\n", valid[j].name, valid[j].age, valid[j].worth); print_num++; } if (print_num="=" 0) printf("none\n"); return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></=></bits></code></pre>
 
             </div>
             <hr>
@@ -713,8 +706,9 @@ None
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1075 PAT Judge
-The ranklist of PAT is generated from the status list, which shows the scores of the submissions. This ti</div>
+                    <div class="summary block-with-text">1075 PAT Judge
+
+The ranklist of PAT is generated from the status list, which shows the scores of the submissions. This t</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-16
@@ -759,10 +753,11 @@ The ranklist of PAT is generated from the status list, which shows the scores of
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1028 List Sorting
+                    <div class="summary block-with-text">1028 List Sorting
+
 Excel can sort records according to any column. Now you are supposed to imitate this function.
 
-Input </div>
+Input</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-15
@@ -941,7 +936,7 @@ Input </div>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">31.9k</span>
+            <span class="white-color">28.7k</span>
             
 
             

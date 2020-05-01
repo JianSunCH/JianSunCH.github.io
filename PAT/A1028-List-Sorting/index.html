@@ -5,10 +5,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1028 List Sorting, 孙健的博客">
-    <meta name="description" content="1028 List Sorting
+    <meta name="description" content="1028 List Sorting
+
 Excel can sort records according to any column. Now you are supposed to imitate this function.
 
-Input ">
+Input">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -391,7 +392,7 @@ Input ">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        453
+                        438
                     </div>
                     
 
@@ -414,87 +415,103 @@ Input ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1028-List-Sorting"><a href="#1028-List-Sorting" class="headerlink" title="1028 List Sorting"></a>1028 List Sorting</h2><blockquote>
+                <h2>1028 List Sorting</h2>
+<blockquote>
 <p>Excel can sort records according to any column. Now you are supposed to imitate this function.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains two integers N (≤10​5​​) and C, where N is the number of records and C is the column that you are supposed to sort the records with. Then N lines follow, each contains a record of a student. A student’s record consists of his or her distinct ID (a 6-digit number), name (a string with no more than 8 characters without space), and grade (an integer between 0 and 100, inclusive).</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, output the sorting result in N lines. That is, if C = 1 then the records must be sorted in increasing order according to ID’s; if C = 2 then the records must be sorted in non-decreasing order according to names; and if C = 3 then the records must be sorted in non-decreasing order according to grades. If there are several students who have the same name or grade, they must be sorted according to their ID’s in increasing order.</p>
-<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h3><pre><code>3 1 
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. For each case, the first line contains two integers N (≤10​5​​) and C, where N is the number of records and C is the column that you are supposed to sort the records with. Then N lines follow, each contains a record of a student. A student's record consists of his or her distinct ID (a 6-digit number), name (a string with no more than 8 characters without space), and grade (an integer between 0 and 100, inclusive).</p>
+<h3>Output Specification:</h3>
+<p>For each test case, output the sorting result in N lines. That is, if C = 1 then the records must be sorted in increasing order according to ID's; if C = 2 then the records must be sorted in non-decreasing order according to names; and if C = 3 then the records must be sorted in non-decreasing order according to grades. If there are several students who have the same name or grade, they must be sorted according to their ID's in increasing order.</p>
+<h3>Sample Input 1:</h3>
+<pre><code>3 1 
 000007 James 85 
 000010 Amy 90 
 000001 Zoe 60 
-</code></pre><h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h3><pre><code>000001 Zoe 60 
+</code></pre>
+<h3>Sample Output 1:</h3>
+<pre><code>000001 Zoe 60 
 000007 James 85 
 000010 Amy 90 
-</code></pre><h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h3><pre><code>4 2 
+</code></pre>
+<h3>Sample Input 2:</h3>
+<pre><code>4 2 
 000007 James 85 
 000010 Amy 90 
 000001 Zoe 60 
 000002 James 98 
-</code></pre><h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h3><pre><code>000010 Amy 90 
+</code></pre>
+<h3>Sample Output 2:</h3>
+<pre><code>000010 Amy 90 
 000002 James 98 
 000007 James 85 
 000001 Zoe 60 
-</code></pre><h3 id="Sample-Input-3"><a href="#Sample-Input-3" class="headerlink" title="Sample Input 3:"></a>Sample Input 3:</h3><pre><code>4 3 
+</code></pre>
+<h3>Sample Input 3:</h3>
+<pre><code>4 3 
 000007 James 85 
 000010 Amy 90 
 000001 Zoe 60 
 000002 James 90 
-</code></pre><h3 id="Sample-Output-3"><a href="#Sample-Output-3" class="headerlink" title="Sample Output 3:"></a>Sample Output 3:</h3><pre><code>000001 Zoe 60 
+</code></pre>
+<h3>Sample Output 3:</h3>
+<pre><code>000001 Zoe 60 
 000007 James 85 
 000002 James 90 
 000010 Amy 90
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
+using namespace std;
 
-<span class="token keyword">struct</span> Student
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> id<span class="token punctuation">;</span>
-    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> score<span class="token punctuation">;</span>
-<span class="token punctuation">}</span> student<span class="token punctuation">[</span><span class="token number">100001</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+struct Student
+{
+	int id;
+	char name[9];
+	int score;
+} student[100001];
 
-<span class="token keyword">bool</span> <span class="token function">cmp1</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">return</span> s1<span class="token punctuation">.</span>id <span class="token operator">&lt;</span> s2<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+bool cmp1(Student s1, Student s2)
+{
+	return s1.id < s2.id;
+}
 
-<span class="token keyword">bool</span> <span class="token function">cmp2</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> val <span class="token operator">=</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span>name<span class="token punctuation">,</span> s2<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>val <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> val <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> s1<span class="token punctuation">.</span>id <span class="token operator">&lt;</span> s2<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+bool cmp2(Student s1, Student s2)
+{
+	int val = strcmp(s1.name, s2.name);
+	if (val != 0)
+		return val < 0;
+	else
+		return s1.id < s2.id;
+}
 
-<span class="token keyword">bool</span> <span class="token function">cmp3</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>s1<span class="token punctuation">.</span>score <span class="token operator">!=</span> s2<span class="token punctuation">.</span>score<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> s1<span class="token punctuation">.</span>score <span class="token operator">&lt;</span> s2<span class="token punctuation">.</span>score<span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> s1<span class="token punctuation">.</span>id <span class="token operator">&lt;</span> s2<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+bool cmp3(Student s1, Student s2)
+{
+	if (s1.score != s2.score)
+		return s1.score < s2.score;
+	else
+		return s1.id < s2.id;
+}
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> C<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>C<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%s%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+int main()
+{
+	int N, C;
+	scanf("%d%d", &N, &C);
+	for (int i = 0; i < N; i++)
+		scanf("%d%s%d", &student[i].id, student[i].name, &student[i].score);
 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>C <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>student<span class="token punctuation">,</span> student <span class="token operator">+</span> N<span class="token punctuation">,</span> cmp1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>C <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>student<span class="token punctuation">,</span> student <span class="token operator">+</span> N<span class="token punctuation">,</span> cmp2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>student<span class="token punctuation">,</span> student <span class="token operator">+</span> N<span class="token punctuation">,</span> cmp3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	if (C == 1)
+		sort(student, student + N, cmp1);
+	else if (C == 2)
+		sort(student, student + N, cmp2);
+	else
+		sort(student, student + N, cmp3);
 
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%06d %s %d\n"</span><span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> student<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	for (int i = 0; i < N; i++)
+		printf("%06d %s %d\n", student[i].id, student[i].name, student[i].score);
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -699,8 +716,9 @@ Input ">
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1055 The World’s Richest
-Forbes magazine publishes every year its list of billionaires based on the annual ranking of th</div>
+                    <div class="summary block-with-text">1055 The World's Richest
+
+Forbes magazine publishes every year its list of billionaires based on the annual ranking of t</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-16
@@ -745,11 +763,12 @@ Forbes magazine publishes every year its list of billionaires based on the annua
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1016 Phone Bills
+                    <div class="summary block-with-text">1016 Phone Bills
+
 A long-distance telephone company charges its customers by the following rules:
 
 
-Making a long-distanc</div>
+Making a long-distan</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-14
@@ -928,7 +947,7 @@ Making a long-distanc</div>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">31.9k</span>
+            <span class="white-color">28.7k</span>
             
 
             
