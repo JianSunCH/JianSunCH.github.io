@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1005 Spell It Right, 孙健的博客">
-    <meta name="description" content="1005 Spell It Right
-Given a non-negative integer N, your task is to compute the sum of all the digits of N, and output e">
+    <meta name="description" content="1005 Spell It Right
+
+Given a non-negative integer N, your task is to compute the sum of all the digits of N, and output ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,7 +390,7 @@ Given a non-negative integer N, your task is to compute the sum of all the digit
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        190
+                        185
                     </div>
                     
 
@@ -412,49 +413,57 @@ Given a non-negative integer N, your task is to compute the sum of all the digit
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1005-Spell-It-Right"><a href="#1005-Spell-It-Right" class="headerlink" title="1005 Spell It Right"></a>1005 Spell It Right</h2><blockquote>
-<p>Given a non-negative integer N, your task is to compute the sum of all the digits of N, and output every digit of the sum in English.</p>
+                <h2>1005 Spell It Right</h2>
+<blockquote>
+<p>Given a non-negative integer N, your task is to compute the sum of all the digits of N, and output every digit of the sum in English.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case occupies one line which contains an N (≤10​^100​​).</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>12345 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>one five
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. Each case occupies one line which contains an N (≤10​^100​​).</p>
+<h3>Output Specification:</h3>
+<p>For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line.</p>
+<h3>Sample Input:</h3>
+<pre><code>12345 
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>one five
+</code></pre>
+<h3>解答</h3>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
+using namespace std;
 
-<span class="token keyword">char</span> num<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"zero"</span><span class="token punctuation">,</span> <span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">,</span> <span class="token string">"four"</span><span class="token punctuation">,</span> <span class="token string">"five"</span><span class="token punctuation">,</span> <span class="token string">"six"</span><span class="token punctuation">,</span> <span class="token string">"seven"</span><span class="token punctuation">,</span> <span class="token string">"eight"</span><span class="token punctuation">,</span> <span class="token string">"nine"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+char num[10][10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
-<span class="token keyword">void</span> <span class="token function">recursion</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> num<span class="token punctuation">[</span>n <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+void recursion(int n)
+{
+	if (n / 10 == 0)
+	{
+		printf("%s", num[n % 10]);
+		return;
+	}
 
-    <span class="token function">recursion</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %s"</span><span class="token punctuation">,</span> num<span class="token punctuation">[</span>n <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+	recursion(n / 10);
+	printf(" %s", num[n % 10]);
+}
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> N<span class="token punctuation">[</span><span class="token number">102</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    cin<span class="token punctuation">.</span><span class="token function">getline</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> length <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+int main()
+{
+	char N[102];
+	cin.getline(N, 102);
+	int length = strlen(N);
 
-    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        sum <span class="token operator">+</span><span class="token operator">=</span> <span class="token punctuation">(</span>N<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	int sum = 0;
+	for (int i = 0; i < length; i++)
+		sum += (N[i] - '0');
 
-    <span class="token comment" spellcheck="true">//特例 sum == 0</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> num<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token function">recursion</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//使用递归</span>
+	//特例 sum == 0
+	if (sum == 0)
+		printf("%s", num[0]);
+	else
+		recursion(sum); //使用递归
 
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
 
             </div>
             <hr>
@@ -659,8 +668,9 @@ Given a non-negative integer N, your task is to compute the sum of all the digit
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1035 Password
-To prepare for PAT, the judge sometimes has to generate random passwords for the users. The problem is tha</div>
+                    <div class="summary block-with-text">1035 Password
+
+To prepare for PAT, the judge sometimes has to generate random passwords for the users. The problem is th</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-07
@@ -705,8 +715,9 @@ To prepare for PAT, the judge sometimes has to generate random passwords for the
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1001 A+B Format
-Calculate a+b and output the sum in standard format – that is, the digits must be separated into groups </div>
+                    <div class="summary block-with-text">1001 A+B Format
+
+Calculate a+b and output the sum in standard format -- that is, the digits must be separated into group</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-06
@@ -885,7 +896,7 @@ Calculate a+b and output the sum in standard format – that is, the digits must
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">31.9k</span>
+            <span class="white-color">28.8k</span>
             
 
             
