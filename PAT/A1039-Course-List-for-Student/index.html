@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1039 Course List for Student, 孙健的博客">
-    <meta name="description" content="1039 Course List for Student
-
-Zhejiang University has 40000 students and provides 2500 courses. Now given the student na">
+    <meta name="description" content="1039 Course List for Student
+Zhejiang University has 40000 students and provides 2500 courses. Now given the student nam">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,7 +389,7 @@ Zhejiang University has 40000 students and provides 2500 courses. Now given the 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        551
+                        566
                     </div>
                     
 
@@ -413,16 +412,12 @@ Zhejiang University has 40000 students and provides 2500 courses. Now given the 
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1039 Course List for Student</h2>
-<blockquote>
+                <h2 id="1039-Course-List-for-Student"><a href="#1039-Course-List-for-Student" class="headerlink" title="1039 Course List for Student"></a>1039 Course List for Student</h2><blockquote>
 <p>Zhejiang University has 40000 students and provides 2500 courses. Now given the student name lists of all the courses, you are supposed to output the registered course list for each student who comes for a query.</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case. For each case, the first line contains 2 positive integers: N (≤40,000), the number of students who look for their course lists, and K (≤2,500), the total number of courses. Then the student name lists are given for the courses (numbered from 1 to K) in the following format: for each course i, first the course index i and the number of registered students N​i​​ (≤200) are given in a line. Then in the next line, N​i​​ student names are given. A student name consists of 3 capital English letters plus a one-digit number. Finally the last line contains the N names of students who come for a query. All the names and numbers in a line are separated by a space.</p>
-<h3>Output Specification:</h3>
-<p>For each test case, print your results in N lines. Each line corresponds to one student, in the following format: first print the student's name, then the total number of registered courses of that student, and finally the indices of the courses in increasing order. The query results must be printed in the same order as input. All the data in a line must be separated by a space, with no extra space at the end of the line.</p>
-<h3>Sample Input:</h3>
-<pre><code>11 5 
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains 2 positive integers: N (≤40,000), the number of students who look for their course lists, and K (≤2,500), the total number of courses. Then the student name lists are given for the courses (numbered from 1 to K) in the following format: for each course i, first the course index i and the number of registered students N​i​​ (≤200) are given in a line. Then in the next line, N​i​​ student names are given. A student name consists of 3 capital English letters plus a one-digit number. Finally the last line contains the N names of students who come for a query. All the names and numbers in a line are separated by a space.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print your results in N lines. Each line corresponds to one student, in the following format: first print the student’s name, then the total number of registered courses of that student, and finally the indices of the courses in increasing order. The query results must be printed in the same order as input. All the data in a line must be separated by a space, with no extra space at the end of the line.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>11 5 
 4 7 
 BOB5 DON2 FRA8 JAY9 KAT3 LOR6 ZOE1 
 1 4 
@@ -434,9 +429,7 @@ BOB5
 5 9 
 AMY7 ANN0 BOB5 DON2 FRA8 JAY9 KAT3 LOR6 ZOE1 
 ZOE1 ANN0 BOB5 JOE4 JAY9 FRA8 DON2 AMY7 KAT3 LOR6 NON9 
-</code></pre>
-<h3>Sample Output:</h3>
-<pre><code>ZOE1 2 4 5 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>ZOE1 2 4 5 
 ANN0 3 1 2 5 
 BOB5 5 1 2 3 4 5 
 JOE4 1 2 JAY9 4 1 2 4 5 
@@ -446,53 +439,51 @@ AMY7 1 5
 KAT3 3 2 4 5 
 LOR6 4 1 2 4 5 
 NON9 0
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
-using namespace std;
-const int up_bound = 26 * 26 * 26 * 10 + 1; //姓名散列上界
-vector<int> selectCourse[up_bound];			//每个学生选择的课程编号
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> up_bound <span class="token operator">=</span> <span class="token number">26</span> <span class="token operator">*</span> <span class="token number">26</span> <span class="token operator">*</span> <span class="token number">26</span> <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//姓名散列上界</span>
+vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> selectCourse<span class="token punctuation">[</span>up_bound<span class="token punctuation">]</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//每个学生选择的课程编号</span>
 
-int get_id(char name[]) //hash, name->digit
-{
-	int id = 0;
-	for (int i = 0; i < 3; i++)
-		id = id * 26 + (name[i] - 'A');
-	id = id * 10 + (name[3] - '0');
-	return id;
-}
+<span class="token keyword">int</span> <span class="token function">get_id</span><span class="token punctuation">(</span><span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//hash, name->digit</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        id <span class="token operator">=</span> id <span class="token operator">*</span> <span class="token number">26</span> <span class="token operator">+</span> <span class="token punctuation">(</span>name<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    id <span class="token operator">=</span> id <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token punctuation">(</span>name<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-	int N, K;
-	scanf("%d%d", &N, &K);
-	char name[5];
-	for (int i = 0; i < K; i++)
-	{
-		int course, num; //课程与对应的人数
-		scanf("%d%d", &course, &num);
-		for (int j = 0; j < num; j++)
-		{
-			scanf("%s", name);
-			selectCourse[get_id(name)].push_back(course); //将课程编号加入选择的学生中
-		}
-	}
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">,</span> K<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> course<span class="token punctuation">,</span> num<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//课程与对应的人数</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>course<span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> num<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            selectCourse<span class="token punctuation">[</span><span class="token function">get_id</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>course<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//将课程编号加入选择的学生中</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-	//查询
-	for (int i = 0; i < N; i++)
-	{
-		scanf("%s", name);
-		int id = get_id(name);
-		sort(selectCourse[id].begin(), selectCourse[id].end()); //从小到大排序
-		printf("%s %d", name, selectCourse[id].size());
-		for (int j = 0; j < selectCourse[id].size(); j++)
-			printf(" %d", selectCourse[id][j]); //选课编号
-		printf("\n");
-	}
+    <span class="token comment" spellcheck="true">//查询</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token function">get_id</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>selectCourse<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> selectCourse<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//从小到大排序</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %d"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> selectCourse<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> selectCourse<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %d"</span><span class="token punctuation">,</span> selectCourse<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//选课编号</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-	return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></int></bits></code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -657,8 +648,8 @@ int main()
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '0700e97a728ccaf306d9',
-        clientSecret: '29f8290635f85b12945789abe276800c2146836a',
+        clientID: 'f89cdfe5265984ab9684',
+        clientSecret: '69087a41c37103efb268aef95ea284cd1c2952ab',
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
@@ -697,9 +688,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1047 Student List for Course
-
-Zhejiang University has 40,000 students and provides 2,500 courses. Now given the register</div>
+                    <div class="summary block-with-text">1047 Student List for Course
+Zhejiang University has 40,000 students and provides 2,500 courses. Now given the registere</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-21
@@ -744,9 +734,8 @@ Zhejiang University has 40,000 students and provides 2,500 courses. Now given th
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1095 Cars on Campus
-
-Zhejiang University has 8 campuses and a lot of gates. From each gate we can collect the in/out tim</div>
+                    <div class="summary block-with-text">1095 Cars on Campus
+Zhejiang University has 8 campuses and a lot of gates. From each gate we can collect the in/out time</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-18
@@ -925,7 +914,7 @@ Zhejiang University has 8 campuses and a lot of gates. From each gate we can col
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">28.8k</span>
+            <span class="white-color">32k</span>
             
 
             

@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1060 Are They Equal, 孙健的博客">
-    <meta name="description" content="1060 Are They Equal
-
-If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered">
+    <meta name="description" content="1060 Are They Equal
+If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,14 +389,14 @@ If a machine can save only 3 significant digits, the float numbers 12300 and 123
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        481
+                        546
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -413,89 +412,77 @@ If a machine can save only 3 significant digits, the float numbers 12300 and 123
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1060 Are They Equal</h2>
-<blockquote>
-<p>If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×10​5​​ with simple chopping. Now given the number of significant digits on a machine and two float numbers, you are supposed to tell if they are treated equal in that machine.</p>
+                <h2 id="1060-Are-They-Equal"><a href="#1060-Are-They-Equal" class="headerlink" title="1060 Are They Equal"></a>1060 Are They Equal</h2><blockquote>
+<p>If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×10​5​​ with simple chopping. Now given the number of significant digits on a machine and two float numbers, you are supposed to tell if they are treated equal in that machine.</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case which gives three numbers N, A and B, where N (&lt;100) is the number of significant digits, and A and B are the two float numbers to be compared. Each float number is non-negative, no greater than 10​100​​, and that its total digit number is less than 100.</p>
-<h3>Output Specification:</h3>
-<p>For each test case, print in a line <code>YES</code> if the two numbers are treated equal, and then the number in the standard form <code>0.d[1]...d[N]*10^k</code> (<code>d[1]</code>&gt;0 unless the number is 0); or <code>NO</code> if they are not treated equal, and then the two numbers in their standard form. All the terms must be separated by a space, with no extra space at the end of a line.</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case which gives three numbers N, A and B, where N (&lt;100) is the number of significant digits, and A and B are the two float numbers to be compared. Each float number is non-negative, no greater than 10​100​​, and that its total digit number is less than 100.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print in a line <code>YES</code> if the two numbers are treated equal, and then the number in the standard form <code>0.d[1]...d[N]*10^k</code> (<code>d[1]</code>&gt;0 unless the number is 0); or <code>NO</code> if they are not treated equal, and then the two numbers in their standard form. All the terms must be separated by a space, with no extra space at the end of a line.</p>
 <p>Note: Simple chopping is assumed without rounding.</p>
-<h3>Sample Input 1:</h3>
-<pre><code>3 12300 12358.9 
-</code></pre>
-<h3>Sample Output 1:</h3>
-<pre><code>YES 0.123*10^5 
-</code></pre>
-<h3>Sample Input 2:</h3>
-<pre><code>3 120 128 
-</code></pre>
-<h3>Sample Output 2:</h3>
-<pre><code>NO 0.120*10^3 0.128*10^3
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
-using namespace std;
+<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h3><pre><code>3 12300 12358.9 
+</code></pre><h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h3><pre><code>YES 0.123*10^5 
+</code></pre><h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h3><pre><code>3 120 128 
+</code></pre><h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h3><pre><code>NO 0.120*10^3 0.128*10^3
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-int N; //有效位数
+<span class="token keyword">int</span> N<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//有效位数</span>
 
-string deal(string s, int &e)
-{
-	int k = 0; //下标
-	while (s.length() > 0 && s[0] == '0')
-		s.erase(s.begin()); //去除s的前面的0
-	if (s[0] == '.')		//去除前面的0后,第一位为小数点,说明为小于1的数
-	{
-		s.erase(s.begin());					  //去除小数点
-		while (s.length() > 0 && s[0] == '0') //去除小数点后的0
-		{
-			s.erase(s.begin());
-			e--; //每去掉一个0,e--
-		}
-	}
-	else //找到小数点并删除
-	{
-		while (k < s.length() && s[k] != '.')
-		{
-			k++;
-			e++; //只要不遇到小数点,指数++
-		}
-		if (k < s.length()) //找到小数点, 删除小数点
-			s.erase(s.begin() + k);
-	}
-	if (s.length() == 0)
-		e = 0; //这个数为0
-	int num = 0;
-	k = 0;
-	string res;
-	while (num < N) //有效位数没到N
-	{
-		if (k < s.length())
-			res += s[k++]; //只要还有数字,一直加到res末尾
-		else
-			res += '0'; //否则末尾添加0
-		num++;
-	}
-	return res;
-}
+string <span class="token function">deal</span><span class="token punctuation">(</span>string s<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">&amp;</span>e<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//下标</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">)</span>
+        s<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//去除s的前面的0</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.'</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">//去除前面的0后,第一位为小数点,说明为小于1的数</span>
+    <span class="token punctuation">{</span>
+        s<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                      <span class="token comment" spellcheck="true">//去除小数点</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//去除小数点后的0</span>
+        <span class="token punctuation">{</span>
+            s<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            e<span class="token operator">--</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//每去掉一个0,e--</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token comment" spellcheck="true">//找到小数点并删除</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">&lt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'.'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            k<span class="token operator">++</span><span class="token punctuation">;</span>
+            e<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//只要不遇到小数点,指数++</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">&lt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//找到小数点, 删除小数点</span>
+            s<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        e <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这个数为0</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    string res<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>num <span class="token operator">&lt;</span> N<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//有效位数没到N</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">&lt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            res <span class="token operator">+</span><span class="token operator">=</span> s<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//只要还有数字,一直加到res末尾</span>
+        <span class="token keyword">else</span>
+            res <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//否则末尾添加0</span>
+        num<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-	string s1, s2;
-	cin >> N >> s1 >> s2;
-	int e1 = 0, e2 = 0;
-	string s3, s4;
-	s3 = deal(s1, e1);
-	s4 = deal(s2, e2);
-	if (s3 == s4 && e1 == e2)
-		cout << "YES 0." << s3 << "*10^" << e1 << endl;
-	else
-		cout << "NO 0." << s3 << "*10^" << e1 << " 0." << s4 << "*10^" << e2 << endl;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    string s1<span class="token punctuation">,</span> s2<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> N <span class="token operator">>></span> s1 <span class="token operator">>></span> s2<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> e1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> e2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    string s3<span class="token punctuation">,</span> s4<span class="token punctuation">;</span>
+    s3 <span class="token operator">=</span> <span class="token function">deal</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> e1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s4 <span class="token operator">=</span> <span class="token function">deal</span><span class="token punctuation">(</span>s2<span class="token punctuation">,</span> e2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s3 <span class="token operator">==</span> s4 <span class="token operator">&amp;&amp;</span> e1 <span class="token operator">==</span> e2<span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"YES 0."</span> <span class="token operator">&lt;&lt;</span> s3 <span class="token operator">&lt;&lt;</span> <span class="token string">"*10^"</span> <span class="token operator">&lt;&lt;</span> e1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"NO 0."</span> <span class="token operator">&lt;&lt;</span> s3 <span class="token operator">&lt;&lt;</span> <span class="token string">"*10^"</span> <span class="token operator">&lt;&lt;</span> e1 <span class="token operator">&lt;&lt;</span> <span class="token string">" 0."</span> <span class="token operator">&lt;&lt;</span> s4 <span class="token operator">&lt;&lt;</span> <span class="token string">"*10^"</span> <span class="token operator">&lt;&lt;</span> e2 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 
-	return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></bits></code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -660,8 +647,8 @@ int main()
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '0700e97a728ccaf306d9',
-        clientSecret: '29f8290635f85b12945789abe276800c2146836a',
+        clientID: 'f89cdfe5265984ab9684',
+        clientSecret: '69087a41c37103efb268aef95ea284cd1c2952ab',
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
@@ -700,13 +687,12 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1044 火星数字
-
+                    <div class="summary block-with-text">1044 火星数字
 火星人是以 13 进制计数的：
 
 
 地球人的 0 被火星人称为 tret。
-地球人数字 1 到 12 的火星文分别为：jan, feb, mar, apr, may, jun, jly, aug, sep, oct, </div>
+地球人数字 1 到 12 的火星文分别为：jan, feb, mar, apr, may, jun, jly, aug, sep, oct, n</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-23
@@ -751,9 +737,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1063 Set Similarity
-
-Given two sets of integers, the similarity of the sets is defined to be N​c​​/N​t​​×100%, where N​c</div>
+                    <div class="summary block-with-text">1063 Set Similarity
+Given two sets of integers, the similarity of the sets is defined to be N​c​​/N​t​​×100%, where N​c​</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-22
@@ -932,7 +917,7 @@ Given two sets of integers, the similarity of the sets is defined to be N​c�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">28.8k</span>
+            <span class="white-color">32k</span>
             
 
             

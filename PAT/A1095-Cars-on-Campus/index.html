@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1095 Cars on Campus, 孙健的博客">
-    <meta name="description" content="1095 Cars on Campus
-
-Zhejiang University has 8 campuses and a lot of gates. From each gate we can collect the in/out tim">
+    <meta name="description" content="1095 Cars on Campus
+Zhejiang University has 8 campuses and a lot of gates. From each gate we can collect the in/out time">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,7 +389,7 @@ Zhejiang University has 8 campuses and a lot of gates. From each gate we can col
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        894
+                        983
                     </div>
                     
 
@@ -413,21 +412,16 @@ Zhejiang University has 8 campuses and a lot of gates. From each gate we can col
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1095 Cars on Campus</h2>
-<blockquote>
+                <h2 id="1095-Cars-on-Campus"><a href="#1095-Cars-on-Campus" class="headerlink" title="1095 Cars on Campus"></a>1095 Cars on Campus</h2><blockquote>
 <p>Zhejiang University has 8 campuses and a lot of gates. From each gate we can collect the in/out times and the plate numbers of the cars crossing the gate. Now with all the information available, you are supposed to tell, at any specific time point, the number of cars parking on campus, and at the end of the day find the cars that have parked for the longest time period.</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case. Each case starts with two positive integers N (≤10​4​​), the number of records, and K (≤8×10​4​​) the number of queries. Then N lines follow, each gives a record in the format:</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case starts with two positive integers N (≤10​4​​), the number of records, and K (≤8×10​4​​) the number of queries. Then N lines follow, each gives a record in the format:</p>
 <pre><code>plate_number hh:mm:ss status 
-</code></pre>
-<p>where <code>plate_number</code> is a string of 7 English capital letters or 1-digit numbers; <code>hh:mm:ss</code> represents the time point in a day by hour:minute:second, with the earliest time being <code>00:00:00</code> and the latest <code>23:59:59</code>; and <code>status</code> is either <code>in</code> or <code>out</code>.</p>
-<p>Note that all times will be within a single day. Each <code>in</code> record is paired with the chronologically next record for the same car provided it is an <code>out</code> record. Any <code>in</code> records that are not paired with an <code>out</code> record are ignored, as are <code>out</code> records not paired with an <code>in</code> record. It is guaranteed that at least one car is well paired in the input, and no car is both <code>in</code> and <code>out</code> at the same moment. Times are recorded using a 24-hour clock.</p>
-<p>Then K lines of queries follow, each gives a time point in the format <code>hh:mm:ss</code>. Note: the queries are given in <strong>ascending</strong> order of the times.</p>
-<h3>Output Specification:</h3>
-<p>For each query, output in a line the total number of cars parking on campus. The last line of output is supposed to give the plate number of the car that has parked for the longest time period, and the corresponding time length. If such a car is not unique, then output all of their plate numbers in a line in alphabetical order, separated by a space.</p>
-<h3>Sample Input:</h3>
-<pre><code>16 7 
+</code></pre><p>where <code>plate_number</code> is a string of 7 English capital letters or 1-digit numbers; <code>hh:mm:ss</code> represents the time point in a day by hour:minute:second, with the earliest time being <code>00:00:00</code> and the latest <code>23:59:59</code>; and <code>status</code> is either <code>in</code> or <code>out</code>.</p>
+<p>Note that all times will be within a single day. Each <code>in</code> record is paired with the chronologically next record for the same car provided it is an <code>out</code> record. Any <code>in</code> records that are not paired with an <code>out</code> record are ignored, as are <code>out</code> records not paired with an <code>in</code> record. It is guaranteed that at least one car is well paired in the input, and no car is both <code>in</code> and <code>out</code> at the same moment. Times are recorded using a 24-hour clock.</p>
+<p>Then K lines of queries follow, each gives a time point in the format <code>hh:mm:ss</code>. Note: the queries are given in <strong>ascending</strong> order of the times.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each query, output in a line the total number of cars parking on campus. The last line of output is supposed to give the plate number of the car that has parked for the longest time period, and the corresponding time length. If such a car is not unique, then output all of their plate numbers in a line in alphabetical order, separated by a space.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>16 7 
 JH007BD 18:00:01 in 
 ZD00001 11:30:08 out 
 DB8888A 13:00:00 out 
@@ -451,9 +445,7 @@ DB8888A 06:30:50 in
 14:00:00 
 18:00:00 
 23:59:00 
-</code></pre>
-<h3>Sample Output:</h3>
-<pre><code>1 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>1 
 4 
 5 
 2 
@@ -461,84 +453,93 @@ DB8888A 06:30:50 in
 0 
 1 
 JH007BD ZD00001 07:20:09
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
-using namespace std;
-const int max_n = 10001;
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> max_n <span class="token operator">=</span> <span class="token number">10001</span><span class="token punctuation">;</span>
 
-struct Car
-{
-	char id[8];
-	int time; //以s为单位
-	char status[4];
-} all[max_n], valid[max_n];
+<span class="token keyword">struct</span> Car
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> id<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> time<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//以s为单位</span>
+    <span class="token keyword">char</span> status<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> all<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">,</span> valid<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-bool cmpByIdAndTime(Car c1, Car c2)
-{
-	if (strcmp(c1.id, c2.id))
-		return strcmp(c1.id, c2.id) < 0;
-	else
-		return c1.time < c2.time;
-}
+<span class="token keyword">bool</span> <span class="token function">cmpByIdAndTime</span><span class="token punctuation">(</span>Car c1<span class="token punctuation">,</span> Car c2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>c1<span class="token punctuation">.</span>id<span class="token punctuation">,</span> c2<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>c1<span class="token punctuation">.</span>id<span class="token punctuation">,</span> c2<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> c1<span class="token punctuation">.</span>time <span class="token operator">&lt;</span> c2<span class="token punctuation">.</span>time<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-bool cmpByTime(Car c1, Car c2)
-{
-	return c1.time < c2.time;
-}
+<span class="token keyword">bool</span> <span class="token function">cmpByTime</span><span class="token punctuation">(</span>Car c1<span class="token punctuation">,</span> Car c2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> c1<span class="token punctuation">.</span>time <span class="token operator">&lt;</span> c2<span class="token punctuation">.</span>time<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int timeToInt(int hh, int mm, int ss)
-{
-	return hh * 3600 + mm * 60 + ss;
-}
+<span class="token keyword">int</span> <span class="token function">timeToInt</span><span class="token punctuation">(</span><span class="token keyword">int</span> hh<span class="token punctuation">,</span> <span class="token keyword">int</span> mm<span class="token punctuation">,</span> <span class="token keyword">int</span> ss<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> hh <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">+</span> mm <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">+</span> ss<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int num = 0;			   //有效的记录数
-map<string, int> parkTime; //key:车牌号,value:总停留时间
+<span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">//有效的记录数</span>
+map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> parkTime<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//key:车牌号,value:总停留时间</span>
 
-int main()
-{
-	int N, K;
-	scanf("%d%d", &N, &K);
-	int hh, mm, ss;
-	for (int i = 0; i < N; i++)
-	{
-		scanf("%s %d:%d:%d %s", all[i].id, &hh, &mm, &ss, all[i].status);
-		all[i].time = timeToInt(hh, mm, ss);
-	}
-	sort(all, all + N, cmpByIdAndTime); //按车牌号和时间排序
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">,</span> K<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> hh<span class="token punctuation">,</span> mm<span class="token punctuation">,</span> ss<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s %d:%d:%d %s"</span><span class="token punctuation">,</span> all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>hh<span class="token punctuation">,</span> <span class="token operator">&amp;</span>mm<span class="token punctuation">,</span> <span class="token operator">&amp;</span>ss<span class="token punctuation">,</span> all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>time <span class="token operator">=</span> <span class="token function">timeToInt</span><span class="token punctuation">(</span>hh<span class="token punctuation">,</span> mm<span class="token punctuation">,</span> ss<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">sort</span><span class="token punctuation">(</span>all<span class="token punctuation">,</span> all <span class="token operator">+</span> N<span class="token punctuation">,</span> cmpByIdAndTime<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//按车牌号和时间排序</span>
 
-	int max_time = -1;				//记录最长的停留时间
-	for (int i = 0; i < N - 1; i++) //遍历所有记录
-	{
-		if (!strcmp(all[i].id, all[i + 1].id) && !strcmp(all[i].status, "in") && !strcmp(all[i + 1].status, "out")) //是同一辆车, i为in, i + 1为out
-		{
-			valid[num++] = all[i]; //配对的,存入valid数组
-			valid[num++] = all[i + 1];
-			int park_time = all[i + 1].time - all[i].time; //这辆车停车的时间
-			if (parkTime.count(all[i].id) == 0)			   //map中还没有这辆车
-				parkTime[all[i].id] = 0;
-			parkTime[all[i].id] += park_time;			   //否则增加停车时间
-			max_time = max(max_time, parkTime[all[i].id]); //更新最大停车时间
-		}
-	}
-	sort(valid, valid + num, cmpByTime); //把有效记录按时间从小到大排序
+    <span class="token keyword">int</span> max_time <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//记录最长的停留时间</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//遍历所有记录</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> all<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>status<span class="token punctuation">,</span> <span class="token string">"in"</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>all<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>status<span class="token punctuation">,</span> <span class="token string">"out"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//是同一辆车, i为in, i + 1为out</span>
+        <span class="token punctuation">{</span>
+            valid<span class="token punctuation">[</span>num<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//配对的,存入valid数组</span>
+            valid<span class="token punctuation">[</span>num<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> all<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> park_time <span class="token operator">=</span> all<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>time <span class="token operator">-</span> all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>time<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这辆车停车的时间</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>parkTime<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true">//map中还没有这辆车</span>
+                parkTime<span class="token punctuation">[</span>all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            parkTime<span class="token punctuation">[</span>all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> park_time<span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">//否则增加停车时间</span>
+            max_time <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>max_time<span class="token punctuation">,</span> parkTime<span class="token punctuation">[</span>all<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//更新最大停车时间</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">sort</span><span class="token punctuation">(</span>valid<span class="token punctuation">,</span> valid <span class="token operator">+</span> num<span class="token punctuation">,</span> cmpByTime<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//把有效记录按时间从小到大排序</span>
 
-	int now = 0, numCar = 0; //now为不超过当前查询时间的记录,numCae为当前校园内的车辆
-	for (int i = 0; i < K; i++)
-	{
-		scanf("%d:%d:%d", &hh, &mm, &ss);
-		int temp_time = timeToInt(hh, mm, ss);
-		//now处理至当前查询时间
-		while (now < num && valid[now].time <= temp_time) { if (!strcmp(valid[now].status, "in")) numcar++; 车辆进入 else numcar--; now++; 指向下一条记录 } printf("%d\n", numcar); 输出该时刻校园内车辆数 map<string, int>::iterator it; //遍历所有车牌号
-	for (it = parkTime.begin(); it != parkTime.end(); it++)
-		if (it->second == max_time) //输出最长停留时间的车牌号
-			printf("%s ", it->first.c_str());
+    <span class="token keyword">int</span> now <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> numCar <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//now为不超过当前查询时间的记录,numCae为当前校园内的车辆</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d:%d:%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>hh<span class="token punctuation">,</span> <span class="token operator">&amp;</span>mm<span class="token punctuation">,</span> <span class="token operator">&amp;</span>ss<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> temp_time <span class="token operator">=</span> <span class="token function">timeToInt</span><span class="token punctuation">(</span>hh<span class="token punctuation">,</span> mm<span class="token punctuation">,</span> ss<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//now处理至当前查询时间</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>now <span class="token operator">&lt;</span> num <span class="token operator">&amp;&amp;</span> valid<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">.</span>time <span class="token operator">&lt;=</span> temp_time<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>valid<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">.</span>status<span class="token punctuation">,</span> <span class="token string">"in"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                numCar<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//车辆进入</span>
+            <span class="token keyword">else</span>
+                numCar<span class="token operator">--</span><span class="token punctuation">;</span>
+            now<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//指向下一条记录</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> numCar<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出该时刻校园内车辆数</span>
+    <span class="token punctuation">}</span>
 
-	//最长的停留时间
-	printf("%02d:%02d:%02d\n", max_time / 3600, max_time % 3600 / 60, max_time % 60);
-	return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></string,></bits></code></pre>
+    map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//遍历所有车牌号</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> parkTime<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> parkTime<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>it<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">==</span> max_time<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//输出最长停留时间的车牌号</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s "</span><span class="token punctuation">,</span> it<span class="token operator">-</span><span class="token operator">></span>first<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//最长的停留时间</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%02d:%02d:%02d\n"</span><span class="token punctuation">,</span> max_time <span class="token operator">/</span> <span class="token number">3600</span><span class="token punctuation">,</span> max_time <span class="token operator">%</span> <span class="token number">3600</span> <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">,</span> max_time <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -703,8 +704,8 @@ int main()
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '0700e97a728ccaf306d9',
-        clientSecret: '29f8290635f85b12945789abe276800c2146836a',
+        clientID: 'f89cdfe5265984ab9684',
+        clientSecret: '69087a41c37103efb268aef95ea284cd1c2952ab',
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
@@ -743,9 +744,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1039 Course List for Student
-
-Zhejiang University has 40000 students and provides 2500 courses. Now given the student na</div>
+                    <div class="summary block-with-text">1039 Course List for Student
+Zhejiang University has 40000 students and provides 2500 courses. Now given the student nam</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-21
@@ -790,9 +790,8 @@ Zhejiang University has 40000 students and provides 2500 courses. Now given the 
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1080 Graduate Admission
-
-It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 appl</div>
+                    <div class="summary block-with-text">1080 Graduate Admission
+It is said that in 2011, there are about 100 graduate schools ready to proceed over 40,000 appli</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-17
@@ -971,7 +970,7 @@ It is said that in 2011, there are about 100 graduate schools ready to proceed o
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">28.8k</span>
+            <span class="white-color">32k</span>
             
 
             

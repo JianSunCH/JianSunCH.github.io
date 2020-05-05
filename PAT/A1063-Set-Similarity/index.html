@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1063 Set Similarity, 孙健的博客">
-    <meta name="description" content="1063 Set Similarity
-
-Given two sets of integers, the similarity of the sets is defined to be N​c​​/N​t​​×100%, where N​c">
+    <meta name="description" content="1063 Set Similarity
+Given two sets of integers, the similarity of the sets is defined to be N​c​​/N​t​​×100%, where N​c​">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,14 +389,14 @@ Given two sets of integers, the similarity of the sets is defined to be N​c�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        307
+                        366
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -413,52 +412,63 @@ Given two sets of integers, the similarity of the sets is defined to be N​c�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1063 Set Similarity</h2>
-<blockquote>
-<p>Given two sets of integers, the similarity of the sets is defined to be N​c​​/N​t​​×100%, where N​c​​ is the number of distinct common numbers shared by the two sets, and N​t​​ is the total number of distinct numbers in the two sets. Your job is to calculate the similarity of any given pair of sets.</p>
+                <h2 id="1063-Set-Similarity"><a href="#1063-Set-Similarity" class="headerlink" title="1063 Set Similarity"></a>1063 Set Similarity</h2><blockquote>
+<p>Given two sets of integers, the similarity of the sets is defined to be N​c​​/N​t​​×100%, where N​c​​ is the number of distinct common numbers shared by the two sets, and N​t​​ is the total number of distinct numbers in the two sets. Your job is to calculate the similarity of any given pair of sets.</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case. Each case first gives a positive integer N (≤50) which is the total number of sets. Then N lines follow, each gives a set with a positive M(≤10​4​​) and followed by M integers in the range [0,10​^9​​]. After the input of sets, a positive integer K (≤2000) is given, followed by K lines of queries. Each query gives a pair of set numbers (the sets are numbered from 1 to N). All the numbers in a line are separated by a space.</p>
-<h3>Output Specification:</h3>
-<p>For each query, print in one line the similarity of the sets, in the percentage form accurate up to 1 decimal place.</p>
-<h3>Sample Input:</h3>
-<pre><code>3 
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case first gives a positive integer N (≤50) which is the total number of sets. Then N lines follow, each gives a set with a positive M(≤10​4​​) and followed by M integers in the range [0,10​^9​​]. After the input of sets, a positive integer K (≤2000) is given, followed by K lines of queries. Each query gives a pair of set numbers (the sets are numbered from 1 to N). All the numbers in a line are separated by a space.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each query, print in one line the similarity of the sets, in the percentage form accurate up to 1 decimal place.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>3 
 3 99 87 101 
 4 87 101 5 87 
 7 99 101 18 5 135 18 99 
 2 
 1 2 
 1 3 
-</code></pre>
-<h3>Sample Output:</h3>
-<pre><code>50.0% 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>50.0% 
 33.3%
-</code></pre>
-<h3>解答</h3>
-<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <bits stdc++.h>
-using namespace std;
-const int N = 51;
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> N <span class="token operator">=</span> <span class="token number">51</span><span class="token punctuation">;</span>
 
-set<int> st[N];
+set<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> st<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-void compare(int st1, int st2)
-{
-	int same_num = 0, total_num = st[st2].size(); //相同的个数, 不同的个数
-	for (set<int>::iterator it = st[st1].begin(); it != st[st1].end(); it++)
-	{
-		if (st[st2].find(*it) != st[st2].end()) //在st[y]中能找到相同的元素
-			same_num++;
-		else
-			total_num++;
-	}
-	printf("%.1f%%\n", same_num * 100.0 / total_num);
-}
+<span class="token keyword">void</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token keyword">int</span> st1<span class="token punctuation">,</span> <span class="token keyword">int</span> st2<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> same_num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> total_num <span class="token operator">=</span> st<span class="token punctuation">[</span>st2<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//相同的个数, 不同的个数</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>set<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">::</span>iterator it <span class="token operator">=</span> st<span class="token punctuation">[</span>st1<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> st<span class="token punctuation">[</span>st1<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>st<span class="token punctuation">[</span>st2<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token operator">*</span>it<span class="token punctuation">)</span> <span class="token operator">!=</span> st<span class="token punctuation">[</span>st2<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//在st[y]中能找到相同的元素</span>
+            same_num<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            total_num<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%.1f%%\n"</span><span class="token punctuation">,</span> same_num <span class="token operator">*</span> <span class="token number">100.0</span> <span class="token operator">/</span> total_num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-	int N, M, K, num;
-	scanf("%d", &N);
-	for (int i = 1; i <= n; i++) { scanf("%d", &m); for (int j="0;" < m; j++) &num); st[i].insert(num); } &k); int st1, st2; i="0;" k; scanf("%d%d", &st1, &st2); compare(st1, st2); return 0; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></int></int></bits></code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">,</span> M<span class="token punctuation">,</span> K<span class="token punctuation">,</span> num<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>M<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> M<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            st<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>K<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> st1<span class="token punctuation">,</span> st2<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> K<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>st1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>st2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">compare</span><span class="token punctuation">(</span>st1<span class="token punctuation">,</span> st2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -623,8 +633,8 @@ int main()
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '0700e97a728ccaf306d9',
-        clientSecret: '29f8290635f85b12945789abe276800c2146836a',
+        clientID: 'f89cdfe5265984ab9684',
+        clientSecret: '69087a41c37103efb268aef95ea284cd1c2952ab',
         repo: 'Blog-Comment-Repo',
         owner: 'JianSunCH',
         admin: "JianSunCH",
@@ -663,9 +673,8 @@ int main()
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1060 Are They Equal
-
-If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered</div>
+                    <div class="summary block-with-text">1060 Are They Equal
+If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-23
@@ -710,9 +719,8 @@ If a machine can save only 3 significant digits, the float numbers 12300 and 123
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1047 Student List for Course
-
-Zhejiang University has 40,000 students and provides 2,500 courses. Now given the register</div>
+                    <div class="summary block-with-text">1047 Student List for Course
+Zhejiang University has 40,000 students and provides 2,500 courses. Now given the registere</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-21
@@ -891,7 +899,7 @@ Zhejiang University has 40,000 students and provides 2,500 courses. Now given th
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">28.8k</span>
+            <span class="white-color">32k</span>
             
 
             
