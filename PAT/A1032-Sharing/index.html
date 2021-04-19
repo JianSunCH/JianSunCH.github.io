@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1032 Sharing, 孙健的博客">
-    <meta name="description" content="1032 Sharing
-
-To store English words, one method is to use linked lists and store a word letter by letter. To save some ">
+    <meta name="description" content="1032 Sharing
+To store English words, one method is to use linked lists and store a word letter by letter. To save some s">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,7 +389,7 @@ To store English words, one method is to use linked lists and store a word lette
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        466
+                        458
                     </div>
                     
 
@@ -413,25 +412,19 @@ To store English words, one method is to use linked lists and store a word lette
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1032 Sharing</h2>
-<blockquote>
-<p>To store English words, one method is to use linked lists and store a word letter by letter. To save some space, we may let the words share the same sublist if they share the same suffix. For example, <code>loading</code> and <code>being</code> are stored as showed in Figure 1.</p>
+                <h2 id="1032-Sharing"><a href="#1032-Sharing" class="headerlink" title="1032 Sharing"></a>1032 Sharing</h2><blockquote>
+<p>To store English words, one method is to use linked lists and store a word letter by letter. To save some space, we may let the words share the same sublist if they share the same suffix. For example, <code>loading</code> and <code>being</code> are stored as showed in Figure 1.</p>
 </blockquote>
 <p><img src="https://images.ptausercontent.com/ef0a1fdf-3d9f-46dc-9a27-21f989270fd4.jpg" alt="fig.jpg"></p>
 <blockquote>
-<p>Figure 1
-You are supposed to find the starting position of the common suffix (e.g. the position of <code>i</code> in Figure 1).</p>
+<p>Figure 1<br>You are supposed to find the starting position of the common suffix (e.g. the position of <code>i</code> in Figure 1).</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case. For each case, the first line contains two addresses of nodes and a positive N (≤10​5​​), where the two addresses are the addresses of the first nodes of the two words, and N is the total number of nodes. The address of a node is a 5-digit positive integer, and NULL is represented by −1.</p>
-<p>Then N lines follow, each describes a node in the format:</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains two addresses of nodes and a positive N (≤10​5​​), where the two addresses are the addresses of the first nodes of the two words, and N is the total number of nodes. The address of a node is a 5-digit positive integer, and NULL is represented by −1.</p>
+<p>Then N lines follow, each describes a node in the format:</p>
 <pre><code>Address Data Next 
-</code></pre>
-<p>where<code>Address</code> is the position of the node, <code>Data</code> is the letter contained by this node which is an English letter chosen from { a-z, A-Z }, and <code>Next</code> is the position of the next node.</p>
-<h3>Output Specification:</h3>
-<p>For each case, simply output the 5-digit starting position of the common suffix. If the two words have no common suffix, output <code>-1</code> instead.</p>
-<h3>Sample Input 1:</h3>
-<pre><code>11111 22222 9 
+</code></pre><p>where<code>Address</code> is the position of the node, <code>Data</code> is the letter contained by this node which is an English letter chosen from { a-z, A-Z }, and <code>Next</code> is the position of the next node.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each case, simply output the 5-digit starting position of the common suffix. If the two words have no common suffix, output <code>-1</code> instead.</p>
+<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h3><pre><code>11111 22222 9 
 67890 i 00002 
 00010 a 12345 
 00003 g -1 
@@ -441,22 +434,54 @@ You are supposed to find the starting position of the common suffix (e.g. the po
 11111 L 00001 
 23456 e 67890 
 00001 o 00010 
-</code></pre>
-<h3>Sample Output 1:</h3>
-<pre><code>67890 
-</code></pre>
-<h3>Sample Input 2:</h3>
-<pre><code>00001 00002 4 
+</code></pre><h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h3><pre><code>67890 
+</code></pre><h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h3><pre><code>00001 00002 4 
 00001 a 10001 
 10001 s -1 
 00002 a 10002 
 10002 t -1 
-</code></pre>
-<h3>Sample Output 2:</h3>
-<pre><code>-1
-</code></pre>
-<h3>解答</h3>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_n = <span class="number">100001</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">true<span class="keyword">char</span> data;</span><br><span class="line">true<span class="keyword">int</span> next;</span><br><span class="line">true<span class="keyword">bool</span> flag; <span class="comment">//判断是否在第一条链表中出现过</span></span><br><span class="line">&#125; node[max_n];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="comment">//初始化node中的flag</span></span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; max_n; i++)</span><br><span class="line">truetruenode[i].flag = <span class="literal">false</span>;</span><br><span class="line">true<span class="keyword">int</span> list_1, list_2, N;</span><br><span class="line">true<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;list_1, &amp;list_2, &amp;N);</span><br><span class="line">true<span class="keyword">int</span> addr, next;</span><br><span class="line">true<span class="keyword">char</span> data;</span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="built_in">scanf</span>(<span class="string">"%d %c %d"</span>, &amp;addr, &amp;data, &amp;next);</span><br><span class="line">truetruenode[addr].data = data;</span><br><span class="line">truetruenode[addr].next = next;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">int</span> p = list_1; <span class="comment">//遍历list_1</span></span><br><span class="line">true<span class="keyword">for</span> (; p != <span class="number">-1</span>; p = node[p].next)</span><br><span class="line">truetruenode[p].flag = <span class="literal">true</span>; <span class="comment">//遍历过的结点,置为true</span></span><br><span class="line">true<span class="comment">//遍历list_2</span></span><br><span class="line">true<span class="keyword">for</span> (p = list_2; p != <span class="number">-1</span>; p = node[p].next)</span><br><span class="line">truetrue<span class="keyword">if</span> (node[p].flag) <span class="comment">//找到第一条链表中出现的结点</span></span><br><span class="line">truetruetrue<span class="keyword">break</span>;</span><br><span class="line">true<span class="keyword">if</span> (p != <span class="number">-1</span>) <span class="comment">//没达到末尾,找到了公共结点</span></span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"%05d\n"</span>, p);</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">true<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</code></pre><h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h3><pre><code>-1
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> max_n <span class="token operator">=</span> <span class="token number">100001</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> Node
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> data<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> next<span class="token punctuation">;</span>
+    <span class="token keyword">bool</span> flag<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//判断是否在第一条链表中出现过</span>
+<span class="token punctuation">}</span> node<span class="token punctuation">[</span>max_n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//初始化node中的flag</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> max_n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> list_1<span class="token punctuation">,</span> list_2<span class="token punctuation">,</span> N<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>list_1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>list_2<span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> addr<span class="token punctuation">,</span> next<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> data<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d %c %d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>addr<span class="token punctuation">,</span> <span class="token operator">&amp;</span>data<span class="token punctuation">,</span> <span class="token operator">&amp;</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        node<span class="token punctuation">[</span>addr<span class="token punctuation">]</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
+        node<span class="token punctuation">[</span>addr<span class="token punctuation">]</span><span class="token punctuation">.</span>next <span class="token operator">=</span> next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> p <span class="token operator">=</span> list_1<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//遍历list_1</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> p <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> p <span class="token operator">=</span> node<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">.</span>next<span class="token punctuation">)</span>
+        node<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">.</span>flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//遍历过的结点,置为true</span>
+    <span class="token comment" spellcheck="true">//遍历list_2</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>p <span class="token operator">=</span> list_2<span class="token punctuation">;</span> p <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> p <span class="token operator">=</span> node<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">.</span>next<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">.</span>flag<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//找到第一条链表中出现的结点</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//没达到末尾,找到了公共结点</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%05d\n"</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"-1\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -661,14 +686,11 @@ You are supposed to find the starting position of the common suffix (e.g. the po
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">问题 A: 简单计算器
-时间限制: 1 Sec  内存限制: 32 MB
+                    <div class="summary block-with-text">问题 A: 简单计算器时间限制: 1 Sec  内存限制: 32 MB  
 题目描述
-
 读入一个只包含 +, -, *, / 的非负整数计算表达式，计算该表达式的值。
 
-输入
-测试输入包含若干测试用例，每个测试用例占一行，每行不超过200个字</div>
+输入测试输入包含若干测试用例，每个测试用例占一行，每行不超过200个字符</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
@@ -713,13 +735,12 @@ You are supposed to find the starting position of the common suffix (e.g. the po
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1100 Mars Numbers
-
+                    <div class="summary block-with-text">1100 Mars Numbers
 People on Mars count their numbers with base 13:
 
 
-Zero on Earth is called &quot;tret&quot; on Mars.
-</div>
+Zero on Earth is called “tret” on Mars.
+The numbers</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-23
@@ -898,7 +919,7 @@ Zero on Earth is called &quot;tret&quot; on Mars.
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">33.7k</span>
+            <span class="white-color">32k</span>
             
 
             

@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1027 Colors in Mars, 孙健的博客">
-    <meta name="description" content="1027 Colors in Mars
-
-People in Mars represent the colors in their computers in a similar way as the Earth people. That i">
+    <meta name="description" content="1027 Colors in Mars
+People in Mars represent the colors in their computers in a similar way as the Earth people. That is">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,7 +389,7 @@ People in Mars represent the colors in their computers in a similar way as the E
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        267
+                        261
                     </div>
                     
 
@@ -413,22 +412,28 @@ People in Mars represent the colors in their computers in a similar way as the E
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1027 Colors in Mars</h2>
-<blockquote>
-<p>People in Mars represent the colors in their computers in a similar way as the Earth people. That is, a color is represented by a 6-digit number, where the first 2 digits are for <code>Red</code>, the middle 2 digits for <code>Green</code>, and the last 2 digits for <code>Blue</code>. The only difference is that they use radix 13 (0-9 and A-C) instead of 16. Now given a color in three decimal numbers (each between 0 and 168), you are supposed to output their Mars RGB values.</p>
+                <h2 id="1027-Colors-in-Mars"><a href="#1027-Colors-in-Mars" class="headerlink" title="1027 Colors in Mars"></a>1027 Colors in Mars</h2><blockquote>
+<p>People in Mars represent the colors in their computers in a similar way as the Earth people. That is, a color is represented by a 6-digit number, where the first 2 digits are for <code>Red</code>, the middle 2 digits for <code>Green</code>, and the last 2 digits for <code>Blue</code>. The only difference is that they use radix 13 (0-9 and A-C) instead of 16. Now given a color in three decimal numbers (each between 0 and 168), you are supposed to output their Mars RGB values.</p>
 </blockquote>
-<h3>Input Specification:</h3>
-<p>Each input file contains one test case which occupies a line containing the three decimal color values.</p>
-<h3>Output Specification:</h3>
-<p>For each test case you should output the Mars RGB value in the following format: first output <code>#</code>, then followed by a 6-digit number where all the English characters must be upper-cased. If a single color is only 1-digit long, you must print a <code>0</code> to its left.</p>
-<h3>Sample Input:</h3>
-<pre><code>15 43 71 
-</code></pre>
-<h3>Sample Output:</h3>
-<pre><code>#123456
-</code></pre>
-<h3>解答</h3>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="comment">//由于数据量限定在[0,168],所以直接定义一个radix数组</span></span><br><span class="line">true<span class="keyword">char</span> radix[<span class="number">13</span>] = &#123;<span class="string">'0'</span>, <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>, <span class="string">'9'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>&#125;;</span><br><span class="line">true<span class="keyword">int</span> r, g, b;</span><br><span class="line">true<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;r, &amp;g, &amp;b);</span><br><span class="line">true<span class="built_in">printf</span>(<span class="string">"#"</span>);</span><br><span class="line">true<span class="built_in">printf</span>(<span class="string">"%c%c"</span>, radix[r / <span class="number">13</span>], radix[r % <span class="number">13</span>]);</span><br><span class="line">true<span class="built_in">printf</span>(<span class="string">"%c%c"</span>, radix[g / <span class="number">13</span>], radix[g % <span class="number">13</span>]);</span><br><span class="line">true<span class="built_in">printf</span>(<span class="string">"%c%c"</span>, radix[b / <span class="number">13</span>], radix[b % <span class="number">13</span>]);</span><br><span class="line">true<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case which occupies a line containing the three decimal color values.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case you should output the Mars RGB value in the following format: first output <code>#</code>, then followed by a 6-digit number where all the English characters must be upper-cased. If a single color is only 1-digit long, you must print a <code>0</code> to its left.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>15 43 71 
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>#123456
+</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//由于数据量限定在[0,168],所以直接定义一个radix数组</span>
+    <span class="token keyword">char</span> radix<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'0'</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'4'</span><span class="token punctuation">,</span> <span class="token string">'5'</span><span class="token punctuation">,</span> <span class="token string">'6'</span><span class="token punctuation">,</span> <span class="token string">'7'</span><span class="token punctuation">,</span> <span class="token string">'8'</span><span class="token punctuation">,</span> <span class="token string">'9'</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>r<span class="token punctuation">,</span> <span class="token operator">&amp;</span>g<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c%c"</span><span class="token punctuation">,</span> radix<span class="token punctuation">[</span>r <span class="token operator">/</span> <span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">,</span> radix<span class="token punctuation">[</span>r <span class="token operator">%</span> <span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c%c"</span><span class="token punctuation">,</span> radix<span class="token punctuation">[</span>g <span class="token operator">/</span> <span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">,</span> radix<span class="token punctuation">[</span>g <span class="token operator">%</span> <span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c%c"</span><span class="token punctuation">,</span> radix<span class="token punctuation">[</span>b <span class="token operator">/</span> <span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">,</span> radix<span class="token punctuation">[</span>b <span class="token operator">%</span> <span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -633,9 +638,8 @@ People in Mars represent the colors in their computers in a similar way as the E
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1058 A+B in Hogwarts
-
-If you are a fan of Harry Potter, you would know the world of magic has its own currency system --</div>
+                    <div class="summary block-with-text">1058 A+B in Hogwarts
+If you are a fan of Harry Potter, you would know the world of magic has its own currency system – a</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-02
@@ -680,9 +684,8 @@ If you are a fan of Harry Potter, you would know the world of magic has its own 
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1019 General Palindromic Number
-
-A number that will be the same when it is written forwards or backwards is known as a P</div>
+                    <div class="summary block-with-text">1019 General Palindromic Number
+A number that will be the same when it is written forwards or backwards is known as a Pa</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-02
@@ -861,7 +864,7 @@ A number that will be the same when it is written forwards or backwards is known
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">33.7k</span>
+            <span class="white-color">32k</span>
             
 
             

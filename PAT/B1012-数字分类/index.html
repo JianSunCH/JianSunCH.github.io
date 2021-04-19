@@ -5,13 +5,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1012 数字分类, 孙健的博客">
-    <meta name="description" content="1012 数字分类
-
+    <meta name="description" content="1012 数字分类
 给定一系列正整数，请按要求对数字进行分类，并输出以下 5 个数字：
 
-
-A​1​​ = 能被 5 整除的数字中所有偶数的和；
-A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和，即计算 n​1​​−n​">
+A​1​​ = 能被 5 整除的数字中所有偶数的和；
+A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和，即计算 n​1​​−n​2​">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -394,7 +392,7 @@ A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        539
+                        496
                     </div>
                     
 
@@ -417,32 +415,101 @@ A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2>1012 数字分类</h2>
-<blockquote>
+                <h2 id="1012-数字分类"><a href="#1012-数字分类" class="headerlink" title="1012 数字分类"></a>1012 数字分类</h2><blockquote>
 <p>给定一系列正整数，请按要求对数字进行分类，并输出以下 5 个数字：</p>
-</blockquote>
 <ul>
-<li>A​1​​ = 能被 5 整除的数字中所有偶数的和；</li>
-<li>A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和，即计算 n​1​​−n​2​​+n​3​​−n​4​​⋯；</li>
-<li>A​3​​ = 被 5 除后余 2 的数字的个数；</li>
-<li>A​4​​ = 被 5 除后余 3 的数字的平均数，精确到小数点后 1 位；</li>
-<li>A​5​​ = 被 5 除后余 4 的数字中最大数字。</li>
+<li>A​1​​ = 能被 5 整除的数字中所有偶数的和；</li>
+<li>A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和，即计算 n​1​​−n​2​​+n​3​​−n​4​​⋯；</li>
+<li>A​3​​ = 被 5 除后余 2 的数字的个数；</li>
+<li>A​4​​ = 被 5 除后余 3 的数字的平均数，精确到小数点后 1 位；</li>
+<li>A​5​​ = 被 5 除后余 4 的数字中最大数字。</li>
 </ul>
-<h3>输入格式：</h3>
-<p>每个输入包含 1 个测试用例。每个测试用例先给出一个不超过 1000 的正整数 N，随后给出 N 个不超过 1000 的待分类的正整数。数字间以空格分隔。</p>
-<h3>输出格式：</h3>
-<p>对给定的 N 个正整数，按题目要求计算 A​1​​~A​5​​ 并在一行中顺序输出。数字间以空格分隔，但行末不得有多余空格。</p>
-<p>若其中某一类数字不存在，则在相应位置输出 <code>N</code>。</p>
-<h3>输入样例 1：</h3>
-<p><code>13 1 2 3 4 5 6 7 8 9 10 20 16 18</code></p>
-<h3>输出样例 1：</h3>
-<p><code>30 11 2 9.7 9</code></p>
-<h3>输入样例 2：</h3>
-<p><code>8 1 2 4 5 6 7 9 16</code></p>
-<h3>输出样例 2：</h3>
-<p><code>N 11 2 N 9</code></p>
-<h3>解答</h3>
-<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">int</span> N, num;</span><br><span class="line">true<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;N);</span><br><span class="line">true<span class="keyword">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">true<span class="keyword">int</span> count[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;num);</span><br><span class="line">truetrue<span class="comment">//A1</span></span><br><span class="line">truetrue<span class="keyword">if</span> (num % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetrue<span class="keyword">if</span> (num % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">truetruetrue&#123;</span><br><span class="line">truetruetruetruearr[<span class="number">0</span>] += num;</span><br><span class="line">truetruetruetruecount[<span class="number">0</span>]++;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="comment">//A2 转换为n1(0) + n3(2) - n2(1) - n4(3)...</span></span><br><span class="line">truetrue<span class="keyword">else</span> <span class="keyword">if</span> (num % <span class="number">5</span> == <span class="number">1</span>)</span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetrue<span class="keyword">if</span> (count[<span class="number">1</span>] % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">truetruetrue&#123;</span><br><span class="line">truetruetruetruearr[<span class="number">1</span>] += num;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetrue<span class="keyword">else</span></span><br><span class="line">truetruetrue&#123;</span><br><span class="line">truetruetruetruearr[<span class="number">1</span>] -= num;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetruecount[<span class="number">1</span>]++;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="comment">//A3</span></span><br><span class="line">truetrue<span class="keyword">else</span> <span class="keyword">if</span> (num % <span class="number">5</span> == <span class="number">2</span>)</span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetruecount[<span class="number">2</span>]++;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="comment">//A4</span></span><br><span class="line">truetrue<span class="keyword">else</span> <span class="keyword">if</span> (num % <span class="number">5</span> == <span class="number">3</span>)</span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetruearr[<span class="number">3</span>] += num;</span><br><span class="line">truetruetruecount[<span class="number">3</span>]++;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="comment">//A5</span></span><br><span class="line">truetrue<span class="keyword">else</span></span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetrue<span class="keyword">if</span> (num &gt; arr[<span class="number">4</span>])</span><br><span class="line">truetruetrue&#123;</span><br><span class="line">truetruetruetruearr[<span class="number">4</span>] = num;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetruecount[<span class="number">4</span>]++;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">if</span> (count[<span class="number">0</span>] == <span class="number">0</span>)</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"N "</span>);</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"%d "</span>, arr[<span class="number">0</span>]);</span><br><span class="line">true<span class="keyword">if</span> (count[<span class="number">1</span>] == <span class="number">0</span>)</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"N "</span>);</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"%d "</span>, arr[<span class="number">1</span>]);</span><br><span class="line">true<span class="keyword">if</span> (count[<span class="number">2</span>] == <span class="number">0</span>)</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"N "</span>);</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"%d "</span>, count[<span class="number">2</span>]);</span><br><span class="line">true<span class="keyword">if</span> (count[<span class="number">3</span>] == <span class="number">0</span>)</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"N "</span>);</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"%.1f "</span>, (<span class="keyword">double</span>)arr[<span class="number">3</span>] / count[<span class="number">3</span>]);</span><br><span class="line">true<span class="keyword">if</span> (count[<span class="number">4</span>] == <span class="number">0</span>)</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"N"</span>);</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"%d"</span>, arr[<span class="number">4</span>]);</span><br><span class="line">true<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个输入包含 1 个测试用例。每个测试用例先给出一个不超过 1000 的正整数 N，随后给出 N 个不超过 1000 的待分类的正整数。数字间以空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对给定的 N 个正整数，按题目要求计算 A​1​​~A​5​​ 并在一行中顺序输出。数字间以空格分隔，但行末不得有多余空格。</p>
+<p>若其中某一类数字不存在，则在相应位置输出 <code>N</code>。</p>
+<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p><code>13 1 2 3 4 5 6 7 8 9 10 20 16 18</code></p>
+<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p><code>30 11 2 9.7 9</code></p>
+<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p><code>8 1 2 4 5 6 7 9 16</code></p>
+<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p><code>N 11 2 N 9</code></p>
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> N<span class="token punctuation">,</span> num<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> count<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//A1</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
+                count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//A2 转换为n1(0) + n3(2) - n2(1) - n4(3)...</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//A3</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            count<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//A4</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            arr<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
+            count<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//A5</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">></span> arr<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                arr<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> num<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            count<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"N "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"N "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"N "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> count<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"N "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%.1f "</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span>arr<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">/</span> count<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"N"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -647,16 +714,14 @@ A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和�
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1018 锤子剪刀布
-
+                    <div class="summary block-with-text">1018 锤子剪刀布
 大家应该都会玩“锤子剪刀布”的游戏：两人同时给出手势，胜负规则如图所示：
 
 
 
 现给出两人的交锋记录，请统计双方的胜、平、负次数，并且给出双方分别出什么手势的胜算最大。
 
-输入格式：
-输入第 1 行给出正整数 N（≤</div>
+输入格式：输入第 1 行给出正整数 N（≤10</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-25
@@ -701,9 +766,8 @@ A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和�
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1008 数组元素循环右移问题
-
-一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A​0​​A​1​​⋯A​N−1​​）变换为（A​N−M​​⋯A​N−1​​A​</div>
+                    <div class="summary block-with-text">1008 数组元素循环右移问题
+一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A​0​​A​1​​⋯A​N−1​​）变换为（A​N−M​​⋯A​N−1​​A​0</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
@@ -882,7 +946,7 @@ A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">33.7k</span>
+            <span class="white-color">32k</span>
             
 
             
