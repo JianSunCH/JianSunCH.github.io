@@ -5,7 +5,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1027 打印沙漏, 孙健的博客">
-    <meta name="description" content="1027 打印沙漏
+    <meta name="description" content="1027 打印沙漏
+
 本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印
 
 *****
@@ -14,7 +15,8 @@
  ***
 *****
 
-所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数">
+
+所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,8 +39,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -397,7 +398,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        399
+                        421
                     </div>
                     
 
@@ -420,7 +421,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1027-打印沙漏"><a href="#1027-打印沙漏" class="headerlink" title="1027 打印沙漏"></a>1027 打印沙漏</h2><blockquote>
+                <h2>1027 打印沙漏</h2>
+<blockquote>
 <p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印</p>
 </blockquote>
 <pre><code>*****
@@ -428,63 +430,30 @@
   *
  ***
 *****
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。</p>
 </blockquote>
 <blockquote>
 <p>给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。</p>
 </blockquote>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入在一行给出1个正整数N（≤1000）和一个符号，中间以空格分隔。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><pre><code>19 *
-</code></pre><h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>*****
+<h3>输入格式:</h3>
+<p>输入在一行给出1个正整数N（≤1000）和一个符号，中间以空格分隔。</p>
+<h3>输出格式:</h3>
+<p>首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。</p>
+<h3>输入样例:</h3>
+<pre><code>19 *
+</code></pre>
+<h3>输出样例</h3>
+<pre><code>*****
  ***
   *
  ***
 *****
 2
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> num<span class="token punctuation">;</span>
-    <span class="token keyword">char</span> C<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d %c"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>num<span class="token punctuation">,</span> <span class="token operator">&amp;</span>C<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//三角形底边的字符数</span>
-    <span class="token keyword">int</span> bottom <span class="token operator">=</span> <span class="token function">floor</span><span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//底边需要为奇数</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>bottom <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-        bottom<span class="token operator">--</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//总共需要输出的非空格字符数</span>
-    <span class="token keyword">int</span> total <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span>bottom <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">//输出倒三角</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> bottom<span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//输出空格</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token punctuation">(</span>bottom <span class="token operator">-</span> i<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//输出对应的字符</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> C<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//输出正三角</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> bottom<span class="token punctuation">;</span> i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//输出空格</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token punctuation">(</span>bottom <span class="token operator">-</span> i<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//输出对应的字符</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> C<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> num <span class="token operator">-</span> total<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
+<h3>解答</h3>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">int</span> num;</span><br><span class="line">true<span class="keyword">char</span> C;</span><br><span class="line">true<span class="built_in">scanf</span>(<span class="string">"%d %c"</span>, &amp;num, &amp;C);</span><br><span class="line">true<span class="comment">//三角形底边的字符数</span></span><br><span class="line">true<span class="keyword">int</span> bottom = <span class="built_in">floor</span>(<span class="built_in">sqrt</span>(<span class="number">2</span> * (<span class="number">1</span> + num)) - <span class="number">1</span>);</span><br><span class="line">true<span class="comment">//底边需要为奇数</span></span><br><span class="line">true<span class="keyword">if</span> (bottom % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">truetruebottom--;</span><br><span class="line">true<span class="comment">//总共需要输出的非空格字符数</span></span><br><span class="line">true<span class="keyword">int</span> total = <span class="built_in">pow</span>(bottom + <span class="number">1</span>, <span class="number">2</span>) / <span class="number">2</span> - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">true<span class="comment">//输出倒三角</span></span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = bottom; i &gt;= <span class="number">1</span>; i -= <span class="number">2</span>)</span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="comment">//输出空格</span></span><br><span class="line">truetrue<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (bottom - i) / <span class="number">2</span>; j++)</span><br><span class="line">truetruetrue<span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">truetrue<span class="comment">//输出对应的字符</span></span><br><span class="line">truetrue<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">truetruetrue<span class="built_in">printf</span>(<span class="string">"%c"</span>, C);</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="comment">//输出正三角</span></span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= bottom; i += <span class="number">2</span>)</span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="comment">//输出空格</span></span><br><span class="line">truetrue<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (bottom - i) / <span class="number">2</span>; j++)</span><br><span class="line">truetruetrue<span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">truetrue<span class="comment">//输出对应的字符</span></span><br><span class="line">truetrue<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">truetruetrue<span class="built_in">printf</span>(<span class="string">"%c"</span>, C);</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, num - total);</span><br><span class="line"></span><br><span class="line">true<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             </div>
             <hr>
@@ -689,8 +658,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1031 Hello World for U
-Given any string of N (≥5) characters, you are asked to form the characters into the shape of U. </div>
+                    <div class="summary block-with-text">1031 Hello World for U
+
+Given any string of N (≥5) characters, you are asked to form the characters into the shape of U.</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-01
@@ -735,8 +705,9 @@ Given any string of N (≥5) characters, you are asked to form the characters in
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1036 跟奥巴马一起编程
-美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014 年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在</div>
+                    <div class="summary block-with-text">1036 跟奥巴马一起编程
+
+美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014 年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-30
@@ -909,13 +880,13 @@ Given any string of N (≥5) characters, you are asked to form the characters in
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
-            &copy;2020, content by
+            &copy;2021, content by
             Jian Sun. All Rights Reserved.
             
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">32k</span>
+            <span class="white-color">33.7k</span>
             
 
             

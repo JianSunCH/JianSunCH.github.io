@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1048 数字加密, 孙健的博客">
-    <meta name="description" content="1048 数字加密
-本题要求实现一种数字加密方法。首先固定一个加密用正整数 A，对任一正整数 B，将其每 1 位数字与 A 的对应位置上的数字进行以下运算：对奇数位，对应位的数字相加后对 13 取余——这里用 J 代表 10、Q 代表 11">
+    <meta name="description" content="1048 数字加密
+
+本题要求实现一种数字加密方法。首先固定一个加密用正整数 A，对任一正整数 B，将其每 1 位数字与 A 的对应位置上的数字进行以下运算：对奇数位，对应位的数字相加后对 13 取余——这里用 J 代表 10、Q 代表 1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,8 +30,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -389,7 +389,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        389
+                        413
                     </div>
                     
 
@@ -412,70 +412,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1048-数字加密"><a href="#1048-数字加密" class="headerlink" title="1048 数字加密"></a>1048 数字加密</h2><blockquote>
+                <h2>1048 数字加密</h2>
+<blockquote>
 <p>本题要求实现一种数字加密方法。首先固定一个加密用正整数 A，对任一正整数 B，将其每 1 位数字与 A 的对应位置上的数字进行以下运算：对奇数位，对应位的数字相加后对 13 取余——这里用 J 代表 10、Q 代表 11、K 代表 12；对偶数位，用 B 的数字减去 A 的数字，若结果为负数，则再加 10。这里令个位为第 1 位。</p>
 </blockquote>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 A 和 B，均为不超过 100 位的正整数，其间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出加密后的结果。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code>1234567 368782971 
-</code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>3695Q8118
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-
-<span class="token keyword">void</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">char</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">strlen</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token function">strlen</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        arr<span class="token punctuation">[</span><span class="token function">strlen</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> A<span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span><span class="token punctuation">,</span> B<span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%s"</span><span class="token punctuation">,</span> A<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> lengthA <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> lengthB <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> length <span class="token operator">=</span> lengthA <span class="token operator">></span> lengthB <span class="token operator">?</span> lengthA <span class="token punctuation">:</span> lengthB<span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">//将A B反转,以便于向0对齐</span>
-    <span class="token function">reverse</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">reverse</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">char</span> result<span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//i为奇数时,对应题目中为偶数;偶数同理</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> numA <span class="token operator">=</span> i <span class="token operator">&lt;</span> lengthA <span class="token operator">?</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'0'</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//A[i]</span>
-        <span class="token keyword">int</span> numB <span class="token operator">=</span> i <span class="token operator">&lt;</span> lengthB <span class="token operator">?</span> B<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'0'</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//B[i]</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>                               <span class="token comment" spellcheck="true">//奇数</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token punctuation">(</span>numA <span class="token operator">+</span> numB<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">13</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span>
-                result<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'J'</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">==</span> <span class="token number">11</span><span class="token punctuation">)</span>
-                result<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Q'</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">==</span> <span class="token number">12</span><span class="token punctuation">)</span>
-                result<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'K'</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span>
-                result<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum <span class="token operator">+</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">else</span> <span class="token comment" spellcheck="true">//偶数</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> diff <span class="token operator">=</span> numB <span class="token operator">-</span> numA<span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>diff <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
-                diff <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-            result<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> diff <span class="token operator">+</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">//反转result数组为正序</span>
-    <span class="token function">reverse</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">puts</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3>输入格式：</h3>
+<p>输入在一行中依次给出 A 和 B，均为不超过 100 位的正整数，其间以空格分隔。</p>
+<h3>输出格式：</h3>
+<p>在一行中输出加密后的结果。</p>
+<h3>输入样例：</h3>
+<pre><code>1234567 368782971 
+</code></pre>
+<h3>输出样例：</h3>
+<pre><code>3695Q8118
+</code></pre>
+<h3>解答</h3>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">char</span> arr[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(arr) / <span class="number">2</span>; i++)</span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="keyword">int</span> temp = arr[i];</span><br><span class="line">truetruearr[i] = arr[<span class="built_in">strlen</span>(arr) - <span class="number">1</span> - i];</span><br><span class="line">truetruearr[<span class="built_in">strlen</span>(arr) - <span class="number">1</span> - i] = temp;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">char</span> A[<span class="number">101</span>], B[<span class="number">101</span>];</span><br><span class="line">true<span class="built_in">scanf</span>(<span class="string">"%s%s"</span>, A, B);</span><br><span class="line">true<span class="keyword">int</span> lengthA = <span class="built_in">strlen</span>(A);</span><br><span class="line">true<span class="keyword">int</span> lengthB = <span class="built_in">strlen</span>(B);</span><br><span class="line">true<span class="keyword">int</span> length = lengthA &gt; lengthB ? lengthA : lengthB;</span><br><span class="line"></span><br><span class="line">true<span class="comment">//将A B反转,以便于向0对齐</span></span><br><span class="line">truereverse(A);</span><br><span class="line">truereverse(B);</span><br><span class="line"></span><br><span class="line">true<span class="keyword">char</span> result[<span class="number">101</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) <span class="comment">//i为奇数时,对应题目中为偶数;偶数同理</span></span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="keyword">int</span> numA = i &lt; lengthA ? A[i] - <span class="string">'0'</span> : <span class="number">0</span>; <span class="comment">//A[i]</span></span><br><span class="line">truetrue<span class="keyword">int</span> numB = i &lt; lengthB ? B[i] - <span class="string">'0'</span> : <span class="number">0</span>; <span class="comment">//B[i]</span></span><br><span class="line">truetrue<span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span>)							   <span class="comment">//奇数</span></span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetrue<span class="keyword">int</span> sum = (numA + numB) % <span class="number">13</span>;</span><br><span class="line">truetruetrue<span class="keyword">if</span> (sum == <span class="number">10</span>)</span><br><span class="line">truetruetruetrueresult[i] = <span class="string">'J'</span>;</span><br><span class="line">truetruetrue<span class="keyword">else</span> <span class="keyword">if</span> (sum == <span class="number">11</span>)</span><br><span class="line">truetruetruetrueresult[i] = <span class="string">'Q'</span>;</span><br><span class="line">truetruetrue<span class="keyword">else</span> <span class="keyword">if</span> (sum == <span class="number">12</span>)</span><br><span class="line">truetruetruetrueresult[i] = <span class="string">'K'</span>;</span><br><span class="line">truetruetrue<span class="keyword">else</span></span><br><span class="line">truetruetruetrueresult[i] = sum + <span class="string">'0'</span>;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="keyword">else</span> <span class="comment">//偶数</span></span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetrue<span class="keyword">int</span> diff = numB - numA;</span><br><span class="line">truetruetrue<span class="keyword">if</span> (diff &lt; <span class="number">0</span>)</span><br><span class="line">truetruetruetruediff += <span class="number">10</span>;</span><br><span class="line">truetruetrueresult[i] = diff + <span class="string">'0'</span>;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="comment">//反转result数组为正序</span></span><br><span class="line">truereverse(result);</span><br><span class="line">true<span class="built_in">puts</span>(result);</span><br><span class="line"></span><br><span class="line">true<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             </div>
             <hr>
@@ -680,8 +632,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1001 A+B Format
-Calculate a+b and output the sum in standard format – that is, the digits must be separated into groups </div>
+                    <div class="summary block-with-text">1001 A+B Format
+
+Calculate a+b and output the sum in standard format -- that is, the digits must be separated into group</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-06
@@ -726,8 +679,9 @@ Calculate a+b and output the sum in standard format – that is, the digits must
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1073 Scientific Notation
-Scientific notation is the way that scientists easily handle very large numbers or very small n</div>
+                    <div class="summary block-with-text">1073 Scientific Notation
+
+Scientific notation is the way that scientists easily handle very large numbers or very small </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-05
@@ -900,13 +854,13 @@ Scientific notation is the way that scientists easily handle very large numbers 
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
-            &copy;2020, content by
+            &copy;2021, content by
             Jian Sun. All Rights Reserved.
             
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">32k</span>
+            <span class="white-color">33.7k</span>
             
 
             

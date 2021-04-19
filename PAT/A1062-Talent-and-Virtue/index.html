@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1062 Talent and Virtue, 孙健的博客">
-    <meta name="description" content="1062 Talent and Virtue
-About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in which he talked abo">
+    <meta name="description" content="1062 Talent and Virtue
+
+About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in which he talked ab">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,8 +30,7 @@ About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in wh
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -389,7 +389,7 @@ About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in wh
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        775
+                        811
                     </div>
                     
 
@@ -412,18 +412,23 @@ About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in wh
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1062-Talent-and-Virtue"><a href="#1062-Talent-and-Virtue" class="headerlink" title="1062 Talent and Virtue"></a>1062 Talent and Virtue</h2><blockquote>
-<p>About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in which he talked about people’s talent and virtue. According to his theory, a man being outstanding in both talent and virtue must be a “sage（圣人）”; being less excellent but with one’s virtue outweighs talent can be called a “nobleman（君子）”; being good in neither is a “fool man（愚人）”; yet a fool man is better than a “small man（小人）” who prefers talent than virtue.</p>
+                <h2>1062 Talent and Virtue</h2>
+<blockquote>
+<p>About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in which he talked about people's talent and virtue. According to his theory, a man being outstanding in both talent and virtue must be a &quot;sage（圣人）&quot;; being less excellent but with one's virtue outweighs talent can be called a &quot;nobleman（君子）&quot;; being good in neither is a &quot;fool man（愚人）&quot;; yet a fool man is better than a &quot;small man（小人）&quot; who prefers talent than virtue.</p>
 </blockquote>
 <blockquote>
-<p>Now given the grades of talent and virtue of a group of people, you are supposed to rank them according to Sima Guang’s theory.</p>
+<p>Now given the grades of talent and virtue of a group of people, you are supposed to rank them according to Sima Guang's theory.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case first gives 3 positive integers in a line: N (≤10​5​​), the total number of people to be ranked; L (≥60), the lower bound of the qualified grades – that is, only the ones whose grades of talent and virtue are both not below this line will be ranked; and H (&lt;100), the higher line of qualification – that is, those with both grades not below this line are considered as the “sages”, and will be ranked in non-increasing order according to their total grades. Those with talent grades below H but virtue grades not are cosidered as the “noblemen”, and are also ranked in non-increasing order according to their total grades, but they are listed after the “sages”. Those with both grades below H, but with virtue not lower than talent are considered as the “fool men”. They are ranked in the same way but after the “noblemen”. The rest of people whose grades both pass the L line are ranked after the “fool men”.</p>
-<p>Then N lines follow, each gives the information of a person in the format:</p>
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. Each case first gives 3 positive integers in a line: N (≤10​5​​), the total number of people to be ranked; L (≥60), the lower bound of the qualified grades -- that is, only the ones whose grades of talent and virtue are both not below this line will be ranked; and H (&lt;100), the higher line of qualification -- that is, those with both grades not below this line are considered as the &quot;sages&quot;, and will be ranked in non-increasing order according to their total grades. Those with talent grades below H but virtue grades not are cosidered as the &quot;noblemen&quot;, and are also ranked in non-increasing order according to their total grades, but they are listed after the &quot;sages&quot;. Those with both grades below H, but with virtue not lower than talent are considered as the &quot;fool men&quot;. They are ranked in the same way but after the &quot;noblemen&quot;. The rest of people whose grades both pass the L line are ranked after the &quot;fool men&quot;.</p>
+<p>Then N lines follow, each gives the information of a person in the format:</p>
 <pre><code>ID_Number Virtue_Grade Talent_Grade 
-</code></pre><p>where <code>ID_Number</code> is an 8-digit number, and both grades are integers in [0, 100]. All the numbers are separated by a space.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>The first line of output must give M (≤N), the total number of people that are actually ranked. Then M lines follow, each gives the information of a person in the same format as the input, according to the ranking rules. If there is a tie of the total grade, they must be ranked with respect to their virtue grades in non-increasing order. If there is still a tie, then output in increasing order of their ID’s.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>14 60 80 
+</code></pre>
+<p>where <code>ID_Number</code> is an 8-digit number, and both grades are integers in [0, 100]. All the numbers are separated by a space.</p>
+<h3>Output Specification:</h3>
+<p>The first line of output must give M (≤N), the total number of people that are actually ranked. Then M lines follow, each gives the information of a person in the same format as the input, according to the ranking rules. If there is a tie of the total grade, they must be ranked with respect to their virtue grades in non-increasing order. If there is still a tie, then output in increasing order of their ID's.</p>
+<h3>Sample Input:</h3>
+<pre><code>14 60 80 
 10000001 64 90 
 10000002 90 60 
 10000011 85 80 
@@ -438,7 +443,9 @@ About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in wh
 10000012 80 100 
 10000013 90 99 
 10000014 66 60 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>12 
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>12 
 10000013 90 99 
 10000012 80 100 
 10000003 85 80 
@@ -451,60 +458,9 @@ About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in wh
 10000014 66 60 
 10000008 75 79 
 10000001 64 90
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">struct</span> Person
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> id<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> Virtue_Grade<span class="token punctuation">,</span> Talent_Grade<span class="token punctuation">,</span> sum<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> category<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//人的种类: 1,sage 2,nobleman 3,fool man 4,small man 5，non pass</span>
-<span class="token punctuation">}</span> p<span class="token punctuation">[</span><span class="token number">100001</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token keyword">bool</span> <span class="token function">cmp</span><span class="token punctuation">(</span>Person p1<span class="token punctuation">,</span> Person p2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>category <span class="token operator">!=</span> p2<span class="token punctuation">.</span>category<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>category <span class="token operator">&lt;</span> p2<span class="token punctuation">.</span>category<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//类别小的放前面</span>
-    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>sum <span class="token operator">!=</span> p2<span class="token punctuation">.</span>sum<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>sum <span class="token operator">></span> p2<span class="token punctuation">.</span>sum<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//总分降序</span>
-    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>Virtue_Grade <span class="token operator">!=</span> p2<span class="token punctuation">.</span>Virtue_Grade<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>Virtue_Grade <span class="token operator">></span> p2<span class="token punctuation">.</span>Virtue_Grade<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//德分大的排前面</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span>id<span class="token punctuation">,</span> p2<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//id升序</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">,</span> L<span class="token punctuation">,</span> H<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">,</span> <span class="token operator">&amp;</span>L<span class="token punctuation">,</span> <span class="token operator">&amp;</span>H<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> pass <span class="token operator">=</span> N<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//需要排序的人数</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%d%d"</span><span class="token punctuation">,</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Virtue_Grade<span class="token punctuation">,</span> <span class="token operator">&amp;</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Talent_Grade<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>sum <span class="token operator">=</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Virtue_Grade <span class="token operator">+</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Talent_Grade<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Virtue_Grade <span class="token operator">&lt;</span> L <span class="token operator">||</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Talent_Grade <span class="token operator">&lt;</span> L<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//不排名</span>
-        <span class="token punctuation">{</span>
-            pass<span class="token operator">--</span><span class="token punctuation">;</span>
-            p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>category <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Virtue_Grade <span class="token operator">>=</span> H <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Talent_Grade <span class="token operator">>=</span> H<span class="token punctuation">)</span>
-            p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>category <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//sage</span>
-        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Virtue_Grade <span class="token operator">>=</span> H <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Talent_Grade <span class="token operator">&lt;</span> H<span class="token punctuation">)</span>
-            p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>category <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//nobleman</span>
-        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Virtue_Grade <span class="token operator">>=</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Talent_Grade<span class="token punctuation">)</span>
-            p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>category <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//fool man</span>
-        <span class="token keyword">else</span>
-            p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>category <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//small man</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token function">sort</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> p <span class="token operator">+</span> N<span class="token punctuation">,</span> cmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> pass<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> pass<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %d %d\n"</span><span class="token punctuation">,</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Virtue_Grade<span class="token punctuation">,</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Talent_Grade<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
+<h3>解答</h3>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">true<span class="keyword">char</span> id[<span class="number">9</span>];</span><br><span class="line">true<span class="keyword">int</span> Virtue_Grade, Talent_Grade, sum;</span><br><span class="line">true<span class="keyword">int</span> category; <span class="comment">//人的种类: 1,sage 2,nobleman 3,fool man 4,small man 5，non pass</span></span><br><span class="line">&#125; p[<span class="number">100001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Person p1, Person p2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">if</span> (p1.category != p2.category)</span><br><span class="line">truetrue<span class="keyword">return</span> p1.category &lt; p2.category; <span class="comment">//类别小的放前面</span></span><br><span class="line">true<span class="keyword">else</span> <span class="keyword">if</span> (p1.sum != p2.sum)</span><br><span class="line">truetrue<span class="keyword">return</span> p1.sum &gt; p2.sum; <span class="comment">//总分降序</span></span><br><span class="line">true<span class="keyword">else</span> <span class="keyword">if</span> (p1.Virtue_Grade != p2.Virtue_Grade)</span><br><span class="line">truetrue<span class="keyword">return</span> p1.Virtue_Grade &gt; p2.Virtue_Grade; <span class="comment">//德分大的排前面</span></span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="keyword">return</span> <span class="built_in">strcmp</span>(p1.id, p2.id) &lt; <span class="number">0</span>; <span class="comment">//id升序</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">int</span> N, L, H;</span><br><span class="line">true<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;N, &amp;L, &amp;H);</span><br><span class="line">true<span class="keyword">int</span> pass = N; <span class="comment">//需要排序的人数</span></span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="built_in">scanf</span>(<span class="string">"%s%d%d"</span>, p[i].id, &amp;p[i].Virtue_Grade, &amp;p[i].Talent_Grade);</span><br><span class="line">truetruep[i].sum = p[i].Virtue_Grade + p[i].Talent_Grade;</span><br><span class="line">truetrue<span class="keyword">if</span> (p[i].Virtue_Grade &lt; L || p[i].Talent_Grade &lt; L) <span class="comment">//不排名</span></span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetruepass--;</span><br><span class="line">truetruetruep[i].category = <span class="number">5</span>;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="keyword">else</span> <span class="keyword">if</span> (p[i].Virtue_Grade &gt;= H &amp;&amp; p[i].Talent_Grade &gt;= H)</span><br><span class="line">truetruetruep[i].category = <span class="number">1</span>; <span class="comment">//sage</span></span><br><span class="line">truetrue<span class="keyword">else</span> <span class="keyword">if</span> (p[i].Virtue_Grade &gt;= H &amp;&amp; p[i].Talent_Grade &lt; H)</span><br><span class="line">truetruetruep[i].category = <span class="number">2</span>; <span class="comment">//nobleman</span></span><br><span class="line">truetrue<span class="keyword">else</span> <span class="keyword">if</span> (p[i].Virtue_Grade &gt;= p[i].Talent_Grade)</span><br><span class="line">truetruetruep[i].category = <span class="number">3</span>; <span class="comment">//fool man</span></span><br><span class="line">truetrue<span class="keyword">else</span></span><br><span class="line">truetruetruep[i].category = <span class="number">4</span>; <span class="comment">//small man</span></span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">truesort(p, p + N, cmp);</span><br><span class="line">true<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, pass);</span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pass; i++)</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"%s %d %d\n"</span>, p[i].id, p[i].Virtue_Grade, p[i].Talent_Grade);</span><br><span class="line"></span><br><span class="line">true<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             </div>
             <hr>
@@ -709,11 +665,12 @@ About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in wh
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1015 德才论
+                    <div class="summary block-with-text">1015 德才论
+
 宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”
 
 
-现给出一批考生的德才分数</div>
+现给出一批考生的德才分</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-13
@@ -758,8 +715,9 @@ About 900 years ago, a Chinese philosopher Sima Guang wrote a history book in wh
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1025 PAT Ranking
-Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejia</div>
+                    <div class="summary block-with-text">1025 PAT Ranking
+
+Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zheji</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-13
@@ -932,13 +890,13 @@ Programming Ability Test (PAT) is organized by the College of Computer Science a
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
-            &copy;2020, content by
+            &copy;2021, content by
             Jian Sun. All Rights Reserved.
             
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">32k</span>
+            <span class="white-color">33.7k</span>
             
 
             

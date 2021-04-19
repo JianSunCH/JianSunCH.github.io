@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1011 World Cup Betting, 孙健的博客">
-    <meta name="description" content="1011 World Cup Betting
-With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly exc">
+    <meta name="description" content="1011 World Cup Betting
+
+With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly ex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,8 +30,7 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -389,7 +389,7 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        397
+                        419
                     </div>
                     
 
@@ -412,55 +412,38 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1011-World-Cup-Betting"><a href="#1011-World-Cup-Betting" class="headerlink" title="1011 World Cup Betting"></a>1011 World Cup Betting</h2><blockquote>
+                <h2>1011 World Cup Betting</h2>
+<blockquote>
 <p>With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly excited as the best players from the best teams doing battles for the World Cup trophy in South Africa. Similarly, football betting fans were putting their money where their mouths were, by laying all manner of World Cup bets.</p>
 </blockquote>
 <blockquote>
-<p>Chinese Football Lottery provided a “Triple Winning” game. The rule of winning was simple: first select any three of the games. Then for each selected game, bet on one of the three possible results – namely <code>W</code> for win, <code>T</code> for tie, and <code>L</code> for lose. There was an odd assigned to each result. The winner’s odd would be the product of the three odds times 65%.</p>
+<p>Chinese Football Lottery provided a &quot;Triple Winning&quot; game. The rule of winning was simple: first select any three of the games. Then for each selected game, bet on one of the three possible results -- namely <code>W</code> for win, <code>T</code> for tie, and <code>L</code> for lose. There was an odd assigned to each result. The winner's odd would be the product of the three odds times 65%.</p>
 </blockquote>
 <blockquote>
-<p>For example, 3 games’ odds are given as the following:</p>
+<p>For example, 3 games' odds are given as the following:</p>
 </blockquote>
 <pre><code>  W   T   L 
  1.1 2.5 1.7 
  1.2 3.1 1.6 
  4.1 1.2 1.1 
-</code></pre><blockquote>
-<p>To obtain the maximum profit, one must buy <code>W</code> for the 3rd game, <code>T</code> for the 2nd game, and <code>T</code> for the 1st game. If each bet takes 2 yuans, then the maximum profit would be (4.1×3.1×2.5×65%−1)×2=39.31 yuans (accurate up to 2 decimal places).</p>
+</code></pre>
+<blockquote>
+<p>To obtain the maximum profit, one must buy <code>W</code> for the 3rd game, <code>T</code> for the 2nd game, and <code>T</code> for the 1st game. If each bet takes 2 yuans, then the maximum profit would be (4.1×3.1×2.5×65%−1)×2=39.31 yuans (accurate up to 2 decimal places).</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case contains the betting information of 3 games. Each game occupies a line with three distinct odds corresponding to <code>W</code>, <code>T</code> and <code>L</code>.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print in one line the best bet of each game, and the maximum profit accurate up to 2 decimal places. The characters and the number must be separated by one space.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>1.1 2.5 1.7 
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. Each case contains the betting information of 3 games. Each game occupies a line with three distinct odds corresponding to <code>W</code>, <code>T</code> and <code>L</code>.</p>
+<h3>Output Specification:</h3>
+<p>For each test case, print in one line the best bet of each game, and the maximum profit accurate up to 2 decimal places. The characters and the number must be separated by one space.</p>
+<h3>Sample Input:</h3>
+<pre><code>1.1 2.5 1.7 
 1.2 3.1 1.6 
 4.1 1.2 1.1 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>T T W 39.31
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> results<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'W'</span><span class="token punctuation">,</span> <span class="token string">'T'</span><span class="token punctuation">,</span> <span class="token string">'L'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token keyword">double</span> max <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">,</span> odds<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">double</span> temp <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//找出每一行的最大值</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>odds<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>odds <span class="token operator">></span> temp<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                temp <span class="token operator">=</span> odds<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//当前最大的赔率</span>
-                id <span class="token operator">=</span> j<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//对应的结果</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c "</span><span class="token punctuation">,</span> results<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        max <span class="token operator">*</span><span class="token operator">=</span> temp<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%.2lf"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>max <span class="token operator">*</span> <span class="token number">0.65</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>T T W 39.31
+</code></pre>
+<h3>解答</h3>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">char</span> results[<span class="number">3</span>] = &#123;<span class="string">'W'</span>, <span class="string">'T'</span>, <span class="string">'L'</span>&#125;;</span><br><span class="line">true<span class="keyword">double</span> max = <span class="number">1.0</span>, odds;</span><br><span class="line">true<span class="keyword">int</span> id = <span class="number">0</span>;</span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="keyword">double</span> temp = <span class="number">0.0</span>;</span><br><span class="line">truetrue<span class="comment">//找出每一行的最大值</span></span><br><span class="line">truetrue<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)</span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetrue<span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;odds);</span><br><span class="line">truetruetrue<span class="keyword">if</span> (odds &gt; temp)</span><br><span class="line">truetruetrue&#123;</span><br><span class="line">truetruetruetruetemp = odds; <span class="comment">//当前最大的赔率</span></span><br><span class="line">truetruetruetrueid = j;		 <span class="comment">//对应的结果</span></span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"%c "</span>, results[id]);</span><br><span class="line">truetruemax *= temp;</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="built_in">printf</span>(<span class="string">"%.2lf"</span>, (max * <span class="number">0.65</span> - <span class="number">1</span>) * <span class="number">2</span>);</span><br><span class="line">true<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             </div>
             <hr>
@@ -665,8 +648,9 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1036 Boys vs Girls
-This time you are asked to tell the difference between the lowest grade of all the male students and </div>
+                    <div class="summary block-with-text">1036 Boys vs Girls
+
+This time you are asked to tell the difference between the lowest grade of all the male students and</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -711,8 +695,9 @@ This time you are asked to tell the difference between the lowest grade of all t
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1006 Sign In and Sign Out
-At the beginning of every day, the first person who signs in the computer room will unlock the</div>
+                    <div class="summary block-with-text">1006 Sign In and Sign Out
+
+At the beginning of every day, the first person who signs in the computer room will unlock th</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -885,13 +870,13 @@ At the beginning of every day, the first person who signs in the computer room w
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
-            &copy;2020, content by
+            &copy;2021, content by
             Jian Sun. All Rights Reserved.
             
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">32k</span>
+            <span class="white-color">33.7k</span>
             
 
             

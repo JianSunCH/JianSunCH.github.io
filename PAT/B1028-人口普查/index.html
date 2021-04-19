@@ -5,11 +5,12 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="B1028 人口普查, 孙健的博客">
-    <meta name="description" content="1028 人口普查
+    <meta name="description" content="1028 人口普查
+
 某城镇进行人口普查，得到了全体居民的生日。现请你写个程序，找出镇上最年长和最年轻的人。
 
 
-这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 6">
+这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,8 +33,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -392,7 +392,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        501
+                        523
                     </div>
                     
 
@@ -415,91 +415,30 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1028-人口普查"><a href="#1028-人口普查" class="headerlink" title="1028 人口普查"></a>1028 人口普查</h2><blockquote>
+                <h2>1028 人口普查</h2>
+<blockquote>
 <p>某城镇进行人口普查，得到了全体居民的生日。现请你写个程序，找出镇上最年长和最年轻的人。</p>
 </blockquote>
 <blockquote>
 <p>这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 6 日，所以超过 200 岁的生日和未出生的生日都是不合理的，应该被过滤掉。</p>
 </blockquote>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第一行给出正整数 N，取值在(0,10​5​​]；随后 N 行，每行给出 1 个人的姓名（由不超过 5 个英文字母组成的字符串）、以及按 <code>yyyy/mm/dd</code>（即年/月/日）格式给出的生日。题目保证最年长和最年轻的人没有并列。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中顺序输出有效生日的个数、最年长人和最年轻人的姓名，其间以空格分隔。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code>5 
+<h3>输入格式：</h3>
+<p>输入在第一行给出正整数 N，取值在(0,10​5​​]；随后 N 行，每行给出 1 个人的姓名（由不超过 5 个英文字母组成的字符串）、以及按 <code>yyyy/mm/dd</code>（即年/月/日）格式给出的生日。题目保证最年长和最年轻的人没有并列。</p>
+<h3>输出格式：</h3>
+<p>在一行中顺序输出有效生日的个数、最年长人和最年轻人的姓名，其间以空格分隔。</p>
+<h3>输入样例：</h3>
+<pre><code>5 
 John 2001/05/12 
 Tom 1814/09/06 
 Ann 2121/01/30 
 James 1814/09/05 
 Steve 1967/11/20 
-</code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>3 Tom John
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-
-<span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">100001</span><span class="token punctuation">;</span>
-<span class="token keyword">struct</span> Person
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> year<span class="token punctuation">,</span> month<span class="token punctuation">,</span> day<span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span> temp<span class="token punctuation">,</span> youngest<span class="token punctuation">,</span> oldest<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//合法日期区间: [left,right]</span>
-
-<span class="token comment" spellcheck="true">//初始化</span>
-<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    youngest<span class="token punctuation">.</span>year <span class="token operator">=</span> left<span class="token punctuation">.</span>year <span class="token operator">=</span> <span class="token number">1814</span><span class="token punctuation">;</span>
-    youngest<span class="token punctuation">.</span>month <span class="token operator">=</span> left<span class="token punctuation">.</span>month <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
-    youngest<span class="token punctuation">.</span>day <span class="token operator">=</span> left<span class="token punctuation">.</span>day <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
-    oldest<span class="token punctuation">.</span>year <span class="token operator">=</span> right<span class="token punctuation">.</span>year <span class="token operator">=</span> <span class="token number">2014</span><span class="token punctuation">;</span>
-    oldest<span class="token punctuation">.</span>month <span class="token operator">=</span> right<span class="token punctuation">.</span>month <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
-    oldest<span class="token punctuation">.</span>day <span class="token operator">=</span> right<span class="token punctuation">.</span>day <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-bool <span class="token function">LessEqu</span><span class="token punctuation">(</span>Person p1<span class="token punctuation">,</span> Person p2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>year <span class="token operator">!=</span> p2<span class="token punctuation">.</span>year<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>year <span class="token operator">&lt;=</span> p2<span class="token punctuation">.</span>year<span class="token punctuation">;</span>
-    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>month <span class="token operator">!=</span> p2<span class="token punctuation">.</span>month<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>month <span class="token operator">&lt;=</span> p2<span class="token punctuation">.</span>month<span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>day <span class="token operator">&lt;=</span> p2<span class="token punctuation">.</span>day<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-bool <span class="token function">MoreEqu</span><span class="token punctuation">(</span>Person p1<span class="token punctuation">,</span> Person p2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>year <span class="token operator">!=</span> p2<span class="token punctuation">.</span>year<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>year <span class="token operator">>=</span> p2<span class="token punctuation">.</span>year<span class="token punctuation">;</span>
-    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>month <span class="token operator">!=</span> p2<span class="token punctuation">.</span>month<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>month <span class="token operator">>=</span> p2<span class="token punctuation">.</span>month<span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> p1<span class="token punctuation">.</span>day <span class="token operator">>=</span> p2<span class="token punctuation">.</span>day<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> N<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>N<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>N<span class="token operator">--</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s%d/%d/%d"</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>year<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>month<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//判断是否合法</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">MoreEqu</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> left<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">LessEqu</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            count<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">MoreEqu</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> youngest<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                youngest <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">LessEqu</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> oldest<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                oldest <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">//特殊处理,否则会出格式错误</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %s %s"</span><span class="token punctuation">,</span> count<span class="token punctuation">,</span> oldest<span class="token punctuation">.</span>name<span class="token punctuation">,</span> youngest<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
+<h3>输出样例：</h3>
+<pre><code>3 Tom John
+</code></pre>
+<h3>解答</h3>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100001</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">true<span class="keyword">char</span> name[<span class="number">6</span>];</span><br><span class="line">true<span class="keyword">int</span> year, month, day;</span><br><span class="line"></span><br><span class="line">&#125; temp, youngest, oldest, left, right; <span class="comment">//合法日期区间: [left,right]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">trueyoungest.year = left.year = <span class="number">1814</span>;</span><br><span class="line">trueyoungest.month = left.month = <span class="number">9</span>;</span><br><span class="line">trueyoungest.day = left.day = <span class="number">6</span>;</span><br><span class="line">trueoldest.year = right.year = <span class="number">2014</span>;</span><br><span class="line">trueoldest.month = right.month = <span class="number">9</span>;</span><br><span class="line">trueoldest.day = right.day = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">LessEqu</span><span class="params">(Person p1, Person p2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">if</span> (p1.year != p2.year)</span><br><span class="line">truetrue<span class="keyword">return</span> p1.year &lt;= p2.year;</span><br><span class="line">true<span class="keyword">else</span> <span class="keyword">if</span> (p1.month != p2.month)</span><br><span class="line">truetrue<span class="keyword">return</span> p1.month &lt;= p2.month;</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="keyword">return</span> p1.day &lt;= p2.day;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">MoreEqu</span><span class="params">(Person p1, Person p2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">if</span> (p1.year != p2.year)</span><br><span class="line">truetrue<span class="keyword">return</span> p1.year &gt;= p2.year;</span><br><span class="line">true<span class="keyword">else</span> <span class="keyword">if</span> (p1.month != p2.month)</span><br><span class="line">truetrue<span class="keyword">return</span> p1.month &gt;= p2.month;</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="keyword">return</span> p1.day &gt;= p2.day;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">trueinit();</span><br><span class="line">true<span class="keyword">int</span> N;</span><br><span class="line">true<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;N);</span><br><span class="line">true<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">true<span class="keyword">while</span> (N--)</span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="built_in">scanf</span>(<span class="string">"%s%d/%d/%d"</span>, temp.name, &amp;temp.year, &amp;temp.month, &amp;temp.day);</span><br><span class="line">truetrue<span class="comment">//判断是否合法</span></span><br><span class="line">truetrue<span class="keyword">if</span> (MoreEqu(temp, left) &amp;&amp; LessEqu(temp, right))</span><br><span class="line">truetrue&#123;</span><br><span class="line">truetruetruecount++;</span><br><span class="line">truetruetrue<span class="keyword">if</span> (MoreEqu(temp, youngest))</span><br><span class="line">truetruetruetrueyoungest = temp;</span><br><span class="line">truetruetrue<span class="keyword">if</span> (LessEqu(temp, oldest))</span><br><span class="line">truetruetruetrueoldest = temp;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="comment">//特殊处理,否则会出格式错误</span></span><br><span class="line">true<span class="keyword">if</span> (count == <span class="number">0</span>)</span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"0"</span>);</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="built_in">printf</span>(<span class="string">"%d %s %s"</span>, count, oldest.name, youngest.name);</span><br><span class="line"></span><br><span class="line">true<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             </div>
             <hr>
@@ -704,8 +643,9 @@ bool <span class="token function">MoreEqu</span><span class="token punctuation">
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1041 考试座位号
-每个 PAT 考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有些</div>
+                    <div class="summary block-with-text">1041 考试座位号
+
+每个 PAT 考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -750,12 +690,14 @@ bool <span class="token function">MoreEqu</span><span class="token punctuation">
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1004 成绩排名
-读入 n（&gt;0）名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。
+                    <div class="summary block-with-text">1004 成绩排名
 
-输入格式：每个测试输入包含 1 个测试用例，格式为
+读入 n（&gt;0）名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。
+
+输入格式：
+每个测试输入包含 1 个测试用例，格式为
 第 1 行：正整数 n 
-第 2 行：第 1 个学生的姓名 学号 成绩 </div>
+第 2 行：第 1 个学生的姓名 学号 成</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -928,13 +870,13 @@ bool <span class="token function">MoreEqu</span><span class="token punctuation">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
-            &copy;2020, content by
+            &copy;2021, content by
             Jian Sun. All Rights Reserved.
             
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">32k</span>
+            <span class="white-color">33.7k</span>
             
 
             

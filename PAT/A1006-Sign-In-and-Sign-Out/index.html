@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="A1006 Sign In and Sign Out, 孙健的博客">
-    <meta name="description" content="1006 Sign In and Sign Out
-At the beginning of every day, the first person who signs in the computer room will unlock the">
+    <meta name="description" content="1006 Sign In and Sign Out
+
+At the beginning of every day, the first person who signs in the computer room will unlock th">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,8 +30,7 @@ At the beginning of every day, the first person who signs in the computer room w
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -389,7 +389,7 @@ At the beginning of every day, the first person who signs in the computer room w
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        379
+                        394
                     </div>
                     
 
@@ -412,68 +412,29 @@ At the beginning of every day, the first person who signs in the computer room w
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1006-Sign-In-and-Sign-Out"><a href="#1006-Sign-In-and-Sign-Out" class="headerlink" title="1006 Sign In and Sign Out"></a>1006 Sign In and Sign Out</h2><blockquote>
-<p>At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door. Given the records of signing in’s and out’s, you are supposed to find the ones who have unlocked and locked the door on that day.</p>
+                <h2>1006 Sign In and Sign Out</h2>
+<blockquote>
+<p>At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door. Given the records of signing in's and out's, you are supposed to find the ones who have unlocked and locked the door on that day.</p>
 </blockquote>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case contains the records for one day. The case starts with a positive integer M, which is the total number of records, followed by Mlines, each in the format:</p>
+<h3>Input Specification:</h3>
+<p>Each input file contains one test case. Each case contains the records for one day. The case starts with a positive integer M, which is the total number of records, followed by Mlines, each in the format:</p>
 <pre><code>ID_number Sign_in_time Sign_out_time 
-</code></pre><p>where times are given in the format <code>HH:MM:SS</code>, and <code>ID_number</code> is a string with no more than 15 characters.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, output in one line the ID numbers of the persons who have unlocked and locked the door on that day. The two ID numbers must be separated by one space.</p>
+</code></pre>
+<p>where times are given in the format <code>HH:MM:SS</code>, and <code>ID_number</code> is a string with no more than 15 characters.</p>
+<h3>Output Specification:</h3>
+<p>For each test case, output in one line the ID numbers of the persons who have unlocked and locked the door on that day. The two ID numbers must be separated by one space.</p>
 <p>Note: It is guaranteed that the records are consistent. That is, the sign in time must be earlier than the sign out time for each person, and there are no two persons sign in or out at the same moment.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><pre><code>3 
+<h3>Sample Input:</h3>
+<pre><code>3 
 CS301111 15:30:28 17:00:10 
 SC3021234 08:00:00 11:25:25 
 CS301133 21:45:00 21:58:40 
-</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><pre><code>SC3021234 CS301133
-</code></pre><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-
-<span class="token keyword">struct</span> Record
-<span class="token punctuation">{</span>
-    <span class="token keyword">char</span> id<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> HH<span class="token punctuation">,</span> MM<span class="token punctuation">,</span> SS<span class="token punctuation">;</span>
-<span class="token punctuation">}</span> temp<span class="token punctuation">,</span> early<span class="token punctuation">,</span> late<span class="token punctuation">;</span>
-
-<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    early<span class="token punctuation">.</span>HH <span class="token operator">=</span> <span class="token number">24</span><span class="token punctuation">;</span>
-    early<span class="token punctuation">.</span>MM <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
-    early<span class="token punctuation">.</span>SS <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
-    late<span class="token punctuation">.</span>HH <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    late<span class="token punctuation">.</span>MM <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    late<span class="token punctuation">.</span>SS <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-bool <span class="token function">compare</span><span class="token punctuation">(</span>Record r1<span class="token punctuation">,</span> Record r2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>r1<span class="token punctuation">.</span>HH <span class="token operator">!=</span> r2<span class="token punctuation">.</span>HH<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> r1<span class="token punctuation">.</span>HH <span class="token operator">&lt;=</span> r2<span class="token punctuation">.</span>HH<span class="token punctuation">;</span>
-    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r1<span class="token punctuation">.</span>MM <span class="token operator">!=</span> r2<span class="token punctuation">.</span>MM<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> r1<span class="token punctuation">.</span>MM <span class="token operator">&lt;=</span> r2<span class="token punctuation">.</span>MM<span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> r1<span class="token punctuation">.</span>SS <span class="token operator">&lt;=</span> r2<span class="token punctuation">.</span>SS<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> M<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>M<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>M<span class="token operator">--</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//读入登入时间</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s %d:%d:%d"</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>HH<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>MM<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>SS<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">compare</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> early<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            early <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//读入登出时间</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d:%d:%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>HH<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>MM<span class="token punctuation">,</span> <span class="token operator">&amp;</span>temp<span class="token punctuation">.</span>SS<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">compare</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> late<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            late <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %s\n"</span><span class="token punctuation">,</span> early<span class="token punctuation">.</span>id<span class="token punctuation">,</span> late<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
+<h3>Sample Output:</h3>
+<pre><code>SC3021234 CS301133
+</code></pre>
+<h3>解答</h3>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Record</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">true<span class="keyword">char</span> id[<span class="number">16</span>];</span><br><span class="line">true<span class="keyword">int</span> HH, MM, SS;</span><br><span class="line">&#125; temp, early, late;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">trueearly.HH = <span class="number">24</span>;</span><br><span class="line">trueearly.MM = <span class="number">60</span>;</span><br><span class="line">trueearly.SS = <span class="number">60</span>;</span><br><span class="line">truelate.HH = <span class="number">0</span>;</span><br><span class="line">truelate.MM = <span class="number">0</span>;</span><br><span class="line">truelate.SS = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">compare</span><span class="params">(Record r1, Record r2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">true<span class="keyword">if</span> (r1.HH != r2.HH)</span><br><span class="line">truetrue<span class="keyword">return</span> r1.HH &lt;= r2.HH;</span><br><span class="line">true<span class="keyword">else</span> <span class="keyword">if</span> (r1.MM != r2.MM)</span><br><span class="line">truetrue<span class="keyword">return</span> r1.MM &lt;= r2.MM;</span><br><span class="line">true<span class="keyword">else</span></span><br><span class="line">truetrue<span class="keyword">return</span> r1.SS &lt;= r2.SS;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">trueinit();</span><br><span class="line">true<span class="keyword">int</span> M;</span><br><span class="line">true<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;M);</span><br><span class="line">true<span class="keyword">while</span> (M--)</span><br><span class="line">true&#123;</span><br><span class="line">truetrue<span class="comment">//读入登入时间</span></span><br><span class="line">truetrue<span class="built_in">scanf</span>(<span class="string">"%s %d:%d:%d"</span>, temp.id, &amp;temp.HH, &amp;temp.MM, &amp;temp.SS);</span><br><span class="line">truetrue<span class="keyword">if</span> (compare(temp, early))</span><br><span class="line">truetruetrueearly = temp;</span><br><span class="line">truetrue<span class="comment">//读入登出时间</span></span><br><span class="line">truetrue<span class="built_in">scanf</span>(<span class="string">"%d:%d:%d"</span>, &amp;temp.HH, &amp;temp.MM, &amp;temp.SS);</span><br><span class="line">truetrue<span class="keyword">if</span> (!compare(temp, late))</span><br><span class="line">truetruetruelate = temp;</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="built_in">printf</span>(<span class="string">"%s %s\n"</span>, early.id, late.id);</span><br><span class="line"></span><br><span class="line">true<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             </div>
             <hr>
@@ -678,8 +639,9 @@ bool <span class="token function">compare</span><span class="token punctuation">
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1011 World Cup Betting
-With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly exc</div>
+                    <div class="summary block-with-text">1011 World Cup Betting
+
+With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly ex</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -724,8 +686,9 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1041 考试座位号
-每个 PAT 考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有些</div>
+                    <div class="summary block-with-text">1041 考试座位号
+
+每个 PAT 考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
@@ -898,13 +861,13 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
-            &copy;2020, content by
+            &copy;2021, content by
             Jian Sun. All Rights Reserved.
             
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">32k</span>
+            <span class="white-color">33.7k</span>
             
 
             
